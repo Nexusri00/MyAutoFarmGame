@@ -1,0 +1,212 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- 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
+
+-- https://lua.expert/
+local t = {}
+
+t.__index = t
+function t.new(p1) --[[ new | Line: 16 | Upvalues: t (copy) ]]
+	return setmetatable({
+		_voxelSize = p1 or 50,
+		_voxels = {}
+	}, t)
+end
+function t._debugDrawVoxel(p1, p2) --[[ _debugDrawVoxel | Line: 23 ]]
+	local Part = Instance.new("Part")
+
+	Part.Name = tostring(p2)
+	Part.Anchored = true
+	Part.CanCollide = false
+	Part.Transparency = 1
+	Part.Size = Vector3.new(1, 1, 1) * p1._voxelSize
+	Part.Position = p2 * p1._voxelSize + Vector3.new(1, 1, 1) * (p1._voxelSize / 2)
+	Part.Parent = workspace
+
+	local SelectionBox = Instance.new("SelectionBox")
+
+	SelectionBox.Color3 = Color3.new(0/255, 0/255, 255/255)
+	SelectionBox.Adornee = Part
+	SelectionBox.Parent = Part
+	task.delay(0.03333333333333333, Part.Destroy, Part)
+end
+function t.AddObject(p1, p2, p3) --[[ AddObject | Line: 41 ]]
+	local ClassName = p3.ClassName
+	local _voxelSize = p1._voxelSize
+	local v7 = Vector3.new(math.floor(p2.X / _voxelSize), math.floor(p2.Y / _voxelSize), (math.floor(p2.Z / _voxelSize)))
+	local v8 = p1._voxels[v7]
+
+	if v8 == nil then
+		p1._voxels[v7] = {
+			[ClassName] = { p3 }
+		}
+
+		return v7
+	end
+
+	if v8[ClassName] == nil then
+		v8[ClassName] = { p3 }
+	else
+		table.insert(v8[ClassName], p3)
+	end
+
+	return v7
+end
+function t.RemoveObject(p1, p2, p3) --[[ RemoveObject | Line: 66 ]]
+	local v1 = p1._voxels[p2]
+
+	if v1 == nil then
+		return
+	end
+
+	local ClassName = p3.ClassName
+
+	if v1[ClassName] == nil then
+		return
+	end
+
+	local v2 = v1[ClassName]
+
+	for v3, v4 in v2 do
+		if v4 == p3 then
+			local v5 = #v2
+
+			v2[v3] = v2[v5]
+			v2[v5] = nil
+
+			break
+		end
+	end
+
+	if #v2 ~= 0 then
+		return
+	end
+
+	v1[ClassName] = nil
+
+	if next(v1) ~= nil then
+		return
+	end
+
+	p1._voxels[p2] = nil
+end
+function t.GetVoxel(p1, p2) --[[ GetVoxel | Line: 100 ]]
+	return p1._voxels[p2]
+end
+function t.ForEachObjectInRegion(p1, p2, p3, p4) --[[ ForEachObjectInRegion | Line: 104 ]]
+	local _voxelSize = p1._voxelSize
+	local v1 = math.min(p3.X, p2.X)
+	local v2 = math.min(p3.Y, p2.Y)
+	local v3 = math.min(p3.Z, p2.Z)
+	local v4 = math.max(p3.X, p2.X)
+	local v5 = math.max(p3.Y, p2.Y)
+	local v6 = math.max(p3.Z, p2.Z)
+	local v7, v8 = v2, v5
+
+	for i = math.floor(v1 / _voxelSize), math.floor(v4 / _voxelSize) do
+		for j = math.floor(v3 / _voxelSize), math.floor(v6 / _voxelSize) do
+			for k = math.floor(v7 / _voxelSize), math.floor(v8 / _voxelSize) do
+				local v9 = p1._voxels[Vector3.new(i, k, j)]
+
+				if v9 then
+					for v10, v11 in v9 do
+						for v12, v13 in v11 do
+							p4(v10, v13)
+						end
+					end
+				end
+			end
+		end
+	end
+end
+function t.ForEachObjectInView(p1, p2, p3, p4) --[[ ForEachObjectInView | Line: 127 ]]
+	local _voxelSize = p1._voxelSize
+	local v1 = p2.CFrame
+	local Position = v1.Position
+	local RightVector = v1.RightVector
+	local UpVector = v1.UpVector
+	local v2 = p3 / 2
+	local v5 = math.tan((math.rad((p2.FieldOfView + 5) / 2))) * p3
+	local v6 = v5 * (p2.ViewportSize.X / p2.ViewportSize.Y)
+	local v7 = v1 * CFrame.new(0, 0, -p3)
+	local v8 = v7 * Vector3.new(-v6, v5, 0)
+	local v9 = v7 * Vector3.new(v6, v5, 0)
+	local v10 = v7 * Vector3.new(-v6, -v5, 0)
+	local v11 = v7 * Vector3.new(v6, -v5, 0)
+	local v12 = (v1 * CFrame.new(0, 0, -v2)):Inverse()
+	local Unit = UpVector:Cross(v11 - Position).Unit
+	local Unit2 = UpVector:Cross(v10 - Position).Unit
+	local Unit3 = RightVector:Cross(Position - v9).Unit
+	local Unit4 = RightVector:Cross(Position - v11).Unit
+	local v13 = Position:Min(v8):Min(v9):Min(v10):Min(v11)
+	local v14 = Position:Max(v8):Max(v9):Max(v10):Max(v11)
+	local v21 = Vector3.new(math.floor(v13.X / _voxelSize), math.floor(v13.Y / _voxelSize), (math.floor(v13.Z / _voxelSize)))
+	local v28 = Vector3.new(math.floor(v14.X / _voxelSize), math.floor(v14.Y / _voxelSize), (math.floor(v14.Z / _voxelSize)))
+
+	local function isPointInView(p1) --[[ isPointInView | Line: 165 | Upvalues: v12 (copy), v6 (copy), v5 (copy), v2 (copy), Position (copy), Unit (copy), Unit2 (copy), Unit3 (copy), Unit4 (copy) ]]
+		local v1 = v12 * p1
+
+		if v6 < v1.X or (v1.X < -v6 or (v5 < v1.Y or (v1.Y < -v5 or (v2 < v1.Z or v1.Z < -v2)))) then
+			return false
+		end
+
+		local v22 = p1 - Position
+
+		return not (Unit:Dot(v22) < 0 or (Unit2:Dot(v22) > 0 or (Unit3:Dot(v22) < 0 or Unit4:Dot(v22) > 0)))
+	end
+
+	local v29, v30 = v21, v28
+
+	for i = v21.X, v28.X do
+		local v31 = i * _voxelSize
+		local v32 = math.clamp(v7.X, v31, v31 + _voxelSize)
+
+		for j = v29.Y, v30.Y do
+			local v33 = j * _voxelSize
+			local v34 = math.clamp(v7.Y, v33, v33 + _voxelSize)
+
+			for k = v29.Z, v30.Z do
+				local v35 = k * _voxelSize
+
+				if isPointInView((Vector3.new(v32, v34, (math.clamp(v7.Z, v35, v35 + _voxelSize))))) then
+					local v37 = v29.Z - 1
+					local Z2 = v30.Z
+
+					v38 = k
+					v39 = k
+
+					while v38 <= Z2 do
+						local v40 = math.floor((v38 + Z2) / 2)
+
+						if isPointInView((Vector3.new(v32, v34, (math.clamp(v7.Z, v40 * _voxelSize, v40 * _voxelSize + _voxelSize))))) then
+							v38 = v40 + 1
+							v37 = v40
+						else
+							Z2 = v40 - 1
+						end
+					end
+
+					for n = v39, v37 do
+						local v42 = p1._voxels[Vector3.new(i, j, n)]
+
+						if v42 then
+							for v43, v44 in v42 do
+								for v45, v46 in v44 do
+									p4(v43, v46)
+								end
+							end
+						end
+					end
+
+					break
+				end
+			end
+		end
+	end
+end
+function t.ClearAll(p1) --[[ ClearAll | Line: 248 ]]
+	table.clear(p1._voxels)
+end
+
+return t

@@ -1,0 +1,17 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQMKCEdlbmVyYXRlEUdlbmVyYXRlX0V4dGVybmFsB3JlcXVpcmUEZ2FtZRFSZXBsaWNhdGVkU3RvcmFnZQZTaGFyZWQFVHlwZXMLQ29tYmF0VHlwZXMQRXh0ZXJuYWxTdGF0VHlwZQlTdGF0c1R5cGUAAwIBAAAAAAP/AQAAAAAAAIIBAgAAAAoBARgAAAELAAAAAAIBAAAAAAP/AQAAAAAAAIIBAgAAAA8CARgAAAEQAAAAAAQAAAECACijAAAApAABAAAAAECkAQMAAAAgQE0BAT8EAAAATQEBEgUAAABNAQHvBgAAAE0BAZwHAAAATQEBKQgAAACfAAICpAEBAAAAAECkAgMAAAAgQE0CAj8EAAAATQICEgUAAABNAgLvBgAAAE0CApwHAAAATQICywkAAACfAQIC/wICAAAAAADAAwoAMAMCNQsAAADAAwwAMAMCkg0AAACCAgIADgMDBAAAAEADBAQAACBAAwUDBgMHAwgDCQMKBgADAQYBAwICAAEBAAEYAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAYAAgAABQAABQEAAAAAAknq0aB4K2KNJQe5lE3eVqo58sbUey67oQ==
+
+-- https://lua.expert/
+require(game.ReplicatedStorage.Shared.Types.CombatTypes.ExternalStatType)
+require(game.ReplicatedStorage.Shared.Types.CombatTypes.StatsType)
+
+return {
+	Generate = function(p1) --[[ Generate | Line: 10 ]]
+		return {}
+	end,
+	Generate_External = function(p1) --[[ Generate_External | Line: 15 ]]
+		return {}
+	end
+}

@@ -1,0 +1,47 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- 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
+
+-- https://lua.expert/
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local CustomTweens = require(ReplicatedStorage.Utilities.CustomTweens)
+local React = require(ReplicatedStorage.Packages.React)
+
+return function(p1) --[[ Line: 5 | Upvalues: React (copy), CustomTweens (copy) ]]
+	local v1 = React.useRef(nil)
+
+	React.useEffect(function() --[[ Line: 7 | Upvalues: p1 (copy), CustomTweens (ref), v1 (copy) ]]
+		if p1.open then
+			CustomTweens.StartFlameAnim(v1.current, 30, Vector2.new(256, 256), 4, 4)
+		else
+			CustomTweens.StopFlameAnim(v1.current)
+		end
+
+		return function() --[[ Line: 13 | Upvalues: CustomTweens (ref), v1 (ref) ]]
+			CustomTweens.StopFlameAnim(v1.current)
+		end
+	end, { p1.open })
+
+	return React.createElement("ImageLabel", {
+		BackgroundTransparency = 1,
+		Image = "rbxassetid://80791144817460",
+		ZIndex = 2,
+		AnchorPoint = Vector2.new(0.5, 0.5),
+		Position = UDim2.fromScale(0.5, 0.5),
+		ScaleType = Enum.ScaleType.Fit,
+		Size = UDim2.fromScale(1.1, 1.1),
+		ref = v1
+	}, {
+		uIGradient = React.createElement("UIGradient", {
+			Rotation = 40,
+			Color = ColorSequence.new({
+				ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 0, 0)),
+				ColorSequenceKeypoint.new(0.247405, Color3.fromRGB(255, 0, 72)),
+				ColorSequenceKeypoint.new(0.50346, Color3.fromRGB(255, 0, 0)),
+				ColorSequenceKeypoint.new(0.737024, Color3.fromRGB(255, 0, 72)),
+				ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 0))
+			})
+		})
+	})
+end

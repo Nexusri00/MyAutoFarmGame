@@ -1,0 +1,106 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- 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
+
+-- https://lua.expert/
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+require(ReplicatedStorage:WaitForChild("Modules"):WaitForChild("SharedPackage"))
+require(script.Parent.Parent.Types.ServiceType)
+
+local v1 = nil
+local v2 = nil
+local v3 = nil
+local v4 = nil
+local v5 = nil
+local v6 = nil
+local v7 = nil
+local v8 = nil
+
+local function Lerp(p1, p2, p3) --[[ Lerp | Line: 20 ]]
+	return p1 + (p2 - p1) * p3
+end
+
+local t = { "Torso", "HumanoidRootPart", "Left Leg", "Left Arm", "Right Leg", "Right Arm", "Head" }
+local v9 = 0
+local v10 = 0
+
+local function CacheRig(p1, p2) --[[ CacheRig | Line: 30 | Upvalues: v4 (ref), v5 (ref), v6 (ref), v7 (ref), v8 (ref), v1 (ref), v2 (ref), v3 (ref) ]]
+	v4 = p1
+	v5 = p1:FindFirstChild("Torso")
+	v6 = p2:FindFirstChild("RootJoint")
+	v7 = v5 and v5:FindFirstChild("Left Hip")
+	v8 = v5 and v5:FindFirstChild("Right Hip")
+	v1 = v6 and v6.C0
+	v2 = v7 and v7.C0
+	v3 = v8 and v8.C0
+end
+
+return function(p1, p2) --[[ Line: 41 | Upvalues: v4 (ref), v5 (ref), v6 (ref), v7 (ref), v8 (ref), CacheRig (copy), v9 (ref), v1 (ref), v2 (ref), v3 (ref), v10 (ref), t (copy) ]]
+	local RootPart = p1.RootPart
+	local DeltaTime = p1.DeltaTime
+	local Character = p1.Character
+
+	if not p1.Humanoid then
+		return
+	end
+
+	if Character ~= v4 or (not v5 or (v5.Parent ~= Character or (not v6 or (v6.Parent ~= RootPart or (not v7 or (v7.Parent ~= v5 or (not v8 or v8.Parent ~= v5))))))) then
+		CacheRig(Character, RootPart)
+	end
+
+	if not (v5 and (v6 and (v8 and v7))) then
+		return
+	end
+
+	local v12 = Character:GetScale()
+
+	if v12 ~= v9 then
+		v1 = v6.C0
+		v2 = v7.C0
+		v3 = v8.C0
+	end
+
+	local v22 = RootPart.Velocity * Vector3.new(1, 0, 1)
+	local v32, v42
+
+	if v22.Magnitude > 0.001 then
+		local v52 = RootPart.CFrame.RightVector:Dot(v22.Unit)
+
+		v32, v42 = RootPart.CFrame.LookVector:Dot(v22.Unit), v52
+	else
+		v32 = 0
+		v42 = 0
+	end
+
+	v6.C0 = v6.C0:Lerp(v1 * CFrame.Angles(math.rad(v32 * 7), math.rad(-v42 * 15), 0), 0.1)
+	v7.C0 = v7.C0:Lerp(v2 * CFrame.Angles(math.rad(v42 * 9), 0, 0), 0.1)
+	v8.C0 = v8.C0:Lerp(v3 * CFrame.Angles(math.rad(-v42 * 9), 0, 0), 0.1)
+
+	if v12 > 1 then
+		if v12 ~= v9 or tick() - v10 >= 0.25 then
+			v10 = tick()
+
+			for k, v in pairs(Character:GetDescendants()) do
+				if v:IsA("BasePart") and v ~= RootPart then
+					v.Massless = true
+				end
+			end
+		end
+	elseif v12 ~= v9 then
+		for k, v in pairs(Character:GetDescendants()) do
+			if v:IsA("BasePart") and v ~= RootPart then
+				if table.find(t, v.Name) then
+					v.Massless = false
+
+					continue
+				end
+
+				v.Massless = true
+			end
+		end
+	end
+
+	v9 = v12
+end

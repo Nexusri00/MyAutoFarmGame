@@ -1,0 +1,60 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- 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
+
+-- https://lua.expert/
+local RunService = game:GetService("RunService")
+local v1 = require("../mod/attributes")
+
+require("../types")
+
+local v2 = require("../mod/utility")
+
+return {
+	emit = function(p1, p2) --[[ emit | Line: 9 | Upvalues: v1 (copy), v2 (copy), RunService (copy) ]]
+		if not p1:GetAttribute("Enabled") then
+			return
+		end
+
+		local v12 = v1.get(p1, "PartScale", Vector3.new(1, 1, 1))
+		local v22 = v1.get(p1, "PartDistance", 1.5)
+		local v3 = v1.get(p1, "OffsetPosition", Vector3.new(0, 0, 0))
+		local v4 = v1.get(p1, "OffsetRotation", Vector3.new(0, 0, 0)) * v2.DEG_TO_RAD
+		local v5 = p1.CFrame
+		local Size = p1.Size
+		local CollisionGroup = p1.CollisionGroup
+
+		p1.CollisionGroup = "ForgeMouseIgnore"
+		table.insert(p2, function() --[[ Line: 26 | Upvalues: p1 (copy), Size (copy), v5 (copy), CollisionGroup (copy) ]]
+			p1.Size = Size
+			p1.CFrame = v5
+			p1.CollisionGroup = if CollisionGroup == "" then "Default" else CollisionGroup or "Default"
+		end)
+
+		local function frame() --[[ frame | Line: 33 | Upvalues: v22 (copy), p1 (copy), v12 (copy), v3 (copy), v4 (copy) ]]
+			local CurrentCamera = workspace.CurrentCamera
+			local v32 = math.tan((math.rad(CurrentCamera.FieldOfView / 2))) * v22 * 2
+			local v5 = CurrentCamera.CFrame * CFrame.new(0, 0, -v22)
+
+			p1.Size = Vector3.new(CurrentCamera.ViewportSize.X / CurrentCamera.ViewportSize.Y * v32, v32, p1.Size.Z) * v12
+			p1.CFrame = v5 * CFrame.new(v3) * CFrame.fromOrientation(v4.x, v4.y, v4.z)
+		end
+
+		if RunService:IsRunning() then
+			local v6 = v2.getRandomId()
+
+			RunService:BindToRenderStep(v6, Enum.RenderPriority.Last.Value + 2 + p2.depth, frame)
+
+			local function f7() --[[ Line: 53 | Upvalues: RunService (ref), v6 (copy) ]]
+				RunService:UnbindFromRenderStep(v6)
+			end
+
+			table.insert(p2, f7)
+		else
+			table.insert(p2, RunService.RenderStepped:Connect(frame))
+		end
+
+		return true
+	end
+}

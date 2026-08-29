@@ -1,0 +1,95 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQM6BUdhdWdlBFNoaW4ETWFuZwdNYXN0ZXJ5BENhc3QJQXdha2VuaW5nCFRyYWluaW5nEERpc2FibGVkUGxhY2VJZHMPU2hpblVubG9ja1F1ZXN0GVRoZU1lbW9yeVRoYXRSZWZ1c2VkVG9EaWUJRGlyZWN0SGl0DFBlcmZlY3REb2RnZQxIZWF2eUhpdExvc3MSSGVhdnlIaXRQY3RPZk1heEhQC0hlYXZ5SGl0SUNEA01heAhEdXJhdGlvbghDb29sZG93bg9EYW1hZ2VSZWR1Y3Rpb24TS25vY2tiYWNrTXVsdGlwbGllcg5GaW5hbERhbWFnZUFtcBFIeXBlckFybW9yU2Vjb25kcwhNYXhSaW5ncwtBY3Rpb25IaXRYUA5QZXJmZWN0RG9kZ2VYUCJNYXhQZXJmZWN0RG9kZ2VDcmVkaXRzUGVyRW5jb3VudGVyHk1heEFjdGlvbk1hc3RlcnlYUFBlckVuY291bnRlcgpCb3NzS2lsbFhQClRocmVzaG9sZHMXTm9ybWFsVHJpYWxGaXJzdENsZWFyWFALTWluTnBjTGV2ZWwEQm9zcwlXb3JsZEJvc3MIUmFpZEJvc3MDVFRMDVJlcXVpcmVkTGV2ZWwJU2xvdENvdW50DFByb21wdFdpbmRvdwxMYXRlbmN5R3JhY2UGUGhhc2VzC1Nsb3RPcmlnaW5YC1Nsb3RPcmlnaW5ZC1Nsb3RPcmlnaW5aC1Nsb3RTcGFjaW5nB1Byb21wdHMIUmVxdWlyZWQISW50ZXJ2YWwFRG9vcnMOUHJvbXB0c1BlckRvb3IPUmVxdWlyZWRQZXJEb29yCk5vcm1hbFRpZXIKRGVhdGhHcmFjZQZFY2hvZXMETmFtZQZVbmR5bmUQSGVhbHRoTXVsdGlwbGllchBEYW1hZ2VNdWx0aXBsaWVyClNoYWRvdyBESU8AAQUAAAECADujAAAA4gAKAOIBFgAwAQAdAAAAAOIBHQAwAQBPAQAAAOIBJAAwAQC9AgAAAOIBMwDiAjgAMAIBui0AAAD/AgAAAwAAAIwD9AH2AwIAjAPcBfYDAgGMA6wN9gMCAjACAaQuAAAAMAEAPAMAAADiATsAMAEA6AQAAADiAUkA/wIAAAMAAADiA08A9gMCAOIDVAD2AwIB4gNWAPYDAgIwAgElQgAAADABAC0FAAAA4gFdAP8CAAACAAAA4gNkAOIEZgDFAgMDAQAAADACAdVcAAAAMAEAgQYAAAD/AQAAAAAAADABANQHAAAAggACAGcDAQMCAwMDBAMFAwYDBwMIAwkDCggJAP////8B/////wL/////A/////8E/////wX/////Bv////8H/////wgJAAAAAwsCAAAAAAAAIEADDAIAAAAAAAAoQAMNAw4CmpmZmZmZuT8DDwIAAAAAAAD4PwMQAgAAAAAAAFlACAYLDAAAAA0OAAAADwwAAAAQEQAAABITAAAAFBUAAAADEQMSAgAAAAAAAD5AAxMDFAIAAAAAAADgPwgEFwwAAAAYGQAAABoRAAAAGxwAAAADFQK4HoXrUbi+PwMWAgAAAAAAANA/AxcCAAAAAAAAEEAIAx4fAAAAICEAAAAiIwAAAAMYAgAAAAAAAABAAxkCAAAAAAAAJEADGgIAAAAAAAAIQAMbAgAAAAAAAElAAxwDHQMeAgAAAAAAwHJAAx8CAAAAAAAAAAAICCUmAAAAJygAAAApKgAAACssAAAALf////8u/////y8wAAAAMTIAAAADIAIAAAAAAAA5QAMhAyIIAzQ1AAAANiwAAAA3FQAAAAMjAgAAAAAAADRACAE5OgAAAAMkAgAAAAAAcJdAAyUDJgIzMzMzMzPzPwMnAygDKQIAAAAAAFLsQAMqAgAAAAAAAIBAAysDLAgJPD0AAAA+DAAAAD9AAAAAQRwAAABC/////0NEAAAARUYAAABHRAAAAEhGAAAAAy0DLgIAAAAAAAAiQAMvAgAAAAAAAAxACANKDgAAAEtMAAAATU4AAAADMAMxAgAAAAAAABRAAzIIBFAqAAAAUVIAAABTIwAAAE0mAAAAAgAAAAAAABhACANKDAAAAEtVAAAATVUAAAACAAAAAABA70ACAAAAAABwp0ADMwIAAAAAAADwPwM0AzUICD5VAAAAQ1cAAABFRgAAAEdXAAAASFgAAABZWgAAAFsqAAAAXP////8DNgM3AzgCmpmZmZmZ2T8DOQIzMzMzMzPjPwgDXl8AAABgYQAAAGJjAAAAAzoIA15lAAAAYBwAAABiYwAAAAABAAEYAAMBAAAIAAAGAAAFBQAAAgAAAAAAAAAAAPkADAAAAgUAAQABAAEA/QD7ABQKAAEBAAD+APYAEAAAAAABAAAAAADYnYe0of4d6papniwYxFePqIWQwOpZ7bU=
+
+-- https://lua.expert/
+return {
+	ShinUnlockQuest = "TheMemoryThatRefusedToDie",
+	Gauge = {
+		DirectHit = 8,
+		PerfectDodge = 12,
+		HeavyHitLoss = 8,
+		HeavyHitPctOfMaxHP = 0.1,
+		HeavyHitICD = 1.5,
+		Max = 100
+	},
+	Shin = {
+		Duration = 8,
+		Cooldown = 30,
+		DamageReduction = 0.1,
+		KnockbackMultiplier = 0.5
+	},
+	Mang = {
+		FinalDamageAmp = 0.12,
+		HyperArmorSeconds = 0.25,
+		MaxRings = 4
+	},
+	Mastery = {
+		ActionHitXP = 2,
+		PerfectDodgeXP = 10,
+		MaxPerfectDodgeCreditsPerEncounter = 3,
+		MaxActionMasteryXPPerEncounter = 50,
+		NormalTrialFirstClearXP = 300,
+		MinNpcLevel = 0,
+		BossKillXP = {
+			Boss = 25,
+			WorldBoss = 50,
+			RaidBoss = 100
+		},
+		Thresholds = { 500, 1500, 3500 }
+	},
+	Cast = {
+		TTL = 20
+	},
+	Awakening = {
+		RequiredLevel = 1500,
+		SlotCount = 8,
+		PromptWindow = 1.2,
+		LatencyGrace = 0.5,
+		SlotOriginX = 58000,
+		SlotOriginY = 512,
+		SlotOriginZ = 58000,
+		SlotSpacing = 512,
+		Phases = {
+			{
+				Prompts = 12,
+				Required = 9,
+				Interval = 3.5
+			},
+			{
+				Doors = 3,
+				PromptsPerDoor = 5,
+				RequiredPerDoor = 4,
+				Interval = 2
+			},
+			{
+				Prompts = 8,
+				Required = 6,
+				Interval = 6
+			}
+		}
+	},
+	Training = {
+		SlotCount = 6,
+		SlotOriginX = 64000,
+		SlotOriginY = 512,
+		SlotOriginZ = 64000,
+		SlotSpacing = 3000,
+		NormalTier = 1,
+		DeathGrace = 3,
+		Echoes = {
+			{
+				Name = "Undyne",
+				HealthMultiplier = 0.4,
+				DamageMultiplier = 0.6
+			},
+			{
+				Name = "Shadow DIO",
+				HealthMultiplier = 0.5,
+				DamageMultiplier = 0.6
+			}
+		}
+	},
+	DisabledPlaceIds = {}
+}

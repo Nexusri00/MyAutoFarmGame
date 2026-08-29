@@ -1,0 +1,241 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQNJBG1hdGgDYWJzBWZsb29yBHNuYXAFVmFsdWUGVXBkYXRlClNlbGZVcGRhdGULSGl0Ym94RnJhbWUKTW91c2VMZWF2ZQdDb25uZWN0DG1vdXNlcHJlc3NlZARoZWxkC1NjYWxlckZyYW1lDUN1cnJlbnRTbGlkZXIWQ3VycmVudFNsaWRlcl9jYWxsYmFjawR0YXNrBHdhaXQKRGlzY29ubmVjdAZQYXJlbnQHRGVzdHJveQR3YXJuG1BsZWFzZSBQcm92aWRlIEhpdGJveCBGcmFtZRtQbGVhc2UgUHJvdmlkZSBTY2FsZXIgRnJhbWUJSW5jcmVtZW50A01pbgNNYXgKTW91c2VFbnRlcgdjb25uZWN0D0FuY2VzdHJ5Q2hhbmdlZApDb25uZWN0aW9uEURlc3Ryb3lDb25uZWN0aW9uDEV4aXN0U2xpZGVycwRJbml0Ckhvcml6b250YWwIVmVydGljYWwIUG9zaXRpb24FY2xhbXAFVURpbTIDbmV3AVgGT2Zmc2V0AVkFU2NhbGUIQ2FsbGJhY2sIdG9udW1iZXIDU2V0BnN0cmluZwZmb3JtYXQYQXR0ZW1wdGluZyB0byBEZXN0cm95ICVzCHRvc3RyaW5nBXBjYWxsB19faW5kZXgMc2V0bWV0YXRhYmxlCU5ld1NsaWRlcg1Vc2VySW5wdXRUeXBlBEVudW0MTW91c2VCdXR0b24xBGdhbWUQVXNlcklucHV0U2VydmljZQpHZXRTZXJ2aWNlEEdldE1vdXNlTG9jYXRpb24QQWJzb2x1dGVQb3NpdGlvbgxBYnNvbHV0ZVNpemUHVmVjdG9yMgVzcGxpdAEuA3N1YitQbGVhc2UgVGVsbCBUdSBvciBkbyBpdCB1cnNlbGYgdG8gbWFrZSB0aGlzBkluaXRlZApJbnB1dEVuZGVkCklucHV0QmVnYW4KUnVuU2VydmljZQ1SZW5kZXJTdGVwcGVkAiYAEAoEAAAAACsmBwIDuwIHAqQGAgAABACAnwYCAgkFAAbsBAUBJgYCA+wFBgGMBgAAYAYGAAMAAAAmBgIDCQcABkMJAwcmCAkD7AQIAcYGAAB4BwUDYAcDAAQAAABSBgUAZQALAIwHAQBgBAMABwAAAIwGAABlAAYAuwwEA1IIBACkBwUAABAAgJ8HAgJSBgcACQgGAUMHAwhgAgIABwAAAIICAgBgBwIAAwAAAIIDAgCCBwIABgMBAwIEAAQAgAIAAAAAAADwPwMDBAAQAIAAGgQBGAAAAAAAAAABAAIAAAEBAQAAAwEAAAEAAQAAAQACAAAAAAADAAEAAQEAAQIbAAAAAAMBAQAABgMAAAUBAgj7AQAAMAAB7AAAAAD7AQAAvAEBJgEAAACfAQIBggABAAIDBQMGAEIHARgAAAABAAAAAUMAAAAAAQABAAAAA6kAAQDeAAAAggABAAAASgABGAAAAUsAAAAABAADAAAAKKkAAAD7AQAATQEBoQAAAABNAQHdAQAAANkDAAASAQD/vAEBxwIAAACfAQMC+wIBAE0CAiQDAAAADgIOAPsCAQCpAwEAMAMC+QQAAAD7AgEA+wMAAE0DA5MFAAAAMAMCuwYAAAD7AgEA+wMCADADArMHAAAApAIKAAAkgICfAgEBKgACAAEAAABIAOj/vAIBGgsAAACfAgIBwQAAAIIAAQAMAwgDCQMKAwsDDAMNAw4DDwMQAxEEACSAgAMSAQJHAAEYAAEAAAAAAAAAAAAEAAAAAQAAAAEAAAAAAAEAAAACAAABAAABAAABAEkAAAAAAgABAAAAD/sAAABNAAChAAAAAA4ABgD7AAAATQAAoQAAAABNAAAkAQAAACsABAD7AAAAvAAAUAIAAACfAAIBggABAAMDCAMTAxQAWAABGAAAAAAAAAAAAAABAAAAAlkAAAAABgEBAAAARU0BAKEAAAAAKwEEAKQBAgAAABBAbwIDAJ8BAgFNAQCTBAAAACsBBACkAQIAAAAQQG8CBQCfAQIBTQEAFQYAAAArAQMAjAEBADABABUGAAAATQEA2AcAAAArAQMAjAEAADABANgHAAAATQEAtAgAAAArAQMAjAEBADABALQIAAAA2QEAABIBAP9NAgChAAAAAE0CAhQJAAAA2QQBABIBAP8SAgAAEgABALwCAucKAAAAnwIDAk0DAKEAAAAATQMDiwsAAADZBQIAEgEA/7wDA8cMAAAAnwMDAjACAIANAAAAMAMAjw4AAAC8BAAmDwAAAJ8EAgH7BAAATQQE3RAAAABNBQCTBAAAAGoABAXBAAAAggABABEDCAMVBAAAEEADFgMNAxcDGAMZAxoDGwMcAx0DCgMeAx8DBgMgAwEDBDghARgAAAAAAAAAAQAAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAIABQAAAAAAAAAAAAARAAAAAAAAAAAGAAEAAQAAAgAAAAAAAQA8AAAAAA4CAAAAAJEBTQIAPQAAAAArAgYATQIASQEAAAArAgMAqQIBADACAD0AAAAATQIAkwIAAAAOAoQATQIAkwIAAABNAgI7AwAAAMYDAABNBQC0BAAAAE0GANgFAAAAJgQFBk0GAOwGAAAATQcA2AUAAAAmBQYHxgYAAE0HANgFAAAAjAgAAGAHNwAIAAAATQcAtAQAAABNCQDYBQAAALsCCQKkCAkAACBwgJ8IAgJDBAcITQcA7AYAAACMCAAAYAcXAAgAAABNCwDYBQAAAE0NAOwGAAAAuwINAqQMCQAAIHCAnwwCAkMKCwy7AgoCpAkJAAAgcICfCQIC7AgJBIwJAACMCgEATC4AAqQHCwAAKHCAnwcEAlIGBwBlABMATQoA7AYAAABNDADYBQAAALsCDAKkCwkAACBwgJ8LAgJDCQoL7AgJBIwJAACMCgEATC4AAqQHCwAAKHCAnwcEAlIGBwBlAAEA7AYFBIwJAACMCgEANC4GBAkKAABSCAYApAcLAAAocICfBwQCUgYHAE0HAD0AAAAADgcSAKQHDgAANMCAUggGAE0JAnkPAAAATQkJcBAAAABNCgJ4EQAAAE0KCoQSAAAATQsCeBEAAABNCwtwEAAAAJ8HBQJSAwcAZQARAKQHDgAANMCATQgCeQ8AAABNCAiEEgAAAE0JAnkPAAAATQkJcBAAAABSCgYATQsCeBEAAABNCwtwEAAAAJ8HBQJSAwcATQcARhMAAAAOBwYATQcARhMAAABNCADsBgAAAFIJAQCfBwMBggABABQDIgMjAw0DJAMaAxkDBQMBAwIEACBwgAMlBAAocIADJgMnBAA0wIADKAMpAyoDKwMsAGUGARgAAAAAAAAAAAACAAABAAAAAQIAAAAAAQAAAAABAgAAAAABAAAAAAAAAAABAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAADAgAAAAAAAAAAAgAAAQAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAFAAABAAAAAAADZwAAAAAGAwAAAAgFAAAFAwQCDw27PgEDUgQBAKQDAQAAAABAnwMCAg4DBgAwAQDsAgAAAFIFAgC8AwAmAwAAAJ8DAwGCAAEABAMtBAAAAEADBQMGAIsBLgEYAAAAAAAAAQABAAAAAo0AAAAAAwACAAAAQ/sAAABNAACPAAAAAA4ACgD7AAAATQAAjwAAAAC8AAAaAQAAAJ8AAgH7AAAAxgEAADABAI8AAAAA+wAAAE0AAIACAAAADgAKAPsAAABNAACAAgAAALwAABoBAAAAnwACAfsAAADGAQAAMAEAgAIAAAD7AAAATQAAkwMAAAAOABAA+wABAE0AALsEAAAA+wEAAE0BAZMDAAAAmgAJAAEAAAD7AAEAxgEAADABALsEAAAA+wABAMYBAAAwAQCzBQAAAPsBAQBNAQHdBgAAAPsCAABNAgKTAwAAAIcAAQIOAAgA+wABAE0AAN0GAAAA+wEAAE0BAZMDAAAAxgIAAGoCAAHGAAAA3gAAAIIAAQAHAx8DEgMeAw0DDgMPAyAAlwEAARgAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAQABmAAAAAAGAQEAAAAVpAEBAAAAAECkAgQAAAwggG8DBQBNBQChBgAAALs/BQKkBAgAAABwQJ8EAgKfAgMAnwEAAaQBCgAAAJBA2QIAABIBAP8SAgAAnwECAcEAAACCAAEACwMVBAAAAEADLwMwBAAMIIADMQMIAzIEAABwQAMzBAAAkEABCJMBFAEYAAAAAAAAAAAAAAAAAAEAAAAAAAcAlgAAAAAEAAEAAAAM/wEAAAAAAADiAgEA+wMAADADAm4AAAAAnj0BAwIAAACkAAMAAAAgQJ8AAwKCAAIABAM0BQEAAzUEAAAgQAChATYBGAAAAAAAAAAAAAAAAKIAAAAABAIBAAAAD00CAMIAAAAApAMDAAIAEMCaAgkAAwAAAPsCAACpAwAAMAMC+QQAAAD7AgAAqQMAADADAiQFAAAAggABAAYDNwM4AzkEAgAQwAMMAwsAqQEAARgAAAAAAAABAAAAAQAAAAKqAAAAAAQCAQAAAAtNAgDCAAAAAKQDAwACABDAmgIFAAMAAAD7AgAAqQMBADADAiQEAAAAggABAAUDNwM4AzkEAgAQwAMLALABAAEYAAAAAAAAAQAAAAKxAAAAABkBAQAAANUB+wEAAE0BAfkAAAAADgHQAPsBAABNAQG7AQAAAA4BzAD7AgAATQIC3QIAAAD7AwAATQMDuwEAAACHAQIDDgHEAPsCAABNAgLdAgAAAPsDAABNAwO7AQAAAIcBAgNNAgG0AwAAAE0DAdgEAAAATQQBFQUAAAD7BQAATQUFuwEAAACkBgcAAABgQG8ICAC8BgYWCQAAAJ8GAwK8BgYGCgAAAJ8GAgJNBwE9CwAAAA4HpABNBwUkDAAAAE0HB3UNAAAATQcHeQ4AAABNCAUkDAAAAE0ICHUNAAAATQgIeA8AAABNCQUkDAAAAE0JCXEQAAAATQkJeQ4AAABNCgUkDAAAAE0KCnEQAAAATQoKeA8AAACkCxMAAEgQgVIMBwBSDQgAnwsDAqQMEwAASBCBUg0JAFIOCgCfDAMCNQ0AXhQAAABNEAZ5DgAAAE0RC3kOAAAAJg8QEU0QBSQMAAAATRAQcRAAAABNEBB5DgAAAOwODxBSDwQAUhACAFIRAwCfDQUCpA8XAABYUIG7PwQDUhEEAKQQGQAAAIBBnxACAm8RGgCfDwMCEw4PAQ4OJwCkEBcAAFhQgbs/BANSEgQApBEZAAAAgEGfEQICbxIaAJ8QAwITDxABHA4PAKQPFwAAWFCBuz8NA1IRDQCkEBkAAACAQZ8QAgJvERoAnw8DAhMQDwEOEBEAExEPAYwSAQA0LREEEg4AAFITDgCkEBwAAGxQgZ8QBAITEw8AbxQaAFIVEABzEhMVuz4SAqQRHgAAANBBnxECAlINEQAmDgIDJg8NA+wRDw6MEgAAjBMBAEwuAAKkECEAAIDwgZ8QBALGEQAAxhIAAIwTAABgAysAEwAAALsCAwNSFAMApBMjAACI8IGfEwICQxICE4wTAABgDRQAEwAAALsCDQNSGA0ApBcjAACI8IGfFwICQxYDF7sCFgKkFSMAAIjwgZ8VAgLsFBUSjBUAAIwWAQBMLgACpBMhAACA8IGfEwQCUhATAGUADgC7AgMDUhcDAKQWIwAAiPCBnxYCAkMVDRbsFBUSjBUAAIwWAQBMLgACpBMhAACA8IGfEwQCUhATAA4BCQBSFQ0AvBMBcyQAAACfEwMBggABAKQHJgAAAFBCbwgnAJ8HAgGCAAEAKAMMAw4DIAMaAxkDGAM6BAAAYEADOwM8Az0DIgMTAz4DKAMqAz8DQAMnBABIEIEDBAMvA0EEAFhQgQMyBAAAgEEDQgNDBABsUIEDLQQAANBBAwEDJQQAgPCBAwIEAIjwgQMuAxUEAABQQgNEALYBAAEYAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAABAAEAAQACAAABAAAAAAAAAAABAAABAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAEAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAABAAAAAAAAAAAAAAEAAAAAAAAAAAEAAQAAAAAAAAABAAAAAAAAAAAEAQEAAAAAAAACAAEAAAEAAAAAAAEAAAEAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAQBAAAAAAMAAAADtwAAAAAFAQEAAAA6+wEAAE0BAYYAAAAADgEBAIIAAQD7AQAAqQIBADACAYYAAAAA+wEAAKQCAgAAABBAbwQDALwCAhYEAAAAnwIDAk0CAq8FAAAAwAQGABICAAC8AgLnBwAAAJ8CAwIwAgGvBQAAAPsBAACkAgIAAAAQQG8EAwC8AgIWBAAAAJ8CAwJNAgKCCAAAAMAECQASAgAAvAICxwoAAACfAgMCMAIBgggAAAD7AQAApAICAAAAEEBvBAsAvAICFgQAAACfAgMCTQICzwwAAADABA0AEgIAALwCAucHAAAAnwIDAjACAc8MAAAAggABAA4DRQM6BAAAEEADOwM8A0YGCwMcA0cGDAMKA0gDSQYNAwsMDaUBIQEYAAAAAAABAAAAAgAAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAAAAAAM6YAAAAAAwAAAQIAOKMAAAD/AAUAAAAAAP8BAwAAAAAAwAIAABgCAF4BAAAAwAICABIAAAAwAgFzAwAAAMACBAAwAgEmBQAAAMACBgAwAgFzBwAAAMACCAASAAAAMAIBUAkAAADAAgoAEgABADACAMcLAAAAwAIMABIAAAAwAgBzAwAAAKkCAAAwAgAkDQAAAKkCAAAwAgD5DgAAAMYCAAAwAgC7DwAAAMYCAAAwAgCCEAAAAMYCAAAwAgCvEQAAAMYCAAAwAgDPEgAAAP8CAAAAAAAAMAIA3RMAAACpAgAAMAIAhhQAAACCAAIAFQYAAwQGBQMhBgYDBgYHAy4GCQMUBgoDNgYOAwsDDAMOA0cDRgNJAyADRQcABQYHCQoOAQABGAAWAAEAAgAAHgAAAC0AACYAAAgAAAAOAAAABAAAAEYAAAEAAAEAAAEAAAEAAAEAAAEAAAABAAACAQAAAAAPtprjzfxjLtWJzN1YknLPqMaC9LmEXonM
+
+-- https://lua.expert/
+local t = {}
+local t2 = {}
+
+function snap(p1, p2, p3, p4) --[[ snap | Line: 26 ]]
+	local v1 = p1 * math.abs(p3 - p4) / p2
+	local v2 = (p3 - p4) / p2
+
+	if p4 > 0 then
+		v1 = (p4 + p1 * (p3 - p4) - p4) / p2
+	end
+
+	local v5 = p4 + (if v2 - 1 < v1 then v2 elseif v1 < 1 then 0 else math.floor(v1)) * p2
+
+	if p3 < v5 then
+		return p3
+	end
+
+	if v5 < p4 then
+		return p4
+	end
+
+	return v5
+end
+function t2.Init(p1) --[[ Init | Line: 56 | Upvalues: t (copy) ]]
+	if not p1.HitboxFrame then
+		warn("Please Provide Hitbox Frame")
+	end
+
+	if not p1.ScalerFrame then
+		warn("Please Provide Scaler Frame")
+	end
+
+	if not p1.Increment then
+		p1.Increment = 1
+	end
+
+	if not p1.Min then
+		p1.Min = 0
+	end
+
+	if not p1.Max then
+		p1.Max = 1
+	end
+
+	local function SelfUpdate(p12) --[[ SelfUpdate | Line: 66 | Upvalues: p1 (ref) ]]
+		p1.Value = p12
+		p1:Update()
+	end
+
+	local v1 = p1.HitboxFrame.MouseEnter:connect(function() --[[ Line: 71 | Upvalues: p1 (ref), t (ref), SelfUpdate (copy) ]]
+		local v1 = false
+		local v2 = p1.HitboxFrame.MouseLeave:Connect(function() --[[ Line: 74 | Upvalues: v1 (ref) ]]
+			v1 = true
+		end)
+
+		repeat
+			if t.mousepressed then
+				t.held = true
+				t.CurrentSlider = p1.ScalerFrame
+				t.CurrentSlider_callback = SelfUpdate
+			end
+
+			task.wait()
+		until v1 == true
+
+		v2:Disconnect()
+	end)
+	local v2 = p1.HitboxFrame.AncestryChanged:Connect(function() --[[ Line: 88 | Upvalues: p1 (ref) ]]
+		if p1.HitboxFrame and p1.HitboxFrame.Parent then
+			return
+		end
+
+		p1:Destroy()
+	end)
+
+	p1.Connection = v1
+	p1.DestroyConnection = v2
+	p1:Update()
+	t.ExistSliders[p1.ScalerFrame] = p1
+end
+function t2.Update(p1, p2) --[[ Update | Line: 101 ]]
+	if not (p1.Horizontal or p1.Vertical) then
+		p1.Horizontal = true
+	end
+
+	if not p1.ScalerFrame then
+		return
+	end
+
+	local Position = p1.ScalerFrame.Position
+	local v1 = p1.Max - p1.Min
+	local v2 = p1.Value - p1.Min
+	local v3
+
+	if p1.Min < 0 then
+		local v4 = p1.Max + math.abs(p1.Min)
+
+		v3 = if p1.Value < 0 then math.clamp(math.abs(p1.Min + math.abs(p1.Value)) / v4, 0, 1) else math.clamp((p1.Value + math.abs(p1.Min)) / v4, 0, 1)
+	else
+		v3 = v2 / v1
+	end
+
+	local v12 = math.clamp(v3, 0, 1)
+
+	if p1.Horizontal then
+		UDim2.new(v12, Position.X.Offset, Position.Y.Scale, Position.Y.Offset)
+	else
+		UDim2.new(Position.X.Scale, Position.X.Offset, v12, Position.Y.Offset)
+	end
+
+	if not p1.Callback then
+		return
+	end
+
+	p1.Callback(p1.Value, p2)
+end
+function t2.Set(p1, p2, p3) --[[ Set | Line: 139 ]]
+	if not tonumber(p2) then
+		return
+	end
+
+	p1.Value = p2
+	p1:Update(p3)
+end
+function t2.Destroy(p1) --[[ Destroy | Line: 147 | Upvalues: t (copy) ]]
+	local v1 = warn
+	local format = string.format
+	local HitboxFrame = p1.HitboxFrame
+
+	v1(format("Attempting to Destroy %s", (tostring(HitboxFrame))))
+	pcall(function() --[[ Line: 151 | Upvalues: p1 (ref), t (ref) ]]
+		if p1.DestroyConnection then
+			p1.DestroyConnection:Disconnect()
+			p1.DestroyConnection = nil
+		end
+
+		if p1.Connection then
+			p1.Connection:Disconnect()
+			p1.Connection = nil
+		end
+
+		if p1.ScalerFrame and t.CurrentSlider == p1.ScalerFrame then
+			t.CurrentSlider = nil
+			t.CurrentSlider_callback = nil
+		end
+
+		if t.ExistSliders[p1.ScalerFrame] then
+			t.ExistSliders[p1.ScalerFrame] = nil
+		end
+
+		p1 = nil
+	end)
+end
+function t.NewSlider() --[[ NewSlider | Line: 161 | Upvalues: t2 (copy) ]]
+	return setmetatable({}, {
+		__index = t2
+	})
+end
+function t.Init(p1) --[[ Init | Line: 165 | Upvalues: t (copy) ]]
+	if not t.Inited then
+		t.Inited = true
+		t.InputEnded = game:GetService("UserInputService").InputEnded:connect(function(p1, p2) --[[ Line: 169 | Upvalues: t (ref) ]]
+			if p1.UserInputType ~= Enum.UserInputType.MouseButton1 then
+				return
+			end
+
+			t.held = false
+			t.mousepressed = false
+		end)
+		t.InputBegan = game:GetService("UserInputService").InputBegan:Connect(function(p1, p2) --[[ Line: 176 | Upvalues: t (ref) ]]
+			if p1.UserInputType ~= Enum.UserInputType.MouseButton1 then
+				return
+			end
+
+			t.mousepressed = true
+		end)
+		t.RenderStepped = game:GetService("RunService").RenderStepped:connect(function(p1) --[[ Line: 182 | Upvalues: t (ref) ]]
+			if not (t.held and (t.CurrentSlider and t.ExistSliders[t.CurrentSlider])) then
+				return
+			end
+
+			local v1 = t.ExistSliders[t.CurrentSlider]
+			local Max = v1.Max
+			local Min = v1.Min
+			local Increment = v1.Increment
+			local CurrentSlider = t.CurrentSlider
+			local v2 = game:GetService("UserInputService"):GetMouseLocation()
+
+			if v1.Horizontal then
+				local v3 = Vector2.new(CurrentSlider.Parent.AbsolutePosition.X, CurrentSlider.Parent.AbsolutePosition.Y)
+
+				Vector2.new(CurrentSlider.Parent.AbsoluteSize.X, CurrentSlider.Parent.AbsoluteSize.Y)
+
+				local v4 = snap((v2.X - v3.X) / CurrentSlider.Parent.AbsoluteSize.X, Increment, Max, Min)
+
+				if string.split(tostring(Increment), ".")[2] then
+					local v5 = #string.split(tostring(Increment), ".")[2]
+					local v6 = string.split(tostring(v4), ".")
+
+					if v6[2] then
+						v4 = tonumber(v6[1] .. "." .. string.sub(v6[2], 1, v5))
+					end
+				end
+
+				math.clamp((v4 - Min) / (Max - Min), 0, 1)
+
+				if Min < 0 then
+					local v11 = Max + math.abs(Min)
+
+					if v4 < 0 then
+						math.clamp(math.abs(Min + math.abs(v4)) / v11, 0, 1)
+					else
+						math.clamp((v4 + math.abs(Min)) / v11, 0, 1)
+					end
+				end
+
+				if v1 then
+					v1:Set(v4)
+				end
+			else
+				warn("Please Tell Tu or do it urself to make this")
+			end
+		end)
+	end
+end
+t.mousepressed = false
+t.held = false
+t.CurrentSlider = nil
+t.InputBegan = nil
+t.InputEnded = nil
+t.RenderStepped = nil
+t.ExistSliders = {}
+t.Inited = false
+
+return t

@@ -1,0 +1,390 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQNND1N0YXREaXNwbGF5TmFtZRJHZXRTdGF0RGlzcGxheU5hbWUGaXBhaXJzCVRpZXJPcmRlcgtHZXROZXh0VGllcgVwYWlycwpDYXRlZ29yaWVzC0dldENhdGVnb3J5BkNvbW1vbgRSYXJlBEVwaWMJTGVnZW5kYXJ5Bk15dGhpYwZTZWNyZXQFT3JkZXIFQ29sb3IJU3RhdFJhbmdlBkNvbG9yMwdmcm9tUkdCBVRpZXJzCk1heFNvY2tldHMMTWF4SW52ZW50b3J5CVNlbGxWYWx1ZQZMZWdlbmQSUmVxdWlyZWRTcGVjUmFyaXR5CU9mZmVuc2l2ZQlEZWZlbnNpdmUHVXRpbGl0eQRVbml0ASUESWNvbg5yYnhhc3NldGlkOi8vMAlTdHlsZSBETUcKV2VhcG9uIERNRwtBYmlsaXR5IERNRwtDcml0IENoYW5jZQhDcml0IERNRwlMaWZlc3RlYWwACVNraWxsIENEUgdEZWYgUGVuB0RvVCBETUcKTWF4IEhlYWx0aA1ETUcgUmVkdWN0aW9uCEhQIFJlZ2VuBEx1Y2sDRXhwBU1vbmV5BlNoYXJkcwpHZW1TdGF0Q2FwDkNvb2xkb3duIEhhc3RlEVN0YXRSYW5nZU92ZXJyaWRlBE5hbWUOU2tpbGwgQ0QgUmVzZXQEVHlwZQRQcm9jClRpZXJDaGFuY2UKVmFsdWVSYW5nZQ9GdWxsUmVzZXRDaGFuY2UNVHJpZ2dlckNoYW5jZQlSZWR1Y3Rpb24JRnVsbFJlc2V0BEZsYXQMU3BlY2lhbFN0YXRzDUJsZXNzZWRDaGFuY2UMQmxlc3NlZEJvbnVzCUJvbnVzU3RhdAlUaWVyVmFsdWUKU2V0Qm9udXNlcwVTbG90cwZCeVR5cGUFU3R5bGUHQWJpbGl0eQZXZWFwb24NRnVsbFNsb3RCb251cwlEcm9wVGFibGUIQWxsU3RhdHMABAQBAQAABgMAAAUBAwb7AwAATQMDMgAAAACHAgMAygECAIIBAgABAwEARgIBGAAAAAAAAEcAAAAACQEBAAAGAwAABQEDGaQBAQAAAABA+wIAAE0CArkCAAAAnwECBFEBDgCaBQ0AAAAAAPsHAABNBwe5AgAAABwGBwBgBAcABgAAAPsHAABNBwe5AgAAAJUIBAOHBgcIggYCAG4B8f8CAACAxgEAAIIB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
+
+-- https://lua.expert/
+local t = {
+	Tiers = {
+		Common = {
+			Order = 1,
+			Color = Color3.fromRGB(180, 180, 180),
+			StatRange = { 0.5, 1 }
+		},
+		Rare = {
+			Order = 2,
+			Color = Color3.fromRGB(60, 160, 255),
+			StatRange = { 1, 2 }
+		},
+		Epic = {
+			Order = 3,
+			Color = Color3.fromRGB(180, 60, 255),
+			StatRange = { 2, 3.5 }
+		},
+		Legendary = {
+			Order = 4,
+			Color = Color3.fromRGB(255, 180, 30),
+			StatRange = { 3.5, 5 }
+		},
+		Mythic = {
+			Order = 5,
+			Color = Color3.fromRGB(255, 50, 50),
+			StatRange = { 5, 8 }
+		},
+		Secret = {
+			Order = 6,
+			Color = Color3.fromRGB(255, 0, 150),
+			StatRange = { 12, 20 }
+		}
+	},
+	TierOrder = { "Common", "Rare", "Epic", "Legendary", "Mythic", "Secret" },
+	MaxSockets = 4,
+	MaxInventory = 1000,
+	SellValue = {
+		Common = 10,
+		Rare = 50,
+		Epic = 100,
+		Legendary = 350,
+		Mythic = 1000,
+		Secret = 4000
+	},
+	RequiredSpecRarity = {
+		Legend = true,
+		Mythic = true,
+		Secret = true
+	},
+	Categories = {
+		Offensive = {
+			["Style DMG"] = {
+				Unit = "%",
+				Icon = "rbxassetid://0"
+			},
+			["Weapon DMG"] = {
+				Unit = "%",
+				Icon = "rbxassetid://0"
+			},
+			["Ability DMG"] = {
+				Unit = "%",
+				Icon = "rbxassetid://0"
+			},
+			["Crit Chance"] = {
+				Unit = "%",
+				Icon = "rbxassetid://0"
+			},
+			["Crit DMG"] = {
+				Unit = "%",
+				Icon = "rbxassetid://0"
+			},
+			Lifesteal = {
+				Unit = "%",
+				Icon = "rbxassetid://0"
+			},
+			["Skill CDR"] = {
+				Unit = "",
+				Icon = "rbxassetid://0"
+			},
+			["Def Pen"] = {
+				Unit = "%",
+				Icon = "rbxassetid://0"
+			},
+			["DoT DMG"] = {
+				Unit = "%",
+				Icon = "rbxassetid://0"
+			}
+		},
+		Defensive = {
+			["Max Health"] = {
+				Unit = "%",
+				Icon = "rbxassetid://0"
+			},
+			["DMG Reduction"] = {
+				Unit = "%",
+				Icon = "rbxassetid://0"
+			},
+			["HP Regen"] = {
+				Unit = "%",
+				Icon = "rbxassetid://0"
+			}
+		},
+		Utility = {
+			Luck = {
+				Unit = "%",
+				Icon = "rbxassetid://0"
+			},
+			Exp = {
+				Unit = "%",
+				Icon = "rbxassetid://0"
+			},
+			Money = {
+				Unit = "%",
+				Icon = "rbxassetid://0"
+			},
+			Shards = {
+				Unit = "%",
+				Icon = "rbxassetid://0"
+			}
+		}
+	},
+	GemStatCap = {
+		["HP Regen"] = 35,
+		["Skill CDR"] = 150,
+		["Crit Chance"] = 15
+	},
+	StatDisplayName = {
+		["Skill CDR"] = "Cooldown Haste"
+	}
+}
+
+function t.GetStatDisplayName(p1) --[[ GetStatDisplayName | Line: 70 | Upvalues: t (copy) ]]
+	return t.StatDisplayName[p1] or p1
+end
+t.StatRangeOverride = {
+	["HP Regen"] = {
+		Common = { 0.2, 0.6 },
+		Rare = { 0.5, 1.1 },
+		Epic = { 1.2, 2.5 },
+		Legendary = { 2, 3.8 },
+		Mythic = { 3, 5 },
+		Secret = { 7.5, 12.5 }
+	},
+	Lifesteal = {
+		Common = { 0.1, 0.3 },
+		Rare = { 0.25, 0.55 },
+		Epic = { 0.6, 1.25 },
+		Legendary = { 1, 1.9 },
+		Mythic = { 1.5, 2.5 },
+		Secret = { 3.75, 6.25 }
+	},
+	["Skill CDR"] = {
+		Common = { 0.48, 1.44 },
+		Rare = { 1.2, 2.64 },
+		Epic = { 2.88, 6 },
+		Legendary = { 4.8, 9.12 },
+		Mythic = { 7.2, 12 },
+		Secret = { 18, 35 }
+	}
+}
+t.SpecialStats = {
+	{
+		Name = "Skill CD Reset",
+		Type = "Proc",
+		TierChance = {
+			Common = 0,
+			Rare = 0,
+			Epic = 0.03,
+			Legendary = 0.05,
+			Mythic = 0.1,
+			Secret = 0.15
+		},
+		ValueRange = {
+			Epic = {
+				TriggerChance = { 10, 15 },
+				Reduction = { 30, 40 }
+			},
+			Legendary = {
+				TriggerChance = { 12, 18 },
+				Reduction = { 35, 45 }
+			},
+			Mythic = {
+				TriggerChance = { 15, 20 },
+				Reduction = { 40, 50 }
+			},
+			Secret = {
+				TriggerChance = { 20, 25 },
+				Reduction = { 50, 60 }
+			}
+		},
+		FullResetChance = {
+			Epic = {
+				FullReset = true,
+				TriggerChance = { 3, 5 }
+			},
+			Legendary = {
+				FullReset = true,
+				TriggerChance = { 5, 8 }
+			},
+			Mythic = {
+				FullReset = true,
+				TriggerChance = { 8, 10 }
+			},
+			Secret = {
+				FullReset = true,
+				TriggerChance = { 10, 14 }
+			}
+		}
+	},
+	{
+		Name = "Crit Chance",
+		Type = "Flat",
+		Unit = "%",
+		TierChance = {
+			Common = 0,
+			Rare = 0,
+			Epic = 0.03,
+			Legendary = 0.05,
+			Mythic = 0.1,
+			Secret = 0.15
+		},
+		ValueRange = {
+			Epic = { 3, 5 },
+			Legendary = { 5, 8 },
+			Mythic = { 8, 12 },
+			Secret = { 12, 18 }
+		}
+	},
+	{
+		Name = "Crit DMG",
+		Type = "Flat",
+		Unit = "%",
+		TierChance = {
+			Common = 0,
+			Rare = 0,
+			Epic = 0.03,
+			Legendary = 0.05,
+			Mythic = 0.1,
+			Secret = 0.15
+		},
+		ValueRange = {
+			Epic = { 8, 12 },
+			Legendary = { 12, 18 },
+			Mythic = { 18, 25 },
+			Secret = { 25, 35 }
+		}
+	},
+	{
+		Name = "Skill CDR",
+		Type = "Flat",
+		Unit = "",
+		TierChance = {
+			Common = 0,
+			Rare = 0,
+			Epic = 0.03,
+			Legendary = 0.05,
+			Mythic = 0.1,
+			Secret = 0.15
+		},
+		ValueRange = {
+			Epic = { 8, 12 },
+			Legendary = { 12, 18 },
+			Mythic = { 18, 27 },
+			Secret = { 27, 40 }
+		}
+	},
+	{
+		Name = "DMG Reduction",
+		Type = "Flat",
+		Unit = "%",
+		TierChance = {
+			Common = 0,
+			Rare = 0,
+			Epic = 0.03,
+			Legendary = 0.05,
+			Mythic = 0.1,
+			Secret = 0.15
+		},
+		ValueRange = {
+			Epic = { 3, 5 },
+			Legendary = { 5, 8 },
+			Mythic = { 8, 12 },
+			Secret = { 12, 18 }
+		}
+	},
+	{
+		Name = "HP Regen",
+		Type = "Flat",
+		Unit = "%",
+		TierChance = {
+			Common = 0,
+			Rare = 0,
+			Epic = 0.03,
+			Legendary = 0.05,
+			Mythic = 0.1,
+			Secret = 0.15
+		},
+		ValueRange = {
+			Epic = { 0.05, 0.1 },
+			Legendary = { 0.1, 0.15 },
+			Mythic = { 0.15, 0.25 },
+			Secret = { 0.25, 0.4 }
+		}
+	}
+}
+t.BlessedChance = {
+	Common = 0.15,
+	Rare = 0.12,
+	Epic = 0.09,
+	Legendary = 0.06,
+	Mythic = 0.05,
+	Secret = 0.04
+}
+t.BlessedBonus = 2
+t.SetBonuses = {
+	[2] = {
+		BonusStat = "DMG Reduction",
+		TierValue = {
+			Secret = 5,
+			Mythic = 3,
+			Legendary = 1.5
+		}
+	},
+	[3] = {
+		BonusStat = "Crit Chance",
+		TierValue = {
+			Secret = 5,
+			Mythic = 3,
+			Legendary = 1.5
+		}
+	}
+}
+t.FullSlotBonus = {
+	Slots = 4,
+	TierValue = {
+		Common = 0,
+		Rare = 2,
+		Epic = 4,
+		Legendary = 6,
+		Mythic = 10,
+		Secret = 15
+	},
+	ByType = {
+		Style = "Style DMG",
+		Ability = "Ability DMG",
+		Weapon = "Weapon DMG"
+	}
+}
+t.DropTable = {
+	Common = 40,
+	Rare = 30,
+	Epic = 18,
+	Legendary = 8,
+	Mythic = 4,
+	Secret = 0.2
+}
+t.AllStats = {}
+
+for k, v in pairs(t.Categories) do
+	for k2, v2 in pairs(v) do
+		t.AllStats[k2] = v2
+	end
+end
+
+function t.GetNextTier(p1) --[[ GetNextTier | Line: 273 | Upvalues: t (copy) ]]
+	for i, v in ipairs(t.TierOrder) do
+		if v == p1 and i < #t.TierOrder then
+			return t.TierOrder[i + 1]
+		end
+	end
+
+	return nil
+end
+function t.GetCategory(p1) --[[ GetCategory | Line: 282 | Upvalues: t (copy) ]]
+	for k, v in pairs(t.Categories) do
+		if v[p1] then
+			return k
+		end
+	end
+
+	return nil
+end
+
+return t

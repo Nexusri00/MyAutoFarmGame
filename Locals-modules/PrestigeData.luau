@@ -1,0 +1,513 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQN4BG1hdGgFY2xhbXALR2V0TGV2ZWxDYXAIVW5yYW5rZWQABGNlaWwLR2V0UmFua0luZm8FZmxvb3IEVHlwZQVMZXZlbAROYW1lBVZhbHVlDFJlYWNoIExldmVsIAhOUENLaWxscwVLaWxsIAUgTlBDcwxTcGVjaWFsS2lsbHMPIFNwZWNpYWwgQm9zc2VzBXRhYmxlBmluc2VydAhDaWRLaWxscwwgQ2lkIEthZ2Vub3UIT3dsS2lsbHMNIE9uZS1FeWVkIE93bAhNYXRlcmlhbAtTaGFkb3cgQ29yZQhPd2wgQ29yZQxPd2wgRnJhZ21lbnQPU2hhZG93IEZyYWdtZW50DFJlZE1pc3RLaWxscxNLaWxsIDMgVGhlIFJlZCBNaXN0DENyaW1zb24gQ29yZRBDcmltc29uIEZyYWdtZW50FUluZmVybmFsQW1idXNoZXJLaWxscxhLaWxsIDUgSW5mZXJuYWwgQW1idXNoZXISRGVtb25JbmZlcm5hbEtpbGxzFUtpbGwgMyBEZW1vbiBJbmZlcm5hbAhEaW9LaWxscwtLaWxsIDEwIERpbxVBbmNpZW50RGVlcHNoYXJrS2lsbHMZS2lsbCAxMCBBbmNpZW50IERlZXBzaGFyaxdEaW9IZWF2ZW5Bc2NlbnNpb25LaWxscxxLaWxsIDIwIERpbyBIZWF2ZW4gQXNjZW5zaW9uC0tpbGwgMjUgRGlvCVJpZW5LaWxscwxLaWxsIDEwIFJpZW4KQXJheWFLaWxscx1LaWxsIDEwIFRoZSBEaWh1aSBTdGFyLCBBcmF5YQNtYXgQIE9uZS1FeWVkIE93bChzKQ9HZXRSZXF1aXJlbWVudHMHRGlzcGxheQZMdWNrICUDS2V5BEx1Y2sHTW9uZXkgJQVNb25leQhTaGFyZHMgJQZTaGFyZHMFQ0RSICUDQ0RSBURNRyAlD0RhbWFnZUFtcGxpZmllcgVERUYgJQ9EYW1hZ2VSZWR1Y3Rpb24FRXhwICUDRXhwDUNyaXQgQ2hhbmNlICUKQ3JpdENoYW5jZQpDcml0IERNRyAlCkNyaXREYW1hZ2UKR2V0UmV3YXJkcwNtaW4GaXBhaXJzDUdldFRvdGFsQnVmZnMKS2lsbFN0cmVhaxBPYnNlcnZhdGlvblNlbnNlEFN1cnZpdmFsSW5zdGluY3QMSFBSZWdl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
+
+-- https://lua.expert/
+local t = {
+	"Iron",
+	"Bronze",
+	"Silver",
+	"Gold",
+	"Platinum",
+	"Emerald",
+	"Diamond",
+	"Master",
+	"Grandmaster",
+	"Challenger"
+}
+local t2 = { "IV", "III", "II", "I" }
+local t3 = {
+	Iron = Color3.fromRGB(140, 140, 140),
+	Bronze = Color3.fromRGB(205, 127, 50),
+	Silver = Color3.fromRGB(192, 192, 192),
+	Gold = Color3.fromRGB(255, 215, 0),
+	Platinum = Color3.fromRGB(100, 200, 220),
+	Emerald = Color3.fromRGB(80, 200, 120),
+	Diamond = Color3.fromRGB(185, 242, 255),
+	Master = Color3.fromRGB(180, 120, 255),
+	Grandmaster = Color3.fromRGB(255, 80, 80),
+	Challenger = Color3.fromRGB(255, 50, 205)
+}
+local t4 = {
+	250,
+	350,
+	400,
+	500,
+	600,
+	700,
+	800,
+	900,
+	1000,
+	1180
+}
+
+local function GetLevelCap(p1) --[[ GetLevelCap | Line: 57 | Upvalues: t4 (copy) ]]
+	local v1 = math.clamp(p1, 0, 40)
+	local sum = 1500
+
+	for i = 1, 10 do
+		sum = sum + math.clamp(v1 - (i - 1) * 4, 0, 4) * t4[i]
+	end
+
+	return sum
+end
+
+local function GetRankInfo(p1) --[[ GetRankInfo | Line: 70 | Upvalues: t (copy), t2 (copy) ]]
+	if p1 <= 0 then
+		return "Unranked", "", 0, 0
+	end
+
+	local v1 = math.clamp(p1, 1, 40)
+	local v2 = math.ceil(v1 / 4)
+	local v3 = v1 - (v2 - 1) * 4
+
+	return t[v2], t2[v3], v2, v3
+end
+
+local t5 = {
+	50,
+	95,
+	175,
+	300,
+	500,
+	820,
+	1320,
+	2050,
+	3100,
+	4500
+}
+local t6 = { 2, 4, 8, 13, 21, 33, 52 }
+local t7 = { 3, 8, 15 }
+local t8 = { 1, 1.15, 1.35, 1.6 }
+
+local function GetRequirements(p1) --[[ GetRequirements | Line: 125 | Upvalues: t8 (copy), GetLevelCap (copy), t5 (copy), t6 (copy), t7 (copy) ]]
+	if p1 <= 0 or p1 > 40 then
+		return nil
+	end
+
+	local v1 = math.ceil(p1 / 4)
+	local v2 = t8[p1 - (v1 - 1) * 4]
+	local v3 = GetLevelCap(p1 - 1)
+	local v5 = math.floor(t5[v1] * v2)
+	local t = {
+		{
+			Type = "Level",
+			Name = "Reach Level " .. v3,
+			Value = v3
+		},
+		{
+			Type = "NPCKills",
+			Name = "Kill " .. v5 .. " NPCs",
+			Value = v5
+		}
+	}
+
+	if v1 >= 4 then
+		local v7 = math.floor(t6[v1 - 3] * v2)
+
+		table.insert(t, {
+			Type = "SpecialKills",
+			Name = "Kill " .. v7 .. " Special Bosses",
+			Value = v7
+		})
+	end
+
+	if p1 >= 13 and p1 <= 16 then
+		local v8 = p1 - 12
+
+		table.insert(t, {
+			Type = "CidKills",
+			Name = "Kill " .. v8 .. " Cid Kagenou",
+			Value = v8
+		})
+		table.insert(t, {
+			Type = "OwlKills",
+			Name = "Kill " .. v8 .. " One-Eyed Owl",
+			Value = v8
+		})
+		table.insert(t, {
+			Type = "Material",
+			Name = "Shadow Core",
+			Value = 1
+		})
+		table.insert(t, {
+			Type = "Material",
+			Name = "Owl Core",
+			Value = 1
+		})
+		table.insert(t, {
+			Type = "Material",
+			Name = "Owl Fragment",
+			Value = v8 + 3
+		})
+		table.insert(t, {
+			Type = "Material",
+			Name = "Shadow Fragment",
+			Value = v8 + 3
+		})
+	end
+
+	if p1 == 17 then
+		table.insert(t, {
+			Type = "RedMistKills",
+			Name = "Kill 3 The Red Mist",
+			Value = 3
+		})
+		table.insert(t, {
+			Type = "Material",
+			Name = "Crimson Core",
+			Value = 2
+		})
+		table.insert(t, {
+			Type = "Material",
+			Name = "Crimson Fragment",
+			Value = 8
+		})
+	end
+
+	if p1 == 18 then
+		table.insert(t, {
+			Type = "InfernalAmbusherKills",
+			Name = "Kill 5 Infernal Ambusher",
+			Value = 5
+		})
+		table.insert(t, {
+			Type = "DemonInfernalKills",
+			Name = "Kill 3 Demon Infernal",
+			Value = 3
+		})
+	end
+
+	if p1 == 19 then
+		table.insert(t, {
+			Type = "DioKills",
+			Name = "Kill 10 Dio",
+			Value = 10
+		})
+	end
+
+	if p1 == 20 then
+		table.insert(t, {
+			Type = "AncientDeepsharkKills",
+			Name = "Kill 10 Ancient Deepshark",
+			Value = 10
+		})
+	end
+
+	if p1 == 21 then
+		table.insert(t, {
+			Type = "DioHeavenAscensionKills",
+			Name = "Kill 20 Dio Heaven Ascension",
+			Value = 20
+		})
+		table.insert(t, {
+			Type = "DioKills",
+			Name = "Kill 25 Dio",
+			Value = 25
+		})
+	end
+
+	if p1 == 22 then
+		table.insert(t, {
+			Type = "RienKills",
+			Name = "Kill 10 Rien",
+			Value = 10
+		})
+		table.insert(t, {
+			Type = "ArayaKills",
+			Name = "Kill 10 The Dihui Star, Araya",
+			Value = 10
+		})
+	end
+
+	if v1 >= 8 then
+		local v11 = math.max(1, (math.floor(t7[v1 - 7] * v2)))
+
+		table.insert(t, {
+			Type = "OwlKills",
+			Name = "Kill " .. v11 .. " One-Eyed Owl(s)",
+			Value = v11
+		})
+	end
+
+	return t
+end
+
+local t9 = {
+	{
+		1.5,
+		2,
+		2,
+		0.6,
+		1,
+		0.25,
+		0,
+		0,
+		2.5
+	},
+	{
+		2,
+		2.7,
+		2.7,
+		0.81,
+		1.35,
+		0.34,
+		0,
+		0,
+		5
+	},
+	{
+		2.5,
+		3.35,
+		3.35,
+		1.005,
+		1.6,
+		0.42,
+		0,
+		0,
+		7.5
+	},
+	{
+		2.95,
+		3.95,
+		3.95,
+		1.185,
+		1.9,
+		0.5,
+		0,
+		0,
+		10
+	},
+	{
+		3.3,
+		4.4,
+		4.4,
+		1.32,
+		2.1,
+		0.56,
+		0.25,
+		1.25,
+		12.5
+	},
+	{
+		3.65,
+		4.85,
+		4.85,
+		1.455,
+		2.3,
+		0.62,
+		0.28,
+		1.4,
+		15
+	},
+	{
+		3.95,
+		5.25,
+		5.25,
+		1.575,
+		2.5,
+		0.67,
+		0.3,
+		1.55,
+		17.5
+	},
+	{
+		4.22,
+		5.6,
+		5.6,
+		1.68,
+		2.65,
+		0.71,
+		0.32,
+		1.65,
+		20
+	},
+	{
+		4.48,
+		5.95,
+		5.95,
+		1.785,
+		2.8,
+		0.75,
+		0.34,
+		1.75,
+		22.5
+	},
+	{
+		4.72,
+		6.25,
+		6.25,
+		1.875,
+		2.95,
+		0.79,
+		0.36,
+		1.85,
+		25
+	}
+}
+
+local function GetRewards(p1) --[[ GetRewards | Line: 308 | Upvalues: t9 (copy) ]]
+	if p1 <= 0 or p1 > 40 then
+		return {}
+	end
+
+	local v1 = t9[math.ceil(p1 / 4)]
+	local t = {
+		{
+			Display = "Luck %",
+			Key = "Luck",
+			Value = v1[1]
+		},
+		{
+			Display = "Money %",
+			Key = "Money",
+			Value = v1[2]
+		},
+		{
+			Display = "Shards %",
+			Key = "Shards",
+			Value = v1[3]
+		},
+		{
+			Display = "CDR %",
+			Key = "CDR",
+			Value = v1[4]
+		},
+		{
+			Display = "DMG %",
+			Key = "DamageAmplifier",
+			Value = v1[5]
+		},
+		{
+			Display = "DEF %",
+			Key = "DamageReduction",
+			Value = v1[6]
+		},
+		{
+			Display = "Exp %",
+			Key = "Exp",
+			Value = v1[9]
+		}
+	}
+
+	if v1[7] > 0 then
+		table.insert(t, {
+			Display = "Crit Chance %",
+			Key = "CritChance",
+			Value = v1[7]
+		})
+		table.insert(t, {
+			Display = "Crit DMG %",
+			Key = "CritDamage",
+			Value = v1[8]
+		})
+	end
+
+	return t
+end
+
+return {
+	MAX_PRESTIGE = 40,
+	BASE_LEVEL_CAP = 1500,
+	RANK_LEVEL_CAP_PER_PRESTIGE = t4,
+	RankOrder = t,
+	DivisionLabels = t2,
+	RankIcons = {
+		Iron = "rbxassetid://135024986930847",
+		Bronze = "rbxassetid://74560486230895",
+		Silver = "rbxassetid://86075869948277",
+		Gold = "rbxassetid://114286147610453",
+		Platinum = "rbxassetid://98815825642114",
+		Emerald = "rbxassetid://97484568961436",
+		Diamond = "rbxassetid://132343055589595",
+		Master = "rbxassetid://99406634991463",
+		Grandmaster = "rbxassetid://82860620204487",
+		Challenger = "rbxassetid://115071899616529"
+	},
+	RankColors = t3,
+	STAT_KEY_MAP = {
+		["Luck %"] = "Luck",
+		["Money %"] = "Money",
+		["Shards %"] = "Shards",
+		["CDR %"] = "CDR",
+		["DMG %"] = "DamageAmplifier",
+		["DEF %"] = "DamageReduction",
+		["Crit Chance %"] = "CritChance",
+		["Crit DMG %"] = "CritDamage",
+		["Exp %"] = "Exp"
+	},
+	GetLevelCap = GetLevelCap,
+	GetRankInfo = GetRankInfo,
+	GetRequirements = GetRequirements,
+	GetRewards = GetRewards,
+	GetTotalBuffs = function(p1) --[[ GetTotalBuffs | Line: 334 | Upvalues: GetRewards (copy) ]]
+		local t = {}
+
+		for i = 1, math.min(p1, 40) do
+			for i2, v in ipairs((GetRewards(i))) do
+				t[v.Key] = (t[v.Key] or 0) + v.Value
+			end
+		end
+
+		return t
+	end,
+	GetPassives = function(p1) --[[ GetPassives | Line: 346 ]]
+		if p1 <= 0 then
+			return {}
+		end
+
+		local v2 = math.ceil(math.clamp(p1, 1, 40) / 4)
+		local t = {}
+
+		if v2 >= 2 then
+			t.KillStreak = true
+		end
+
+		if v2 >= 3 then
+			t.ObservationSense = true
+		end
+
+		if v2 >= 4 then
+			t.SurvivalInstinct = true
+		end
+
+		if v2 >= 4 then
+			t.HPRegenBonus = 1
+		end
+
+		if v2 >= 5 then
+			t.IronBody = true
+		end
+
+		if v2 >= 5 then
+			t.HPRegenBonus = 2
+		end
+
+		if v2 >= 6 then
+			t.SecondWind = true
+		end
+
+		if v2 >= 7 then
+			t.BonusPointPerLevel = 1
+		end
+
+		if v2 >= 8 then
+			t.ConquerorAura = true
+		end
+
+		if v2 >= 9 then
+			t.BonusDamage = 0.1
+		end
+
+		if v2 >= 10 then
+			t.BonusDamage = 0.15
+		end
+
+		if v2 >= 10 then
+			t.ChallengerDmgColor = true
+		end
+
+		return t
+	end
+}

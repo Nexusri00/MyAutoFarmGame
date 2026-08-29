@@ -1,0 +1,35 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQMYCkdldFBhc3NpdmUVSGVhdmVuY2xvY2sgQW5nZWxmaXNoA1ZGWAV2ZnhPZglQcmltYXJ5T2YHU3Bhd25BdAZGb2xkZXIFU3RhY2sGQ0ZyYW1lA25ldwhQb3NpdGlvbghMaWZldGltZQRUaWVyBEVjaG8EZ2FtZRFSZXBsaWNhdGVkU3RvcmFnZQpHZXRTZXJ2aWNlB3JlcXVpcmUHTW9kdWxlcw5Db25maWd1cmF0aW9ucwhGaXNoRGF0YQZzY3JpcHQGUGFyZW50B19TaGFyZWQABAIAAQAAAAj7AAAATQAAXwAAAABvAQEAnwACAk0AAH4CAAAAggACAAMDAQMCAwMAHwQBGAAAAAAAAAAAIAAAAAAJAQIAAAYDAAAFAQcg+wEAAE0BARIAAAAAUgIAAJ8BAgIrAQEAggABAPsCAQBNAgJfAQAAAG8DAgCfAgICTQICfgMAAAD7AwAATQMDNAQAAABNBAKIBQAAAE0FAr0GAAAApAYJAAAgcIBNBwE7CgAAAJ8GAgJNBwLLCwAAAE0IAosMAAAAnwMGAYIAAQANAwUDAQMCAwMDBgMHAwgDCQMKBAAgcIADCwMMAw0AJwgBGAgAAAAAAQD3AAAAAAAADAAAAAAAAAAAAAAAAAAAAAABIAAAAAAJAQIAAAYDAAAFAQcg+wEAAE0BARIAAAAAUgIAAJ8BAgIrAQEAggABAPsCAQBNAgJfAQAAAG8DAgCfAgICTQICfgMAAAD7AwAATQMDNAQAAABNBAKIBQAAAE0FAsgGAAAApAYJAAAgcIBNBwE7CgAAAJ8GAgJNBwLLCwAAAE0IAosMAAAAnwMGAYIAAQANAwUDAQMCAwMDBgMHAw4DCQMKBAAgcIADCwMMAw0AMQ4BGBIAAAAAAQDtAAAAAAAAFgAAAAAAAAAAAAAAAAAAAAABIAAAAAAGAAABAgAoowAAAKQAAQAAAABAbwICALwAABYDAAAAnwADAqQBBQAAAEBATQIA6AYAAABNAgK6BwAAAE0CAqEIAAAAnwECAqQCBQAAAEBApAMKAAAAkEBNAwMkCwAAAE0DA0YMAAAAnwICAv8DAgAAAAAAwAQNABIAAQDABQ4AEgACABIAAQAwBQO9DwAAAMAFEAASAAIAEgABADAFA8gRAAAAggMCABIDDwQAAABAAxADEQMSBAAAQEADEwMUAxUDFgQAAJBAAxcDGAYABgEDCAYCAw4DAAECAQABGAAPAAAAAAAEAAAAAAAAAAABAAAAAAAAAAAEAAYACAAAAAAKAAAAAAgBAAAAAAMkBFZSvTypLJCVeUVaOiOhVBxBJhbAPFM=
+
+-- https://lua.expert/
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local FishData = require(ReplicatedStorage.Modules.Configurations.FishData)
+local _Shared = require(script.Parent._Shared)
+local t = {}
+
+local function vfxOf() --[[ vfxOf | Line: 31 | Upvalues: FishData (copy) ]]
+	return FishData.GetPassive("Heavenclock Angelfish").VFX
+end
+
+function t.Stack(p1) --[[ Stack | Line: 39 | Upvalues: _Shared (copy), FishData (copy) ]]
+	local v1 = _Shared.PrimaryOf(p1)
+
+	if v1 then
+		local VFX = FishData.GetPassive("Heavenclock Angelfish").VFX
+
+		_Shared.SpawnAt(VFX.Folder, VFX.Stack, CFrame.new(v1.Position), VFX.Lifetime, VFX.Tier)
+	end
+end
+function t.Echo(p1) --[[ Echo | Line: 49 | Upvalues: _Shared (copy), FishData (copy) ]]
+	local v1 = _Shared.PrimaryOf(p1)
+
+	if v1 then
+		local VFX = FishData.GetPassive("Heavenclock Angelfish").VFX
+
+		_Shared.SpawnAt(VFX.Folder, VFX.Echo, CFrame.new(v1.Position), VFX.Lifetime, VFX.Tier)
+	end
+end
+
+return t

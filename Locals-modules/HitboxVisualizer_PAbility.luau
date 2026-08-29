@@ -1,0 +1,278 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQNPDUxvY2F0ZVN1cmZhY2UHUnVudGltZQpEaXNjb25uZWN0BVR3ZWVuBXRhYmxlBWNsZWFyBlBhcmVudAdEZXN0cm95CVR3ZWVuSW5mbwNuZXcERW51bQtFYXNpbmdTdHlsZQRCYWNrD0Vhc2luZ0RpcmVjdGlvbgJJbgRTaXplBkNyZWF0ZQRQbGF5BHRhc2sFZGVsYXkQSHVtYW5vaWRSb290UGFydAZDRnJhbWUGdHlwZW9mCGZ1bmN0aW9uCFBvc2l0aW9uAVgBWQFaB1Bpdm90VG8PQ3VycmVudFBvc2l0aW9uDlVwZGF0ZVBvc2l0aW9uATICVUkIUm90YXRpb24BMw5GaW5kRmlyc3RDaGlsZAR3YXJuD1Jvb3RQYXJ0IE5lZWRlZAVXaWR0aANGUFMJUmF5TGVuZ3RoDkNGcmFtZUxvY2F0aW9uBnNjcmlwdAdWaXN1YWxzA0FPRQVDbG9uZQpBdHRhY2htZW50B1BhcnRpY2wOTnVtYmVyU2VxdWVuY2UWTnVtYmVyU2VxdWVuY2VLZXlwb2ludA1SZW5kZXJTdGVwcGVkB0Nvbm5lY3QDT3V0B1ZlY3RvcjMJd29ya3NwYWNlBkRlYnJpcwZDaXJjbGUIVHdlZW5fMDIEU2luZQRCZWFtBldpZHRoMAZXaWR0aDEEVW5pdAZsb29rQXQGQW5nbGVzBVJhbmdlDkFuY2hvckxvY2F0aW9uBk9mZnNldARMaW5lDEF0dGFjaG1lbnQxQgxBdHRhY2htZW50MkIEZ2FtZQpSdW5TZXJ2aWNlCkdldFNlcnZpY2UMVHdlZW5TZXJ2aWNlB3JlcXVpcmURUmVwbGljYXRlZFN0b3JhZ2UHTW9kdWxlcw1TaGFyZWRQYWNrYWdlARYADAUCAQAABwQAAAUCCAIH+wIAAE0CAsEAAAAAUgMAAFIEAQCfAgMAggIAAAEDAQAoAQEYAAAAAAAAACkAAAAAAgACAAAHAAABBwAJAiP7AAAADgAYAPsAAABNAAB4AAAAAA4ACgD7AAAATQAAeAAAAAC8AAAaAQAAAJ8AAgH7AAAAxgEAADABAHgAAAAA+wAAAMYBAAAwAQDgAgAAAKQABQAAEDCA+wEAAJ8AAgHGAAAA3gAAAPsAAQBNAAAkBgAAAA4ABAD7AAEAvAAAUAcAAACfAAIBggABAAgDAgMDAwQD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
+
+-- https://lua.expert/
+local RunService = game:GetService("RunService")
+local TweenService = game:GetService("TweenService")
+local SharedPackage = require(game.ReplicatedStorage.Modules.SharedPackage)
+local t = {}
+
+function LocateSurface(p1, p2) --[[ LocateSurface | Line: 40 | Upvalues: SharedPackage (copy) ]]
+	return SharedPackage.LocateSurface(p1, p2)
+end
+function t.Circle(p1, p2) --[[ Circle | Line: 45 | Upvalues: TweenService (copy), RunService (copy) ]]
+	local HumanoidRootPart = p1:FindFirstChild("HumanoidRootPart")
+
+	if not HumanoidRootPart then
+		return warn("RootPart Needed")
+	end
+
+	local v1 = if p2 then p2 else {}
+	local v2 = v1.Width or 5
+	local v3 = v1.FPS or 60
+	local v4 = v1.RayLength or 40
+	local CFrameLocation = v1.CFrameLocation
+	local v5 = script.Visuals.AOE:Clone()
+
+	v5.Attachment.Particl.Size = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(1, v2 - 2) })
+
+	local t = {}
+
+	function t.Destroy(p1) --[[ Destroy | Line: 63 | Upvalues: t (ref), TweenService (ref), v5 (copy) ]]
+		if not t.Tween then
+			t.Tween = TweenService:Create(v5, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.In), {
+				Size = Vector3.new(0, 0.01, 0)
+			})
+			t.Tween:Play()
+			task.delay(0.4, function() --[[ Line: 73 | Upvalues: t (ref), v5 (ref) ]]
+				if t then
+					if t.Runtime then
+						t.Runtime:Disconnect()
+						t.Runtime = nil
+					end
+
+					t.Tween = nil
+					table.clear(t)
+					t = nil
+				end
+
+				if not v5.Parent then
+					return
+				end
+
+				v5:Destroy()
+			end)
+
+			return
+		end
+
+		t.Tween:Destroy()
+		t.Tween = TweenService:Create(v5, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.In), {
+			Size = Vector3.new(0, 0.01, 0)
+		})
+		t.Tween:Play()
+		task.delay(0.4, function() --[[ Line: 73 | Upvalues: t (ref), v5 (ref) ]]
+			if t then
+				if t.Runtime then
+					t.Runtime:Disconnect()
+					t.Runtime = nil
+				end
+
+				t.Tween = nil
+				table.clear(t)
+				t = nil
+			end
+
+			if not v5.Parent then
+				return
+			end
+
+			v5:Destroy()
+		end)
+	end
+	function t.UpdatePosition(p12) --[[ UpdatePosition | Line: 90 | Upvalues: p1 (copy), CFrameLocation (copy), v4 (copy), v5 (copy), t (ref) ]]
+		local v1 = p1.HumanoidRootPart.CFrame
+
+		if CFrameLocation and typeof(CFrameLocation) == "function" then
+			v1 = CFrameLocation()
+		elseif CFrameLocation and typeof(CFrameLocation) == "CFrame" then
+			v1 = CFrameLocation
+		end
+
+		if not v1 then
+			return
+		end
+
+		local v52, v6 = LocateSurface(v1.Position + Vector3.new(0, 2, 0), v4)
+		local v7 = if v6 then CFrame.new(v1.X, v52.Y, v1.Z) else v1 * CFrame.new(0, -2.75, 0)
+
+		v5:PivotTo(v7)
+		t.CurrentPosition = v7.Position
+	end
+
+	local v6 = 0
+	local v7 = 0
+
+	t.Runtime = RunService.RenderStepped:Connect(function(p1) --[[ Line: 119 | Upvalues: v6 (ref), v3 (copy), HumanoidRootPart (copy), t (ref), v7 (ref), v5 (copy) ]]
+		v6 = v6 + p1
+
+		if v6 <= 1 / v3 then
+			return
+		end
+
+		v6 = v6 - 1 / v3
+
+		if HumanoidRootPart.Parent then
+			t:UpdatePosition()
+			v7 = v7 + p1
+			v5.UI["2"].Rotation = v7 * 30 % 360
+			v5.UI["3"].Rotation = -v7 * 30 % 360
+
+			return
+		end
+
+		return t:Destroy()
+	end)
+	v5.Size = Vector3.new(0, 0.001, 0)
+	t.Tween = TweenService:Create(v5, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+		Size = Vector3.new(v2, 0.001, v2)
+	})
+	t.Tween:Play()
+	v5.Parent = workspace.Debris
+	t:UpdatePosition()
+
+	return t
+end
+function t.Line(p1, p2) --[[ Line | Line: 157 | Upvalues: TweenService (copy), RunService (copy) ]]
+	local HumanoidRootPart = p1:FindFirstChild("HumanoidRootPart")
+
+	if not HumanoidRootPart then
+		return warn("RootPart Needed")
+	end
+
+	local v1 = p2 or {}
+	local v2 = v1.Range or 15
+	local v3 = v1.Width or 5
+	local v4 = v1.FPS or 60
+	local v5 = v1.RayLength or 40
+	local CFrameLocation = v1.CFrameLocation
+	local AnchorLocation = v1.AnchorLocation
+	local v6 = v1.Offset or {
+		X = 0,
+		Y = 0,
+		Z = 0
+	}
+	local v7 = script.Visuals.Line:Clone()
+
+	v7.Size = Vector3.new(v2, 0.25, 0)
+	v7.Attachment1B.CFrame = CFrame.new(v2 / 2, 0.22, -0.01) * CFrame.Angles(-1.5707963267948966, 0, 0)
+	v7.Attachment2B.CFrame = CFrame.new(-v2 / 2, 0.22, -0.01) * CFrame.Angles(-1.5707963267948966, 0, 0)
+	v7.Beam.Width0 = 0
+	v7.Beam.Width1 = 0
+
+	local t = {}
+
+	function t.Destroy(p1) --[[ Destroy | Line: 178 | Upvalues: t (ref), TweenService (ref), v7 (copy), v2 (copy) ]]
+		if t.Tween then
+			t.Tween:Destroy()
+		end
+
+		local v4, v5
+
+		if t.Tween_02 then
+			t.Tween_02:Destroy()
+		end
+
+		v4 = TweenInfo.new(0.4, Enum.EasingStyle.Sine, Enum.EasingDirection.In)
+		v5 = {}
+		v5.Size = Vector3.new(v2, 0.25, 0)
+		t.Tween = TweenService:Create(v7, v4, v5)
+		t.Tween:Play()
+		t.Tween_02 = TweenService:Create(v7.Beam, TweenInfo.new(0.4, Enum.EasingStyle.Sine, Enum.EasingDirection.In), {
+			Width0 = 0,
+			Width1 = 0
+		})
+		t.Tween_02:Play()
+		task.delay(0.4, function() --[[ Line: 196 | Upvalues: t (ref), v7 (ref) ]]
+			if t then
+				if t.Runtime then
+					t.Runtime:Disconnect()
+					t.Runtime = nil
+				end
+
+				t.Tween = nil
+				t.Tween_02 = nil
+				table.clear(t)
+				t = nil
+			end
+
+			if not v7.Parent then
+				return
+			end
+
+			v7:Destroy()
+		end)
+	end
+	function t.UpdatePosition(p1) --[[ UpdatePosition | Line: 214 | Upvalues: HumanoidRootPart (copy), v2 (copy), CFrameLocation (copy), AnchorLocation (copy), v5 (copy), v6 (copy), v7 (copy), t (ref) ]]
+		local v1 = HumanoidRootPart.CFrame * CFrame.new(0, 0, -v2 * 1.5)
+
+		if CFrameLocation and typeof(CFrameLocation) == "function" then
+			v1 = CFrameLocation()
+		elseif CFrameLocation and typeof(CFrameLocation) == "CFrame" then
+			v1 = CFrameLocation
+		end
+
+		if not v1 then
+			return
+		end
+
+		local v52 = HumanoidRootPart.CFrame
+
+		if AnchorLocation and typeof(AnchorLocation) == "function" then
+			v52 = AnchorLocation()
+		elseif AnchorLocation and typeof(AnchorLocation) == "CFrame" then
+			v52 = AnchorLocation
+		end
+
+		if not v52 then
+			return
+		end
+
+		local Position = v52.Position
+		local Position2 = v1.Position
+		local v9, v10 = LocateSurface(Position + Vector3.new(0, 2, 0), v5)
+		local v11 = if v10 then Vector3.new(Position.X, v9.Y + v6.Y, Position.Z) else Position + Vector3.new(0, -2.75, 0)
+		local v16 = v11 + Vector3.new(Position2.X - v11.X, 0, Position2.Z - v11.Z).Unit
+		local v17 = CFrame.lookAt(v11, v16) * CFrame.new(0, 0, -v2 / 2 - v6.Z) * CFrame.Angles(0, -1.5707963267948966, 0)
+
+		v7:PivotTo(v17)
+		t.CurrentPosition = v17.Position
+	end
+
+	local v8 = 0
+
+	t.Runtime = RunService.RenderStepped:Connect(function(p1) --[[ Line: 264 | Upvalues: v8 (ref), v4 (copy), HumanoidRootPart (copy), t (ref) ]]
+		v8 = v8 + p1
+
+		if v8 <= 1 / v4 then
+			return
+		end
+
+		v8 = v8 - 1 / v4
+
+		if HumanoidRootPart.Parent then
+			t:UpdatePosition()
+
+			return
+		end
+
+		return t:Destroy()
+	end)
+	t.Tween = TweenService:Create(v7, TweenInfo.new(0.4, Enum.EasingStyle.Sine, Enum.EasingDirection.In), {
+		Size = Vector3.new(v2, 0.25, v3)
+	})
+	t.Tween:Play()
+	t.Tween_02 = TweenService:Create(v7.Beam, TweenInfo.new(0.4, Enum.EasingStyle.Sine, Enum.EasingDirection.In), {
+		Width0 = v3,
+		Width1 = v3
+	})
+	t.Tween_02:Play()
+	v7.Parent = workspace.Debris
+	t:UpdatePosition()
+
+	return t
+end
+
+return t

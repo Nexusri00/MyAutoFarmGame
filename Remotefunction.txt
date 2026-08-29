@@ -1,0 +1,76 @@
+Here is a categorized list of all RemoteFunctions (which use InvokeServer / InvokeClient to return data synchronously) from your provided list:
+
+Quests & Contracts
+game.ReplicatedStorage.Remotes.RF_ContractAccept
+
+game.ReplicatedStorage.Remotes.RF_ContractAbandon
+
+game.ReplicatedStorage.Remotes.RF_ContractClaim
+
+game.ReplicatedStorage.Remotes.RF_ContractGetState
+
+game.ReplicatedStorage.Remotes.RF_ContractPurchase
+
+Inventory, Selling & Economy
+game.ReplicatedStorage.Remotes.RF_PrepareSell
+
+game.ReplicatedStorage.Remotes.RF_Sell
+
+game.ReplicatedStorage.Remotes.RF_SellBatch
+
+game.ReplicatedStorage.Remotes.RF_InventoryCapacity
+
+game.ReplicatedStorage.Remotes.RF_InventorySetFlag
+
+game.ReplicatedStorage.Remotes.RF_Storage
+
+Progression & Character Upgrades
+game.ReplicatedStorage.Remotes.RF_SkillTreeGetState
+
+game.ReplicatedStorage.Remotes.RF_SkillTreeUnlock
+
+game.ReplicatedStorage.Remotes.RF_SkillTreeReset
+
+game.ReplicatedStorage.Remotes.RF_SpecEnchantGetAllLevels
+
+game.ReplicatedStorage.Remotes.RF_SpecEnchantGetSnapshot
+
+game.ReplicatedStorage.Remotes.RF_UltimateEnhance
+
+Traits & Customization Data
+game.ReplicatedStorage.Remotes.TraitGetData
+
+game.ReplicatedStorage.Remotes.TraitReroll
+
+game.ReplicatedStorage.Remotes.TraitUpdateSkips
+
+game.ReplicatedStorage.Remotes.SpecGetBannedTraits
+
+Game Data, World & UI Queries
+game.ReplicatedStorage.Remotes.Functions.GetLeaderboard
+
+game.ReplicatedStorage.Remotes.Functions.GetNPCData
+
+game.ReplicatedStorage.Remotes.GetMouse
+
+game.ReplicatedStorage.Remotes.GetPinnedIslands
+
+game.ReplicatedStorage.Remotes.CheckPortalUnlock
+
+Faction, Rien & Activity States
+game.ReplicatedStorage.Remotes.RF_IndexFactionGetState
+
+game.ReplicatedStorage.Remotes.RF_IndexFactionAction
+
+game.ReplicatedStorage.Remotes.RF_RienObtainGetState
+
+game.ReplicatedStorage.Remotes.RF_RienObtainAction
+
+game.ReplicatedStorage.Remotes.RF_FishingPassState
+
+System, Developer & Utility Remotes
+game.ReplicatedStorage.Remotes.Functions.Input
+
+game.ReplicatedStorage.Remotes.Functions.Output
+
+game.ReplicatedStorage.Shared.Cmdr.CmdrClient.CmdrFunction

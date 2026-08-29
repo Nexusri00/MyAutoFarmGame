@@ -1,0 +1,98 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- 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
+
+-- https://lua.expert/
+return {
+	CostSingle = 1,
+	CostAll = 1,
+	StatDefs = {
+		{
+			key = "DamageAmplifier",
+			action = "Damage",
+			displayName = "DMG",
+			maxPct = 35
+		},
+		{
+			key = "CriticalDamage",
+			action = "CritDamage",
+			displayName = "Crit DMG",
+			maxPct = 40
+		},
+		{
+			key = "CriticalChance",
+			action = "CritChance",
+			displayName = "Crit Chance",
+			maxPct = 10
+		},
+		{
+			key = "CooldownReduction",
+			action = "CooldownReduction",
+			displayName = "CDH",
+			maxPct = 15
+		}
+	},
+	StatMax = {
+		DamageAmplifier = 0.35,
+		CriticalDamage = 0.4,
+		CriticalChance = 0.1,
+		CooldownReduction = 0.15
+	},
+	StatOrder = { "DamageAmplifier", "CriticalDamage", "CriticalChance", "CooldownReduction" },
+	RankColors = {
+		F = Color3.fromRGB(180, 180, 180),
+		E = Color3.fromRGB(120, 200, 120),
+		D = Color3.fromRGB(80, 180, 220),
+		C = Color3.fromRGB(120, 100, 220),
+		B = Color3.fromRGB(220, 160, 60),
+		A = Color3.fromRGB(220, 80, 80),
+		S = Color3.fromRGB(240, 200, 40),
+		SS = Color3.fromRGB(255, 120, 20),
+		SSS = Color3.fromRGB(255, 50, 50),
+		Kami = Color3.fromRGB(255, 235, 120)
+	},
+	RarityOrder = {
+		Collectible = 1,
+		Limited = 2,
+		Secret = 3,
+		Mythical = 4,
+		Legendary = 5,
+		Epic = 6,
+		Rare = 7,
+		Uncommon = 8,
+		Common = 9
+	},
+	RankToRarity = {
+		F = "Common",
+		E = "Uncommon",
+		D = "Rare",
+		C = "Epic",
+		B = "Legendary",
+		A = "Mythical",
+		S = "Secret",
+		SS = "Limited",
+		SSS = "Collectible",
+		Kami = "Collectible"
+	},
+	RankOrder = {
+		F = 1,
+		E = 2,
+		D = 3,
+		C = 4,
+		B = 5,
+		A = 6,
+		S = 7,
+		SS = 8,
+		SSS = 9,
+		Kami = 10
+	},
+	ProtectedRanks = {
+		A = true,
+		S = true,
+		SS = true,
+		SSS = true,
+		Kami = true
+	},
+	AutoSkipRanks = { "A", "S", "SS", "SSS" }
+}

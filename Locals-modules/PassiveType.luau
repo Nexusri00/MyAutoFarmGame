@@ -1,0 +1,9 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQMHB3JlcXVpcmUEZ2FtZRFSZXBsaWNhdGVkU3RvcmFnZQZTaGFyZWQFVHlwZXMKQmFzaWNUeXBlcwtSYXJpdHlUeXBlcwABAgAAAQIAE6MAAACkAAEAAAAAQKQBAwAAACBATQEBPwQAAABNAQESBQAAAE0BAe8GAAAATQEBYQcAAABNAQGfCAAAAJ8AAgL/AQAAAAAAAIIBAgAJAwEEAAAAQAMCBAAAIEADAwMEAwUDBgMHAAEAARgAAAAAAAAAAAAAAAAAAAAAGAAAAQAAAAAA
+
+-- https://lua.expert/
+require(game.ReplicatedStorage.Shared.Types.BasicTypes.RarityTypes)
+
+return {}

@@ -1,0 +1,28 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQMPB3JlcXVpcmUGc2NyaXB0CVdpbmRMaW5lcwlXaW5kU2hha2UJRGlyZWN0aW9uBVNwZWVkCExpZmV0aW1lCVNwYXduUmF0ZQRJbml0CVdpbmRTcGVlZA1XaW5kRGlyZWN0aW9uCVdpbmRQb3dlchJTZXREZWZhdWx0U2V0dGluZ3MSTWF0Y2hXb3Jrc3BhY2VXaW5kDEdldEF0dHJpYnV0ZQABCAAAAQIARKMAAABvAAAAjAEUAG8CAQCkAwMAAAAgQKQEBQAAAEBATQQEYgYAAACfAwICpAQDAAAAIECkBQUAAABAQE0FBcgHAAAAnwQCAuIHDgAwAAdhCAAAADABBywJAAAAvAUDcw8AAACfBQMB4gcTADABBwsQAAAAMAAH3REAAAAwAgcHEgAAALwFBLMUAAAAnwUDAeIHFwC8BQRzDwAAAJ8FAwGkBQUAAABAQE0FBcgHAAAAbwcQALwFBRIYAAAAnwUDAlIBBQCkBQUAAABAQE0FBcgHAAAAbwcRALwFBRIYAAAAnwUDAlIABQCkBQUAAABAQE0FBcgHAAAAbwcSALwFBRIYAAAAnwUDAlICBQCCAAEAGQcAAIA/AAAAAJqZmT4AAAAAAgAAAAAAAOA/AwEEAAAgQAMCBAAAQEADAwMEAwUDBgMHAgAAAAAAAPg/AwgCAAAAAAAAGEAIBAj/////Cf////8KCwAAAAwNAAAAAwkDCgMLAwwFAxAREgMNAw4BAQgBFRYAAAADDwABAAEYAAABAQMAAAAAAAABAAAAAAAAAgEAAQD+AAAHAQABAAEA/QAABQAAAAQAAAAAAAAAAAEAAAAAAAAAAAEAAAAAAAAAAAIBAAAAAADwXVHegHPRhs+L79s5a1dSgEVGqsKZO98=
+
+-- https://lua.expert/
+local v1 = Vector3.new(1, 0, 0.3)
+local v2 = 20
+local WindLines = require(script.WindLines)
+local WindShake = require(script.WindShake)
+
+WindLines:Init({
+	Lifetime = 1.5,
+	SpawnRate = 6,
+	Direction = v1,
+	Speed = v2
+})
+WindShake:SetDefaultSettings({
+	WindSpeed = v2,
+	WindDirection = v1,
+	WindPower = 0.5
+})
+WindShake:Init({
+	MatchWorkspaceWind = true
+})
+script.WindShake:GetAttribute("WindSpeed")
+script.WindShake:GetAttribute("WindDirection")
+script.WindShake:GetAttribute("WindPower")

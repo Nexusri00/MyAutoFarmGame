@@ -1,0 +1,165 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQNZCGNvcHlCYXJlCEFuY2hvcmVkCkNhbkNvbGxpZGUIQ2FuUXVlcnkIQ2FuVG91Y2gITWFzc2xlc3MGTG9ja2VkCkFyY2hpdmFibGUMVHJhbnNwYXJlbmN5BURlY2FsFkZpbmRGaXJzdENoaWxkV2hpY2hJc0EHVGV4dHVyZQxidWlsZFNlZ21lbnQGbGF5b3V0DFNlZ21lbnRDb3VudANNYXgJRm9ya0RlcHRoCkZvcmtDaGFuY2UJbGF5b3V0Rm9yCEluc3RhbmNlA25ldwVNb2RlbA1MaWdodG5pbmdCb2x0BE5hbWUOX2xpZ2h0bmluZ0JvbHQMU2V0QXR0cmlidXRlCXBhcnRDb3VudAhtYWluU2Vncwhmb3JrU2Vncwlmb3JrU2xvdHMFdGFibGUGY3JlYXRlBXBhcnRzB3JvbGxDRnMId3JpdGVDRnMGc2VnTGVuCnJldmVhbERpc3QLcmV2ZWFsT3JkZXIKd2lkdGhTY2FsZQZkZWNhbHMEbWF0aANtYXgJc2xvdERlcHRoBXB0QnVmCWJhc2VQdEJ1Zglmb3JrUHRCdWYNZm9ya0FuY2hvclBvcw1mb3JrQW5jaG9yRGlyEGZvcmtBbmNob3JSZXZlYWwOZm9ya0FuY2hvclNsb3QPZm9ya0FuY2hvclB0SWR4DWZvcmtPcmlnaW5JZHgOZm9ya1BhcmVudFNsb3QPZm9ya1BhcmVudFB0SWR4B2ZvcmtMZW4FZm9ya1UFZm9ya1YJZm9ya1NlZWRVCWZvcmtTZWVkVgxmb3JrTG9jYWxQdHMMZm9ya1dvcmxkUHRzCHByZXZMaXZlDmxhc3RXcml0dGVuTGVuDHNpemVXcml0ZUlkeAxuZXdseUxpdmVJZHgJZ3JhZENvbG9yBGNlaWwPRm9ya0xlbmd0aFNjYWxlDlJlbmRlclRlbXBsYXRlA1NlZwZDRnJhbWUGUGFyZW50BWZsb29yBFJpZ3MIYnVpbGRSaWcHRGVzdHJveQRQb29sB2FjcXVpcmUJTGlnaHRuaW5nDV9QYXJ0SWNsZUVtaXQFcGNhbGwLYWNxdWlyZUJvbHQHcmVxdWlyZQZzY3JpcHQHQm9sdEdlbg5NQVhfQk9MVF9QQVJUUwZfX21vZGUBawxzZXRtZXRhdGFibGUABgUBAQAAACf7AQAATQEBewAAAABSAgAAnwEC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
+
+-- https://lua.expert/
+local Pool = require(script.Parent.Parent.Pool)
+local BoltGen = require(script.Parent.BoltGen)
+local v1 = CFrame.new(1000000000, 1000000000, 1000000000)
+local t = {
+	MAX_BOLT_PARTS = 64,
+	Rigs = setmetatable({}, {
+		__mode = "k"
+	})
+}
+
+local function buildSegment(p1) --[[ buildSegment | Line: 24 | Upvalues: Pool (copy) ]]
+	local v1 = Pool.copyBare(p1)
+
+	v1.Anchored = true
+	v1.CanCollide = false
+	v1.CanQuery = false
+	v1.CanTouch = false
+	v1.Massless = true
+	v1.Locked = true
+	v1.Archivable = false
+	v1.Transparency = 0
+
+	return v1, v1:FindFirstChildWhichIsA("Decal") or v1:FindFirstChildWhichIsA("Texture")
+end
+
+function t.layoutFor(p1) --[[ layoutFor | Line: 40 | Upvalues: BoltGen (copy) ]]
+	return BoltGen.layout(p1.SegmentCount.Max, p1.ForkDepth.Max, p1.ForkChance.Max, 64)
+end
+function t.buildRig(p1) --[[ buildRig | Line: 46 | Upvalues: t (copy), Pool (copy), v1 (copy) ]]
+	local v12, v2, v3, v4 = t.layoutFor(p1)
+	local LightningBolt = Instance.new("Model")
+
+	LightningBolt.Name = "LightningBolt"
+	LightningBolt.Archivable = false
+	LightningBolt:SetAttribute("_lightningBolt", true)
+
+	local t2 = {
+		partCount = v12,
+		mainSegs = v2,
+		forkSegs = v3,
+		forkSlots = v4,
+		parts = table.create(v12),
+		rollCFs = table.create(v12),
+		writeCFs = table.create(v12),
+		segLen = table.create(v12),
+		revealDist = table.create(v12),
+		revealOrder = table.create(v12),
+		widthScale = table.create(v12),
+		decals = table.create(v12),
+		slotDepth = table.create((math.max(v4, 1))),
+		ptBuf = table.create(v2 + 1),
+		basePtBuf = table.create(v2 + 1),
+		forkPtBuf = table.create(v3 + 1),
+		forkAnchorPos = {},
+		forkAnchorDir = {},
+		forkAnchorReveal = {},
+		forkAnchorSlot = {},
+		forkAnchorPtIdx = {},
+		forkOriginIdx = {},
+		forkParentSlot = {},
+		forkParentPtIdx = {},
+		forkLen = {},
+		forkU = {},
+		forkV = {},
+		forkSeedU = {},
+		forkSeedV = {},
+		forkLocalPts = {},
+		forkWorldPts = {},
+		prevLive = table.create(v12),
+		lastWrittenLen = table.create(v12),
+		sizeWriteIdx = table.create(v12),
+		newlyLiveIdx = table.create(v12),
+		gradColor = table.create(v12)
+	}
+
+	for i = 1, v4 do
+		t2.forkLocalPts[i] = table.create(v3 + 1)
+		t2.forkWorldPts[i] = table.create(v3 + 1)
+		t2.forkOriginIdx[i] = 0
+		t2.forkParentSlot[i] = 0
+	end
+
+	local v5 = v4 > 0 and math.max(1, (math.ceil(v4 / 2))) or 0
+
+	for j = 1, v4 do
+		t2.slotDepth[j] = if j <= v5 then 1 else 2
+	end
+
+	local v10 = math.max(0.45, p1.ForkLengthScale and p1.ForkLengthScale.Max or 0.4)
+
+	for k = 1, v12 do
+		local v11 = Pool.copyBare(p1.RenderTemplate)
+
+		v11.Anchored = true
+		v11.CanCollide = false
+		v11.CanQuery = false
+		v11.CanTouch = false
+		v11.Massless = true
+		v11.Locked = true
+		v11.Archivable = false
+		v11.Transparency = 0
+
+		local v122 = v11:FindFirstChildWhichIsA("Decal") or v11:FindFirstChildWhichIsA("Texture")
+
+		v11.Name = "Seg" .. k
+		v11.CFrame = v1
+		v11.Parent = LightningBolt
+		t2.parts[k] = v11
+		t2.decals[k] = v122
+		t2.rollCFs[k] = v1
+		t2.writeCFs[k] = v1
+		t2.segLen[k] = 0.05
+		t2.revealDist[k] = (1 / 0)
+		t2.revealOrder[k] = k
+		t2.prevLive[k] = false
+		t2.lastWrittenLen[k] = -1
+
+		if k <= v2 then
+			t2.widthScale[k] = 1
+
+			continue
+		end
+
+		t2.widthScale[k] = v10 ^ (t2.slotDepth[math.floor((k - v2 - 1) / v3) + 1] or 1)
+	end
+
+	t.Rigs[LightningBolt] = t2
+
+	return LightningBolt, t2
+end
+function t.acquireBolt(p1) --[[ acquireBolt | Line: 126 | Upvalues: t (copy), Pool (copy) ]]
+	local v1 = t.layoutFor(p1)
+
+	if p1.Pool ~= false then
+		local v2 = Pool.acquire(p1.RenderTemplate, "Lightning")
+
+		if v2 then
+			local v3 = t.Rigs[v2]
+
+			if v3 and (v3.partCount == v1 and (v3.parts[1] and v3.parts[1].Parent == v2)) then
+				v2:SetAttribute("_PartIcleEmit", true)
+
+				return v2, v3
+			end
+
+			pcall(function() --[[ Line: 136 | Upvalues: v2 (copy) ]]
+				v2:Destroy()
+			end)
+		end
+	end
+
+	local v4, v5 = t.buildRig(p1)
+
+	v4:SetAttribute("_PartIcleEmit", true)
+
+	return v4, v5
+end
+
+return t

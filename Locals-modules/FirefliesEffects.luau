@@ -1,0 +1,464 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQOIAQZzY3JpcHQFRmlyZTEORmluZEZpcnN0Q2hpbGQFRmlyZTJZW0ZpcmVmbGllc0VmZmVjdHNdIEZpcmUxL0ZpcmUyIHRlbXBsYXRlcyBtaXNzaW5nIChub25lIGJ1bmRsZWQgYW5kIG5vbmUgcGFzc2VkIGluIGNvbmZpZykGYXNzZXJ0FHJlc29sdmVGaXJlVGVtcGxhdGVzBVN0YXIxE3Jlc29sdmVTdGFyVGVtcGxhdGUGUGFyZW50Am9zBWNsb2NrBVVEaW0yA25ldwhQb3NpdGlvbgdDbGVhbnVwBFN0b3AJY3ljbGVUaW1lEWltYWdlVHJhbnNwYXJlbmN5BnpJbmRleAl0ZW1wbGF0ZTEJdGVtcGxhdGUyBUNsb25lBlpJbmRleBFJbWFnZVRyYW5zcGFyZW5jeQdWaXNpYmxlBnBhcmVudANBZGQNUmVuZGVyU3RlcHBlZAdDb25uZWN0CU1vdW50RmlyZQVmcmFtZQRnbG93BWluVXNlD3JlbGVhc2VQYXJ0aWNsZQ9hY3F1aXJlUGFydGljbGUQR2V0TW91c2VMb2NhdGlvbglzdGFydFRpbWUIbGlmZVRpbWUGc3RhcnRYCXdpbmRGcmVxMQl3aW5kUGhhc2UEbWF0aANzaW4Id2luZEFtcDEJd2luZEZyZXEyCHdpbmRBbXAyBnN0YXJ0WQd1cFNwZWVkB3JlcHVsc2UQQWJzb2x1dGVQb3NpdGlvbgxBYnNvbHV0ZVNpemUJTWFnbml0dWRlB1ZlY3RvcjIEemVybwRVbml0BExlcnABWAFZB2Jhc2VSb3QIcm90U3BlZWQIUm90YXRpb24DbWluA21heAxmbGlja2VyUGhhc2UGcmFuZG9tCWZyb21TY2FsZQR0YXNrBHdhaXQIcG9vbFNpemUIc3Bhd25NaW4Lc3Bhd25KaXR0ZXIIdGVtcGxhdGULaW50ZXJhY3RpdmUNcmVwdWxzZVJhZGl1cw9yZXB1bHNlU3RyZW5ndGgLcmVwdWxzZUxlcnAFdGFibGUGY3JlYXRlCEluc3RhbmNlCkltYWdlTGFiZWwYcmJ4YXNzZXRpZDovLzEwMDg3OTYzMzM1BUltYWdlC0FuY2hvclBvaW50FkJhY2tncm91bmRUcmFuc3BhcmVuY3kPQm9yZGVyU2l6ZVBpeGVsCFN0YXJHbG93BXNw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
+
+-- https://lua.expert/
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local Janitor = require(ReplicatedStorage.Modules.Zone.Janitor)
+local t = {}
+
+local function resolveFireTemplates(p1, p2) --[[ resolveFireTemplates | Line: 168 ]]
+	local v1 = if p1 then p1 else script:FindFirstChild("Fire1")
+	local v2 = if p2 then p2 else script:FindFirstChild("Fire2")
+
+	assert(v1 and v2, "[FirefliesEffects] Fire1/Fire2 templates missing (none bundled and none passed in config)")
+
+	return v1, v2
+end
+
+local function resolveStarTemplate(p1) --[[ resolveStarTemplate | Line: 175 ]]
+	return if p1 then p1 else script:FindFirstChild("Star1")
+end
+
+function t.MountFire(p1) --[[ MountFire | Line: 182 | Upvalues: Janitor (copy), RunService (copy) ]]
+	local v1 = Janitor.new()
+	local v2 = p1.cycleTime or 15
+	local v3 = p1.imageTransparency or 0.65
+	local v4 = p1.zIndex or 2
+	local template2 = p1.template2
+	local v5 = p1.template1 or script:FindFirstChild("Fire1")
+	local v6 = if template2 then template2 else script:FindFirstChild("Fire2")
+
+	assert(v5 and v6, "[FirefliesEffects] Fire1/Fire2 templates missing (none bundled and none passed in config)")
+
+	local v7 = v5:Clone()
+
+	v7.ZIndex = v4
+	v7.ImageTransparency = v3
+	v7.Visible = true
+	v7.Parent = p1.parent
+	v1:Add(v7)
+
+	local v8 = v6:Clone()
+
+	v8.ZIndex = v4
+	v8.ImageTransparency = v3
+	v8.Visible = true
+	v8.Parent = p1.parent
+	v1:Add(v8)
+
+	local v9 = os.clock()
+
+	v1:Add(RunService.RenderStepped:Connect(function() --[[ Line: 206 | Upvalues: v7 (copy), v9 (copy), v2 (copy), v8 (copy) ]]
+		if v7.Parent then
+			local v1 = (os.clock() - v9) % v2 / v2
+
+			v7.Position = UDim2.new(0, 0, 1 - v1, 0)
+			v8.Position = UDim2.new(0, 0, 2 - v1, 0)
+		end
+	end))
+
+	return {
+		Stop = function(p1) --[[ Stop | Line: 214 | Upvalues: v1 (copy) ]]
+			v1:Cleanup()
+		end
+	}
+end
+function t.MountFireflies(p1) --[[ MountFireflies | Line: 223 | Upvalues: Janitor (copy), RunService (copy), UserInputService (copy) ]]
+	local v1 = Janitor.new()
+	local parent = p1.parent
+	local v2 = p1.poolSize or 24
+	local v3 = p1.zIndex or 2
+	local v4 = p1.spawnMin or 0.3
+	local v5 = p1.spawnJitter or 0.25
+	local v6 = p1.template or script:FindFirstChild("Star1")
+	local v7 = if p1.interactive == nil then true else p1.interactive
+	local v8 = p1.repulseRadius or 400
+	local v9 = p1.repulseStrength or 50
+	local v10 = p1.repulseLerp or 0.24
+	local v11 = table.create(v2)
+
+	for i = 1, v2 do
+		local v12
+
+		if v6 then
+			v12 = v6:Clone()
+		else
+			local ImageLabel = Instance.new("ImageLabel")
+
+			ImageLabel.Image = "rbxassetid://10087963335"
+			v12 = ImageLabel
+		end
+
+		v12.AnchorPoint = Vector2.new(0.5, 0.5)
+		v12.BackgroundTransparency = 1
+		v12.BorderSizePixel = 0
+		v12.ImageTransparency = 1
+		v12.ZIndex = v3
+		v12.Visible = false
+		v12.Parent = parent
+		v1:Add(v12)
+
+		local StarGlow = v12:FindFirstChild("StarGlow")
+
+		if StarGlow then
+			StarGlow.ImageTransparency = 1
+		end
+
+		v11[i] = {
+			inUse = false,
+			startTime = 0,
+			startX = 0,
+			startY = 0,
+			lifeTime = 0,
+			windPhase = 0,
+			windAmp1 = 0,
+			windAmp2 = 0,
+			windFreq1 = 0,
+			windFreq2 = 0,
+			upSpeed = 0,
+			baseRot = 0,
+			rotSpeed = 0,
+			flickerPhase = 0,
+			frame = v12,
+			glow = StarGlow,
+			repulse = Vector2.zero
+		}
+	end
+
+	local function releaseParticle(p1) --[[ releaseParticle | Line: 268 ]]
+		p1.frame.Visible = false
+		p1.frame.ImageTransparency = 1
+
+		if p1.glow then
+			p1.glow.ImageTransparency = 1
+		end
+
+		p1.inUse = false
+	end
+
+	local function acquireParticle() --[[ acquireParticle | Line: 275 | Upvalues: v11 (copy) ]]
+		for v1, v2 in v11 do
+			if not v2.inUse then
+				v2.inUse = true
+				v2.frame.Visible = true
+
+				return v2
+			end
+		end
+
+		return nil
+	end
+
+	v1:Add(RunService.RenderStepped:Connect(function() --[[ Line: 286 | Upvalues: UserInputService (ref), v11 (copy), v7 (copy), v8 (copy), v9 (copy), v10 (copy) ]]
+		local v1 = os.clock()
+		local v2 = UserInputService:GetMouseLocation()
+
+		for v3, v4 in v11 do
+			if v4.inUse then
+				local frame = v4.frame
+
+				if frame.Parent then
+					local v5 = v1 - v4.startTime
+
+					if v4.lifeTime <= v5 then
+						v4.frame.Visible = false
+						v4.frame.ImageTransparency = 1
+
+						if v4.glow then
+							v4.glow.ImageTransparency = 1
+						end
+
+						v4.inUse = false
+
+						continue
+					end
+
+					local v72 = v4.startX + math.sin(v5 * v4.windFreq1 + v4.windPhase) * v4.windAmp1
+					local v92 = v72 + math.sin(v5 * v4.windFreq2 + v4.windPhase * 2.3) * v4.windAmp2
+					local v102 = v4.startY - v5 * v4.upSpeed
+					local repulse = v4.repulse
+
+					if v7 then
+						local v112 = frame.AbsolutePosition + frame.AbsoluteSize * 0.5 - v2
+						local Magnitude = v112.Magnitude
+						local zero = Vector2.zero
+
+						if Magnitude < v8 then
+							local v12 = (1 - Magnitude / v8) * v9
+
+							if Magnitude > 0.001 then
+								zero = v112.Unit * v12
+							end
+						end
+
+						local v13 = repulse:Lerp(zero, v10)
+
+						v4.repulse = v13
+						repulse = v13
+					end
+
+					frame.Position = UDim2.new(v92, repulse.X, v102, repulse.Y)
+					frame.Rotation = v4.baseRot + v5 * v4.rotSpeed
+
+					local v18 = math.min(math.min(1, v5 / 0.8), (math.min(1, (math.max(0, (v4.lifeTime - v5) / 0.8)))))
+
+					frame.ImageTransparency = 1 - v18 * (1 - (math.sin(v5 * 3 + v4.flickerPhase) * 0.5 + 0.5) * 0.35) * 0.9
+
+					if v4.glow then
+						v4.glow.ImageTransparency = 1 - v18 * (1 - (math.sin(v5 * 1.7 + v4.flickerPhase * 1.3) * 0.5 + 0.5) * 0.4) * 0.7
+					end
+				end
+			end
+		end
+	end))
+
+	local v14 = true
+
+	v1:Add(function() --[[ Line: 335 | Upvalues: v14 (ref) ]]
+		v14 = false
+	end, true)
+	task.spawn(function() --[[ Line: 336 | Upvalues: v14 (ref), parent (copy), v11 (copy), v4 (copy), v5 (copy) ]]
+		while v14 and parent.Parent do
+			local v1
+
+			do
+				local __inline_returned = false
+
+				for v2, v3 in v11 do
+					if not v3.inUse then
+						v3.inUse = true
+						v3.frame.Visible = true
+						v1 = v3
+						__inline_returned = true
+
+						break
+					end
+				end
+
+				if not __inline_returned then
+					v1 = nil
+				end
+			end
+
+			if v1 then
+				local frame = v1.frame
+
+				v1.startX = math.random() * 0.9 + 0.05
+				v1.startY = 1.05
+				v1.startTime = os.clock()
+				v1.lifeTime = math.random() * 3 + 5
+				v1.windPhase = math.random() * 6.283185307179586
+				v1.windAmp1 = 0.04 + math.random() * 0.04
+				v1.windAmp2 = 0.015 + math.random() * 0.02
+				v1.windFreq1 = 0.5 + math.random() * 0.5
+				v1.windFreq2 = 1.3 + math.random() * 0.8
+				v1.upSpeed = 0.08 + math.random() * 0.05
+				v1.baseRot = math.random(0, 360)
+				v1.rotSpeed = (math.random() - 0.5) * 60
+				v1.flickerPhase = math.random() * 6.283185307179586
+				v1.repulse = Vector2.zero
+				frame.Position = UDim2.fromScale(v1.startX, v1.startY)
+				frame.ImageTransparency = 1
+				frame.Rotation = v1.baseRot
+
+				if v1.glow then
+					v1.glow.ImageTransparency = 1
+				end
+			end
+
+			task.wait(v4 + math.random() * v5)
+		end
+	end)
+
+	return {
+		Stop = function(p1) --[[ Stop | Line: 365 | Upvalues: v1 (copy) ]]
+			v1:Cleanup()
+		end
+	}
+end
+
+local function randRange(p1, p2) --[[ randRange | Line: 374 ]]
+	return p1 + math.random() * (p2 - p1)
+end
+
+local function makeGalaxyItem(p1, p2, p3) --[[ makeGalaxyItem | Line: 378 ]]
+	local v1 = Vector2.new(math.random(-100, 100), math.random(-100, 100))
+
+	if v1.Magnitude < 1 then
+		v1 = Vector2.new(0, 1)
+	end
+
+	local t = {
+		rot = 0,
+		image = p1,
+		basePos = p1.Position,
+		baseRot = p1.Rotation,
+		phase = 0 + math.random() * 6.283185307179586
+	}
+	local speedMin = p3.speedMin
+
+	t.speed = speedMin + math.random() * (p3.speedMax - speedMin)
+
+	local ampXMin = p3.ampXMin
+
+	t.ampX = ampXMin + math.random() * (p3.ampXMax - ampXMin)
+
+	local ampYMin = p3.ampYMin
+
+	t.ampY = ampYMin + math.random() * (p3.ampYMax - ampYMin)
+	t.driftDir = v1.Unit
+
+	local driftSpeedMin = p3.driftSpeedMin
+
+	t.driftSpeed = driftSpeedMin + math.random() * (p3.driftSpeedMax - driftSpeedMin)
+
+	local driftAmpMin = p3.driftAmpMin
+
+	t.driftAmp = driftAmpMin + math.random() * (p3.driftAmpMax - driftAmpMin)
+	t.repulse = Vector2.zero
+
+	local v3
+
+	if p2 then
+		local rotMin = p3.rotMin
+
+		v3 = rotMin + math.random() * (p3.rotMax - rotMin)
+	else
+		v3 = 0
+	end
+
+	t.rotSpeed = v3
+
+	return t
+end
+
+function t.MountGalaxy(p1) --[[ MountGalaxy | Line: 401 | Upvalues: Janitor (copy), makeGalaxyItem (copy), RunService (copy), UserInputService (copy) ]]
+	local v1 = Janitor.new()
+	local parent = p1.parent
+	local v2 = p1.template or script:FindFirstChild("Star1")
+	local v3 = p1.count or 14
+	local v4 = p1.zIndex or 2
+	local v5 = if p1.canRotate == nil then true else p1.canRotate
+	local t = {
+		repulseRadius = p1.repulseRadius or 200,
+		repulseStrength = p1.repulseStrength or 10,
+		repulseLerp = p1.repulseLerp or 0.24,
+		speedMin = p1.speedMin or 1,
+		speedMax = p1.speedMax or 2,
+		ampXMin = p1.ampXMin or 6,
+		ampXMax = p1.ampXMax or 16,
+		ampYMin = p1.ampYMin or 8,
+		ampYMax = p1.ampYMax or 18,
+		driftSpeedMin = p1.driftSpeedMin or 1,
+		driftSpeedMax = p1.driftSpeedMax or 1.5,
+		driftAmpMin = p1.driftAmpMin or 14,
+		driftAmpMax = p1.driftAmpMax or 26,
+		rotMin = p1.rotMin or 10,
+		rotMax = p1.rotMax or 60
+	}
+	local v6 = table.create(v3)
+
+	for i = 1, v3 do
+		local v7
+
+		if v2 then
+			v7 = v2:Clone()
+		else
+			local ImageLabel = Instance.new("ImageLabel")
+
+			ImageLabel.Image = "rbxassetid://10087963335"
+			v7 = ImageLabel
+		end
+
+		v7.AnchorPoint = Vector2.new(0.5, 0.5)
+		v7.BackgroundTransparency = 1
+		v7.BorderSizePixel = 0
+		v7.ZIndex = v4
+		v7.Position = UDim2.fromScale(0.05 + math.random() * 0.8999999999999999, 0.05 + math.random() * 0.8999999999999999)
+		v7.Visible = true
+		v7.Parent = parent
+		v1:Add(v7)
+		v6[i] = makeGalaxyItem(v7, v5, t)
+	end
+
+	local v9 = os.clock()
+
+	v1:Add(RunService.RenderStepped:Connect(function(p1) --[[ Line: 449 | Upvalues: v9 (copy), UserInputService (ref), v6 (copy), t (copy) ]]
+		local v1 = os.clock() - v9
+		local v2 = UserInputService:GetMouseLocation()
+
+		for v3, v4 in v6 do
+			local image = v4.image
+
+			if image.Parent then
+				local v62 = math.sin(v1 * v4.speed + v4.phase) * v4.ampX
+				local v8 = math.cos(v1 * v4.speed + v4.phase) * v4.ampY
+				local v10 = v4.driftDir * (math.sin(v1 * v4.driftSpeed + v4.phase) * v4.driftAmp)
+				local v11 = image.AbsolutePosition + image.AbsoluteSize * 0.5 - v2
+				local Magnitude = v11.Magnitude
+				local zero = Vector2.zero
+
+				if Magnitude < t.repulseRadius then
+					local v12 = (1 - Magnitude / t.repulseRadius) * t.repulseStrength
+
+					if Magnitude > 0.001 then
+						zero = v11.Unit * v12
+					end
+				end
+
+				v4.repulse = v4.repulse:Lerp(zero, t.repulseLerp)
+
+				local basePos = v4.basePos
+
+				image.Position = UDim2.new(basePos.X.Scale, basePos.X.Offset + v62 + v10.X + v4.repulse.X, basePos.Y.Scale, basePos.Y.Offset + v8 + v10.Y + v4.repulse.Y)
+
+				if v4.rotSpeed ~= 0 then
+					v4.rot = (v4.rot + v4.rotSpeed * p1) % 360
+					image.Rotation = v4.baseRot + v4.rot
+				end
+			end
+		end
+	end))
+
+	return {
+		Stop = function(p1) --[[ Stop | Line: 488 | Upvalues: v1 (copy) ]]
+			v1:Cleanup()
+		end
+	}
+end
+function t.Mount(p1) --[[ Mount | Line: 497 | Upvalues: Janitor (copy), t (copy) ]]
+	local v1 = Janitor.new()
+
+	v1:Add(t.MountFire({
+		parent = p1.parent,
+		template1 = p1.fireTemplate1,
+		template2 = p1.fireTemplate2,
+		cycleTime = p1.fireCycleTime,
+		imageTransparency = p1.fireTransparency,
+		zIndex = p1.fireZIndex
+	}), "Stop")
+	v1:Add(t.MountFireflies({
+		parent = p1.parent,
+		template = p1.fireflyTemplate,
+		poolSize = p1.poolSize,
+		zIndex = p1.fireflyZIndex,
+		spawnMin = p1.spawnMin,
+		spawnJitter = p1.spawnJitter,
+		interactive = p1.interactive,
+		repulseRadius = p1.repulseRadius,
+		repulseStrength = p1.repulseStrength,
+		repulseLerp = p1.repulseLerp
+	}), "Stop")
+
+	return {
+		Stop = function(p1) --[[ Stop | Line: 523 | Upvalues: v1 (copy) ]]
+			v1:Cleanup()
+		end
+	}
+end
+
+return t

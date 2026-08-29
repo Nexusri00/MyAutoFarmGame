@@ -1,0 +1,174 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQNLBkNvbG9yMwNuZXcBUgFHAUIJbGVycENvbG9yCV9ncmFkaWVudAVfZnJvbQNfdG8JX2R1cmF0aW9uBl9zdHlsZQpfZGlyZWN0aW9uCV9sb29wTW9kZQZfZGVsYXkKX3JlcGVhdE1heAhfcmVwZWF0cwhfZWxhcHNlZAhfcGxheWluZwdfcGF1c2VkCV9yZXZlcnNlZApfZGVsYXlMZWZ0BV9kZWFkBV9jb25uCUNvbXBsZXRlZAdTdG9wcGVkC0Vhc2luZ1N0eWxlBEVudW0GTGluZWFyD0Vhc2luZ0RpcmVjdGlvbgNPdXQETm9uZQhMb29wTW9kZQlEZWxheVRpbWULUmVwZWF0Q291bnQMc2V0bWV0YXRhYmxlBG1hdGgDbWluBWNsYW1wDUNvbG9yU2VxdWVuY2UFQ29sb3IETG9vcAdfZmluaXNoBkJvdW5jZQVfdGljawpEaXNjb25uZWN0BEZpcmUJSGVhcnRiZWF0B0Nvbm5lY3QEUGxheQRTdG9wBVBhdXNlBlJlc3VtZQdSZXZlcnNlCUlzUGxheWluZwpJc0NvbXBsZXRlB0Rlc3Ryb3kKVUlHcmFkaWVudANJc0EsW0dyYWRpZW50Q29sb3JUd2Vlbl0gTXVzdCBwYXNzIGEgVUlHcmFkaWVudC4GYXNzZXJ0BnR5cGVvZixbR3JhZGllbnRDb2xvclR3ZWVuXSB0b0NvbG9yIG11c3QgYmUgQ29sb3IzLgR0eXBlBm51bWJlcipbR3JhZGllbnRDb2xvclR3ZWVuXSBkdXJhdGlvbiBtdXN0IGJlID4gMC4JS2V5cG9pbnRzBVZhbHVlBGdhbWUKUnVuU2VydmljZQpHZXRTZXJ2aWNlB3JlcXVpcmUGc2NyaXB0BlBhcmVudAZTaWduYWwHX19pbmRleAEBABAMAwAAAAgFAAAFA0BAAh+kAwIAAAQAgE0FAHMDAAAATQgBcwMAAABNCQBzAwAAACYHCAkJBgcCQwQFBk0GAGYEAAAATQkBZgQAAABNCgBmBAAAACYICQoJBwgCQwUGB00HAGMFAAAATQoBYwUAAABNCwBjBQAAACYJCgsJCAkCQwYHCJ8DBACCAwAABgMBAwIEAAQAgAMDAwQDBQANBgEYAAABAAAAAAAAAAABAAAAAAAAAAABAAAAAAAAAAD9AA4AAAAACgUCAAAKBwAABQUHQEACDz5SBQQAKwUCAP8FAAAAAAAA4gcWADAAB98AAAAAMAEHugEAAAAwAgeSAgAAADADB2oDAAAATQgFaRcAAAArCAIApAgaABlcgMEwCAd9BAAAAE0IBS8bAAAAKwgCAKQIHQAcbIDBMAgHpwUAAABNCQXoHwAAAJAICR4wCAedBgAAAE0JBVsgAAAAkAgJCjAIBy4HAAAATQkFUCEAAACQCAkKMAgH9QgAAABNCQVbIAAAAJAICQowCAepEAAAAPsIAACfCAECMAgHGBQAAAD7CAAAnwgBAjAIB2UVAAAA+wgBAJ49BwMIAAAApAYjAAAAIEKfBgMCggYCACQDBwMIAwkDCgMLAwwDDQMOAw8DEAIAAAAAAAAAAAMRAxIBAAMTAxQDFQMWAxcAAxgDGQgTAP////8B/////wL/////A/////8E/////wX/////Bv////8H/////wj/////CQoAAAALCgAAAAwNAAAADg0AAAAPDQAAABD/////EQ0AAAASEwAAABT/////Ff////8DGgMbAxwEGVyAwQMdAx4EHGyAwQMfAyADIQMiAyMEAAAgQgAVAgEYAAAAAAIBAAEAAQABAAEAAAAAAAABAAAAAAAAAQAAAAABAAAAAAEAAAAABgAAAAADAAAAAQAAAAEAAOwAABYWAAAAAAsCAQAABwQAAAUCBAKKAU0CAE4AAAAAKwIDAE0CAKYBAAAADgIBAIIAAQBNAgCpAgAAAIwDAABgAwcAAgAAAE0CAKkCAAAAJgICATACAKkCAAAAggABAE0EAGMDAAAAQwMEAU0EAGoEAAAAnhMDAwQAAACkAgcAABhQgJ8CAwIwAgBjAwAAAE0EAGMDAAAATQUAagQAAADsAwQFjAQAAIwFAQBMLgACpAIJAAAgUICfAgQCTQQAsgoAAAAOBAMATQMAkgsAAAArAwIATQMAugwAAABNBQCyCgAAAA4FAwBNBAC6DAAAACsEAgBNBACSCwAAAE0FAN8NAAAApAYQAAA84ID7BwAAUggDAFIJBABSCgIAnwcEAJ8GAAIwBgWkEQAAAE0FAGMDAAAATQYAagQAAAB9Bj8ABQAAAE0FAJ0SAAAA8AUYABMAAICMBQAAMAUAYwMAAABNBQD2FAAAAJUFBRUwBQD2FAAAAE0FAPUWAAAAjAYAAGAGLgAFAAAATQUA9hQAAABNBgD1FgAAAH0GKAAFAAAAvAUAcRcAAACfBQIBggABAE0FAJ0SAAAA8AUdABgAAIBNBgCyCgAAAFYFBgAwBQCyCgAAAIwFAAAwBQBjAwAAAE0FAPYUAAAAlQUFFTAFAPYUAAAATQUA9RYAAACMBgAAYAYOAAUAAABNBQD2FAAAAE0GAPUWAAAAfQYIAAUAAAC8BQBxFwAAAJ8FAgGCAAEAvAUAcRcAAACfBQIBggABABkDEwMWAxUDEQMKAyQDJQQAGFCAAyYEACBQgAMUAwkDCAMHAycDAgQAPOCAAygDDQMpAxACAAAAAAAA8D8DDwMqAysAMSwBGAAAAAAAAAACAAAAAAEAAAAAAQMAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAgAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAEAAAABAAABAAAAAAEAAAAAAAAAAAAAAQAAAAIAAAABAAAAAAEAAAEAAAAAAQAAAAAAAAAAAAABAAAAAwAAAzIAAAAAAwEAAAAAF6kBAQAwAQCmAAAAAKkBAAAwAQAlAQAAAE0BANkCAAAADgEIAE0BANkCAAAAvAEBGgMAAACfAQIBxgEAADABANkCAAAATQEAGAQAAAC8AQHdBQAAAJ8BAgGCAAEABgMWAxIDFwMtAxgDLgBUKgEYAAAAAQAAAQAAAQAAAAABAAACAAAAAAFVAAAAAAQBAQAAAAb7AQAAUgMAALwBASUAAAAAnwEDAYIAAQABAywAYwABGAAAAAAAAWQAAAAABAEBAAAAGE0BAKYAAAAAKwEDAE0BACUBAAAADgEBAIIAAgCpAQEAMAEAJQEAAACpAQAAMAEATgIAAAD7AQAATQEB/QMAAADZAwAAEgAAALwBAccEAAAAnwEDAjABANkFAAAAggACAAYDFgMSAxMDLwMwAxcBBF4xARgAAAAAAAAAAgAAAQAAAQAAAAAAAAAAAARfAAAAAAMBAAAAABtNAQCmAAAAAA4BAQCCAAIAqQEBADABAKYAAAAAqQEAADABACUBAAAATQEA2QIAAAAOAQgATQEA2QIAAAC8AQEaAwAAAJ8BAgHGAQAAMAEA2QIAAABNAQBlBAAAALwBAd0FAAAAnwECAYIAAgAGAxYDEgMXAy0DGQMuAGoyARgAAAAAAgAAAQAAAQAAAQAAAAABAAACAAAAAAJrAAAAAAIBAAAAAAtNAQCmAAAAACsBAwBNAQBOAQAAAA4BAQCCAAIAqQEBADABAE4BAAAAggACAAIDFgMTAHgzARgAAAAAAAAAAQAAAXkAAAAAAgEAAAAAC00BAKYAAAAAKwEDAE0BAE4BAAAAKwEBAIIAAgCpAQAAMAEATgEAAACCAAIAAgMWAxMAfjQBGAAAAAAAAAABAAABfwAAAAAEAQAAAAARTQEApgAAAAAOAQEAggACAE0CALIBAAAAVgECADABALIBAAAATQIAagIAAABNAwBjAwAAACYBAgMwAQBjAwAAAIIAAgAEAxYDFAMKAxEAhAE1ARgAAAAAAQAAAAABAAAAAAAAAYUAAAAAAwEAAAAAC00BACUAAAAADgEHAE0CAE4BAAAAVgECAA4BAwBNAgCmAgAAAFYBAgCCAQIAAwMSAxMDFgCLATYBGAAAAAAAAAAAAAAAjAAAAAACAQAAAAADTQEApgAAAACCAQIAAQMWAI8BNwEYAAAAkAAAAAADAQAAAAAOvAEA+gAAAACfAQIBTQEAGAEAAAC8AQFQAgAAAJ8BAgFNAQBlAwAAALwBAVACAAAAnwECAYIAAQAEAzIDGAM4AxkAkwE4ARgAAAABAAAAAAEAAAAAAZQAAAAACwQBAAAJBgAABQQHQAIPP1IFAAAOBQQAbwcAALwFAP4BAAAAnwUDAoEBBQQCAAAAbwYCAKQEBAAAADBAnwQDAbssAQNSBwEApAYGAAAAUECfBgIC8AYCAAcAAACpBQABqQUBAIEBBQQIAAAAbwYIAKQEBAAAADBAnwQDAakFAAC7KAIDUgcCAKQGCgAAAJBAnwYCAvAGBgALAACAjAYAALcGAgACAAAAqQUAAakFAQCBAQUEDAAAAG8GDACkBAQAAAAwQJ8EAwFNBQCkDQAAAE0FBcIOAAAAEwQFAE0EBOwPAAAA+wUAAE0FBe8QAAAAUgYAAFIHBABSCAEAUgkCAFIKAwCfBQYAggUAABEDOQM6AzsDPAQAADBAAz0EAABQQAMBAz4DPwQAAJBAA0ADQQMoA0IDQwMCAJ0BAgEYAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAABAAAAAAAAAAAAngAAAAAJBAEAAAkGAAAFBAdAAg8M+wQAAE0EBO8AAAAAUgUAAFIGAQBSBwIAUggDAJ8EBQK8BATuAQAAAJ8EAgCCBAAAAgMCAzEApgExARgAAAAAAAAAAAAAAACnAAAAAAYAAAECAEejAAAApAABAAAAAEBvAgIAvAAAFgMAAACfAAMCpAEFAAAAQECkAgcAAABgQE0CAiQIAAAATQICHwkAAACfAQIC/wIFAAAAAAAwAgJuCgAAAMADCwDABAwAEgABABIAAgAwBALvDQAAAMAEDgASAAMAMAQCJQ8AAADABBAAMAQCcREAAADABBIAEgAAADAEAu4TAAAAwAQUADAEAvoVAAAAwAQWADAEAl4XAAAAwAQYADAEAmEZAAAAwAQaADAEArsbAAAAwAQcADAEApwdAAAAwAQeADAEAhsfAAAAwAQgADAEAlAhAAAA/wQDAAAAAAAwBARuCgAAAMAFIgASAAIAMAUE7w0AAADABSMAEgAEADAFBO4TAAAAggQCACQDRAQAAABAA0UDRgNHBAAAQEADSAQAAGBAA0kDSgNLBgAGAQMCBgIDLAYDAyoGBQMxBgYDMgYHAzMGCAM0BgkDNQYKAzYGCwM3BgwDOAYNBg4OAAECAwUGBwgJCgsMDQ4BAAEYAAMAAAAAAAMAAAAAAAAAAAMAAQACCAAAAAAcAAAAIwAACgAAAAwAAA4AAAYAAAYAAAcAAAQAAAQAAAcAAQACAAAACQAAAAQBAAAAAA9PTqnkFZzbdclm3Dnc4OQhP1a+kH2Kw+U=
+
+-- https://lua.expert/
+local RunService = game:GetService("RunService")
+local Signal = require(script.Parent.Signal)
+local t = {}
+
+t.__index = t
+
+local function lerpColor(p1, p2, p3) --[[ lerpColor | Line: 13 ]]
+	return Color3.new(p1.R + (p2.R - p1.R) * p3, p1.G + (p2.G - p1.G) * p3, p1.B + (p2.B - p1.B) * p3)
+end
+
+function t.new(p1, p2, p3, p4, p5) --[[ new | Line: 21 | Upvalues: Signal (copy), t (copy) ]]
+	local v1 = if p5 then p5 else {}
+	local t2 = {
+		_repeats = 0,
+		_elapsed = 0,
+		_playing = false,
+		_paused = false,
+		_reversed = false,
+		_dead = false,
+		_conn = nil,
+		_gradient = p1,
+		_from = p2,
+		_to = p3,
+		_duration = p4
+	}
+
+	t2._style = v1.EasingStyle or Enum.EasingStyle.Linear
+	t2._direction = v1.EasingDirection or Enum.EasingDirection.Out
+	t2._loopMode = v1.LoopMode or "None"
+	t2._delay = v1.DelayTime or 0
+	t2._repeatMax = v1.RepeatCount or 0
+	t2._delayLeft = v1.DelayTime or 0
+	t2.Completed = Signal()
+	t2.Stopped = Signal()
+
+	return setmetatable(t2, t)
+end
+function t._tick(p1, p2) --[[ _tick | Line: 49 | Upvalues: lerpColor (copy) ]]
+	if p1._paused or p1._dead then
+		return
+	end
+
+	if p1._delayLeft > 0 then
+		p1._delayLeft = p1._delayLeft - p2
+
+		return
+	end
+
+	p1._elapsed = math.min(p1._elapsed + p2, p1._duration)
+	p1._gradient.Color = ColorSequence.new(lerpColor(p1._reversed and p1._to or p1._from, p1._reversed and p1._from or p1._to, (math.clamp(p1._elapsed / p1._duration, 0, 1))))
+
+	if not (p1._elapsed >= p1._duration) then
+		return
+	end
+
+	if p1._loopMode == "Loop" then
+		p1._elapsed = 0
+		p1._repeats = p1._repeats + 1
+
+		if p1._repeatMax > 0 and p1._repeats >= p1._repeatMax then
+			p1:_finish()
+		end
+	elseif p1._loopMode == "Bounce" then
+		p1._reversed = not p1._reversed
+		p1._elapsed = 0
+		p1._repeats = p1._repeats + 1
+
+		if p1._repeatMax > 0 and p1._repeats >= p1._repeatMax then
+			p1:_finish()
+		end
+	else
+		p1:_finish()
+	end
+end
+function t._finish(p1) --[[ _finish | Line: 84 ]]
+	p1._dead = true
+	p1._playing = false
+
+	if p1._conn then
+		p1._conn:Disconnect()
+		p1._conn = nil
+	end
+
+	p1.Completed:Fire()
+end
+function t.Play(p1) --[[ Play | Line: 94 | Upvalues: RunService (copy) ]]
+	if not (p1._dead or p1._playing) then
+		p1._playing = true
+		p1._paused = false
+		p1._conn = RunService.Heartbeat:Connect(function(p12) --[[ Line: 99 | Upvalues: p1 (copy) ]]
+			p1:_tick(p12)
+		end)
+
+		return p1
+	end
+
+	return p1
+end
+function t.Stop(p1) --[[ Stop | Line: 106 ]]
+	if p1._dead then
+		return p1
+	end
+
+	p1._dead = true
+	p1._playing = false
+
+	if p1._conn then
+		p1._conn:Disconnect()
+		p1._conn = nil
+	end
+
+	p1.Stopped:Fire()
+
+	return p1
+end
+function t.Pause(p1) --[[ Pause | Line: 120 ]]
+	if not (p1._dead or p1._paused) then
+		p1._paused = true
+
+		return p1
+	end
+
+	return p1
+end
+function t.Resume(p1) --[[ Resume | Line: 126 ]]
+	if not p1._dead and p1._paused then
+		p1._paused = false
+
+		return p1
+	end
+
+	return p1
+end
+function t.Reverse(p1) --[[ Reverse | Line: 132 ]]
+	if not p1._dead then
+		p1._reversed = not p1._reversed
+		p1._elapsed = p1._duration - p1._elapsed
+	end
+
+	return p1
+end
+function t.IsPlaying(p1) --[[ IsPlaying | Line: 139 ]]
+	return p1._playing and (not p1._paused and not p1._dead)
+end
+function t.IsComplete(p1) --[[ IsComplete | Line: 143 ]]
+	return p1._dead
+end
+function t.Destroy(p1) --[[ Destroy | Line: 147 ]]
+	p1:Stop()
+	p1.Completed:Destroy()
+	p1.Stopped:Destroy()
+end
+
+local t2 = {}
+
+t2.__index = t2
+function t2.new(p1, p2, p3, p4) --[[ new | Line: 157 | Upvalues: t (copy) ]]
+	assert(if p1 then p1:IsA("UIGradient") else p1, "[GradientColorTween] Must pass a UIGradient.")
+	assert(if typeof(p2) == "Color3" then true else false, "[GradientColorTween] toColor must be Color3.")
+	assert(if type(p3) == "number" then if p3 > 0 then true else false else false, "[GradientColorTween] duration must be > 0.")
+
+	return t.new(p1, p1.Color.Keypoints[1].Value, p2, p3, p4)
+end
+function t2.Play(p1, p2, p3, p4) --[[ Play | Line: 166 | Upvalues: t2 (copy) ]]
+	return t2.new(p1, p2, p3, p4):Play()
+end
+
+return t2

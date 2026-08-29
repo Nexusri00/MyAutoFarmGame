@@ -1,0 +1,190 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQNUCFR3ZWVuRk9WBEVudW0LRWFzaW5nU3R5bGUEU2luZQ9FYXNpbmdEaXJlY3Rpb24DT3V0BlBhcmVudAVWYWx1ZQdQaXZvdFRvCkRpc2Nvbm5lY3QFcGFpcnMOR2V0RGVzY2VuZGFudHMPUGFydGljbGVFbWl0dGVyA0lzQQRCZWFtBVRyYWlsB0VuYWJsZWQJVHdlZW5JbmZvA25ldwRRdWFkBmlwYWlycwZXaWR0aDAGV2lkdGgxBkNyZWF0ZQRQbGF5BVNvdW5kBFN0b3AEdGFzawVkZWxheQdEZXN0cm95CEh1bWFub2lkDkZpbmRGaXJzdENoaWxkEEh1bWFub2lkUm9vdFBhcnQWR2V0UGxheWVyRnJvbUNoYXJhY3RlcgtMb2NhbFBsYXllcg9HZXRBYmlsaXR5U2NhbGUSZ2V0U291bmRGcm9tQXNzZXRzEmdldFNvdW5kRnJvbUdsb2JhbAVUb3JzbwpVcHBlclRvcnNvCEJhc2VQYXJ0BkNoYXJnZQVRdWFydAJfRwdFZmZlY3RzDFdhaXRGb3JDaGlsZAVDbG9uZQZDRnJhbWUHU2NhbGVUbwVFeHRyYQdBZGRJdGVtDkVtaXRfV2l0aFNjYWxlBUxpZ2h0BVNsYXNoC0V4cG9uZW50aWFsBUhlYXZ5C2ltcGFjdFB1bmNoD1NsYXNoUHJvamVjdGlsZQZBbmdsZXMFTW9kZWwIU2V0dGluZ3MDVkZYCEluc3RhbmNlC0NGcmFtZVZhbHVlGEdldFByb3BlcnR5Q2hhbmdlZFNpZ25hbAdDb25uZWN0BkxpbmVhcglDb21wbGV0ZWQKQW5pbWF0aW9ucw1Mb2FkQW5pbWF0aW9uBGdhbWUJV29ya3NwYWNlCkdldFNlcnZpY2UGRGVicmlzB1BsYXllcnMMVHdlZW5TZXJ2aWNlB3JlcXVpcmUGc2NyaXB0BkNvbW1vbg1WaXN1YWxQYWNrYWdlB1NmeFV0aWwJU2hha2VHYXRlCVRPT0xfVFlQRQlUT09MX05BTUUACAYAAgAAAAz7AAAATQAAMAAAAAD7AQEAjAJQAG8DAQCkBAUABAwgwKQFCAAHGCDAnwAGAYIAAQAJAwECzczMzMzM7D8DAgMDAwQEBAwgwAMFAwYEBxggwAA6AAEYAAAAAAAAAAAAAAABOwAAAAADAAMAAAAX+wAA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
+
+-- https://lua.expert/
+local Workspace = game:GetService("Workspace")
+local Debris = game:GetService("Debris")
+local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+local Common = require(script.Parent.Common)
+local VisualPackage = Common.VisualPackage
+local SfxUtil = Common.SfxUtil
+local ShakeGate = Common.ShakeGate
+local TOOL_TYPE = Common.TOOL_TYPE
+local TOOL_NAME = Common.TOOL_NAME
+
+return function(p1, p2, p3, ...) --[[ Line: 15 | Upvalues: Players (copy), VisualPackage (copy), Common (copy), TOOL_TYPE (copy), TOOL_NAME (copy), SfxUtil (copy), Workspace (copy), Debris (copy), ShakeGate (copy), TweenService (copy) ]]
+	local Humanoid = p1:FindFirstChild("Humanoid")
+	local HumanoidRootPart = p1:FindFirstChild("HumanoidRootPart")
+	local t = { ... }
+
+	if Humanoid == nil or HumanoidRootPart == nil then
+		return
+	end
+
+	local v1 = if Players:GetPlayerFromCharacter(p1) == Players.LocalPlayer then true else false
+	local _, v2 = VisualPackage.GetAbilityScale(p1)
+
+	if p3 == nil then
+		local v3 = Common.getSoundFromAssets(TOOL_TYPE, TOOL_NAME, p2) or Common.getSoundFromGlobal(TOOL_TYPE, TOOL_NAME, p2)
+		local v4 = p1:FindFirstChild("Torso") or p1:FindFirstChild("UpperTorso")
+		local v5 = if v4 and (v4:IsA("BasePart") and v4) then v4 else HumanoidRootPart
+
+		if v3 and (v5 and v5.Parent) then
+			SfxUtil.Play(v5, v3, TOOL_NAME)
+		end
+	end
+
+	if p3 == "Charge" then
+		if v1 then
+			Common.TweenFOV(p1, 58, 0.12, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
+		end
+
+		local v6 = _G.Effects:WaitForChild(TOOL_TYPE):WaitForChild(TOOL_NAME):WaitForChild(p2):WaitForChild("Charge"):Clone()
+
+		v6:PivotTo(HumanoidRootPart.CFrame)
+		VisualPackage.ScaleTo(v6, v2)
+		v6.Parent = Workspace.Extra:WaitForChild("Effects")
+		Debris:AddItem(v6, 2)
+		VisualPackage.Emit_WithScale(v6)
+		ShakeGate.Light(p1, HumanoidRootPart, 120)
+	elseif p3 == "Slash" then
+		if v1 then
+			Common.TweenFOV(p1, 105, 0.08, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out)
+			task.delay(0.1, function() --[[ Line: 58 | Upvalues: Common (ref), p1 (copy) ]]
+				Common.TweenFOV(p1, 80, 0.9, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
+			end)
+		end
+
+		ShakeGate.Heavy(p1, HumanoidRootPart, 160)
+		Common.impactPunch(v1)
+
+		local v10 = _G.Effects:WaitForChild(TOOL_TYPE):WaitForChild(TOOL_NAME):WaitForChild(p2):WaitForChild("Slash"):Clone()
+
+		v10:PivotTo(HumanoidRootPart.CFrame)
+		VisualPackage.ScaleTo(v10, v2)
+		v10.Parent = Workspace.Extra:WaitForChild("Effects")
+		Debris:AddItem(v10, 2)
+		VisualPackage.Emit_WithScale(v10)
+
+		local v11 = _G.Effects:WaitForChild(TOOL_TYPE):WaitForChild(TOOL_NAME):WaitForChild(p2):WaitForChild("SlashProjectile"):Clone()
+		local v12 = CFrame.new(t[1], t[2]) * CFrame.new(0, 0, -5 * v2) * CFrame.Angles(0, 0, 1.5707963267948966)
+		local v13 = v12 * CFrame.new(0, 0, -(t[3] or 80))
+
+		if v11:IsA("Model") then
+			v11:PivotTo(v12)
+		elseif v11:IsA("BasePart") then
+			v11.CFrame = v12
+		end
+
+		VisualPackage.ScaleTo(v11, v2)
+		v11.Parent = Workspace.Extra:WaitForChild("Effects")
+		Debris:AddItem(v11, 3)
+
+		for k, v in pairs(v11:GetDescendants()) do
+			if (v:IsA("ParticleEmitter") or (v:IsA("Beam") or v:IsA("Trail"))) and (not _G.Settings or _G.Settings.VFX ~= false) then
+				v.Enabled = true
+			end
+		end
+
+		if v11:IsA("Model") then
+			local CFrameValue = Instance.new("CFrameValue")
+
+			CFrameValue.Value = v12
+
+			local v14 = nil
+
+			v14 = CFrameValue:GetPropertyChangedSignal("Value"):Connect(function() --[[ Line: 103 | Upvalues: v11 (copy), CFrameValue (copy), v14 (ref) ]]
+				if v11 and v11.Parent then
+					v11:PivotTo(CFrameValue.Value)
+
+					return
+				end
+
+				if not v14 then
+					return
+				end
+
+				v14:Disconnect()
+				v14 = nil
+			end)
+
+			local v15 = TweenService:Create(CFrameValue, TweenInfo.new(0.65, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {
+				Value = v13
+			})
+
+			v15:Play()
+			v15.Completed:Connect(function() --[[ Line: 122 | Upvalues: v14 (ref), v11 (copy), TweenService (ref), CFrameValue (copy) ]]
+				if v14 then
+					v14:Disconnect()
+					v14 = nil
+				end
+
+				local v1 = TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+
+				for i, v in ipairs(v11:GetDescendants()) do
+					if v:IsA("Beam") then
+						TweenService:Create(v, v1, {
+							Width0 = 0,
+							Width1 = 0
+						}):Play()
+					end
+				end
+
+				for i, v in ipairs(v11:GetDescendants()) do
+					if v:IsA("Sound") then
+						v:Stop()
+					end
+				end
+
+				task.delay(0.35, function() --[[ Line: 139 | Upvalues: v11 (ref) ]]
+					for k, v in pairs(v11:GetDescendants()) do
+						if v:IsA("ParticleEmitter") or (v:IsA("Beam") or v:IsA("Trail")) then
+							v.Enabled = false
+						end
+					end
+				end)
+				CFrameValue:Destroy()
+			end)
+
+			return
+		end
+
+		if v11:IsA("BasePart") then
+			local v16 = TweenService:Create(v11, TweenInfo.new(0.65, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {
+				CFrame = v13
+			})
+
+			v16:Play()
+			v16.Completed:Connect(function() --[[ Line: 159 | Upvalues: v11 (copy), TweenService (ref) ]]
+				local v1 = TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+
+				for i, v in ipairs(v11:GetDescendants()) do
+					if v:IsA("Beam") then
+						TweenService:Create(v, v1, {
+							Width0 = 0,
+							Width1 = 0
+						}):Play()
+					end
+				end
+
+				task.delay(0.35, function() --[[ Line: 166 | Upvalues: v11 (ref) ]]
+					for k, v in pairs(v11:GetDescendants()) do
+						if v:IsA("ParticleEmitter") or (v:IsA("Beam") or v:IsA("Trail")) then
+							v.Enabled = false
+						end
+					end
+				end)
+			end)
+		end
+	else
+		if v1 then
+			Common.TweenFOV(p1, 55, 0.2, Enum.EasingStyle.Quart, Enum.EasingDirection.Out)
+		end
+
+		Humanoid:LoadAnimation(_G.Animations:WaitForChild(TOOL_TYPE):WaitForChild(TOOL_NAME):WaitForChild(p2)):Play()
+		ShakeGate.Light(p1, HumanoidRootPart, 120)
+	end
+end

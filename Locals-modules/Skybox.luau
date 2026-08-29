@@ -1,0 +1,91 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- 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
+
+-- https://lua.expert/
+local t = {}
+local t2 = {
+	ft = "SkyboxFt",
+	bk = "SkyboxBk",
+	lf = "SkyboxLf",
+	rt = "SkyboxRt",
+	up = "SkyboxUp",
+	dn = "SkyboxDn"
+}
+
+function t.fromSky(p1, p2, p3) --[[ fromSky | Line: 12 | Upvalues: t2 (copy) ]]
+	local Template = script:FindFirstChild("Template")
+
+	if not Template then
+		return nil
+	end
+
+	local SkyboxPart = Template:Clone()
+
+	SkyboxPart.Name = "SkyboxPart"
+
+	for i, v in ipairs(SkyboxPart:GetChildren()) do
+		local v1 = t2[v.Name]
+
+		if v1 and v:IsA("MeshPart") then
+			v.TextureID = p1[v1]
+		end
+	end
+
+	SkyboxPart:PivotTo(CFrame.new(p2.Position))
+	SkyboxPart:ScaleTo(p3 or 1)
+
+	local v2 = 2 * (p3 or 1)
+
+	for i, v in ipairs(SkyboxPart:GetChildren()) do
+		if v:IsA("MeshPart") then
+			local Size = v.Size
+
+			if Size.X <= Size.Y and Size.X <= Size.Z then
+				v.Size = Vector3.new(Size.X, Size.Y + v2, Size.Z + v2)
+
+				continue
+			end
+
+			if Size.Y <= Size.X and Size.Y <= Size.Z then
+				v.Size = Vector3.new(Size.X + v2, Size.Y, Size.Z + v2)
+
+				continue
+			end
+
+			v.Size = Vector3.new(Size.X + v2, Size.Y + v2, Size.Z)
+		end
+	end
+
+	return SkyboxPart
+end
+function t.fromPrefab(p1, p2, p3) --[[ fromPrefab | Line: 58 ]]
+	local v1 = p1:Clone()
+	local v2 = 800 * (p3 or 1)
+
+	v1:PivotTo(CFrame.new(p2.Position))
+
+	if v1:IsA("Model") then
+		local v3 = v1:GetExtentsSize()
+		local v4 = math.max(v3.X, v3.Y, v3.Z)
+
+		if v4 > 0.001 then
+			pcall(function() --[[ Line: 69 | Upvalues: v1 (copy), v2 (copy), v4 (copy) ]]
+				v1:ScaleTo((v1:GetScale() or 1) * (v2 / v4))
+			end)
+
+			return v1
+		end
+	elseif v1:IsA("BasePart") then
+		local v5 = math.max(v1.Size.X, v1.Size.Y, v1.Size.Z)
+
+		if v5 > 0.001 then
+			v1.Size = v1.Size * (v2 / v5)
+		end
+	end
+
+	return v1
+end
+
+return t

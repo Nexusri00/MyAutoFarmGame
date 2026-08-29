@@ -1,0 +1,280 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQOFAQJfRw5DbGllbnRTZXJ2aWNlcw1GT1ZfQmx1ZVByaW50Bk5ld0ZPVghEdXJhdGlvbgREYXNoCVVuaXF1ZVRhZxVPdmVycmlkZVR3ZWVuRHVyYXRpb24GTGluZWFyCVByZXNldFRJcwhHZXRGT1ZCUAlQbGF5ZXJHdWkORmluZEZpcnN0Q2hpbGQHRGlzcGxheQZNb2JpbGUJVGV4dExhYmVsBkNvbG9yMwNuZXcKVGV4dENvbG9yMwZQYXJlbnQHRGFzaGluZwxEYXNoQ29vbGRvd24FcGNhbGwNTW92ZURpcmVjdGlvbgZIZWFsdGgJV2Fsa1NwZWVkDFZhbHVlTWFuYWdlcgVDaGVjawZGbGlnaHQIU3dpbW1pbmcGTm9EYXNoA0FkZAhHZXRTdGF0ZQRFbnVtEUh1bWFub2lkU3RhdGVUeXBlCEZyZWVmYWxsB0p1bXBpbmcLRmFsbGluZ0Rvd24GTm9KdW1wBHRhc2sFZGVsYXkHUnVubmluZwRTdG9wBkNGcmFtZQpMb29rVmVjdG9yA0RvdARnYW1lEFVzZXJJbnB1dFNlcnZpY2UKR2V0U2VydmljZQ1Nb3VzZUJlaGF2aW9yCkxvY2tDZW50ZXIMVG91Y2hFbmFibGVkCVNoaWZ0bG9jawRQbGF5C1JpZ2h0VmVjdG9yBXBhaXJzC0dldENoaWxkcmVuDEJvZHlWZWxvY2l0eQNJc0EMQm9keVBvc2l0aW9uB0Rlc3Ryb3kIUG9zaXRpb24KSW5wdXRFdmVudApGaXJlU2VydmVyB0dldFN0YXQORGFzaE11bHRpcGxpZXIPR2V0QWJpbGl0eVNjYWxlB0ZPVl9BZGQISW5zdGFuY2UETW92ZQROYW1lCE1heEZvcmNlAVAIVmVsb2NpdHkNUmF5Y2FzdFBhcmFtcxFSYXljYXN0RmlsdGVyVHlwZQdFeGNsdWRlCkZpbHRlclR5cGUaRmlsdGVyRGVzY2VuZGFudHNJbnN0YW5jZXMRUmVzcGVjdENhbkNvbGxpZGUOQ29sbGlzaW9uR3JvdXAEdGljawlNYWduaXR1ZGUJd29ya3NwYWNlBFNpemUJQmxvY2tjYXN0BU1vZGVsGEZpbmRGaXJzdEFuY2VzdG9yT2ZDbGFzcwhIdW1hbm9pZBVGaW5kRmlyc3RDaGlsZE9mQ2xhc3MLQWRk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
+
+-- https://lua.expert/
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local LocalPlayer = game:GetService("Players").LocalPlayer
+
+LocalPlayer:GetMouse()
+
+local v1 = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+local Humanoid = v1:WaitForChild("Humanoid")
+local HumanoidRootPart = v1:WaitForChild("HumanoidRootPart")
+local VisualPackage = require(ReplicatedStorage:WaitForChild("Modules"):WaitForChild("VisualPackage"))
+local SharedPackage = require(ReplicatedStorage:WaitForChild("Modules"):WaitForChild("SharedPackage"))
+local Extra = require(ReplicatedStorage:WaitForChild("Modules"):WaitForChild("Effects"):WaitForChild("Extra"))
+local v2 = Humanoid:LoadAnimation(_G.Animations.Extra.Dash:WaitForChild("Front1"))
+local v3 = Humanoid:LoadAnimation(_G.Animations.Extra.Dash:WaitForChild("Front2"))
+local v4 = Humanoid:LoadAnimation(_G.Animations.Extra.Dash:WaitForChild("Back"))
+local v5 = Humanoid:LoadAnimation(_G.Animations.Extra.Dash:WaitForChild("Right"))
+local v6 = Humanoid:LoadAnimation(_G.Animations.Extra.Dash:WaitForChild("Left"))
+
+v2.Priority = Enum.AnimationPriority.Action2
+v3.Priority = Enum.AnimationPriority.Action2
+v4.Priority = Enum.AnimationPriority.Action2
+v5.Priority = Enum.AnimationPriority.Action2
+v6.Priority = Enum.AnimationPriority.Action2
+v2:AdjustSpeed(2)
+v3:AdjustSpeed(2)
+v4:AdjustSpeed(2)
+
+local v7 = 1
+
+_G.DashCooldown = nil
+
+local v8 = nil
+
+local function GetFOVBP() --[[ GetFOVBP | Line: 34 | Upvalues: v8 (ref), SharedPackage (copy) ]]
+	if v8 then
+		return v8
+	end
+
+	if not _G.ClientServices then
+		return nil
+	end
+
+	if SharedPackage.ClientServices then
+		v8 = SharedPackage.ClientServices.FOV_BluePrint()
+		v8.NewFOV = 10
+		v8.Duration = 0.75
+		v8.UniqueTag = "Dash"
+		v8.OverrideTweenDuration = 0.125
+		v8.PresetTIs = "Linear"
+
+		return v8
+	end
+
+	return nil
+end
+
+return function() --[[ Line: 47 | Upvalues: Humanoid (copy), v1 (copy), LocalPlayer (copy), v2 (copy), v3 (copy), v4 (copy), v5 (copy), v6 (copy), HumanoidRootPart (copy), v7 (ref), Extra (copy), SharedPackage (copy), VisualPackage (copy), v8 (ref) ]]
+	local MoveDirection = Humanoid.MoveDirection
+
+	if Humanoid.Health <= 0 or (Humanoid.WalkSpeed <= 0 or (MoveDirection == Vector3.new(0, 0, 0) or _G.DashCooldown == true)) then
+		return
+	end
+
+	if _G.ValueManager:Check(v1, "Dash") == false or (v1:FindFirstChild("Flight") or v1:FindFirstChild("Swimming")) then
+		return
+	end
+
+	_G.ValueManager:Add(v1, "NoDash", 0.3)
+
+	local v12 = Humanoid:GetState()
+
+	if v12 ~= Enum.HumanoidStateType.Freefall and (v12 ~= Enum.HumanoidStateType.Jumping and v12 ~= Enum.HumanoidStateType.FallingDown) then
+		_G.ValueManager:Add(v1, "NoJump", 0.3)
+	end
+
+	_G.Dashing = true
+
+	local v22 = nil
+
+	pcall(function() --[[ Line: 70 | Upvalues: LocalPlayer (ref), v22 (ref) ]]
+		local v1 = LocalPlayer:FindFirstChild("PlayerGui") and LocalPlayer.PlayerGui:FindFirstChild("Display")
+		local v2 = if v1 then v1:FindFirstChild("Mobile") else v1
+
+		v22 = if v2 then v2:FindFirstChild("Dash") else v2
+
+		if not v22 then
+			return
+		end
+
+		local TextLabel = v22:FindFirstChild("TextLabel")
+
+		if not TextLabel then
+			return
+		end
+
+		TextLabel.TextColor3 = Color3.new(255/255, 0/255, 0/255)
+	end)
+	_G.DashCooldown = true
+	task.delay(0.3, function() --[[ Line: 84 | Upvalues: v22 (ref) ]]
+		_G.Dashing = nil
+		_G.DashCooldown = nil
+		pcall(function() --[[ Line: 88 | Upvalues: v22 (ref) ]]
+			if not (v22 and v22.Parent) then
+				return
+			end
+
+			local TextLabel = v22:FindFirstChild("TextLabel")
+
+			if not TextLabel then
+				return
+			end
+
+			TextLabel.TextColor3 = Color3.new(255/255, 255/255, 255/255)
+		end)
+	end)
+	_G.Running = true
+	v2:Stop()
+	v3:Stop()
+	v4:Stop()
+	v5:Stop()
+	v6:Stop()
+
+	local v32 = MoveDirection:Dot(HumanoidRootPart.CFrame.LookVector)
+
+	if (game:GetService("UserInputService").MouseBehavior == Enum.MouseBehavior.LockCenter or game:GetService("UserInputService").TouchEnabled ~= false) and (game:GetService("UserInputService").TouchEnabled ~= true or _G.Shiftlock ~= false) then
+		if v32 >= 0.4 or v32 == 0 then
+			if v7 == 1 then
+				v2:Play()
+				v7 = 2
+			else
+				v3:Play()
+				v7 = 1
+			end
+		elseif v32 <= -0.4 then
+			v4:Play()
+		else
+			local v42 = Humanoid.MoveDirection:Dot(HumanoidRootPart.CFrame.RightVector)
+
+			if v42 >= 0.4 then
+				v5:Play()
+			elseif v42 < -0.4 then
+				v6:Play()
+			end
+		end
+	elseif v7 == 1 then
+		v2:Play()
+		v7 = 2
+	else
+		v3:Play()
+		v7 = 1
+	end
+
+	for k, v in pairs(HumanoidRootPart:GetChildren()) do
+		if v:IsA("BodyVelocity") or v:IsA("BodyPosition") then
+			v:Destroy()
+		end
+	end
+
+	local v52 = CFrame.new(HumanoidRootPart.Position, HumanoidRootPart.Position + MoveDirection)
+
+	_G.InputEvent:FireServer("Dash", v52)
+	Extra.Dash(v1, v52)
+
+	local v72 = if SharedPackage.ClientServices and SharedPackage.ClientServices.GetStat then SharedPackage.ClientServices.GetStat("DashMultiplier") or 1 else 1
+	local v82 = 135 * v72 * VisualPackage.GetAbilityScale(v1, nil, 0.75)
+	local v9
+
+	if v8 then
+		v9 = v8
+	elseif _G.ClientServices and SharedPackage.ClientServices then
+		v8 = SharedPackage.ClientServices.FOV_BluePrint()
+		v8.NewFOV = 10
+		v8.Duration = 0.75
+		v8.UniqueTag = "Dash"
+		v8.OverrideTweenDuration = 0.125
+		v8.PresetTIs = "Linear"
+		v9 = v8
+	else
+		v9 = nil
+	end
+
+	if v9 and (SharedPackage.ClientServices and SharedPackage.ClientServices.FOV_Add) then
+		SharedPackage.ClientServices.FOV_Add(v9)
+	end
+
+	local Move = Instance.new("BodyVelocity")
+
+	Move.Name = "Move"
+	Move.MaxForce = Vector3.new(100000, 100000, 100000)
+	Move.P = 15000
+	Move.Velocity = MoveDirection * v82
+	Move.Parent = HumanoidRootPart
+
+	local v10 = RaycastParams.new()
+
+	v10.FilterType = Enum.RaycastFilterType.Exclude
+	v10.FilterDescendantsInstances = { v1 }
+	v10.RespectCanCollide = true
+	v10.CollisionGroup = HumanoidRootPart.CollisionGroup
+
+	local v11 = tick()
+	local v122 = 1 / 60
+
+	while tick() - v11 < 0.3 do
+		local MoveDirection2 = Humanoid.MoveDirection
+
+		if MoveDirection2.Magnitude == 0 then
+			MoveDirection2 = MoveDirection
+		else
+			MoveDirection = MoveDirection2
+		end
+
+		local sum = MoveDirection2 * v82 * (2.4 * (1 - (tick() - v11) / 0.3) ^ 1.3)
+		local v13 = workspace:Blockcast(HumanoidRootPart.CFrame, HumanoidRootPart.Size, sum * v122, v10)
+
+		for i = 1, 4 do
+			if not v13 then
+				break
+			end
+
+			local v14 = v13.Instance:FindFirstAncestorOfClass("Model")
+			local v15 = nil
+
+			while true do
+				if not v14 then
+					break
+				end
+
+				if v14:FindFirstChildOfClass("Humanoid") then
+					v15 = v14
+
+					break
+				end
+
+				v14 = v14:FindFirstAncestorOfClass("Model")
+			end
+
+			if not v15 then
+				break
+			end
+
+			v10:AddToFilter(v15)
+			v13 = workspace:Blockcast(HumanoidRootPart.CFrame, HumanoidRootPart.Size, sum * v122, v10)
+		end
+
+		if v13 then
+			local v18 = sum:Dot(v13.Normal)
+
+			if v18 < 0 then
+				sum = sum - v13.Normal * (v18 * (1 - math.max((v13.Distance - 0.1) / (sum.Magnitude * v122), 0)))
+				HumanoidRootPart.AssemblyLinearVelocity = Vector3.new(sum.X, HumanoidRootPart.AssemblyLinearVelocity.Y, sum.Z)
+			end
+		end
+
+		Move.Velocity = sum
+
+		if Humanoid.Health <= 0 or Humanoid.Sit == true then
+			break
+		end
+
+		if v1:FindFirstChild("Stunned") or (v1:FindFirstChild("Swimming") or (v1:FindFirstChild("Holding") or (v1:FindFirstChild("Acting") or v1:FindFirstChild("MovementDisabled")))) then
+			v2:Stop()
+			v3:Stop()
+			v4:Stop()
+			v5:Stop()
+			v6:Stop()
+
+			break
+		end
+
+		v122 = game:GetService("RunService").RenderStepped:Wait()
+	end
+
+	Move:Destroy()
+end

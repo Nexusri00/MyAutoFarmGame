@@ -1,0 +1,20 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQMTFUNoYXRNYWtlU3lzdGVtTWVzc2FnZQRUZXh0BUNvbG9yEVtBbm5vdW5jZW1lbnRdICVzBmZvcm1hdAZDb2xvcjMHZnJvbVJHQgdTZXRDb3JlB0FkZExpbmUHTWVzc2FnZQtIYW5kbGVFdmVudARnYW1lClN0YXJ0ZXJHdWkKR2V0U2VydmljZQdyZXF1aXJlBnNjcmlwdAZQYXJlbnQNQ21kckludGVyZmFjZQZXaW5kb3cABAkBAQAABwAAAQMFBQIW+wEAAG8DAADiBAMAbwUEAFIHAAC8BQWNBQAAAJ8FAwIwBQT1AQAAAKQFCAAAHGCAjAb5AIwH2QCMCDgAnwUEAjAFBKQCAAAAvAEBvwkAAACfAQQBggABAAoDAQMCAwMFAgECAwQDBQMGAwcEABxggAMIAAUAARgAAAABAAAAAAAAAQAAAAAAAAD+AAAEBgAAAAADAAEBAAAHowAAAPsAAADdAgAAvAAAaAAAAACfAAABggABAAEDCQAMAAEYAAEAAAAAAQwAAAAABQECAAAADW8DAADABAEAEgIAALwBAJQCAAAAnwEEAW8DAwDABAQAEgIBALwBAJQCAAAAnwEEAYIAAQAFAwoGAAMLAwkGAQIAAQQAARgAAAAAAAAHAAAAAAADBQAAAAADAAABAgAWowAAAKQAAQAAAABAbwICALwAABYDAAAAnwADAqQBBQAAAEBApAIHAAAAYEBNAgIkCAAAAE0CAuwJAAAATQICZQoAAACfAQICwAILABIAAAASAAEAggICAAwDDAQAAABAAw0DDgMPBAAAQEADEAQAAGBAAxEDEgMTBgIBAgEAARgAAAAAAAAAAQAAAAAAAAAAAAACAAAAAQAAAAADpFYkylEf8NfeAx694zCaXNROM76Wkk7L
+
+-- https://lua.expert/
+local StarterGui = game:GetService("StarterGui")
+local Window = require(script.Parent.CmdrInterface.Window)
+
+return function(p1) --[[ Line: 4 | Upvalues: StarterGui (copy), Window (copy) ]]
+	p1:HandleEvent("Message", function(p1) --[[ Line: 5 | Upvalues: StarterGui (ref) ]]
+		StarterGui:SetCore("ChatMakeSystemMessage", {
+			Text = ("[Announcement] %s"):format(p1),
+			Color = Color3.fromRGB(249, 217, 56)
+		})
+	end)
+	p1:HandleEvent("AddLine", function(...) --[[ Line: 12 | Upvalues: Window (ref) ]]
+		Window:AddLine(...)
+	end)
+end

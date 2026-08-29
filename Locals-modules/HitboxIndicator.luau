@@ -1,0 +1,327 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQNvCUtleXBvaW50cw5OdW1iZXJTZXF1ZW5jZQNuZXcFVmFsdWUIRW52ZWxvcGUWTnVtYmVyU2VxdWVuY2VLZXlwb2ludARUaW1lFGZyZWV6ZU51bWJlclNlcXVlbmNlBXRhYmxlBmluc2VydBZldmFsdWF0ZU51bWJlclNlcXVlbmNlBkVuZExhZw9FbmRMYWdBbmltYXRpb24IQ2FsbGJhY2sHRGVzdHJveQ5fVHJpZ2dlckVuZGluZwhpc2Zyb3plbglfaXNQYXVzZWQEdGFzawR3YWl0CXdvcmtzcGFjZRBHZXRTZXJ2ZXJUaW1lTm93Dl9lbWl0U3RhcnRUaW1lD19wYXVzZWREdXJhdGlvbghMaWZldGltZQRtYXRoBWNsYW1wB0FuaW1hdGUPX3BhdXNlU3RhcnRUaW1lBXNwYXduBl9TdGFydAxzZXRtZXRhdGFibGUTX3RyYW5zcGFyZW5jeVN0b3Jlcwtfc2l6ZVN0b3Jlcw1fcGF1c2VkU3RhdGVzDV9mcm96ZW5DbG9uZXMLX2hpdGJveFR5cGUNX2Nsb25lc0ZyZWV6ZQRuZXh0BEluaXQFVURpbTIEU2l6ZQxJbml0aWFsVHdlZW4JVHdlZW5JbmZvBkVuZGxhZwRFbnVtC0Vhc2luZ1N0eWxlBEJhY2sPRWFzaW5nRGlyZWN0aW9uAkluBkNyZWF0ZQRQbGF5BnNjcmlwdAdWaXN1YWxzA0FPRQVDbG9uZQVXaWR0aApBdHRhY2htZW50B1BhcnRpY2wGQ0ZyYW1lB1Bpdm90VG8DT3V0B1ZlY3RvcjMGRGVicmlzBlBhcmVudAZDaGFyZ2UKSW1hZ2VMYWJlbBVGaW5kRmlyc3RDaGlsZE9mQ2xhc3MRSW1hZ2VUcmFuc3BhcmVuY3kIQ2hhcmdlVUkETGluZQtIaXRib3hTY2FsZQdTY2FsZVRvBkJvdHRvbQNUb3AOR2V0RGVzY2VuZGFudHMEQmVhbQNJc0EETmFtZQhOb0NoYW5nZQxUZXh0dXJlU3BlZWQHQmFzZVZGWAZUb3BWRlgJRGVzdHJveWVkBmZyZWV6ZQVSZXNldA9wcm9wZXJ0aWVzQ2FjaGUUX3BhdXNlTm9ybWFsaXplZFRpbWUISW5zdGFuY2UEUGFydAhBbmNob3JlZApDYW5Db2xsaWRlDFRyYW5zcGFyZW5jeQtGcm96ZW5DbG9uZQ9mcm96ZW5QYXJ0Q2xvbmUQRnJvemVuQXR0YWNobWVudA9QYXJ0aWNsZUVtaXR0ZXIHRW5hYmxlZA5WZWxvY2l0eVNwcmVhZARSYXRlC051bWJlclJhbmdlBVNwZWVkBEVtaXQGRnJlZXplA01heAZSZXN1bWUEZ2FtZQxUd2VlblNlcnZpY2UKR2V0U2VydmljZQpIaXRib3hUeXBlB19faW5kZXgAEBICAAAABwQAAAUCBwKBAU0CAMIAAAAAHAMCAA0DBgABAACApAMEAAAMIICMBAAAnwMCAIIDAAAcAwIADQMbAAUAAIATAwIATQMD7AYAAAATBAIATQQEEAcAAACkBQQAAAwggP8GAAACAAAApAcJAAAMgICMCAAAUgkDAFIKBACfBwQCpAgJAAAMgICMCQEAUgoDAFILBACfCAQAxQYHAAEAAACfBQIAggUAAIwFAQAcBgIAeAMGBYwEAQCoAzsAhwYCBZUIBQWHBwIITQgGSgoAAAB9CDQAAQAAAE0IB0oKAAAAfQEwAAgAAABNCgZKCgAAACYJAQpNCwdKCgAAAE0MBkoKAAAAJgoLDOwICQpNCgbsBgAAAE0NB+wGAAAATQ4G7AYAAAAmDA0OCQsMCEMJCgtNCwYQBwAAAE0OBxAHAAAATQ8GEAcAAAAmDQ4PCQwNCEMKCwykCwQAAAwggP8MAAACAAAApA0JAAAMgICMDgAAUg8JAFIQCgCfDQQCpA4JAAAMgICMDwEAUhAJAFIRCgCfDgQAxQwNAAEAAACfCwIAggsAAIsDxf8cBAIAhwMCBKQEBAAADCCA/wUAAAIAAACkBgkAAAyAgIwHAABNCAPsBgAAAE0JAxAHAAAAnwYEAqQHCQAADICAjAgBAE0JA+wGAAAATQoDEAcAAACfBwQAxQUGAAEAAACfBAIAggQAAAsDAQIAAAAAAAAAAAMCAwMEAAwggAIAAAAAAADwPwMEAwUDBgQADICAAwcABQgBGAAAAgAAAQAAAAABAAABAAABAAABAAAAAQAAAAAAAQAAAAAAAAD+AAYAAAAAAQEAAgAAAAAAAAABAAAAAAAAAAABAAAAAAAAAAABAAAAAAAAAAACAAAAAQAAAAAAAQAAAAAAAAD+APcQAAEAAAABAAAAAAAAAAEAAAAAAAAAAAD+AAYAAAAAFwIAAAAHBAAABQIHApQBTQIAwgAAAAAcAwIADQMGAAEAAICkAwQAAAwggIwEAACfAwIAggMAABwDAgANAxYABQAAgBMDAgBNAwPsBgAAAKQEBAAADCCA/wUAAAIAAACkBggAAAxwgIwHAABSCAMAnwYDAqQHCAAADHCAjAgBAFIJAwCfBwMAxQUGAAEAAACfBAIAggQAAP8DAAAAAAAAjAYBABwHAgB4BAcFjAUBAKgEUQCHBwIGlQkGBYcIAglNCQdKCQAAAH0JSgABAAAATQkISgkAAAB9AUYACQAAAE0KCEoJAAAATQsHSgkAAAAmCQoLTQwHSgkAAAAmCwEM7AoLCU0MB+wGAAAATQ8I7AYAAABNEAfsBgAAACYODxAJDQ4KQwsMDU0NBxAKAAAATRAIEAoAAABNEQcQCgAAACYPEBEJDg8KQwwNDlIOAwCkDwgAAAxwgIwQAABSEQsAUhIMAJ8PBABMNAACpA0NAAAwsICfDQABlQ8GBRwNAgCMDgEAqA0WAIcSAg9NEhJKCQAAACYREgH1EgUB7BARElISAwCkEwgAAAxwgFIUEACHFQIPTRUV7AYAAACHFgIPTRYWEAoAAACfEwQATDQAAqQRDQAAMLCAnxEAAYsN6v+kDQQAAAwggFIOAwCfDQIAgg0AAIsEr/8cBQIAhwQCBaQFBAAADCCA/wYAAAIAAACkBwgAAAxwgIwIAABNCQTsBgAAAE0KBBAKAAAAnwcEAqQICAAADHCAjAkBAE0KBOwGAAAATQsEEAoAAACfCAQAxQYHAAEAAACfBQIAggUAAA4DAQIAAAAAAAAAAAMCAwMEAAwggAIAAAAAAADwPwMEAwYEAAxwgAMHAwUDCQMKBAAwsIAAKgsBGAAAAQAAAQAAAAABAAABAAABAAAAAAAAAAAAAAAAAAAAAAADAAIAAAAAAQEAAQAAAAAAAAABAAAAAAEAAAABAAAAAAAAAAABAAAAAAAAAAACAAAAAAAAAAAAAAIAAAABAAAAAAABAAAAAAAAAAAAAAAAAAD+BQAAAADwFAABAAAAAQAAAAAAAAABAAAAAAAAAAAA/gArAAAAAAMBAAAAABNNAQDCAAAAAA4BBgBNAQBpAQAAAA4BAwC8AQBpAQAAAJ8BAgFNAQBGAgAAAA4BAwBNAQBGAgAAAJ8BAQG8AQBQAwAAAJ8BAgGCAAEABAMMAw0DDgMPAHkQARgAAAABAAABAAAEAAAAAAACAAABegAAAAAGAAEAAAA+pAACAAAEAID7AQAAnwACAisAOAD7AAAATQAA2wMAAAAOAAUApAAGAAAUQIBvAQcAnwACAWUALgCkAAkAAACAQLwAALcKAAAAnwACAvsDAABNAwN3CwAAACYCAAP7AwAATQMDHgwAAAAmAQID+wQAAE0EBMsNAAAA7AMBBIwEAACMBQEATC4AAqQCEAAAPOCAnwIEAvsDAABNAwPCEQAAAA4DBQD7AwAAUgUCALwDA8IRAAAAnwMDAfsDAABNAwPLDQAAAH0DBgABAAAA+wMAALwDA4oSAAAAnwMCAYIAAQCkAwYAABRAgG8EEwCfAwIBSADD/4IAAQAUAwkDEQQABACAAxIDEwMUBAAUQIACmpmZmZmZuT8DFQQAAIBAAxYDFwMYAxkDGgMbBAA84IADHAMQApqZmZmZmak/AIsBAAEYAQAAAAAEAAAAAQAAAAEDAAAAAAEAAAAAAAAAAQAAAAAAAAAAAAIAAAAAAAAAAAIAAAAAAQAAAAEDAAAA6xeMAAAAAAMBAAAAABakAQEAAAAAQLwBAbcCAAAAnwECAjABAHcDAAAAqQEAADABANsEAAAAjAEAADABAB4FAAAAxgEAADABAJwGAAAApAEJAAAgcIDZAgAAEgAAAJ8BAgGCAAEACgMVBAAAAEADFgMXAxIDGAMdAxMDHgQAIHCAAQOFAR8BGAAAAAAAAAABAAABAAABAAACAAAAABmGAAAAAAgCAgAABwQAAAUCA4Q+UgIBACsCAQD7AgAAUgECAP8DBQAAAAAA+wQBAJ49AwMEAAAApAIBAAAAAECfAgMC/wMAAAAAAAAwAwKaAgAAAP8DAAAAAAAAMAMCjAMAAAD/AwAAAAAAADADAiQEAAAA/wMAAAAAAAAwAwLBBQAAAKQDBwAAAGBAvAMDtwgAAACfAwICMAMCdwkAAACpAwAAMAMC2woAAACMAwAAMAMCHgsAAADGAwAAMAMCnAwAAAAwAAKADQAAAP8DAAAAAAAAMAMCeA4AAACkAxAAAADwQFIEAQDGBQAAFwMBAGoHAgZuA/7/AgAAALwDAnMRAAAAnwMCAYICAgASAyAEAAAAQAMhAyIDIwMkAxUEAABgQAMWAxcDEgMYAx0DJQMmAycEAADwQAMoAKcBAwEYAAAAAAIAAAAAAAAAAQAAAAEAAAABAAAAAQAAAAEAAAAAAAABAAABAAABAAABAAEAAAACAAAAAAH/AAQAAAGoAAAAAAgCAQAABwQAAAUCBAIL+wIAAKQDAgAABACAUgQBAIwFAABSBgEAjAcAAJ8DBQIwAwIvAwAAAIIAAQAEAykDAwQABACAAyoA2wEcARgAAAABAAAA/wAAA9wAAAAACAECAAAAJU0BAOkAAAAADgEFAE0BAOkAAAAAvAEBUAEAAACfAQIB+wEAAPsDAQCkBAQAAAwggE0GAIwGAAAAkAUGBaQGCgAJIHDApAcNAAwscMCfBAQC4gUQALwBAZYRAAAAnwEFAjABAOkAAAAATQEA6QAAAAC8AQHuEgAAAJ8BAgGkARQAAAAwQU0CAIwGAAAAnwECAYIAAQAVAysDDwMsAwMEAAwggAKamZmZmZm5PwMtAy4DLwMwBAkgcMADMQMyBAwscMADKgcAAAAACtcjPAAAAAAAAAAACAEODwAAAAMzAzQDFAQAADBBAOEBDQEYAAAAAAAAAAACAQEAAAAAAAAAAAAB/QAAAAAFAAAAAAEAAAAAAeIAAAAADAEBAAAAcKQBAQAAAABATQEByAIAAABNAQH2AwAAALwBAToEAAAAnwECAk0DANcGAAAAkAIDBU0DAQ0HAAAATQMD0wgAAACkBAsAACiQgP8FAAACAAAApAYNAAAowICMBwAAjAgAAJ8GAwKkBw0AACjAgIwIAQB4CQIOnwcDAMUFBgABAAAAnwQCAjAEAy8PAAAATQUAhRAAAAC8AwHCEQAAAJ8DAwFvAxIAMAMBLw8AAAD7AwAAUgUBAKQGFAAAKDCBbwcVAKQIGQAYXGDBpAkcABtoYMGfBgQC4gcdAG8KHgA0NgIFCgIAAFIJAgBSCwIApAggAAAo8IGfCAQCMAgHLw8AAAC8AwOWIQAAAJ8DBQIwAwDpIgAAAE0DAOkiAAAAvAMD7iMAAACfAwIBpAMlAAAAQEJNAwOdJgAAADADASQnAAAATQMBgSgAAABvBSkAvAMDuCoAAACfAwMCpAQsAAAosIKMBQAAjAYAAIwHAACMCAAAnwQFAjAEAy8PAAAAbwQtADAEA6MuAAAAMAMAtS8AAAAwAQDIAgAAANkEAAASAAMAMAQAwjAAAADZBAEAEgIAABIAAQAwBABpMQAAAIIAAQAyAzUEAAAAQAM2AzcDOAIAAAAAAAAUQAM5AzoDOwMCAwMEACiQgAMGBAAowIACAAAAAAAAAEADKgM8Az0HAAAAAArXIzwAAAAAAAAAAAMsBAAoMIECmpmZmZmZ2T8DLgMvAzAEGFxgwQMxAz4EG2hgwQUBDwJ7FK5H4XqEPwM/BAAo8IEDMwMrAzQDFQQAAEBCA0ADQQNCA0MDRAMpBAAosIICAAAAAAAA4D8DRQNGAxwDDQIGB8ABAAEYAAAAAAAAAAAAAgAAAQAAAAAAAAABAAAAAAEAAAAAAAD+AAAEAAAAAAMAAAEBAQAAAAAAAAABAAAAAAAAAAAAAP0AAAAABQAAAAABAAAAAAACAAAAAAABAAAAAAAAAAABAAACAAEAAgAAAAYAAAAAC8EAAAAADAEAAAAAO6QBAQAAAABATQEByAIAAABNAQHpAwAAALwBAToEAAAAnwECAk0FAA0GAAAAkAQFBbwCATQHAAAAnwIDAU0EAIUIAAAAvAIBwgkAAACfAgMBTQIBEwoAAABNAwGYCwAAAKQEDQAAAMBAvAUCRw4AAACfBQIDFwQOAG8LDwC8CQj+EAAAAJ8JAwIOCQkATQkIuhEAAADwCQYAEgAAAE0KAMsTAAAA2AkFCjAJCDUUAAAAbgTx/wIAAAAwAgDrFQAAADADAGcWAAAAMAEAyAIAAACkBBgAAABwQU0EBJ0ZAAAAMAQBJBoAAACCAAEAGwM1BAAAAEADNgNHAzgCAAAAAAAA8D8DSANJAzwDPQNKA0sDJwQAAMBAA0wDTQNOA08DUAMZA1EDUgNTAxUEAABwQQNAA0EA7QEAARgAAAAAAAAAAAACAAAAAAABAAAAAAIAAQACAAAAAAABAAAAAAAAAAABAAAAAP4ABgABAAEAAgAAAAAAAe4AAAAABQEBAAAAFP8BAgAAAAAAwAIAABICAAAwAgH2AQAAAMACAgAwAgHpAwAAAE0DAIAEAAAAhwIBAw4CAwBSAwIAUgQAAJ8DAgG8AwBzBQAAAJ8DAgGCAAEABgYIAzcGCQNHAyUDHwIICb4BKAEYAAABAAAALQAAFwAAAQAAAAIAAAG/AAAAAAgBAAAAACZNAQAlAAAAAA4BAQCCAAEAqQEBADABACUAAAAATQEAyAEAAAC8AQFQAgAAAJ8BAgFNAQB4AwAAAMYCAADGAwAAZAEDALwGBVACAAAAnwYCAW4B/P8CAAAA/wEAAAAAAAAwAQB4AwAAAIE9AAUEAAAAUgIAAG8DBACkAQYAAABQQJ8BAwGkAQkAACBwgFICAACfAQIBggABAAoDVAM2Aw8DJgADIAQAAFBAAwkDVQQAIHCAAIoCDwEYAAAAAAEAAAIAAAAAAgAAAAABAAD/AAQAAAACAAAAAAAAAQAAAAELAQAAAAgBAAAAABdNAQDIAAAAALwBAVABAAAAnwECAU0BAHgCAAAAxgIAAMYDAABkAQMAvAYFUAEAAACfBgIBbgH8/wIAAAD/AQAAAAAAADABAHgCAAAAvAEAcwMAAACfAQIBggABAAQDNgMPAyYDKACbAlYBGAAAAAAAAgAAAAABAAD/AAQAAAACAAABHAEAAAAQAQAAAADAAakBAQAwAQDbAAAAAKQBAgAAABBAvAEBtwMAAACfAQICMAEAnAQAAAD/AQAAAAAAADABACQFAAAA/wEAAAAAAAAwAQDqBgAAAKQBAgAAABBAvAEBtwMAAACfAQICTQQAdwcAAAAmAwEETQUAHgkAAACQBAUIJgIDBE0FAMsKAAAA7AQCBYwFAACMBgEATC4AAqQDDQAAMLCAnwMEAjADADgOAAAApAQRAABA8IBvBRIAnwQCAm8FEwAwBQQvFAAAAKkFAQAwBQRFFQAAAKkFAAAwBQTTFgAAAE0FAIUXAAAAMAUEhRcAAACMBQEAMAUE2RgAAABvBRkAMAUEuhoAAAAwBADdGwAAAKQFEQAAQPCAbwYcAJ8FAgJvBh0AMAYFuhoAAAAwBAUkHgAAAE0HAHgfAAAAnjQHBAQAAABSCAQApAYiAACEAIKfBgMBTQYA6yMAAAC8BgZHJAAAAJ8GAgRkBmAAbw0lALwLCv4mAAAAnwsDAg4LBwBNCwq6GgAAAPALBAAnAAAAjAsAADALCjUoAAAAbw0pALwLCv4mAAAAnwsDAg4LTwBNCwq6GgAAAPALTAAnAAAATQsA6gYAAADiDCoANQ0AGSsAAABNDgrZGAAAAFIPAwCfDQMCMA0M2RgAAAA1DQAZKwAAAE0OCi8UAAAAUg8DAJ8NAwIwDQwvFAAAAGoMCwq8Cwo6LAAAAJ8LAgKpDAEAMAwL8C0AAACMDAAAMAwLqC4AAACMDAAAMAwL9i8AAACkDDEAAEAAg28NMgCfDAICMAwLywoAAACkDDEAAEAAg28NMwCfDAICMAwLLDQAAAA1DACHNQAAAE0NCtkYAAAAUg4DAJ8MAwIwDAvZGAAAADUMAIc1AAAATQ0KLxQAAABSDgMAnwwDAjAMCy8UAAAAMAULJB4AAACMDgEAvAwLVjYAAACfDAMBqQwAADAMCvAtAAAApAw4AABAcIOMDQEAnwwCAjAMCtkYAAAAbgaf/wIAAACkBgIAAAAQQDAGBCQeAAAAggABADkDEgMVBAAAEEADFgMdAyMDVwMXAgAAAAAAAAAAAxgDGQMaAxsEADCwgANYA1kDAwQAQPCAA1oHzczMPc3MzD3NzMw9AAAAAAMqA1sDXAM8A10DXgNPA18DOgNgA0EDJgMJAwoEAIQAggNSA0wDTQNOA1ADUQNhBQIYFAMLAzgDYgNjA2QDZQQAQACDAgAAANCIwwBCAnsUrkfheoQ/A2YDCANnAwIEAEBwgwCnAmgBGAAAAAEAAAAAAAACAAAAAQAAAAIAAAAAAQAAAAAAAAEAAAAAAAAAAAEAAgAAAAEAAAEAAAEAAAEAAAABAAABAAABAAIAAAABAAABAAIAAAAAAAAAAgAAAAAAAQAAAAAAAAAAAQAAAwAAAAAAAAAAAQAAAQAAAAAAAAABAAAAAAAAAP4FAAABAAABAAABAAABAAAAAAABAAAAAAABAAAAAAAAAAEAAAAAAAAAAQACAAAAAgAAAQAAAAAA6AAcAAAAASgBAAAADgEAAAAAZ00BANsAAAAADgEQAE0BAJwBAAAADgENAKQBAwAAACBAvAEBtwQAAACfAQICTQIAHgUAAABNBACcAQAAACYDAQRDAgIDMAIAHgUAAACpAQAAMAEA2wAAAADGAQAAMAEAnAEAAABNAQDdBgAAAA4BBQBNAQDdBgAAALwBAVAHAAAAnwECAU0BAOsIAAAAvAEBRwkAAACfAQIEZAERAG8ICgC8BgX+CwAAAJ8GAwIOBgwATQYFugwAAADwBgkADQAAAE0HAMsPAAAA2AYOBzAGBTUQAAAAqQYBADAGBfARAAAAbgHu/wIAAACkARMAAAAgQU0CAOoUAAAAxgMAABcBJABNBgTLDwAAAE0GBrQVAAAATQkAOBYAAAD1CA4JCQcGCLwIBDoXAAAAnwgCAqQJEwAAACBBUgoFAMYLAAAXCQEAag0IDG4J/v8CAAAApAkaAABkgIFSCgcAnwkCAjAJCMsPAAAATQkEJBsAAAAwCQgkGwAAALwJBFAHAAAAnwkCAYwLAQC8CQhWHAAAAJ8JAwFuAdv/AgAAAIIAAQAdAxIDHQMVBAAAIEADFgMYA18DDwNSA0wDTQNOA08DUAIAAAAAAADwPwMZA1EDYgMnBAAAIEEDVwNpA1gDOANlAwMEAGSAgQNBA2cA4QJqARgAAAAAAAABAAAAAAEAAAAAAAAAAwAAAQAAAgAAAQAAAAADAAAAAAABAAAAAAAAAAABAAAAAAEAAP0ABwAAAAAAAQAAAAEAAAACAAABAAAAAAH/AAQAAAAAAAIAAAABAAACAAAA8gAQYgEAAAAEAAABAgAuowAAAKQAAQAAAABAbwICALwAABYDAAAAnwADAsABBAAYAQCHBQAAAMABBgAYAQAZBwAAAOIBDQD/AgUAAAAAADACAm4OAAAAwAMPADADAooQAAAAwAMRADADAnMSAAAAwAMTABIAAQASAAIAMAMC7xQAAADAAxUAEgAAADADAnMWAAAAwAMXADADAlAYAAAAwAMZADADAn8aAAAAwAMbADADAo8cAAAAwAMdADADAmEeAAAAggICAB8DawQAAABAA2wDbQYAAwgGAQMLA24DNwMZAgAAAAAAAPA/A0gIAwgJAAAACgsAAAAMCwAAAANvBgIDEAYEAx8GBQMDBgoDKAYLAw8GDANWBg0DaAYOA2oKAAECBAUKCwwNDgEAAQUAAQAAAAAAAwAAJQAARAcAAQADAAAMAAAiAAAAABcAAENMAAARAAAMAAA6AAAmAQAAAL0AAAAAD/BbjfeFF6S+K/dBnEu1IBKAQ5qDwp/n9g==
+
+-- https://lua.expert/
+local TweenService = game:GetService("TweenService")
+
+function freezeNumberSequence(p1, p2) --[[ freezeNumberSequence | Line: 5 ]]
+	local Keypoints = p1.Keypoints
+
+	if #Keypoints == 0 then
+		return NumberSequence.new(0)
+	end
+
+	if #Keypoints == 1 then
+		local v1 = Keypoints[1].Value
+		local Envelope = Keypoints[1].Envelope
+
+		return NumberSequence.new({ NumberSequenceKeypoint.new(0, v1, Envelope), NumberSequenceKeypoint.new(1, v1, Envelope) })
+	end
+
+	for i = 1, #Keypoints - 1 do
+		local v2 = Keypoints[i]
+		local v3 = Keypoints[i + 1]
+
+		if v2.Time <= p2 and p2 <= v3.Time then
+			local v4 = (p2 - v2.Time) / (v3.Time - v2.Time)
+			local v5 = v2.Value + (v3.Value - v2.Value) * v4
+			local v6 = v2.Envelope + (v3.Envelope - v2.Envelope) * v4
+
+			return NumberSequence.new({ NumberSequenceKeypoint.new(0, v5, v6), NumberSequenceKeypoint.new(1, v5, v6) })
+		end
+	end
+
+	local v7 = Keypoints[#Keypoints]
+
+	return NumberSequence.new({ NumberSequenceKeypoint.new(0, v7.Value, v7.Envelope), NumberSequenceKeypoint.new(1, v7.Value, v7.Envelope) })
+end
+function evaluateNumberSequence(p1, p2) --[[ evaluateNumberSequence | Line: 42 ]]
+	local Keypoints = p1.Keypoints
+
+	if #Keypoints == 0 then
+		return NumberSequence.new(0)
+	end
+
+	if #Keypoints == 1 then
+		local v1 = Keypoints[1].Value
+
+		return NumberSequence.new({ NumberSequenceKeypoint.new(0, v1), NumberSequenceKeypoint.new(1, v1) })
+	end
+
+	local t = {}
+
+	for i = 1, #Keypoints - 1 do
+		local v2 = Keypoints[i]
+		local v3 = Keypoints[i + 1]
+
+		if v2.Time <= p2 and p2 <= v3.Time then
+			local v5 = (p2 - v2.Time) / (v3.Time - v2.Time)
+
+			table.insert(t, NumberSequenceKeypoint.new(0, v2.Value + (v3.Value - v2.Value) * v5, v2.Envelope + (v3.Envelope - v2.Envelope) * v5))
+
+			for j = i + 1, #Keypoints do
+				table.insert(t, NumberSequenceKeypoint.new((Keypoints[j].Time - p2) / (1 - p2), Keypoints[j].Value, Keypoints[j].Envelope))
+			end
+
+			return NumberSequence.new(t)
+		end
+	end
+
+	local v12 = Keypoints[#Keypoints]
+
+	return NumberSequence.new({ NumberSequenceKeypoint.new(0, v12.Value, v12.Envelope), NumberSequenceKeypoint.new(1, v12.Value, v12.Envelope) })
+end
+
+local t = {
+	HitboxType = "AOE",
+	Lifetime = 1,
+	HitboxScale = 1
+}
+local t2 = {}
+
+t2.__index = t2
+function t2._TriggerEnding(p1) --[[ _TriggerEnding | Line: 121 ]]
+	if p1.EndLag and p1.EndLagAnimation then
+		p1:EndLagAnimation()
+	end
+
+	if p1.Callback then
+		p1.Callback()
+	end
+
+	p1:Destroy()
+end
+function t2._Start(p1) --[[ _Start | Line: 133 ]]
+	p1._emitStartTime = workspace:GetServerTimeNow()
+	p1._isPaused = false
+	p1._pausedDuration = 0
+	p1._pauseStartTime = nil
+	task.spawn(function() --[[ Line: 139 | Upvalues: p1 (copy) ]]
+		while not table.isfrozen(p1) do
+			if p1._isPaused then
+				task.wait(0.1)
+
+				continue
+			end
+
+			local v1 = workspace:GetServerTimeNow() - p1._emitStartTime - p1._pausedDuration
+			local v3 = math.clamp(v1 / p1.Lifetime, 0, 1)
+
+			if p1.Animate then
+				p1:Animate(v3)
+			end
+
+			if p1.Lifetime <= v1 then
+				p1:_TriggerEnding()
+
+				return
+			end
+
+			task.wait(0.05)
+		end
+	end)
+end
+function t2.new(p1, p2) --[[ new | Line: 167 | Upvalues: t (copy), t2 (copy) ]]
+	local v3 = setmetatable({}, t2)
+
+	v3._transparencyStores = {}
+	v3._sizeStores = {}
+	v3._pausedStates = {}
+	v3._frozenClones = {}
+	v3._emitStartTime = workspace:GetServerTimeNow()
+	v3._isPaused = false
+	v3._pausedDuration = 0
+	v3._pauseStartTime = nil
+	v3._hitboxType = p1
+	v3._clonesFreeze = {}
+
+	for v4, v5 in next, if p2 then p2 else t do
+		v3[v4] = v5
+	end
+
+	v3:Init()
+
+	return v3
+end
+function t2.Init(p1) --[[ Init | Line: 190 | Upvalues: TweenService (copy) ]]
+	local v1 = ({
+		AOE = function(p1) --[[ Line: 192 | Upvalues: TweenService (ref) ]]
+			local v1 = script.Visuals.AOE:Clone()
+			local v2 = p1.Width or 5
+
+			v1.Attachment.Particl.Size = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0), NumberSequenceKeypoint.new(1, v2 - 2) })
+			v1:PivotTo(p1.CFrame)
+			v1.Size = Vector3.new(0, 0.01, 0)
+			p1.InitialTween = TweenService:Create(v1, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+				Size = Vector3.new(v2, 0.01, v2)
+			})
+			p1.InitialTween:Play()
+			v1.Parent = workspace.Debris
+
+			local ImageLabel = v1.Charge:FindFirstChildOfClass("ImageLabel")
+
+			ImageLabel.Size = UDim2.new(0, 0, 0, 0)
+			ImageLabel.ImageTransparency = 0.5
+			p1.ChargeUI = ImageLabel
+			p1.Visuals = v1
+			function p1.Animate(p1, p2) --[[ Animate | Line: 219 | Upvalues: ImageLabel (copy) ]]
+				ImageLabel.Size = UDim2.new(p2, 0, p2, 0)
+			end
+			function p1.EndLagAnimation(p1) --[[ EndLagAnimation | Line: 225 | Upvalues: TweenService (ref), v1 (copy) ]]
+				if p1.InitialTween then
+					p1.InitialTween:Destroy()
+				end
+
+				p1.InitialTween = TweenService:Create(v1, TweenInfo.new(p1.Endlag or 0.1, Enum.EasingStyle.Back, Enum.EasingDirection.In), {
+					Size = Vector3.new(0, 0.01, 0)
+				})
+				p1.InitialTween:Play()
+				wait(p1.Endlag)
+			end
+		end,
+		Line = function(p1) --[[ Line: 237 ]]
+			local v1 = script.Visuals.Line:Clone()
+
+			v1:ScaleTo(p1.HitboxScale or 1)
+			v1:PivotTo(p1.CFrame)
+
+			local Bottom = v1.Bottom
+			local v2 = next
+			local v3, v4 = Bottom:GetDescendants()
+
+			for v5, v6 in v2, v3, v4 do
+				if v6:IsA("Beam") and v6.Name ~= "NoChange" then
+					v6.TextureSpeed = 1 / p1.Lifetime
+				end
+			end
+
+			p1.BaseVFX = Bottom
+			p1.TopVFX = v1.Top
+			p1.Visuals = v1
+			v1.Parent = workspace.Debris
+		end
+	})[p1._hitboxType]
+
+	if v1 then
+		v1(p1)
+	end
+
+	p1:_Start()
+end
+function t2.Destroy(p1) --[[ Destroy | Line: 266 ]]
+	if p1.Destroyed then
+		return
+	end
+
+	p1.Destroyed = true
+	p1.Visuals:Destroy()
+
+	for v1, v2 in p1._clonesFreeze do
+		v2:Destroy()
+	end
+
+	p1._clonesFreeze = {}
+	setmetatable(p1, nil)
+	table.freeze(p1)
+end
+function t2.Reset(p1) --[[ Reset | Line: 283 ]]
+	p1.Visuals:Destroy()
+
+	for v1, v2 in p1._clonesFreeze do
+		v2:Destroy()
+	end
+
+	p1._clonesFreeze = {}
+	p1:Init()
+end
+function t2.Freeze(p1) --[[ Freeze | Line: 295 ]]
+	p1._isPaused = true
+	p1._pauseStartTime = workspace:GetServerTimeNow()
+	p1._pausedStates = {}
+	p1.propertiesCache = {}
+
+	local v2 = math.clamp((workspace:GetServerTimeNow() - p1._emitStartTime - (p1._pausedDuration or 0)) / p1.Lifetime, 0, 1)
+
+	p1._pauseNormalizedTime = v2
+
+	local FrozenClone = Instance.new("Part")
+
+	FrozenClone.Size = Vector3.new(0.1, 0.1, 0.1)
+	FrozenClone.Anchored = true
+	FrozenClone.CanCollide = false
+	FrozenClone.CFrame = p1.CFrame
+	FrozenClone.Transparency = 1
+	FrozenClone.Name = "FrozenClone"
+	p1.frozenPartClone = FrozenClone
+
+	local FrozenAttachment = Instance.new("Attachment")
+
+	FrozenAttachment.Name = "FrozenAttachment"
+	FrozenAttachment.Parent = FrozenClone
+	table.insert(p1._clonesFreeze, FrozenClone)
+
+	for v3, v4 in p1.BaseVFX:GetDescendants() do
+		if v4:IsA("Beam") and v4.Name ~= "NoChange" then
+			v4.TextureSpeed = 0
+		end
+
+		if v4:IsA("ParticleEmitter") and v4.Name ~= "NoChange" then
+			p1.propertiesCache[v4] = {
+				Transparency = evaluateNumberSequence(v4.Transparency, v2),
+				Size = evaluateNumberSequence(v4.Size, v2)
+			}
+
+			local v5 = v4:Clone()
+
+			v5.Enabled = true
+			v5.VelocitySpread = 0
+			v5.Rate = 0
+			v5.Lifetime = NumberRange.new(9000000000)
+			v5.Speed = NumberRange.new(0.01)
+			v5.Transparency = freezeNumberSequence(v4.Transparency, v2)
+			v5.Size = freezeNumberSequence(v4.Size, v2)
+			v5.Parent = FrozenAttachment
+			v5:Emit(1)
+			v4.Enabled = false
+			v4.Transparency = NumberSequence.new(1)
+		end
+	end
+
+	FrozenClone.Parent = workspace
+end
+function t2.Resume(p1) --[[ Resume | Line: 353 ]]
+	if p1._isPaused and p1._pauseStartTime then
+		p1._pausedDuration = p1._pausedDuration + (workspace:GetServerTimeNow() - p1._pauseStartTime)
+	end
+
+	p1._isPaused = false
+	p1._pauseStartTime = nil
+
+	if p1.frozenPartClone then
+		p1.frozenPartClone:Destroy()
+	end
+
+	for v2, v3 in p1.BaseVFX:GetDescendants() do
+		if v3:IsA("Beam") and v3.Name ~= "NoChange" then
+			v3.TextureSpeed = 1 / p1.Lifetime
+			v3.Enabled = true
+		end
+	end
+
+	for v4, v5 in next, p1.propertiesCache do
+		local v7 = v4:Clone()
+
+		for v8, v9 in next, v5 do
+			v7[v8] = v9
+		end
+
+		v7.Lifetime = NumberRange.new(v4.Lifetime.Max * (1 - p1._pauseNormalizedTime))
+		v7.Parent = v4.Parent
+		v4:Destroy()
+		v7:Emit(1)
+	end
+end
+
+return t2

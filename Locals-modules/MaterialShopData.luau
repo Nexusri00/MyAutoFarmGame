@@ -1,0 +1,113 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- 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
+
+-- https://lua.expert/
+return {
+	{
+		Name = "Common Chest",
+		Currency = "Shards",
+		Cost = 1000
+	},
+	{
+		Name = "Rare Chest",
+		Currency = "Shards",
+		Cost = 5000
+	},
+	{
+		Name = "Legendary Chest",
+		Currency = "Shards",
+		Cost = 10000
+	},
+	{
+		Name = "Lucky Potion",
+		Currency = "Shards",
+		Cost = 10000
+	},
+	{
+		Name = "Flashy Token",
+		Currency = "Shards",
+		Cost = 1400
+	},
+	{
+		Name = "E-Shard",
+		Currency = "Shards",
+		Cost = 150
+	},
+	{
+		Name = "Common Crystal",
+		Currency = "Shards",
+		Cost = 250
+	},
+	{
+		Name = "Element Essence",
+		Currency = "Shards",
+		Cost = 400
+	},
+	{
+		Name = "Rare Crystal",
+		Currency = "Shards",
+		Cost = 600
+	},
+	{
+		Name = "Cursed Fragment",
+		Currency = "Shards",
+		Cost = 1200
+	},
+	{
+		Name = "Legendary Crystal",
+		Currency = "Shards",
+		Cost = 2000
+	},
+	{
+		Name = "Iron Ingot",
+		Currency = "Shards",
+		Cost = 150
+	},
+	{
+		Name = "Bronze Ingot",
+		Currency = "Shards",
+		Cost = 250
+	},
+	{
+		Name = "Silver Ingot",
+		Currency = "Shards",
+		Cost = 500
+	},
+	{
+		Name = "Gold Ingot",
+		Currency = "Shards",
+		Cost = 900
+	},
+	{
+		Name = "Platinum Ingot",
+		Currency = "Shards",
+		Cost = 1800
+	},
+	{
+		Name = "Diamond Ingot",
+		Currency = "Shards",
+		Cost = 4000
+	},
+	{
+		Name = "Random Emotes",
+		Currency = "Shards",
+		Cost = 20000
+	},
+	{
+		Name = "Trait Reroll",
+		Currency = "Shards",
+		Cost = 750
+	},
+	{
+		Name = "Clan Reroll",
+		Currency = "Shards",
+		Cost = 1500
+	},
+	{
+		Name = "Race Reroll",
+		Currency = "Shards",
+		Cost = 1000
+	}
+}

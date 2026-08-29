@@ -1,0 +1,118 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- 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
+
+-- https://lua.expert/
+local TweenService = game:GetService("TweenService")
+local t = {
+	Cache = {},
+	bounceHeight = 10,
+	bounceTime = 0.5,
+	bounceEndlag = 0.5
+}
+
+t.bounceInfo = TweenInfo.new(t.bounceTime, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
+function t.AddPointing(p1, p2, p3, p4) --[[ AddPointing | Line: 14 | Upvalues: t (copy) ]]
+	if not (p2 and p2.Parent) then
+		return
+	end
+
+	if not p3 then
+		error("Please Provide a Flag")
+	end
+
+	if not t.Cache[p3] then
+		t.Cache[p3] = {}
+	end
+
+	table.insert(t.Cache[p3], {
+		p2,
+		p2.Position,
+		nil,
+		p3,
+		p4
+	})
+end
+function t.RemovePointing(p1, p2) --[[ RemovePointing | Line: 35 ]] end
+function t.RemoveWithFlag(p1) --[[ RemoveWithFlag | Line: 39 ]] end
+function t.SetupBounceTime(p1, p2) --[[ SetupBounceTime | Line: 43 | Upvalues: t (copy) ]]
+	if p2 then
+		t.bounceTime = p2
+		t.bounceInfo = TweenInfo.new(t.bounceTime, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
+	end
+end
+function t.Bounce(p1, p2, p3) --[[ Bounce | Line: 54 | Upvalues: TweenService (copy), t (copy) ]]
+	TweenService:Create(p2, t.bounceInfo, {
+		Position = p3
+	}):Play()
+end
+function t.Start(p1) --[[ Start | Line: 62 | Upvalues: t (copy) ]]
+	task.spawn(function() --[[ Line: 63 | Upvalues: t (ref) ]]
+		while true do
+			if t.Cache and next(t.Cache) then
+				for k, v in pairs(t.Cache) do
+					if v and next(v) then
+						for k2, v2 in pairs(v) do
+							local v1 = v2[1]
+							local v22 = v2[2]
+							local v3 = v2[5]
+
+							if v1 and v1.Parent then
+								v2[3] = true
+
+								local v4 = UDim2.new(v22.X.Scale, v22.X.Offset, v22.Y.Scale, v22.Y.Offset + t.bounceHeight)
+
+								if v3 then
+									v4 = UDim2.new(v22.X.Scale, v22.X.Offset + t.bounceHeight, v22.Y.Scale, v22.Y.Offset)
+								end
+
+								t:Bounce(v1, v4)
+
+								continue
+							end
+
+							t:RemovePointing(v1)
+						end
+					end
+				end
+			end
+
+			wait(t.bounceTime + t.bounceEndlag)
+
+			if t.Cache and next(t.Cache) then
+				for k, v in pairs(t.Cache) do
+					if v and next(v) then
+						for k2, v2 in pairs(v) do
+							local v6 = v2[1]
+							local v7 = v2[2]
+							local v8 = v2[5]
+
+							if v6 and v6.Parent then
+								if v2[3] then
+									v2[3] = nil
+
+									local v9 = UDim2.new(v7.X.Scale, v7.X.Offset, v7.Y.Scale, v7.Y.Offset - t.bounceHeight)
+
+									if v8 then
+										v9 = UDim2.new(v7.X.Scale, v7.X.Offset - t.bounceHeight, v7.Y.Scale, v7.Y.Offset)
+									end
+
+									t:Bounce(v6, v9)
+								end
+
+								continue
+							end
+
+							t:RemovePointing(v6)
+						end
+					end
+				end
+			end
+
+			wait(t.bounceTime)
+		end
+	end)
+end
+
+return t

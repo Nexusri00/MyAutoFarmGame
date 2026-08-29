@@ -1,0 +1,89 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- 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
+
+-- https://lua.expert/
+local t = {
+	StatSoftCap = {
+		HPRegeneration = function(p1) --[[ HPRegeneration | Line: 10 ]]
+			if p1 <= 30 then
+				return p1
+			end
+
+			return math.log(p1 - 29) / 5 + 30
+		end
+	},
+	Fmt2dp = function(p1) --[[ Fmt2dp | Line: 18 ]]
+		local v1 = math.floor(p1 * 100 + 0.5) / 100
+
+		if v1 % 1 == 0 then
+			return tostring((math.floor(v1)))
+		end
+
+		return string.format("%.2f", v1):gsub("0+$", ""):gsub("%.$", "")
+	end
+}
+
+function t.Percent(p1) --[[ Percent | Line: 28 | Upvalues: t (copy) ]]
+	return t.Fmt2dp(p1 * 100) .. "%"
+end
+function t.MultiplierPercent(p1) --[[ MultiplierPercent | Line: 32 | Upvalues: t (copy) ]]
+	return t.Fmt2dp(p1 * 100) .. "%"
+end
+t.DisplayNames = {
+	ItemHPBonus = "Health Bonus",
+	AttackSpeed = "Attack Speed",
+	CriticalChance = "Critical Chance",
+	CriticalDamage = "Critical Damage",
+	DamageAmplifier = "Damage Multiplier",
+	DamageReduction = "Defense Reduction",
+	MeleeMultiplier = "Style Multiplier",
+	WeaponMultiplier = "Weapon Multiplier",
+	PowerMultiplier = "Ability Multiplier"
+}
+function t.PrettifyStatName(p1) --[[ PrettifyStatName | Line: 50 | Upvalues: t (copy) ]]
+	return t.DisplayNames[p1] or p1
+end
+function t.CamelCaseToTitle(p1) --[[ CamelCaseToTitle | Line: 54 ]]
+	return p1:gsub("(%u)", function(p1) --[[ Line: 55 ]]
+		return " " .. p1
+	end):sub(2)
+end
+function t.BuffText(p1, p2, p3) --[[ BuffText | Line: 62 | Upvalues: t (copy) ]]
+	if typeof(p2) ~= "number" or typeof(p3) ~= "number" then
+		return nil
+	end
+
+	if p1 == "ItemHPBonus" then
+		local v1 = math.floor(p2 * 100 + 0.5) / 100
+
+		if v1 <= 0 then
+			return nil
+		end
+
+		return string.format("%s: +%s%%", t.PrettifyStatName(p1), t.Fmt2dp(v1))
+	end
+
+	if p1 == "CriticalChance" then
+		local v3 = math.floor(math.clamp(p2, 0, 1) * 100 * 100 + 0.5) / 100
+
+		if v3 <= 0 then
+			return nil
+		end
+
+		return string.format("%s: %s%%", t.PrettifyStatName(p1), t.Fmt2dp(v3))
+	end
+
+	if p2 <= p3 then
+		return nil
+	end
+
+	if p1 == "DamageReduction" or p1 == "DamageAmplifier" or p1 == "CriticalDamage" then
+		return string.format("%s: +%s%%", t.PrettifyStatName(p1), t.Fmt2dp((p2 - p3) * 100))
+	end
+
+	return string.format("%s: +%s%%", t.PrettifyStatName(p1), t.Fmt2dp((p2 / p3 - 1) * 100))
+end
+
+return t

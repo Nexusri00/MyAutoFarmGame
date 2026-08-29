@@ -1,0 +1,327 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQNeBFBsYXkFcGFpcnMEU3RvcAlJc1BsYXlpbmcHQWxsU3RvcAxTZXRBbmltYXRpb24GdHlwZW9mBXRhYmxlAl9HD0N1c3RvbUFuaW1hdGlvbg1GbG9vck1hdGVyaWFsBEVudW0ITWF0ZXJpYWwDQWlyDFZhbHVlTWFuYWdlcglDaGFyYWN0ZXIFU2tpbGwFQ2hlY2sIQW5jaG9yZWQJV2Fsa1NwZWVkDU1vdmVEaXJlY3Rpb24HUnVubmluZwNSdW4EV2FsawRJZGxlBFRvb2wETmFtZQ5GaW5kRmlyc3RDaGlsZARnYW1lClJ1blNlcnZpY2UKR2V0U2VydmljZQlIZWFydGJlYXQEV2FpdAdFbmFibGVkCElkZW50aXR5C0RhdGFNYW5hZ2VyBlBsYXllcgVWYWx1ZQdHZXRJdGVtCVNraWxsTGlzdA1EaXNwbGF5U2tpbGxzCklucHV0RXZlbnQFRXF1aXAKRmlyZVNlcnZlcgR0YXNrBXNwYXduBkV2ZW50cwRIb2xkBkZsaWdodAhNMUFjdGl2ZQZBdHRhY2sCTTEBWgRUeXBlAS0IR2V0TW91c2UBWAFDAVYFQmVnYW4FSW5wdXQFRW5kZWQISHVtYW5vaWQIUm9vdFBhcnQKQW5pbWF0aW9ucwxXYWl0Rm9yQ2hpbGQNTG9hZEFuaW1hdGlvbghUb29sRGF0YQNLZXkLQWJpbGl0eU5hbWUKVHVyYm8gUnVzaANUYWcGc2NyaXB0Al9aDlNwaXJpdCBUZW1wZXN0Al9YD1Zlcm1pbGxpb24gUmVuZAJfQw9UdXJibyBCcmVha2Rvd24CX1YLQ29ubmVjdGlvbnMIRXF1aXBwZWQHQ29ubmVjdApVbmVxdWlwcGVkB1VuZXF1aXAJQWN0aXZhdGVkBE1vdmUQVXNlcklucHV0U2VydmljZQpJbnB1dEJlZ2FuCklucHV0RW5kZWQHcmVxdWlyZRFSZXBsaWNhdGVkU3RvcmFnZQ9WaXN1YWxFbmhhbmNlcnMOQWJpbGl0eURpc3BsYXkADgkCAQAAAC3wABUAAAAAgKQCAgAAABBA+wMAAJ8CAgQXAgUA8QYEAAEAAAC8Bwb6AwAAAJ8HAgFuAvr/AgAAAE0CAZwEAAAAKgIbAAAAAIC8AgHuAAAAAJ8CAgGCAAEA8AAJAAMAAIBNAgGcBAAAACoC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
+
+-- https://lua.expert/
+local AbilityDisplay = require(game.ReplicatedStorage.VisualEnhancers.AbilityDisplay)
+
+return function(p1) --[[ Line: 3 | Upvalues: AbilityDisplay (copy) ]]
+	local Humanoid = p1.Humanoid
+	local RootPart = p1.RootPart
+	local v1 = _G.Animations:WaitForChild(p1.Type):WaitForChild(p1.Tool.Name)
+	local v2 = nil
+
+	if v1:FindFirstChild("Walk") and v1:FindFirstChild("Run") then
+		v2 = {
+			Idle = Humanoid:LoadAnimation(v1:WaitForChild("Idle")),
+			Walk = Humanoid:LoadAnimation(v1:WaitForChild("Walk")),
+			Run = Humanoid:LoadAnimation(v1:WaitForChild("Run"))
+		}
+	elseif v1:FindFirstChild("Idle") then
+		v2 = Humanoid:LoadAnimation(v1:WaitForChild("Idle"))
+	end
+
+	local _ = _G.ToolData[p1.Tool.Name]
+
+	p1.SkillList = {
+		{
+			Key = "Z",
+			AbilityName = "Turbo Rush",
+			Tag = script.Name .. "_Z"
+		},
+		{
+			Key = "X",
+			AbilityName = "Spirit Tempest",
+			Tag = script.Name .. "_X"
+		},
+		{
+			Key = "C",
+			AbilityName = "Vermillion Rend",
+			Tag = script.Name .. "_C"
+		},
+		{
+			Key = "V",
+			AbilityName = "Turbo Breakdown",
+			Tag = script.Name .. "_V"
+		}
+	}
+	p1.Connections.Equip = p1.Tool.Equipped:Connect(function() --[[ Line: 31 | Upvalues: p1 (copy), AbilityDisplay (ref), v2 (ref), Humanoid (copy), RootPart (copy) ]]
+		p1.Tool.Enabled = true
+
+		local Identity = p1.Tool:FindFirstChild("Identity")
+		local DataManager = _G.DataManager
+		local Player = p1.Player
+		local v1 = Identity and Identity.Value or p1.Tool.Name
+
+		AbilityDisplay:DisplaySkills(p1.SkillList, (DataManager:GetItem(Player, v1)))
+		_G.InputEvent:FireServer("Equip", p1.Tool)
+		task.spawn(function() --[[ Line: 43 | Upvalues: v2 (ref), Humanoid (ref), p1 (ref), RootPart (ref) ]]
+			if not v2 then
+				return
+			end
+
+			local v1 = v2
+
+			if typeof(v1) == "table" then
+				_G.CustomAnimation = true
+
+				local function SetAnimation(p1, p2) --[[ SetAnimation | Line: 48 | Upvalues: v2 (ref) ]]
+					if p1 == "Play" then
+						for k, v in pairs(v2) do
+							if v ~= p2 then
+								v:Stop()
+							end
+						end
+
+						if p2.IsPlaying == false then
+							p2:Play()
+						end
+					elseif p1 == "Stop" then
+						if p2.IsPlaying == true then
+							p2:Stop()
+						end
+					else
+						if p1 ~= "AllStop" then
+							return
+						end
+
+						for k, v in pairs(v2) do
+							v:Stop()
+						end
+					end
+				end
+
+				local v22
+
+				if Humanoid.FloorMaterial == Enum.Material.Air or _G.ValueManager:Check(p1.Character, "Skill") == false then
+					v22 = true
+
+					for k, v in pairs(v2) do
+						v:Stop()
+					end
+				else
+					v22 = false
+
+					if RootPart.Anchored == false and (Humanoid.WalkSpeed > 0 and Humanoid.MoveDirection ~= Vector3.new(0, 0, 0)) then
+						if _G.Running == true and _G.ValueManager:Check(p1.Character, "Run") == true then
+							local Run = v2.Run
+
+							for k, v in pairs(v2) do
+								if v ~= Run then
+									v:Stop()
+								end
+							end
+
+							if Run.IsPlaying == false then
+								Run:Play()
+							end
+						else
+							local Walk = v2.Walk
+
+							for k, v in pairs(v2) do
+								if v ~= Walk then
+									v:Stop()
+								end
+							end
+
+							if Walk.IsPlaying == false then
+								Walk:Play()
+							end
+						end
+					else
+						local Idle = v2.Idle
+
+						for k, v in pairs(v2) do
+							if v ~= Idle then
+								v:Stop()
+							end
+						end
+
+						if Idle.IsPlaying == false then
+							Idle:Play()
+						end
+					end
+				end
+
+				while _G.CustomAnimation == true and p1.Character:FindFirstChild(p1.Tool.Name) ~= nil do
+					if v22 == false and (RootPart.Anchored == false and (Humanoid.WalkSpeed > 0 and Humanoid.MoveDirection ~= Vector3.new(0, 0, 0))) then
+						if _G.Running == true and _G.ValueManager:Check(p1.Character, "Run") == true then
+							local Run = v2.Run
+
+							for k, v in pairs(v2) do
+								if v ~= Run then
+									v:Stop()
+								end
+							end
+
+							if Run.IsPlaying == false then
+								Run:Play()
+							end
+						else
+							local Walk = v2.Walk
+
+							for k, v in pairs(v2) do
+								if v ~= Walk then
+									v:Stop()
+								end
+							end
+
+							if Walk.IsPlaying == false then
+								Walk:Play()
+							end
+						end
+					elseif v22 == false then
+						local Idle = v2.Idle
+
+						for k, v in pairs(v2) do
+							if v ~= Idle then
+								v:Stop()
+							end
+						end
+
+						if Idle.IsPlaying == false then
+							Idle:Play()
+						end
+					end
+
+					if Humanoid.FloorMaterial == Enum.Material.Air or _G.ValueManager:Check(p1.Character, "Skill") == false then
+						v22 = true
+
+						for k, v in pairs(v2) do
+							v:Stop()
+						end
+					else
+						v22 = false
+
+						if RootPart.Anchored == false and (Humanoid.WalkSpeed > 0 and Humanoid.MoveDirection ~= Vector3.new(0, 0, 0)) then
+							if _G.Running == true and _G.ValueManager:Check(p1.Character, "Run") == true then
+								local Run = v2.Run
+
+								for k, v in pairs(v2) do
+									if v ~= Run then
+										v:Stop()
+									end
+								end
+
+								if Run.IsPlaying == false then
+									Run:Play()
+								end
+							else
+								local Walk = v2.Walk
+
+								for k, v in pairs(v2) do
+									if v ~= Walk then
+										v:Stop()
+									end
+								end
+
+								if Walk.IsPlaying == false then
+									Walk:Play()
+								end
+							end
+						else
+							local Idle = v2.Idle
+
+							for k, v in pairs(v2) do
+								if v ~= Idle then
+									v:Stop()
+								end
+							end
+
+							if Idle.IsPlaying == false then
+								Idle:Play()
+							end
+						end
+					end
+
+					game:GetService("RunService").Heartbeat:Wait()
+				end
+
+				for k, v in pairs(v2) do
+					v:Stop()
+				end
+			else
+				v2:Play()
+			end
+		end)
+	end)
+	p1.Connections.Unequip = p1.Tool.Unequipped:Connect(function() --[[ Line: 136 | Upvalues: p1 (copy), AbilityDisplay (ref), v2 (ref) ]]
+		p1.Tool.Enabled = false
+		AbilityDisplay:DisplaySkills()
+		p1.Events.Hold = nil
+		p1.Events.Flight = nil
+		_G.InputEvent:FireServer("Equip", p1.Tool)
+
+		if not v2 then
+			return
+		end
+
+		if typeof(v2) == "table" then
+			_G.CustomAnimation = nil
+
+			return
+		end
+
+		v2:Stop()
+	end)
+	p1.Connections.Activated = p1.Tool.Activated:Connect(function() --[[ Line: 155 | Upvalues: p1 (copy) ]]
+		if _G.M1Active then
+			return
+		end
+
+		if _G.ValueManager:Check(p1.Character, "Attack") ~= false then
+			_G.InputEvent:FireServer("Tool", p1.Tool, "M1")
+		end
+	end)
+
+	local function f3(p12) --[[ Line: 164 | Upvalues: p1 (copy) ]]
+		if p12 == "Z" or (p12 == "X" or p12 == "C") then
+			if p1.Player:FindFirstChild(p1.Type .. "-" .. p12) or p1.Character:FindFirstChild(p1.Type .. "-" .. p12) then
+				return
+			end
+
+			if _G.ValueManager:Check(p1.Character, "Skill", { p1.Tool }) ~= false then
+				_G.InputEvent:FireServer("Tool", p1.Tool, p12, (_G.GetMouse(p1.Player)))
+			end
+		else
+			if p12 ~= "V" then
+				return
+			end
+
+			if p1.Player:FindFirstChild(p1.Type .. "-" .. p12) or p1.Character:FindFirstChild(p1.Type .. "-" .. p12) then
+				return
+			end
+
+			if _G.ValueManager:Check(p1.Character, "Skill", { p1.Tool }) == false then
+				return
+			end
+
+			_G.InputEvent:FireServer("Tool", p1.Tool, p12, (_G.GetMouse(p1.Player)))
+		end
+	end
+
+	p1.Move = f3
+	p1.Connections.InputBegan = game:GetService("UserInputService").InputBegan:Connect(function(p12, p2) --[[ Line: 218 | Upvalues: p1 (copy), f3 (copy) ]]
+		if not p2 then
+			p1:Input("Began", "Z", p12, function(p1) --[[ Line: 223 | Upvalues: f3 (ref) ]]
+				f3(p1)
+			end)
+			p1:Input("Began", "X", p12, function(p1) --[[ Line: 227 | Upvalues: f3 (ref) ]]
+				f3(p1)
+			end)
+			p1:Input("Began", "C", p12, function(p1) --[[ Line: 231 | Upvalues: f3 (ref) ]]
+				f3(p1)
+			end)
+			p1:Input("Began", "V", p12, function(p1) --[[ Line: 235 | Upvalues: f3 (ref) ]]
+				f3(p1)
+			end)
+		end
+	end)
+	p1.Connections.InputEnded = game:GetService("UserInputService").InputEnded:Connect(function(p12) --[[ Line: 240 | Upvalues: p1 (copy) ]]
+		p1:Input("Ended", "Z", p12)
+		p1:Input("Ended", "X", p12)
+		p1:Input("Ended", "C", p12)
+		p1:Input("Ended", "V", p12)
+	end)
+end

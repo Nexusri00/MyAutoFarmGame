@@ -1,0 +1,31 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQMeBkhlYWx0aAJfRxBUZWxlcG9ydENvb2xkb3duDFZhbHVlTWFuYWdlcgVTa2lsbAVDaGVjawxHZXRBdHRyaWJ1dGUGRmxpZ2h0DkZpbmRGaXJzdENoaWxkB0hvbGRpbmcGTm9EYXNoBk5vSnVtcA1JbnB1dEZ1bmN0aW9uCkZsYXNoIFN0ZXADSGl0CFBvc2l0aW9uDEludm9rZVNlcnZlcgR0YXNrBHdhaXQEZ2FtZQdQbGF5ZXJzCkdldFNlcnZpY2ULTG9jYWxQbGF5ZXIIR2V0TW91c2UJQ2hhcmFjdGVyDkNoYXJhY3RlckFkZGVkBFdhaXQISHVtYW5vaWQMV2FpdEZvckNoaWxkEEh1bWFub2lkUm9vdFBhcnQAAgQAAwAAAFX7AAAATQAAWgAAAACMAQAA1AAHAAEAAACkAAIAAAAQQE0AAK0DAAAAKgACAAEAAICCAAEApAACAAAAEEBNAAC2BAAAAPsCAQBvAwUAvAAA/AYAAACfAAQCKgAfAAAAAAD7AAEAbwIDALwAABIHAAAAnwADAisAGAD7AAEAbwIIALwAAAMJAAAAnwADAisAEgD7AAEAbwIKALwAAAMJAAAAnwADAisADAD7AAEAbwILALwAAAMJAAAAnwADAisABgD7AAEAbwIMALwAAAMJAAAAnwADAg4AAQCCAAEApAACAAAAEEBNAAAxDQAAAG8CDgD7AwIATQMD+w8AAABNAwM7EAAAALwAADkRAAAAnwAEAioADwABAACApAECAAAAEECpAgEAMAIBrQMAAACkARQAAEwggYwCCACfAQIBpAECAAAAEEDGAgAAMAIBrQMAAACCAAEAFQMBAwIEAAAQQAMDAwQDBQMGAwcDCAMJAwoDCwMMAw0DDgMPAxADEQMSAxMEAEwggQAJAAEYAAAAAAAAAAAAAAAAAQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQMAAAAAAAAAAAAAAAACAAEAAAAAAgAAAAIAAAAAAgoAAAAABwAAAQIAJqMAAACkAAEAAAAAQG8CAgC8AAAWAwAAAJ8AAwJNAAAxBAAAALwBACMFAAAAnwECAk0CAGkGAAAAKwIFAE0CAJcHAAAAvAIC9wgAAACfAgICbwUJALwDAtMKAAAAnwMDAm8GCwC8BALTCgAAAJ8EAwKkBQ0AAADAQMYGAAAwBgWtDgAAAMAFDwASAAMAEgACABIAAQCCBQIAEAMUBAAAAEADFQMWAxcDGAMZAxoDGwMcAx0DHgMCBAAAwEADAwYAAQABAAEYAAAAAAAAAAAAAQAAAQAAAAAAAAABAAAAAQAAAAIAAAAAAgAAAAABAAAAAAG36WXiK5lfCTmh+sYaHzhvx/FyloUtD+M=
+
+-- https://lua.expert/
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local v1 = LocalPlayer:GetMouse()
+local v2 = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+local Humanoid = v2:WaitForChild("Humanoid")
+
+v2:WaitForChild("HumanoidRootPart")
+_G.TeleportCooldown = nil
+
+return function() --[[ Line: 9 | Upvalues: Humanoid (copy), v2 (copy), v1 (copy) ]]
+	if Humanoid.Health <= 0 or _G.TeleportCooldown == true then
+		return
+	end
+
+	if _G.ValueManager:Check(v2, "Skill") == false or (v2:GetAttribute("TeleportCooldown") or (v2:FindFirstChild("Flight") or (v2:FindFirstChild("Holding") or (v2:FindFirstChild("NoDash") or v2:FindFirstChild("NoJump"))))) then
+		return
+	end
+
+	if _G.InputFunction:InvokeServer("Flash Step", v1.Hit.Position) ~= true then
+		return
+	end
+
+	_G.TeleportCooldown = true
+	task.wait(8)
+	_G.TeleportCooldown = nil
+end

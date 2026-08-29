@@ -1,0 +1,21 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQMRBGdhbWUQVXNlcklucHV0U2VydmljZQpHZXRTZXJ2aWNlCkd1aVNlcnZpY2UHcmVxdWlyZQ9SZXBsaWNhdGVkRmlyc3QFRW51bXMSSXNUZW5Gb290SW50ZXJmYWNlAl9HB0RldmljZXMHQ29uc29sZQZEZXZpY2UMVG91Y2hFbmFibGVkD0tleWJvYXJkRW5hYmxlZAxNb3VzZUVuYWJsZWQGTW9iaWxlAlBDAAEFAAABAgA+owAAAKQAAQAAAABAbwICALwAABYDAAAAnwADAqQBAQAAAABAbwMEALwBARYDAAAAnwEDAqQCBgAAAFBApAMBAAAAAEBNAwNFBwAAAE0DA1sIAAAAnwICArwDAWwJAAAAnwMCAg4DCQCkAwsAAACgQE0EAkcMAAAATQQEgQ0AAAAwBAN0DgAAAIIAAQBNAwB/DwAAAA4DDwBNAwAtEAAAACsDDABNAwBQEQAAACsDCQCkAwsAAACgQE0EAkcMAAAATQQEWRIAAAAwBAN0DgAAAIIAAQCkAwsAAACgQE0EAkcMAAAATQQEERMAAAAwBAN0DgAAAIIAAQAUAwEEAAAAQAMCAwMDBAMFBAAAUEADBgMHAwgDCQQAAKBAAwoDCwMMAw0DDgMPAxADEQABAAEYAAAAAAAAAAEAAAAAAAIAAAAAAAAAAAQAAAABAAAAAAAAAAABAAAAAAAAAAABAAAAAAAAAAACAAAAAAAAAAEBAAAAAABcfYRBYkzO4GemLRmWzvxzLGWTNW657kA=
+
+-- https://lua.expert/
+local UserInputService = game:GetService("UserInputService")
+local GuiService = game:GetService("GuiService")
+local v1 = require(game.ReplicatedFirst.Enums)
+
+if GuiService:IsTenFootInterface() then
+	_G.Device = v1.Devices.Console
+
+	return
+end
+
+if UserInputService.TouchEnabled and not (UserInputService.KeyboardEnabled or UserInputService.MouseEnabled) then
+	_G.Device = v1.Devices.Mobile
+else
+	_G.Device = v1.Devices.PC
+end

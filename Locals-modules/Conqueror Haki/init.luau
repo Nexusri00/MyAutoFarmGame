@@ -1,0 +1,101 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQM6B0Rlc3Ryb3kGQ0ZyYW1lB1Bpdm90VG8KU3VyZmFjZUZpeAlUd2VlbkluZm8DbmV3BEVudW0LRWFzaW5nU3R5bGUEUXVhZA9FYXNpbmdEaXJlY3Rpb24DT3V0BlZvbHVtZQZDcmVhdGUEUGxheQlDb21wbGV0ZWQEV2FpdApEaXNjb25uZWN0EEh1bWFub2lkUm9vdFBhcnQORmluZEZpcnN0Q2hpbGQESGVhZAExD0NvbnF1ZXJvcnMgSGFraQZzY3JpcHQFQ2xvbmUJU2V0dXBQYXJ0CEFuY2hvcmVkBFdlbGQORW1pdF9XaXRoU2NhbGUMRGVicmlzTW9kdWxlCUFkZERlYnJpcwtJbXBhY3RGcmFtZQhOZXdGcmFtZQ1QcmVzZXRfSW1wYWN0BHRhc2sFZGVsYXkKQXVyYUFyb3VuZARnYW1lCVdvcmtzcGFjZQZEZWJyaXMGUGFyZW50DkNvbnF1ZXJvciBIYWtpB0VmZmVjdHMESGFraQZQcm9tcHQJUGxheVNvdW5kA1JlZApSdW5TZXJ2aWNlCkdldFNlcnZpY2UNUmVuZGVyU3RlcHBlZAdDb25uZWN0CEF1cmFIZWFkB3JlcXVpcmURUmVwbGljYXRlZFN0b3JhZ2UHTW9kdWxlcw1WaXN1YWxQYWNrYWdlDVNoYXJlZFBhY2thZ2UJU291bmREYXRhDFR3ZWVuU2VydmljZQAFAgABAAAABfsAAAC8AABQAAAAAJ8AAgGCAAEAAQMBABoAARgAAAAAARsAAAAAAwADAAAADfsAAAD7AgEATQIChQAAAAC8AADCAQAAAJ8AAwH7AAIATQAARQIAAAD7AQAAnwACAYIAAQADAwIDAwMEACwAARgAAAAAAAAAAQAAAAABLQAAAAAGAAUAAAAspAACAAAEAIBvAQMApAIHAAYUQMCkAwoACSBAwJ8ABAL7AQAA+wMBAFIEAADiBQ0AvAEBlg4AAACfAQUCvAIB7g8AAACfAgIBTQIBGBAAAAC8AgL3EQAAAJ8CAgH7AgIAvAICUBIAAACfAgIB+wIDAA4CBAD7AgMAvAICGhMAAACfAgIBxgIAAN4CAwD7AgQADgIGAPsCBAC8AgJQEgAAAJ8CAgHGAgAA3gIEAIIAAQAUAwUDBgQABACAAgAAAAAAAOA/AwcDCAMJBAYUQMADCgMLBAkgQMAD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
+
+-- https://lua.expert/
+local VisualPackage = require(game.ReplicatedStorage.Modules.VisualPackage)
+
+require(game.ReplicatedStorage.Modules.SharedPackage)
+
+local SoundData = require(game.ReplicatedStorage.Modules.Effects.SoundData)
+local TweenService = game:GetService("TweenService")
+
+return {
+	["Conqueror Haki"] = function(p1, p2, p3) --[[ Line: 8 | Upvalues: VisualPackage (copy), SoundData (copy), TweenService (copy) ]]
+		local HumanoidRootPart = p1:FindFirstChild("HumanoidRootPart")
+		local Head = p1:FindFirstChild("Head")
+
+		if not Head then
+			return
+		end
+
+		if not HumanoidRootPart then
+			return
+		end
+
+		local v1 = script["Conquerors Haki"]["1"]:Clone()
+
+		VisualPackage.SetupPart(v1)
+		v1.Anchored = false
+		v1.CFrame = Head.CFrame
+		VisualPackage.Weld(v1, Head)
+		VisualPackage.Emit_WithScale(v1)
+		VisualPackage.DebrisModule:AddDebris(v1, 8)
+
+		local v2 = VisualPackage.ImpactFrame.NewFrame()
+
+		v2:Preset_Impact()
+		task.delay(2, function() --[[ Line: 26 | Upvalues: v2 (copy) ]]
+			v2:Destroy()
+		end)
+
+		local v3 = script["Conquerors Haki"].AuraAround:Clone()
+
+		v3.Parent = game.Workspace.Debris
+		v3:PivotTo(HumanoidRootPart.CFrame)
+		VisualPackage.SurfaceFix(v3)
+		VisualPackage.Emit_WithScale(v3, nil, p3)
+
+		local v4 = SoundData.Effects.Haki["Conqueror Haki"].AuraAround.Prompt:Clone()
+
+		v4.Parent = v3
+		VisualPackage.PlaySound(v4)
+
+		local v5 = VisualPackage.ImpactFrame.NewFrame()
+
+		v5:Red()
+		v5:Prompt()
+
+		local v6 = game:GetService("RunService").RenderStepped:Connect(function() --[[ Line: 44 | Upvalues: v3 (copy), HumanoidRootPart (copy), VisualPackage (ref) ]]
+			v3:PivotTo(HumanoidRootPart.CFrame)
+			VisualPackage.SurfaceFix(v3)
+		end)
+
+		VisualPackage.DebrisModule:AddDebris(v3, p3, nil, function() --[[ Line: 50 | Upvalues: TweenService (ref), v4 (copy), v3 (copy), v6 (ref), v5 (ref) ]]
+			local v1 = TweenService:Create(v4, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+				Volume = 0
+			})
+
+			v1:Play()
+			v1.Completed:Wait()
+			v3:Destroy()
+
+			if v6 then
+				v6:Disconnect()
+			end
+
+			v6 = nil
+
+			if not v5 then
+				return
+			end
+
+			v5:Destroy()
+			v5 = nil
+		end, true)
+
+		local Head2 = p1:FindFirstChild("Head")
+
+		if Head2 then
+			local v7 = script["Conquerors Haki"].AuraHead:Clone()
+
+			VisualPackage.SetupPart(v7)
+			v7.Anchored = false
+			v7.CFrame = Head2.CFrame
+			VisualPackage.Weld(v7, Head2)
+			VisualPackage.Emit_WithScale(v7)
+			VisualPackage.DebrisModule:AddDebris(v7, p3)
+		end
+	end
+}

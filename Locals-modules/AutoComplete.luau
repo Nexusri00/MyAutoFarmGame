@@ -1,0 +1,172 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQNmB1Zpc2libGUABFRleHQFVURpbTIDbmV3C0dldFRleHRTaXplB1ZlY3RvcjIBWARTaXplAVkFU2NhbGUGT2Zmc2V0B1NldFRleHQFRmllbGQKVGV4dEJvdW5kcwRUeXBlBG1hdGgDbWF4DFVJTGlzdExheW91dBNBYnNvbHV0ZUNvbnRlbnRTaXplBlBhcmVudAxBYnNvbHV0ZVNpemUQQWJzb2x1dGVQb3NpdGlvbgNtaW4TVXBkYXRlQ29udGFpbmVyU2l6ZQRuYW1lBHR5cGUCOiADc3ViBXVwcGVyBUxhYmVsC2Rlc2NyaXB0aW9uB2ludmFsaWQGQ29sb3IzB2Zyb21SR0IKVGV4dENvbG9yMwhUZXh0Rml0cwR0YXNrBHdhaXQLQXBwbHlMYXlvdXQSU2Nyb2xsQmFyVGhpY2tuZXNzEVVwZGF0ZUluZm9EaXNwbGF5BXBhaXJzBUl0ZW1zA2d1aQdEZXN0cm95DFNlbGVjdGVkSXRlbQZwcmVmaXgGUHJlZml4BmlzTGFzdAhMYXN0SXRlbQdjb21tYW5kB0NvbW1hbmQDYXJnA0FyZwdudW1BcmdzB051bUFyZ3MJaXNQYXJ0aWFsCUlzUGFydGlhbAVDbG9uZQROYW1lFkJhY2tncm91bmRUcmFuc3BhcmVuY3kGc3RyaW5nBGZpbmQFbG93ZXIFVHlwZWQDcmVwASAHU3VnZ2VzdAtMYXlvdXRPcmRlcgdUZXh0Qm94C1NwbGl0U3RyaW5nAmF0AWUFdGFibGUGcmVtb3ZlBmNvbmNhdAhQb3NpdGlvbgdvcHRpb25zBFNob3cPR2V0U2VsZWN0ZWRJdGVtBEhpZGUJSXNWaXNpYmxlDkNhbnZhc1Bvc2l0aW9uBlNlbGVjdAtJdGVtT3B0aW9ucwRVdGlsCVBsYXllckd1aQxXYWl0Rm9yQ2hpbGQEQ21kcgxBdXRvY29tcGxldGUKVGV4dEJ1dHRvbgVUaXRsZQtEZXNjcmlwdGlvbgVGcmFtZQVFbnRyeRhHZXRQcm9wZXJ0eUNoYW5nZWRTaWduYWwHQ29ubmVjdARnYW1lB1BsYXllcnMKR2V0U2VydmljZQtMb2NhbFBsYXllcgAKDAQBAAAALEcCAgAAAACAqQQAAakEAQAwBACAAAAAAJAEAgEwBAH1AgAAAA4DIQCkBAUAABAw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
+
+-- https://lua.expert/
+local LocalPlayer = game:GetService("Players").LocalPlayer
+
+return function(p1) --[[ Line: 5 | Upvalues: LocalPlayer (copy) ]]
+	local t = {
+		SelectedItem = 0,
+		Items = {},
+		ItemOptions = {}
+	}
+	local Util = p1.Util
+	local Autocomplete = LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("Cmdr"):WaitForChild("Autocomplete")
+	local TextButton = Autocomplete:WaitForChild("TextButton")
+	local Title = Autocomplete:WaitForChild("Title")
+	local Description = Autocomplete:WaitForChild("Description")
+	local Entry = Autocomplete.Parent:WaitForChild("Frame"):WaitForChild("Entry")
+
+	TextButton.Parent = nil
+
+	local ScrollBarThickness = Autocomplete.ScrollBarThickness
+
+	local function SetText(p1, p2, p3, p4) --[[ SetText | Line: 24 | Upvalues: Util (copy) ]]
+		p1.Visible = if p3 == nil then false else true
+		p2.Text = p3 or ""
+
+		if not p4 then
+			return
+		end
+
+		p2.Size = UDim2.new(0, Util.GetTextSize(p3 or "", p2, Vector2.new(1000, 1000), 1, 0).X, p1.Size.Y.Scale, p1.Size.Y.Offset)
+	end
+
+	local function UpdateContainerSize() --[[ UpdateContainerSize | Line: 38 | Upvalues: Autocomplete (copy), Title (copy) ]]
+		Autocomplete.Size = UDim2.new(0, math.max(Title.Field.TextBounds.X + Title.Field.Type.TextBounds.X, Autocomplete.Size.X.Offset), 0, (math.min(Autocomplete.UIListLayout.AbsoluteContentSize.Y, Autocomplete.Parent.AbsoluteSize.Y - Autocomplete.AbsolutePosition.Y - 10)))
+	end
+
+	local function UpdateInfoDisplay(p1) --[[ UpdateInfoDisplay | Line: 48 | Upvalues: SetText (copy), Title (copy), Description (copy), Autocomplete (copy), UpdateContainerSize (copy), ScrollBarThickness (copy) ]]
+		SetText(Title, Title.Field, p1.name, true)
+
+		local v1 = p1.type and ": " .. p1.type:sub(1, 1):upper() .. p1.type:sub(2)
+
+		Title.Field.Type.Visible = if v1 == nil then false else true
+		Title.Field.Type.Text = v1 or ""
+
+		local Label = Description.Label
+		local description = p1.description
+
+		Description.Visible = description ~= nil
+		Label.Text = description or ""
+		Description.Label.TextColor3 = p1.invalid and Color3.fromRGB(255, 73, 73) or Color3.fromRGB(255, 255, 255)
+		Description.Size = UDim2.new(1, 0, 0, 40)
+
+		repeat
+			if Description.Label.TextFits then
+				break
+			end
+
+			Description.Size = Description.Size + UDim2.new(0, 0, 0, 2)
+		until Description.Size.Y.Offset > 500
+
+		task.wait()
+		Autocomplete.UIListLayout:ApplyLayout()
+		UpdateContainerSize()
+		Autocomplete.ScrollBarThickness = ScrollBarThickness
+	end
+
+	function t.Show(p1, p2, p3) --[[ Show | Line: 88 | Upvalues: Autocomplete (copy), TextButton (copy), Entry (copy), Util (copy), UpdateInfoDisplay (copy) ]]
+		local v2 = if p3 then p3 else {}
+
+		for k, v in pairs(p1.Items) do
+			if v.gui then
+				v.gui:Destroy()
+			end
+		end
+
+		p1.SelectedItem = 1
+		p1.Items = p2
+		p1.Prefix = v2.prefix or ""
+		p1.LastItem = v2.isLast or false
+		p1.Command = v2.command
+		p1.Arg = v2.arg
+		p1.NumArgs = v2.numArgs
+		p1.IsPartial = v2.isPartial
+		Autocomplete.ScrollBarThickness = 0
+
+		local v3 = 200
+
+		for k, v in pairs(p1.Items) do
+			local v4 = v[1]
+			local v5 = v[2]
+			local v6 = TextButton:Clone()
+
+			v6.Name = v4 .. v5
+			v6.BackgroundTransparency = if k == p1.SelectedItem then 0.5 else 1
+
+			local v8, v9 = string.find(v5:lower(), v4:lower(), 1, true)
+
+			v6.Typed.Text = string.rep(" ", v8 - 1) .. v4
+			v6.Suggest.Text = string.sub(v5, 0, v8 - 1) .. string.rep(" ", #v4) .. string.sub(v5, v9 + 1)
+			v6.Parent = Autocomplete
+			v6.LayoutOrder = k
+
+			local v10 = math.max(v6.Typed.TextBounds.X, v6.Suggest.TextBounds.X) + 20
+
+			if v3 < v10 then
+				v3 = v10
+			end
+
+			v.gui = v6
+		end
+
+		Autocomplete.UIListLayout:ApplyLayout()
+
+		local Text = Entry.TextBox.Text
+		local v11 = Util.SplitString(Text)
+
+		if Text:sub(#Text, #Text) == " " and not v2.at then
+			v11[#v11 + 1] = "e"
+		end
+
+		table.remove(v11, #v11)
+		Autocomplete.Position = UDim2.new(0, Entry.TextBox.AbsolutePosition.X - 10 + (v2.at and v2.at or #table.concat(v11, " ") + 1) * 7, 0, Entry.TextBox.AbsolutePosition.Y + 30)
+		Autocomplete.Size = UDim2.new(0, v3, 0, Autocomplete.UIListLayout.AbsoluteContentSize.Y)
+		Autocomplete.Visible = true
+		UpdateInfoDisplay(if p1.Items[1] then p1.Items[1].options or v2 else v2)
+	end
+	function t.GetSelectedItem(p1) --[[ GetSelectedItem | Line: 161 | Upvalues: Autocomplete (copy), t (copy) ]]
+		if Autocomplete.Visible == false then
+			return nil
+		end
+
+		return t.Items[t.SelectedItem]
+	end
+	function t.Hide(p1) --[[ Hide | Line: 170 | Upvalues: Autocomplete (copy) ]]
+		Autocomplete.Visible = false
+	end
+	function t.IsVisible(p1) --[[ IsVisible | Line: 175 | Upvalues: Autocomplete (copy) ]]
+		return Autocomplete.Visible
+	end
+	function t.Select(p1, p2) --[[ Select | Line: 180 | Upvalues: Autocomplete (copy), Title (copy), Description (copy), TextButton (copy), UpdateInfoDisplay (copy) ]]
+		if not Autocomplete.Visible then
+			return
+		end
+
+		p1.SelectedItem = p1.SelectedItem + p2
+
+		if p1.SelectedItem > #p1.Items then
+			p1.SelectedItem = 1
+		elseif p1.SelectedItem < 1 then
+			p1.SelectedItem = #p1.Items
+		end
+
+		for k, v in pairs(p1.Items) do
+			v.gui.BackgroundTransparency = if k == p1.SelectedItem then 0.5 else 1
+		end
+
+		Autocomplete.CanvasPosition = Vector2.new(0, (math.max(0, Title.Size.Y.Offset + Description.Size.Y.Offset + p1.SelectedItem * TextButton.Size.Y.Offset - Autocomplete.Size.Y.Offset)))
+
+		if not (p1.Items[p1.SelectedItem] and p1.Items[p1.SelectedItem].options) then
+			return
+		end
+
+		UpdateInfoDisplay(p1.Items[p1.SelectedItem].options or {})
+	end
+	Autocomplete.Parent:GetPropertyChangedSignal("AbsoluteSize"):Connect(UpdateContainerSize)
+
+	return t
+end

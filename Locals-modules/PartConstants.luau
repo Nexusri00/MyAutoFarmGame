@@ -1,0 +1,261 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQNfCkF0dGFjaG1lbnQDSXNBC1dvcmxkQ0ZyYW1lBU1vZGVsCEdldFBpdm90BEJvbmUWVHJhbnNmb3JtZWRXb3JsZENGcmFtZQZDRnJhbWURcmVzb2x2ZUxpbmtDRnJhbWUGbW90aW9uC1NjYWxlTW90aW9uCHJvdGF0aW9uDVNjYWxlUm90YXRpb24LU3RhdGljVmFsdWUEbWF0aANtYXgJU3RhcnRUaW1lCExpZmVUaW1lBWNsYW1wE1F1ZXJ5UG9pbnRzV2l0aFRpbWUFR3JhcGgEU2VlZAZQYXJlbnQUZ2V0UGFyZW50U2NhbGVGYWN0b3IGQW5nbGVzA3JhZAhMb2NhbFhZWghMb2NhbFhaWQhMb2NhbFlYWghMb2NhbFlaWAhMb2NhbFpYWQhMb2NhbFpZWA9jb21wb3NlUm90YXRpb24GcmFuZG9tBFNpemUBWAFZAVoHVmVjdG9yMwNuZXcJTWFnbml0dWRlBFVuaXQGbG9va0F0DFNoYXBlUGFydGlhbARhY29zA3NpbgNjb3MEc3FydANhYnMEc2lnbglBeGlzTGlua3MPc2FtcGxlUmFuZ2VBeGVzBFBvc1gEUG9zWQRQb3NaFFJhbmRvbVZhbHVlRnJvbVJhbmdlC051bWJlclJhbmdlBUxvY2FsB1Bvc01vZGUGR2xvYmFsElZlY3RvclRvV29ybGRTcGFjZRNWZWN0b3JUb09iamVjdFNwYWNlCFBvc2l0aW9uCFJvdGF0aW9uE2FwcGx5UG9zaXRpb25PZmZzZXQKUmlnaWRMb2NhbBNyZXNvbHZlRGlzcGxhY2VtZW50Dl9zZXR0bGVFbmdhZ2VkDl9sYXN0SGl0Tm9ybWFsA0RvdAZFdmVudHMFT25IaXQIRnJpY3Rpb24JX2FjY2VsVmVsEWFwcGx5Q29udGFjdEFjY2VsBEVudW0ITm9ybWFsSWQDVG9wBnZlY3RvcghVcFZlY3RvcgptdWx0aXBsaWVyBkJvdHRvbQVGcm9udApMb29rVmVjdG9yBEJhY2sETGVmdAtSaWdodFZlY3RvcgVSaWdodBBEaXJlY3Rpb25WZWN0b3JzFFBhcnRpY2xlRW1pdHRlclNoYXBlA0JveAZTcGhlcmUIQ3lsaW5kZXIERGlzYw5zaGFwZUZ1bmN0aW9ucwALBAEAAAAAHG8DAAC8AQD+AQAA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
+
+-- https://lua.expert/
+local t = {
+	resolveLinkCFrame = function(p1) --[[ resolveLinkCFrame | Line: 11 ]]
+		if p1:IsA("Attachment") then
+			return p1.WorldCFrame
+		end
+
+		if p1:IsA("Model") then
+			return p1:GetPivot()
+		end
+
+		if p1:IsA("Bone") then
+			return p1.TransformedWorldCFrame
+		end
+
+		return p1.CFrame
+	end,
+	getParentScaleFactor = function(p1, p2, p3, p4) --[[ getParentScaleFactor | Line: 24 ]]
+		local v1, v2 = p1, 1
+
+		while v1 do
+			local v3
+			local v4 = true
+
+			if p4 == "motion" then
+				v4 = v1.ScaleMotion ~= false
+			elseif p4 == "rotation" then
+				v4 = if v1.ScaleRotation == true then true else false
+			end
+
+			if v4 then
+				v3 = if v1.StaticValue then math.max(0.001, v1.StaticValue) else math.max(0.001, p3.QueryPointsWithTime(math.clamp((p2 - v1.StartTime) / v1.LifeTime, 0, 1), v1.Graph, v1.Seed))
+				v2 = v2 * v3
+			end
+
+			v1 = v1.Parent
+		end
+
+		return v2
+	end,
+	composeRotation = function(p1, p2, p3, p4) --[[ composeRotation | Line: 51 ]]
+		local v1 = CFrame.Angles(math.rad(p2), 0, 0)
+		local v2 = CFrame.Angles(0, math.rad(p3), 0)
+		local v3 = CFrame.Angles(0, 0, (math.rad(p4)))
+
+		if p1 == "LocalXYZ" then
+			return v1 * v2 * v3
+		end
+
+		if p1 == "LocalXZY" then
+			return v1 * v3 * v2
+		end
+
+		if p1 == "LocalYXZ" then
+			return v2 * v1 * v3
+		end
+
+		if p1 == "LocalYZX" then
+			return v2 * v3 * v1
+		end
+
+		if p1 == "LocalZXY" then
+			return v3 * v1 * v2
+		end
+
+		if p1 == "LocalZYX" then
+			return v3 * v2 * v1
+		end
+
+		return v2 * v1 * v3
+	end,
+	DirectionVectors = {
+		[Enum.NormalId.Top] = {
+			vector = "UpVector",
+			multiplier = 1
+		},
+		[Enum.NormalId.Bottom] = {
+			vector = "UpVector",
+			multiplier = -1
+		},
+		[Enum.NormalId.Front] = {
+			vector = "LookVector",
+			multiplier = 1
+		},
+		[Enum.NormalId.Back] = {
+			vector = "LookVector",
+			multiplier = -1
+		},
+		[Enum.NormalId.Left] = {
+			vector = "RightVector",
+			multiplier = -1
+		},
+		[Enum.NormalId.Right] = {
+			vector = "RightVector",
+			multiplier = 1
+		}
+	},
+	shapeFunctions = {
+		[Enum.ParticleEmitterShape.Box] = function(p1, p2) --[[ Line: 76 ]]
+			local v4 = Vector3.new((math.random() * 2 - 1) * p1.Size.X / 2, (math.random() * 2 - 1) * p1.Size.Y / 2, (math.random() * 2 - 1) * p1.Size.Z / 2)
+			local v5 = v4.Magnitude > 0.0001 and v4.Unit or Vector3.new(0, 1, 0)
+
+			return v4, v4.Magnitude > 0.0001 and CFrame.lookAt(Vector3.new(), -v5) or CFrame.new(), v5
+		end,
+		[Enum.ParticleEmitterShape.Sphere] = function(p1, p2) --[[ Line: 86 ]]
+			local v1 = p1.Size.X / 2
+			local v2 = v1 * p2.ShapePartial
+			local v3 = (math.random() * (v1 ^ 3 - v2 ^ 3) + v2 ^ 3) ^ 0.3333333333333333
+			local v4 = math.random() * 2 * math.pi
+			local v6 = math.acos(math.random() * 2 - 1)
+			local v10 = Vector3.new(math.sin(v6) * math.cos(v4), math.sin(v6) * math.sin(v4), (math.cos(v6)))
+
+			return v10 * v3, CFrame.lookAt(Vector3.new(), -v10), v10
+		end,
+		[Enum.ParticleEmitterShape.Cylinder] = function(p1, p2) --[[ Line: 99 ]]
+			local v1 = p1.Size.X / 2
+			local Y = p1.Size.Y
+			local v2 = math.clamp(p2.ShapePartial, 0, 1)
+			local v4 = math.sqrt(math.random() * (1 - v2 * v2) + v2 * v2)
+			local v5 = math.random() * 2 * math.pi
+			local v6 = v4 * v1 * math.cos(v5)
+			local v7 = (math.random() * 2 - 1) * (Y / 2)
+			local v8 = v4 * v1 * math.sin(v5)
+			local v9 = Vector3.new(v6, v7, v8)
+			local v10
+
+			if Y / 2 - 0.01 < math.abs(v7) then
+				v10 = Vector3.new(0, math.sign(v7), 0)
+			else
+				local v13 = Vector3.new(v6, 0, v8)
+
+				v10 = if v13.Magnitude < 0.0001 then Vector3.new(0, 1, 0) else v13.Unit
+			end
+
+			return v9, CFrame.lookAt(Vector3.new(), -v10), v10
+		end,
+		[Enum.ParticleEmitterShape.Disc] = function(p1, p2) --[[ Line: 123 ]]
+			local v1 = p1.Size.X / 2
+			local v2 = math.clamp(p2.ShapePartial, 0, 1)
+			local v4 = math.sqrt(math.random() * (1 - v2 * v2) + v2 * v2)
+			local v5 = math.random() * 2 * math.pi
+			local v8 = Vector3.new(v4 * v1 * math.cos(v5), 0, v4 * v1 * math.sin(v5))
+
+			if v8.Magnitude < 0.0001 then
+				return v8, CFrame.new(), Vector3.new(0, 1, 0)
+			end
+
+			local Unit = v8.Unit
+
+			return v8, CFrame.lookAt(Vector3.new(), -Unit), Unit
+		end
+	}
+}
+
+function t.applyPositionOffset(p1, p2, p3, p4, p5, p6, p7, p8, p9) --[[ applyPositionOffset | Line: 144 | Upvalues: t (copy) ]]
+	local v1, v2, v3
+
+	if p6 and p2.AxisLinks then
+		local v4 = p6.sampleRangeAxes(p2, p2.AxisLinks, { "PosX", "PosY", "PosZ" }, p5, p7)
+
+		v1 = v4.PosX
+		v2 = v4.PosY
+		v3 = v4.PosZ
+	else
+		v1, v2, v3 = p5.RandomValueFromRange(p2.PosX or NumberRange.new(0)), p5.RandomValueFromRange(p2.PosY or NumberRange.new(0)), p5.RandomValueFromRange(p2.PosZ or NumberRange.new(0))
+	end
+
+	local v11, v12, v13
+
+	if p9 and p9 ~= 1 then
+		v11 = v1 * p9
+		v12 = v2 * p9
+		v13 = v3 * p9
+	else
+		v11 = v1
+		v12 = v2
+		v13 = v3
+	end
+
+	if v11 == 0 and (v12 == 0 and v13 == 0) then
+		return p1
+	end
+
+	local v14 = p2.PosMode or "Local"
+
+	if v14 == "Local" then
+		return p1 * CFrame.new(v11, v12, v13)
+	end
+
+	local v15 = Vector3.new(v11, v12, v13)
+	local v16 = if v14 == "Global" then v15 else (if p3 then t.resolveLinkCFrame(p3) elseif p4:IsA("Attachment") then p4.WorldCFrame elseif p4:IsA("Model") then p4:GetPivot() else p4.CFrame):VectorToWorldSpace(v15)
+
+	return CFrame.new(p1.Position + (p8 and p8:VectorToObjectSpace(v16) or v16)) * p1.Rotation
+end
+function t.resolveDisplacement(p1, p2, p3, p4, p5, p6, p7) --[[ resolveDisplacement | Line: 203 ]]
+	local v1 = if p2 == "Global" then p1 elseif p2 == "RigidLocal" then p4:VectorToWorldSpace(p1) else p3:VectorToWorldSpace(p1)
+
+	if p5 then
+		return p5 * v1.X + p6 * v1.Y + p7 * v1.Z
+	end
+
+	return v1
+end
+function t.applyContactAccel(p1, p2, p3) --[[ applyContactAccel | Line: 225 ]]
+	if p2._settleEngaged and p2._lastHitNormal then
+		local _lastHitNormal = p2._lastHitNormal
+
+		if _lastHitNormal.Magnitude < 0.0001 then
+			return p1
+		end
+
+		local v1 = p1:Dot(_lastHitNormal)
+
+		if v1 >= 0 then
+			return p1
+		end
+
+		if math.abs(v1) < 10 then
+			return p1
+		end
+
+		local v2 = p1 - v1 * _lastHitNormal
+		local v4
+
+		if p2._accelVel then
+			local _accelVel = p2._accelVel
+
+			v4 = _accelVel - _accelVel:Dot(_lastHitNormal) * _lastHitNormal
+		else
+			v4 = Vector3.new(0, 0, 0)
+		end
+
+		local Magnitude = v4.Magnitude
+		local v5 = (p2.Events and p2.Events.OnHit and p2.Events.OnHit.Friction or 0.2) * math.abs(v1)
+
+		if Magnitude > 0.0001 then
+			local v6 = -v4.Unit * v5
+
+			if Magnitude < v5 * (p3 or 1 / 60) then
+				v6 = -v4 / (p3 or 1 / 60)
+			end
+
+			return v2 + v6
+		end
+
+		if v2.Magnitude <= v5 then
+			return Vector3.new(0, 0, 0)
+		end
+
+		return v2 - v2.Unit * v5
+	end
+
+	return p1
+end
+
+return t

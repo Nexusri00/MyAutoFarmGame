@@ -1,0 +1,372 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQNhC0xvY2FsUGxheWVyBERhdGEMV2FpdEZvckNoaWxkCFNldHRpbmdzBXBhaXJzDkZpbmRGaXJzdENoaWxkBVZhbHVlB0NoYW5nZWQHQ29ubmVjdAVwY2FsbAR3YXJuIltWRlhCcmlkZ2VdIENhbnQgbG9hZCBpbiBTZXR0aW5nczoKX2luaXRDYWNoZQZ0eXBlb2YHVmVjdG9yMwhJbnN0YW5jZQhCYXNlUGFydANJc0EIUG9zaXRpb24FTW9kZWwLUHJpbWFyeVBhcnQLX3Jlc29sdmVQb3MCX0cQQ2FtZXJhQ29udHJvbGxlcg1TZXRNYXhBeGlzRm92BmZvdkFwaQV0b2tlbgRob2xkBXB1bmNoBHRpY2sEcm9sbAZpc0lkbGUFaG9sZFQHaG9sZExlbgRtYXRoA21heANtaW4JaG9sZFN0eWxlB2hvbGREaXIERW51bQ9FYXNpbmdEaXJlY3Rpb24DT3V0CEdldFZhbHVlCGhvbGRGcm9tBmhvbGRUbwdhdHRhY2tUCWF0dGFja0xlbgRwZWFrCHB1bmNoVmVsA2FicwdyZWxlYXNlClNtb290aERhbXAHdGlja1ZlbAdyb2xsVmVsBGJhc2UFY2xhbXANQ3VycmVudENhbWVyYQZDRnJhbWUGQW5nbGVzA3JhZAdfdW5iaW5kBV9zdGVwDlNoYXJlZENhbWVyYUZYDlJlbmRlclByaW9yaXR5BkNhbWVyYRBCaW5kVG9SZW5kZXJTdGVwBWJvdW5kBV9iaW5kFFVuYmluZEZyb21SZW5kZXJTdGVwEk1heEF4aXNGaWVsZE9mVmlldwdBY3F1aXJlBG93bnMESG9sZAVQdW5jaAd0aWNrQ2FwBFRpY2sEUm9sbAdSZWxlYXNlCEZvdlNjYWxlDER5bmFtaWNfTGVucwpSZWxlYXNlRk9WCU1hZ25pdHVkZQRPd25zDVR3ZWVuRk9WU2NhbGUMSXNGT1ZFbmFibGVkDVNldEZPVkVuYWJsZWQEZ2FtZQpSdW5TZXJ2aWNlCkdldFNlcnZpY2UISXNDbGllbnQeW1ZGWEJyaWRnZV0gY2xpZW50LW9ubHkgbW9kdWxlBmFzc2VydAdQbGF5ZXJzDFR3ZWVuU2VydmljZQlXb3Jrc3BhY2UEdGFzawVzcGF3bgAYAwECAAAABPsBAAD7AgEAagABAoIA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
+
+-- https://lua.expert/
+local RunService = game:GetService("RunService")
+
+assert(RunService:IsClient(), "[VFXBridge] client-only module")
+
+local t = {}
+local Players = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
+local Workspace = game:GetService("Workspace")
+local t2 = {
+	Dynamic_Lens = true
+}
+
+local function _initCache() --[[ _initCache | Line: 14 | Upvalues: Players (copy), t2 (copy) ]]
+	local ok, result = pcall(function() --[[ Line: 15 | Upvalues: Players (ref), t2 (ref) ]]
+		local LocalPlayer = Players.LocalPlayer
+
+		if not LocalPlayer then
+			return
+		end
+
+		local v1 = LocalPlayer:WaitForChild("Data", 10) and LocalPlayer.Data:WaitForChild("Settings", 10)
+
+		if not v1 then
+			return
+		end
+
+		for k in pairs(t2) do
+			local v2 = v1:FindFirstChild(k)
+
+			if v2 then
+				t2[k] = v2.Value
+				v2.Changed:Connect(function(p1) --[[ Line: 26 | Upvalues: t2 (ref), k (copy) ]]
+					t2[k] = p1
+				end)
+			end
+		end
+	end)
+
+	if ok then
+		return
+	end
+
+	warn("[VFXBridge] Cant load in Settings:", result)
+end
+
+task.spawn(_initCache)
+
+local function _resolvePos(p1) --[[ _resolvePos | Line: 39 ]]
+	if typeof(p1) == "Vector3" then
+		return p1
+	end
+
+	if typeof(p1) == "Instance" and p1:IsA("BasePart") then
+		return p1.Position
+	end
+
+	if typeof(p1) == "Instance" and (p1:IsA("Model") and p1.PrimaryPart) then
+		return p1.PrimaryPart.Position
+	end
+
+	return nil
+end
+
+local t3 = {
+	token = nil,
+	bound = false,
+	base = 105.26,
+	hold = 0,
+	holdFrom = 0,
+	holdTo = 0,
+	holdT = 1,
+	holdLen = 1,
+	holdStyle = nil,
+	holdDir = nil,
+	punch = 0,
+	punchVel = 0,
+	peak = 0,
+	attackT = 1,
+	attackLen = 0.04,
+	release = 0.16,
+	tick = 0,
+	tickVel = 0,
+	tickCap = 3,
+	roll = 0,
+	rollVel = 0
+}
+
+local function fovApi() --[[ fovApi | Line: 89 ]]
+	local CameraController = _G.CameraController
+
+	return if CameraController and (CameraController.SetMaxAxisFov and CameraController) then CameraController else nil
+end
+
+local function isIdle() --[[ isIdle | Line: 95 | Upvalues: t3 (copy) ]]
+	return if t3.token == nil and (t3.hold == 0 and (t3.punch == 0 and t3.tick == 0)) then t3.roll == 0 else false
+end
+
+function t3._step(p1) --[[ _step | Line: 101 | Upvalues: t3 (copy), TweenService (copy), Workspace (copy) ]]
+	local CameraController = _G.CameraController
+	local v1 = if CameraController and (CameraController.SetMaxAxisFov and CameraController) then CameraController else nil
+
+	if not v1 then
+		return
+	end
+
+	if t3.holdT < 1 then
+		t3.holdT = math.min(t3.holdT + p1 / math.max(t3.holdLen, 0.001), 1)
+
+		local holdT2 = t3.holdT
+
+		t3.hold = t3.holdFrom + (t3.holdTo - t3.holdFrom) * (if t3.holdStyle then TweenService:GetValue(holdT2, t3.holdStyle, t3.holdDir or Enum.EasingDirection.Out) else holdT2 * holdT2 * (3 - 2 * holdT2))
+	end
+
+	if t3.attackT < 1 then
+		t3.attackT = math.min(t3.attackT + p1 / math.max(t3.attackLen, 0.001), 1)
+		t3.punch = t3.peak * t3.attackT
+		t3.punchVel = 0
+	elseif math.abs(t3.punch) > 0.01 or math.abs(t3.punchVel) > 0.01 then
+		local v10, v11, v12, v13
+
+		v10 = t3
+		v11 = t3
+		v12, v13 = TweenService:SmoothDamp(t3.punch, 0, t3.punchVel, t3.release, (1 / 0), p1)
+		t3.punch = v12
+		t3.punchVel = v13
+	else
+		t3.punch = 0
+		t3.punchVel = 0
+	end
+
+	if math.abs(t3.tick) > 0.01 or math.abs(t3.tickVel) > 0.01 then
+		local v16, v17, v18, v19
+
+		v16 = t3
+		v17 = t3
+		v18, v19 = TweenService:SmoothDamp(t3.tick, 0, t3.tickVel, 0.12, (1 / 0), p1)
+		t3.tick = v18
+		t3.tickVel = v19
+	else
+		t3.tick = 0
+		t3.tickVel = 0
+	end
+
+	if math.abs(t3.roll) > 0.005 or math.abs(t3.rollVel) > 0.005 then
+		local v21, v22, v23, v24
+
+		v21 = t3
+		v22 = t3
+		v23, v24 = TweenService:SmoothDamp(t3.roll, 0, t3.rollVel, 0.22, (1 / 0), p1)
+		t3.roll = v23
+		t3.rollVel = v24
+	else
+		t3.roll = 0
+		t3.rollVel = 0
+	end
+
+	v1.SetMaxAxisFov((math.clamp(t3.base + t3.hold + t3.punch + t3.tick, 1, 120)))
+
+	if math.abs(t3.roll) > 0.005 then
+		local CurrentCamera = Workspace.CurrentCamera
+
+		if CurrentCamera then
+			local Angles = CFrame.Angles
+
+			CurrentCamera.CFrame = CurrentCamera.CFrame * Angles(0, 0, (math.rad(t3.roll)))
+		end
+	end
+
+	if not (if t3.token == nil and (t3.hold == 0 and (t3.punch == 0 and t3.tick == 0)) then t3.roll == 0 else false) then
+		return
+	end
+
+	t3._unbind()
+end
+function t3._bind() --[[ _bind | Line: 156 | Upvalues: t3 (copy), RunService (copy) ]]
+	if not t3.bound then
+		t3.bound = pcall(function() --[[ Line: 158 | Upvalues: RunService (ref), t3 (ref) ]]
+			RunService:BindToRenderStep("SharedCameraFX", Enum.RenderPriority.Camera.Value + 1, t3._step)
+		end)
+	end
+end
+function t3._unbind() --[[ _unbind | Line: 164 | Upvalues: t3 (copy), RunService (copy) ]]
+	if t3.bound then
+		t3.bound = false
+		pcall(function() --[[ Line: 167 | Upvalues: RunService (ref) ]]
+			RunService:UnbindFromRenderStep("SharedCameraFX")
+		end)
+	end
+end
+function t3.Acquire() --[[ Acquire | Line: 171 | Upvalues: t3 (copy), Workspace (copy) ]]
+	local CameraController = _G.CameraController
+
+	if not (if CameraController and (CameraController.SetMaxAxisFov and CameraController) then CameraController else nil) then
+		return nil
+	end
+
+	if not (if t3.token == nil and (t3.hold == 0 and (t3.punch == 0 and t3.tick == 0)) then t3.roll == 0 else false) then
+		local v3, v4, v5, v6, v7, v8, v9, v10
+
+		v3 = t3
+		v4 = t3
+		v5 = t3
+		t3.hold = 0
+		t3.holdFrom = 0
+		t3.holdTo = 0
+		t3.holdT = 1
+		v6 = t3
+		t3.holdStyle = nil
+		t3.holdDir = nil
+		v7 = t3
+		v8 = t3
+		t3.punch = 0
+		t3.punchVel = 0
+		t3.attackT = 1
+		v9 = t3
+		t3.tick = 0
+		t3.tickVel = 0
+		v10 = t3
+		t3.roll = 0
+		t3.rollVel = 0
+		t3.token = {}
+		t3._bind()
+
+		return t3.token
+	end
+
+	local CurrentCamera = Workspace.CurrentCamera
+
+	t3.base = if CurrentCamera then CurrentCamera.MaxAxisFieldOfView or 105.26 else 105.26
+	t3.hold = 0
+	t3.holdFrom = 0
+	t3.holdTo = 0
+	t3.holdT = 1
+	t3.holdStyle = nil
+	t3.holdDir = nil
+	t3.punch = 0
+	t3.punchVel = 0
+	t3.attackT = 1
+	t3.tick = 0
+	t3.tickVel = 0
+	t3.roll = 0
+	t3.rollVel = 0
+	t3.token = {}
+	t3._bind()
+
+	return t3.token
+end
+function t3.Owns(p1) --[[ owns | Line: 190 | Upvalues: t3 (copy) ]]
+	return if p1 == nil then false else t3.token == p1
+end
+function t3.Hold(p1, p2, p3, p4, p5) --[[ Hold | Line: 197 | Upvalues: t3 (copy) ]]
+	if if p1 == nil then false else t3.token == p1 then
+		t3.holdFrom = t3.hold
+		t3.holdTo = p2
+		t3.holdLen = math.max(p3 or 0.15, 0.001)
+		t3.holdT = 0
+		t3.holdStyle = p4
+		t3.holdDir = p5
+	end
+end
+function t3.Punch(p1, p2, p3, p4) --[[ Punch | Line: 205 | Upvalues: t3 (copy) ]]
+	if if p1 == nil then false else t3.token == p1 then
+		t3.peak = p2
+		t3.attackLen = p3 or 0.04
+		t3.release = p4 or 0.16
+		t3.attackT = 0
+		t3.punchVel = 0
+	end
+end
+function t3.Tick(p1, p2, p3) --[[ Tick | Line: 216 | Upvalues: t3 (copy) ]]
+	if not (if p1 == nil then false else t3.token == p1) then
+		return
+	end
+
+	t3.tickCap = if p3 then p3 else t3.tickCap
+	t3.tick = math.clamp(t3.tick + p2, -t3.tickCap, t3.tickCap)
+end
+function t3.Roll(p1, p2) --[[ Roll | Line: 222 | Upvalues: t3 (copy) ]]
+	if if p1 == nil then false else t3.token == p1 then
+		local v2 = t3
+
+		v2.roll = v2.roll + p2
+	end
+end
+function t3.Release(p1, p2, p3, p4) --[[ Release | Line: 229 | Upvalues: t3 (copy) ]]
+	if not (if p1 == nil then false else t3.token == p1) then
+		return
+	end
+
+	t3.token = nil
+	t3.holdFrom = t3.hold
+	t3.holdTo = 0
+	t3.holdLen = math.max(p2 or 0.2, 0.001)
+	t3.holdT = 0
+	t3.holdStyle = p3
+	t3.holdDir = p4
+
+	local CameraController = _G.CameraController
+	local v5 = if CameraController and (CameraController.SetMaxAxisFov and CameraController) then CameraController else nil
+
+	if not v5 then
+		return
+	end
+
+	v5.SetMaxAxisFov(t3.base)
+end
+t.Camera = t3
+function t.FovScale(p1) --[[ FovScale | Line: 250 ]]
+	return p1 / 70
+end
+
+local v2 = nil
+
+function t.TweenFOVScale(p1, p2, p3, p4, p5, p6, p7) --[[ TweenFOVScale | Line: 262 | Upvalues: t2 (copy), t (copy), Workspace (copy), _resolvePos (copy), t3 (copy), v2 (ref) ]]
+	if not t2.Dynamic_Lens then
+		return
+	end
+
+	if math.abs(p4 - 1) < 0.0001 then
+		t:ReleaseFOV(p5, p6, p7)
+
+		return
+	end
+
+	local CurrentCamera = Workspace.CurrentCamera
+
+	if not CurrentCamera then
+		return
+	end
+
+	local v1 = _resolvePos(p2)
+
+	if not v1 then
+		return
+	end
+
+	if (p3 or 100) < (CurrentCamera.CFrame.Position - v1).Magnitude then
+		return
+	end
+
+	if t3.Owns(v2) then
+		t3.Hold(v2, t3.base * (p4 - 1), p5, p6, p7)
+
+		return
+	end
+
+	v2 = t3.Acquire()
+
+	if v2 then
+		t3.Hold(v2, t3.base * (p4 - 1), p5, p6, p7)
+	end
+end
+function t.ReleaseFOV(p1, p2, p3, p4) --[[ ReleaseFOV | Line: 283 | Upvalues: v2 (ref), t3 (copy) ]]
+	if v2 then
+		t3.Release(v2, p2, p3, p4)
+		v2 = nil
+	end
+end
+function t.IsFOVEnabled(p1) --[[ IsFOVEnabled | Line: 289 | Upvalues: t2 (copy) ]]
+	return t2.Dynamic_Lens
+end
+function t.SetFOVEnabled(p1, p2) --[[ SetFOVEnabled | Line: 293 | Upvalues: t2 (copy) ]]
+	t2.Dynamic_Lens = p2
+end
+
+return t

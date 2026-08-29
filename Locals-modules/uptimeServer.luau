@@ -1,0 +1,13 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQMGAm9zBHRpbWUPJWRkICVkaCAlZG0gJWRzBG1hdGgFZmxvb3IGZm9ybWF0AAIJAAEAAAcAAAEDAR0CIaQBAgAABACAnwEBAvsCAAAmAAECbwEDAD4EAAS7DAQCpAMHAAAYUICfAwICPgYACbsMBgKkBQcAABhQgJ8FAgIhBAUIPgcACrsMBwKkBgcAABhQgJ8GAgIhBQYKuwwAA1IIAACkBwcAABhQgJ8HAgIhBgcKvAEBjQsAAACfAQYAggEAAAwDAQMCBAAEAIADAwIAAAAAABj1QAMEAwUEABhQgAIAAAAAAAA4QAIAAAAAACCsQAIAAAAAAABOQAMGAAMAARgAAAAAAAEBAAAAAAEAAAAAAAEAAAAAAAEAAAAAAPwAAAAEAAAAAAIAAAECAAejAAAApAACAAAEAICfAAECwAEDABIAAACCAQIABAMBAwIEAAQAgAYAAQABAAEYAAAAAAIAAAEAAAAAAYzp6suqNcpRGloJp47uMmv88f2/vi2Ayg==
+
+-- https://lua.expert/
+local v1 = os.time()
+
+return function() --[[ Line: 3 | Upvalues: v1 (copy) ]]
+	local v12 = os.time() - v1
+
+	return ("%dd %dh %dm %ds"):format(math.floor(v12 / 86400), math.floor(v12 / 3600) % 24, math.floor(v12 / 60) % 60, math.floor(v12) % 60)
+end

@@ -1,0 +1,102 @@
+Here is a categorized list of all RemoteEvents from your list that trigger server state modifications, player actions, UI updates, or game events.
+
+UI & Teleportation Events
+game.ReplicatedStorage.Remotes.OpenTeleportUI
+
+game.ReplicatedStorage.Remotes.OpenTraitUI
+
+game.ReplicatedStorage.Remotes.TeleportToIslandSpot
+
+game.ReplicatedStorage.Remotes.TeleportToPortal
+
+game.ReplicatedStorage.Remotes.TogglePinIsland
+
+Inventory, Equipment & Economy
+game.ReplicatedStorage.Remotes.RE_Equip
+
+game.ReplicatedStorage.Remotes.RE_EquipVanity
+
+game.ReplicatedStorage.Remotes.RE_UseItem
+
+game.ReplicatedStorage.Remotes.DungeonShopBuy
+
+game.ReplicatedStorage.Remotes.GoldShopBuy
+
+game.ReplicatedStorage.Remotes.TradingValueRequest
+
+Combat, Specs & Passives
+game.ReplicatedStorage.Remotes.Input
+
+game.ReplicatedStorage.Remotes.Ragdoll
+
+game.ReplicatedStorage.Remotes.ShieldEvent
+
+game.ReplicatedStorage.ShieldEvent
+
+game.ReplicatedStorage.Remotes.RE_SkillTreeChanged
+
+game.ReplicatedStorage.Remotes.RE_SpecialPassiveActivate
+
+game.ReplicatedStorage.Remotes.RE_SpecialPassiveReady
+
+game.ReplicatedStorage.Remotes.ShinAwakeningRemote
+
+Traits & Enchanting Systems
+game.ReplicatedStorage.Remotes.TraitAutoReroll
+
+game.ReplicatedStorage.Remotes.TraitUpdateAutoSkip
+
+game.ReplicatedStorage.Remotes.TraitUpdateFilters
+
+game.ReplicatedStorage.Remotes.SpecUpdateBannedTraits
+
+game.ReplicatedStorage.Remotes.RE_SpecEnchantAttempt
+
+game.ReplicatedStorage.Remotes.RE_SpecEnchantReset
+
+Dungeon, Portal & Activity Actions
+game.ReplicatedStorage.Remotes.Events.CursedChildPortal
+
+game.ReplicatedStorage.Remotes.Events.DungeonLeave
+
+game.ReplicatedStorage.Remotes.Events.HouseOfSpidersPortal
+
+game.ReplicatedStorage.Remotes.Events.InfiniteTowerAction
+
+game.ReplicatedStorage.Remotes.Events.RealmBeyondHeavenPortal
+
+game.ReplicatedStorage.Remotes.Events.SpiderEstatePortal
+
+game.ReplicatedStorage.Remotes.Events.TimeSafePortal
+
+game.ReplicatedStorage.Remotes.Events.TournamentAction
+
+game.ReplicatedStorage.Remotes.RE_FishingMinigame
+
+game.ReplicatedStorage.Remotes.RE_FishingPassClaim
+
+game.ReplicatedStorage.Remotes.RE_FishingPassPremium
+
+Social, Faction & Anti-Cheat/AFK
+game.ReplicatedStorage.Remotes.AFKSupporter
+
+game.ReplicatedStorage.Remotes.AllyRemote
+
+game.ReplicatedStorage.Remotes.AllyStateRemote
+
+game.ReplicatedStorage.Remotes.RE_ContractStateChanged
+
+game.ReplicatedStorage.Remotes.RE_IndexFactionStateChanged
+
+game.ReplicatedStorage.Remotes.Observer.Answer
+
+System & Developer Remotes
+game.ReplicatedStorage.Remotes.Output
+
+game.ReplicatedStorage.Remotes.OutputEvent
+
+game.ReplicatedStorage.Remotes.Render
+
+game.ReplicatedStorage.Remotes["CheckPortalUnlock "]
+
+game.ReplicatedStorage.Shared.Cmdr.CmdrClient.CmdrEvent

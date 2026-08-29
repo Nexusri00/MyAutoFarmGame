@@ -1,0 +1,47 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQMbBE5vbmUJVHJhbnNmb3JtIU5vIGNsYW4gZm91bmQgbWF0Y2hpbmcgdGhhdCBuYW1lLghWYWxpZGF0ZQxBdXRvY29tcGxldGUFUGFyc2UFcGFpcnMEdHlwZQV0YWJsZQROYW1lBnN0cmluZwZpbnNlcnQEc29ydA9NYWtlRnV6enlGaW5kZXIIY2xhbm5hbWUMUmVnaXN0ZXJUeXBlB3JlcXVpcmUGc2NyaXB0BlBhcmVudAZTaGFyZWQEVXRpbARnYW1lEVJlcGxpY2F0ZWRTdG9yYWdlCkdldFNlcnZpY2UERGF0YQhDbGFuRGF0YQVDbGFucwAHAwIAAAAADfAAAwAAAACAqQIBAIICAgDwAQMAAAAAgKkCAACCAgIAtwACAAEAAACpAgABqQIBAIICAgABAwEADAABGAAAAAABAAAAAQAAAAANAAAAAAMBAQAABgMAAAUBAwT7AQAAUgIAAJ8BAgCCAQAAAAAVAgEYAAAAABYAAAAABAEAAAAGAwAABQEECBwCAACMAwAAtwMCAAIAAACpAQABqQEBAG8CAACCAQMAAQMDABkEARgAAAAAAAAAABoAAAAAAQEAAAAGAwAABQEEAYIAAgAAAB0FARgAHgAAAAACAQAAAAYDAAAFAQQCEwEAAIIBAgAAACEGARgAACIAAAAACgECAAAAQP8BAAABAAAAbwIAAMUBAgIBAAAApAICAAAAEED7AwAAnwICBBcCFwC7KAYDUggGAKQHBAAAADBAnwcCAvAHEQAFAACATQgGugYAAAC7KAgCpAcEAAAAMECfBwIC8AcJAAcAAIBNCQa6BgAAAJ40AQQJAAAAUggBAKQHCQAAIFCAnwcDAW4C6P8CAAAApAILAAAoUIBSAwEAwAQMAJ8CAwH7AgEATQICPQ0AAABSAwEAnwICAm8FDgDiBhMA2QcBABIAAgAwBwYhDwAAAMAHFAAwBwZ2EAAAAMAHFQAwBwarEQAAAMAHFgAwBwabEgAAALwDAN0XAAAAnwMEAYIAAQAYAwEDBwQAABBAAwgEAAAwQAMJAwoDCwMMBAAgUIADDQQAKFCABgADDgMPAwIDBAMFAwYFBA8QERIGAgYDBgQDEAUAAQIDBAUAARgAAAAAAAEAAAAAAQAAAAAAAAAAAAAAAAAAAQAAAAAAAAD+AAUAAAAABgAAAAACAAEAAAAEAAAEAAAEAADzAAARBgAAAAAFAAABAgAjowAAAKQAAQAAAABApAEDAAAAIEBNAQEkBAAAAE0BASQEAAAATQEBEgUAAABNAQGeBgAAAJ8AAgKkAQEAAAAAQKQCCAAAAHBAbwQJALwCAhYKAAAAnwIDAk0CAhIFAAAATQICxgsAAABNAgKqDAAAAJ8BAgJNAgHrDQAAAMADDgASAAIAEgAAAIIDAgAPAxEEAAAAQAMSBAAAIEADEwMUAxUDFgQAAHBAAxcDGAMZAxoDGwYFAQUBAAEYAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAABAAIAAAABAAAAAAb2cZBf3b1LOnKdMMKpRtXPhmmHK8S1+l4=
+
+-- https://lua.expert/
+local Util = require(script.Parent.Parent.Shared.Util)
+local Clans = require(game:GetService("ReplicatedStorage").Shared.Data.ClanData).Clans
+
+return function(p1) --[[ Line: 5 | Upvalues: Clans (copy), Util (copy) ]]
+	local t = { "None" }
+
+	for k, v in pairs(Clans) do
+		if type(v) == "table" and type(v.Name) == "string" then
+			table.insert(t, v.Name)
+		end
+	end
+
+	table.sort(t, function(p1, p2) --[[ Line: 12 ]]
+		if p1 == "None" then
+			return true
+		end
+
+		if p2 == "None" then
+			return false
+		end
+
+		return p1 < p2
+	end)
+
+	local v3 = Util.MakeFuzzyFinder(t)
+
+	p1:RegisterType("clanname", {
+		Transform = function(p1) --[[ Transform | Line: 21 | Upvalues: v3 (copy) ]]
+			return v3(p1)
+		end,
+		Validate = function(p1) --[[ Validate | Line: 25 ]]
+			return #p1 > 0, "No clan found matching that name."
+		end,
+		Autocomplete = function(p1) --[[ Autocomplete | Line: 29 ]]
+			return p1
+		end,
+		Parse = function(p1) --[[ Parse | Line: 33 ]]
+			return p1[1]
+		end
+	})
+end

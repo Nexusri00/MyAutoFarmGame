@@ -1,0 +1,139 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- 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
+
+-- https://lua.expert/
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local t = {}
+
+t.__index = t
+
+local v1 = TweenInfo.new(0.55, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+local v2 = TweenInfo.new(0.18, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+
+local function isMobileDevice() --[[ isMobileDevice | Line: 34 | Upvalues: UserInputService (copy) ]]
+	return UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled
+end
+
+function t.new(p1, p2) --[[ new | Line: 38 | Upvalues: UserInputService (copy), t (copy) ]]
+	local Scale = p1.Scale
+
+	if UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled then
+		Scale = Scale * 0.45
+	end
+
+	return setmetatable({
+		tween = nil,
+		uiScale = p1,
+		isActive = p2,
+		initialScale = Scale,
+		minScale = Scale * 0.45,
+		maxScale = Scale * 2,
+		target = Scale,
+		pinchBase = Scale,
+		connections = {}
+	}, t)
+end
+function t._clamp(p1, p2) --[[ _clamp | Line: 56 ]]
+	return math.clamp(p2, p1.minScale, p1.maxScale)
+end
+function t.EnsureAtLeast(p1, p2) --[[ EnsureAtLeast | Line: 62 | Upvalues: TweenService (copy), v2 (copy) ]]
+	if p1.target < p2 then
+		p1.target = p2
+	end
+
+	if not (p1.uiScale.Scale < p2) then
+		return
+	end
+
+	p1.uiScale.Scale = p2
+
+	if p1.tween == nil then
+		return
+	end
+
+	p1.tween:Cancel()
+	p1.tween = TweenService:Create(p1.uiScale, v2, {
+		Scale = p1.target
+	})
+	p1.tween:Play()
+end
+function t._tweenTo(p1, p2) --[[ _tweenTo | Line: 76 ]]
+	local v1 = p1:_clamp(p2)
+
+	p1.target = v1
+
+	if p1.tween ~= nil then
+		p1.tween:Cancel()
+	end
+
+	p1.uiScale.Scale = v1
+end
+function t._setNow(p1, p2) --[[ _setNow | Line: 85 ]]
+	local v1 = p1:_clamp(p2)
+
+	p1.target = v1
+
+	if p1.tween ~= nil then
+		p1.tween:Cancel()
+		p1.tween = nil
+	end
+
+	p1.uiScale.Scale = v1
+end
+function t.PlayIntro(p1) --[[ PlayIntro | Line: 95 | Upvalues: TweenService (copy), v1 (copy) ]]
+	if p1.tween ~= nil then
+		p1.tween:Cancel()
+	end
+
+	p1.target = p1.initialScale
+	p1.uiScale.Scale = p1.initialScale * 0.5
+	p1.tween = TweenService:Create(p1.uiScale, v1, {
+		Scale = p1.initialScale
+	})
+	p1.tween:Play()
+end
+function t.Start(p1) --[[ Start | Line: 105 | Upvalues: UserInputService (copy) ]]
+	table.insert(p1.connections, UserInputService.InputChanged:Connect(function(p12) --[[ Line: 108 | Upvalues: p1 (copy) ]]
+		if p12.UserInputType ~= Enum.UserInputType.MouseWheel or not p1.isActive() then
+			return
+		end
+
+		p1:_tweenTo(p1.target + p12.Position.Z * 0.12)
+	end))
+	table.insert(p1.connections, UserInputService.TouchPinch:Connect(function(p12, p2, p3, p4) --[[ Line: 116 | Upvalues: p1 (copy) ]]
+		if not p1.isActive() then
+			return
+		end
+
+		if p4 == Enum.UserInputState.Begin then
+			p1.pinchBase = p1.uiScale.Scale
+
+			return
+		end
+
+		if p4 ~= Enum.UserInputState.Change then
+			return
+		end
+
+		p1:_setNow(p1.pinchBase * p2)
+	end))
+end
+function t.Stop(p1) --[[ Stop | Line: 129 ]]
+	for i, v in ipairs(p1.connections) do
+		v:Disconnect()
+	end
+
+	table.clear(p1.connections)
+
+	if p1.tween == nil then
+		return
+	end
+
+	p1.tween:Cancel()
+	p1.tween = nil
+end
+
+return t

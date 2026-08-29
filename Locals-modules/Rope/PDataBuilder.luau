@@ -1,0 +1,240 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQOiAQhJc1N0YXRpYw5HZXRTdGF0aWNWYWx1ZQlsaXZlR3JhcGgERW51bQhOb3JtYWxJZAVGcm9udAZDRnJhbWUDbmV3BnZlY3RvcgptdWx0aXBsaWVyBmxvb2tBdAFYAVkGQW5nbGVzBG1hdGgGcmFuZG9tA3JhZAhSb3RhdGlvbgpMb29rVmVjdG9yElZlY3RvclRvV29ybGRTcGFjZQpjb21wb3NlRGlyCEJvdGhFbmRzB1Bpbk1vZGUIX3Bpbk1vZGUGVGFyZ2V0B190YXJnZXQJX3BpblN0YXJ0BkxhdW5jaAdfcGluRW5kFFJhbmRvbVZhbHVlRnJvbVJhbmdlDFNlZ21lbnRDb3VudAVmbG9vcgZzZWdDYXAFY2xhbXAJX3NlZ0NvdW50CVN0aWZmbmVzcwpfc3RpZmZuZXNzDUJlbmRTdGlmZm5lc3MOX2JlbmRTdGlmZm5lc3MHRGFtcGluZwhfZGFtcGluZwdHcmF2aXR5CF9ncmF2aXR5DVdpbmRBbXBsaXR1ZGUIX3dpbmRBbXANV2luZEZyZXF1ZW5jeQlfd2luZEZyZXEGR3Jvd0luB19ncm93SW4ETm9uZQlEZWF0aE1vZGUKX2RlYXRoTW9kZQtEZWF0aFdpbmRvdwxfZGVhdGhXaW5kb3cQVGhpY2tuZXNzUHJvZmlsZQxHZW5lcmF0ZVNlZWQKd2lkdGhTY2FsZRNRdWVyeVBvaW50c1dpdGhUaW1lA21heAVTdGFydAxNb3Rpb25UYXJnZXQNX21vdGlvblRhcmdldAZHbG9iYWwQRGlzcGxhY2VtZW50TW9kZQlfZGlzcE1vZGUKUG9zT2Zmc2V0WApQb3NPZmZzZXRZClBvc09mZnNldFoGR3JhcGhzCF9oYXNEaXNwBVNlZWRzBmlzTGl2ZQpUdXJidWxlbmNlCF9oYXNUdXJiE1R1cmJ1bGVuY2VGcmVxdWVuY3kJX3R1cmJGcmVxCV90dXJiU2VlZA9zYW1wbGVSYW5nZUF4ZXMJQXhpc0xpbmtzBFJvdFgEUm90WQRSb3RaD2NvbXBvc2VSb3RhdGlvbghSb3RPcmRlcglfc3Bhd25Sb3QEUG9zWARQb3NZBFBvc1oHVmVjdG9yMwlfc3Bhd25PZmYFTG9jYWwHUG9zTW9kZQ1fc3Bhd25PZmZNb2RlC1NwYXduVGFyZ2V0DF9zcGF3blRhcmdldAxyZXNvbHZlU3RhcnQLU3ByZWFkQW5nbGUHVmVjdG9yMhFFbWlzc2lvbkRpcmVjdGlvbgpfbW90aW9uRGlyD01vdGlvbkRpcmVjdGlvbglfc3BlZWREaXIFU3BlZWQMQWNjZWxlcmF0aW9uBl9hY2NlbAREcmFnBV9kcmFnCU1hZ25pdHVkZQpfaGFzTW90aW9uDV9tb3Rpb25PZmZzZXQPX21vdGlvbkFjY2VsVmVsC0xhdW5jaFNwZWVkCFBvc2l0aW9uDV9sYXVuY2hPcmlnaW4IX2xhdW5jaFQFcGNhbGwRcmVzb2x2ZUxpbmtDRnJhbWUKX2xhdW5jaFZlbApSb3BlTGVuZ3RoBVNsYWNrCF9yZXN0TGVuDnJlYWRSb3BlUGFyYW1zCkJyaWdodG5lc3MMVHJhbnNwYXJlbmN5CVRoaWNrbmVzcwlUaW1lc2NhbGUEVHlwZQRSb3BlClZpc3VhbFBhcnQEX3JpZwZFdmVudHMJU3RhcnRUaW1lDlRvdGFsS2V5RnJhbWVzC0N1cnJlbnRTdGVwCExpZmVUaW1lCFBhcnRMaWZlC19zb3VyY2VJdGVtEV9lZmZlY3RpdmVFbGFwc2VkC19wYXJlbnRMaW5rBl9hY2N1bQpfd2luZFBoYXNlCl93aW5kU2VlZEEKX3dpbmRTZWVkQgJvcwVjbG9jawVDb2xvchdJbml0aWFsRWZmZWN0aXZlRWxhcHNlZBNFdmVudE9yaWdpblJlc29sdmVyDUV2ZW50T3JpZ2luQ0YNVXNlRnVsbE9yaWdpbhBfc3RhcnRDRk92ZXJyaWRlDl9sYXVuY2hBcnJpdmVkCV9yZWxlYXNlZAVidWlsZAdyZXF1aXJlBnNjcmlwdAZQYXJlbnQFR3JhcGgFUmFuZ2UNUGFydENvbnN0YW50cwdBbmNob3JzEERpcmVjdGlvblZlY3RvcnMABQQBAQAAABQrAAIAxgEAAIIBAgD7AQAATQEBcQAAAABSAgAAnwECAg4BCgD7AQAATQEBgQEAAABSAgAAjAMAAJ8BAwINAQMAAgAAgMYBAACCAQIAggACAAMDAQMCAgAAAAAAAAAAABQDARgAAAABAAAAAAAAAAAAAAAAAAAAARUAAAAACwEEAAAAS/sCAACHAQIAKwEEAPsCAACkAwMAAgQAwIcBAgOk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
+
+-- https://lua.expert/
+local Graph = require(script.Parent.Parent.Graph)
+local Range = require(script.Parent.Parent.Range)
+local PartConstants = require(script.Parent.Parent.PartConstants)
+local Turbulence = require(script.Parent.Parent.Turbulence)
+local AxisLinks = require(script.Parent.Parent.AxisLinks)
+local Anchors = require(script.Parent.Anchors)
+local DirectionVectors = PartConstants.DirectionVectors
+local t = {}
+
+local function liveGraph(p1) --[[ liveGraph | Line: 20 | Upvalues: Graph (copy) ]]
+	if not p1 then
+		return nil
+	end
+
+	if Graph.IsStatic(p1) and Graph.GetStaticValue(p1, 0) == 0 then
+		return nil
+	end
+
+	return p1
+end
+
+function t.readRopeParams(p1, p2, p3, p4) --[[ readRopeParams | Line: 28 | Upvalues: Range (copy), Graph (copy), Turbulence (copy), AxisLinks (copy), PartConstants (copy), Anchors (copy), DirectionVectors (copy) ]]
+	p1._pinMode = p2.PinMode or "BothEnds"
+	p1._target = p2.Target
+	p1._pinStart = true
+	p1._pinEnd = if p1._pinMode == "BothEnds" and p2.Target ~= nil then true elseif p1._pinMode == "Launch" then true else false
+	p1._segCount = math.clamp(math.floor(Range.RandomValueFromRange(p2.SegmentCount) + 0.5), 2, p3.segCap)
+	p1._stiffness = math.clamp(math.floor((p2.Stiffness or 4) + 0.5), 1, 10)
+	p1._bendStiffness = math.clamp(p2.BendStiffness or 0, 0, 1)
+	p1._damping = math.clamp(p2.Damping or 0.03, 0, 0.5)
+	p1._gravity = p2.Gravity or Vector3.new(0, -40, 0)
+	p1._windAmp = Range.RandomValueFromRange(p2.WindAmplitude)
+	p1._windFreq = p2.WindFrequency or 2
+	p1._growIn = math.clamp(p2.GrowIn or 0, 0, 0.9)
+	p1._deathMode = p2.DeathMode or "None"
+	p1._deathWindow = math.clamp(p2.DeathWindow or 0.2, 0.05, 0.9)
+
+	local ThicknessProfile = p2.ThicknessProfile
+	local v10 = not ThicknessProfile or Graph.IsStatic(ThicknessProfile)
+	local v11 = not v10 and Graph.GenerateSeed(ThicknessProfile) or nil
+
+	for i = 1, p3.segCap do
+		if v10 then
+			p3.widthScale[i] = ThicknessProfile and Graph.GetStaticValue(ThicknessProfile, 1) or 1
+
+			continue
+		end
+
+		p3.widthScale[i] = math.max(Graph.QueryPointsWithTime((i - 0.5) / p3.segCap, ThicknessProfile, v11), 0.05)
+	end
+
+	p1._motionTarget = p2.MotionTarget or "Start"
+	p1._dispMode = p2.DisplacementMode or "Global"
+
+	local PosOffsetX = p2.PosOffsetX
+	local v14 = if PosOffsetX and (not Graph.IsStatic(PosOffsetX) or Graph.GetStaticValue(PosOffsetX, 0) ~= 0) then PosOffsetX else nil
+	local PosOffsetY = p2.PosOffsetY
+	local v15 = if PosOffsetY and (not Graph.IsStatic(PosOffsetY) or Graph.GetStaticValue(PosOffsetY, 0) ~= 0) then PosOffsetY else nil
+	local PosOffsetZ = p2.PosOffsetZ
+	local v16 = if PosOffsetZ and (not Graph.IsStatic(PosOffsetZ) or Graph.GetStaticValue(PosOffsetZ, 0) ~= 0) then PosOffsetZ else nil
+
+	p1.Graphs.PosOffsetX = v14
+	p1.Graphs.PosOffsetY = v15
+	p1.Graphs.PosOffsetZ = v16
+	p1._hasDisp = if (if v14 then v14 elseif v15 then v15 else v16) == nil then false else true
+
+	if v14 then
+		p1.Seeds.PosOffsetX = p1.Seeds.PosOffsetX or Graph.GenerateSeed(v14)
+	end
+
+	if v15 then
+		p1.Seeds.PosOffsetY = p1.Seeds.PosOffsetY or Graph.GenerateSeed(v15)
+	end
+
+	if v16 then
+		p1.Seeds.PosOffsetZ = p1.Seeds.PosOffsetZ or Graph.GenerateSeed(v16)
+	end
+
+	local v22 = Turbulence.isLive(p2.Turbulence)
+
+	p1.Graphs.Turbulence = v22
+	p1._hasTurb = if v22 == nil then false else true
+
+	if v22 then
+		p1.Seeds.Turbulence = p1.Seeds.Turbulence or Graph.GenerateSeed(v22)
+		p1._turbFreq = p2.TurbulenceFrequency or 1
+		p1._turbSeed = p1._turbSeed or math.random() * 997 + 0.5
+	end
+
+	local v26 = AxisLinks.sampleRangeAxes(p2, p2.AxisLinks, { "RotX", "RotY", "RotZ" }, Range, p4)
+	local v27 = PartConstants.composeRotation(p2.RotOrder or "Global", v26.RotX or 0, v26.RotY or 0, v26.RotZ or 0)
+
+	p1._spawnRot = v27
+
+	local v28 = AxisLinks.sampleRangeAxes(p2, p2.AxisLinks, { "PosX", "PosY", "PosZ" }, Range, p4)
+
+	p1._spawnOff = Vector3.new(v28.PosX or 0, v28.PosY or 0, v28.PosZ or 0)
+	p1._spawnOffMode = p2.PosMode or "Local"
+	p1._spawnTarget = p2.SpawnTarget or "Start"
+
+	local v32 = Anchors.resolveStart(p1)
+	local v33 = p2.SpreadAngle or Vector2.new(0, 0)
+
+	local function composeDir(p1) --[[ composeDir | Line: 102 | Upvalues: DirectionVectors (ref), v27 (copy), v33 (copy), v32 (copy) ]]
+		local v1 = DirectionVectors[p1] or DirectionVectors[Enum.NormalId.Front]
+		local v3 = CFrame.lookAt(Vector3.new(0, 0, 0), CFrame.new()[v1.vector] * v1.multiplier) * v27
+
+		if v33.X > 0 or v33.Y > 0 then
+			v3 = v3 * CFrame.Angles(math.rad((math.random() * 2 - 1) * v33.X), math.rad((math.random() * 2 - 1) * v33.Y), 0)
+		end
+
+		return v32.Rotation:VectorToWorldSpace(v3.LookVector)
+	end
+
+	p1._motionDir = composeDir(p2.EmissionDirection)
+	p1._speedDir = composeDir(p2.MotionDirection or p2.EmissionDirection)
+
+	local Speed = p2.Speed
+	local v35 = if Speed and (not Graph.IsStatic(Speed) or Graph.GetStaticValue(Speed, 0) ~= 0) then Speed else nil
+
+	p1.Graphs.Speed = v35
+
+	if v35 then
+		p1.Seeds.Speed = p1.Seeds.Speed or Graph.GenerateSeed(v35)
+	end
+
+	p1._accel = p2.Acceleration or Vector3.new(0, 0, 0)
+	p1._drag = p2.Drag or 0
+	p1._hasMotion = if v35 == nil then if p1._accel.Magnitude > 0 then true else false else true
+	p1._motionOffset = Vector3.new(0, 0, 0)
+	p1._motionAccelVel = Vector3.new(0, 0, 0)
+
+	if p1._pinMode == "Launch" then
+		local v39 = math.max(Range.RandomValueFromRange(p2.LaunchSpeed), 1)
+
+		p1._launchOrigin = v32.Position
+		p1._launchT = nil
+
+		local v40 = nil
+
+		if p2.Target then
+			local ok, result = pcall(PartConstants.resolveLinkCFrame, p2.Target)
+
+			if ok and result then
+				v40 = result.Position
+			end
+		end
+
+		if v40 then
+			local v41 = v40 - v32.Position
+			local v43 = math.max(v41.Magnitude / v39, 0.05)
+
+			p1._launchVel = v41 * (1 / v43) - p1._gravity * (v43 * 0.5)
+			p1._launchT = v43
+		else
+			p1._launchVel = p1._motionDir * v39
+		end
+	end
+
+	local v44 = Range.RandomValueFromRange(p2.RopeLength)
+
+	if v44 <= 0 then
+		local v46 = math.max(p2.Slack or 1.2, 1)
+		local v47 = 10
+
+		if (p1._pinMode == "BothEnds" or p1._pinMode == "Launch") and p2.Target then
+			local ok, result = pcall(PartConstants.resolveLinkCFrame, p2.Target)
+
+			if ok and result then
+				v47 = math.max((result.Position - v32.Position).Magnitude, 1)
+			end
+		end
+
+		v44 = v47 * v46
+	end
+
+	p1._restLen = math.max(v44 / p1._segCount, 0.05)
+end
+function t.build(p1, p2, p3, p4, p5, p6, p7) --[[ build | Line: 169 | Upvalues: Graph (copy), t (copy) ]]
+	local t2 = {
+		Brightness = Graph.GenerateSeed(p2.Brightness),
+		Transparency = Graph.GenerateSeed(p2.Transparency),
+		Thickness = Graph.GenerateSeed(p2.Thickness),
+		Timescale = Graph.GenerateSeed(p2.Timescale)
+	}
+	local t3 = {
+		Type = "Rope",
+		CurrentStep = 0,
+		_accum = 0,
+		_windPhase = 0,
+		VisualPart = p3,
+		_rig = p4,
+		Events = p2.Events,
+		StartTime = os.clock()
+	}
+
+	t3.TotalKeyFrames = math.max(1, p2.TotalKeyFrames)
+	t3.LifeTime = p5
+	t3.PartLife = p2.PartLife or 0
+	t3._sourceItem = p1
+	t3.Graphs = {
+		Color = p2.Color,
+		Brightness = p2.Brightness,
+		Transparency = p2.Transparency,
+		Thickness = p2.Thickness,
+		Timescale = p2.Timescale
+	}
+	t3.Seeds = t2
+	t3._effectiveElapsed = Graph.InitialEffectiveElapsed(p2.Timescale, t2.Timescale, p5)
+	t3._parentLink = p7
+	t3._windSeedA = math.random() * 1000
+	t3._windSeedB = 500 + math.random() * 1000
+
+	if p6 then
+		local v1 = if p6.EventOriginResolver then p6.EventOriginResolver() else nil
+		local v3 = if v1 then v1 else p6.EventOriginCF
+
+		if v3 then
+			if not (p6.UseFullOrigin and v3) then
+				v3 = CFrame.new(v3.Position) * p1.CFrame.Rotation
+			end
+
+			t3._startCFOverride = v3
+		end
+	end
+
+	t.readRopeParams(t3, p2, p4, p6)
+	t3._launchArrived = false
+	t3._released = false
+
+	return t3
+end
+
+return t

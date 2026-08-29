@@ -1,0 +1,150 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQM/DHNldG1ldGF0YWJsZQdFbmFibGVkDUxpZ2h0bmluZ0JvbHQNTWF4U3BhcmtDb3VudAhNaW5TcGVlZAhNYXhTcGVlZAtNaW5EaXN0YW5jZQtNYXhEaXN0YW5jZRBNaW5QYXJ0c1BlclNwYXJrEE1heFBhcnRzUGVyU3BhcmsHU3BhcmtzTglTbG90VGFibGUIUmVmSW5kZXgDbmV3BXBhaXJzBVBhcnRzBlBhcmVudAdEZXN0cm95BkNGcmFtZQZsb29rQXQHVmVjdG9yMwZBbmdsZXMKTmV4dE51bWJlcgRtYXRoA2NvcwRhY29zCkxvb2tWZWN0b3ISUmFuZG9tVmVjdG9yT2Zmc2V0DFRyYW5zcGFyZW5jeQRjZWlsC05leHRJbnRlZ2VyA2FicwVmbG9vcghQb3NpdGlvbgtSaWdodFZlY3RvcgRTaXplAVgNV29ybGRQb3NpdGlvbgRVbml0CVdvcmxkQXhpcwlNaW5SYWRpdXMJTWF4UmFkaXVzDkFuaW1hdGlvblNwZWVkAVkJVGhpY2tuZXNzFk1pblRoaWNrbmVzc011bHRpcGxpZXIWTWF4VGhpY2tuZXNzTXVsdGlwbGllcgtQdWxzZUxlbmd0aApQdWxzZVNwZWVkCkZhZGVMZW5ndGgGQ29sb3IzBXRvSFNWBUNvbG9yB2Zyb21IU1YHcmVxdWlyZQZzY3JpcHQGUmFuZG9tB19faW5kZXgEZ2FtZQpSdW5TZXJ2aWNlCkdldFNlcnZpY2UJSGVhcnRiZWF0B0Nvbm5lY3QABQYCAgAAADP/AwUAAAAAAPsEAACePQMDBAAAAKQCAQAAAABAnwIDAqkDAQAwAwLwAgAAADAAAvYDAAAAkAMBBDADAqQFAAAAjAMEAIwEBgAwAwLFBgAAADAEAjoHAAAAjAMDAIwEBgAwAwK4CAAAADAEApkJAAAAjAMIAIwECgAwAwJhCgAAADAEAsgLAAAAjAMAADADAuAMAAAA/wMAAAAAAAAwAwLGDQAAAPsFAQAcBAUAlQMEDjADAj8PAAAA+wMBAE0EAj8PAAAAagIDBIICAgAQAwEEAAAAQAMCAwMCAAAAAAAAJEADBAMFAwYDBwMIAwkDCgMLAwwCAAAAAAAA8D8DDQALDgEYAAAAAAAAAAAEAAABAAEAAAEAAAAAAAEAAAAAAAEAAAAAAAQA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
+
+-- https://lua.expert/
+local v1 = require(script.Parent)
+local t = {}
+local v2 = Random.new()
+local t2 = {}
+
+t2.__index = t2
+function t2.new(p1, p2) --[[ new | Line: 11 | Upvalues: t2 (copy), t (copy) ]]
+	local v2 = setmetatable({}, t2)
+
+	v2.Enabled = true
+	v2.LightningBolt = p1
+	v2.MaxSparkCount = p2 or 10
+	v2.MinSpeed = 4
+	v2.MaxSpeed = 6
+	v2.MinDistance = 3
+	v2.MaxDistance = 6
+	v2.MinPartsPerSpark = 8
+	v2.MaxPartsPerSpark = 10
+	v2.SparksN = 0
+	v2.SlotTable = {}
+	v2.RefIndex = #t + 1
+	t[v2.RefIndex] = v2
+
+	return v2
+end
+function t2.Destroy(p1) --[[ Destroy | Line: 34 | Upvalues: t (copy) ]]
+	t[p1.RefIndex] = nil
+
+	for k, v in pairs(p1.SlotTable) do
+		if v.Parts[1].Parent == nil then
+			p1.SlotTable[k] = nil
+		end
+	end
+end
+function RandomVectorOffset(p1, p2) --[[ RandomVectorOffset | Line: 46 | Upvalues: v2 (copy) ]]
+	local v1 = CFrame.lookAt(Vector3.new(), p1) * CFrame.Angles(0, 0, v2:NextNumber(0, 6.283185307179586))
+	local Angles = CFrame.Angles
+
+	return (v1 * Angles(math.acos((v2:NextNumber(math.cos(p2), 1))), 0, 0)).LookVector
+end
+game:GetService("RunService").Heartbeat:Connect(function() --[[ Line: 50 | Upvalues: t (copy), v2 (copy), v1 (copy) ]]
+	for k, v in pairs(t) do
+		if v.Enabled == true and v.SparksN < v.MaxSparkCount then
+			local LightningBolt = v.LightningBolt
+
+			if LightningBolt.Parts[1].Parent == nil then
+				v:Destroy()
+
+				return
+			end
+
+			local Parts = LightningBolt.Parts
+			local t2 = {}
+			local v12 = #Parts
+
+			for i = 1, #Parts do
+				if Parts[i].Transparency < 0.3 then
+					t2[#t2 + 1] = (i - 0.5) / v12
+				end
+			end
+
+			local v22, v3
+
+			if #t2 == 0 then
+				v22 = nil
+				v3 = nil
+			else
+				v22, v3 = math.ceil(t2[1] * v.MaxSparkCount), math.ceil(t2[#t2] * v.MaxSparkCount)
+			end
+
+			for j = 1, v2:NextInteger(1, v.MaxSparkCount - v.SparksN) do
+				if #t2 == 0 then
+					break
+				end
+
+				local t3 = {}
+
+				for k2 = v22, v3 do
+					if v.SlotTable[k2] == nil then
+						t3[#t3 + 1] = k2
+					end
+				end
+
+				if #t3 ~= 0 then
+					local v8 = t3[v2:NextInteger(1, #t3)]
+					local v9 = v2:NextNumber(-0.5, 0.5)
+					local v10 = (v8 - 0.5 + v9) / v.MaxSparkCount
+					local v11 = 10
+					local v122 = 1
+
+					for n = 1, #t2 do
+						local v14 = math.abs(t2[n] - v10)
+
+						if v14 < v11 then
+							v11, v122 = v14, math.floor(t2[n] * v12 + 0.5 + 0.5)
+						end
+					end
+
+					local v17 = Parts[v122]
+					local t4 = {}
+					local t5 = {}
+
+					t4.WorldPosition = v17.Position + v9 * v17.CFrame.RightVector * v17.Size.X
+					t5.WorldPosition = t4.WorldPosition + RandomVectorOffset(v17.CFrame.RightVector, 0.7853981633974483) * v2:NextNumber(v.MinDistance, v.MaxDistance)
+					t4.WorldAxis = (t5.WorldPosition - t4.WorldPosition).Unit
+					t5.WorldAxis = t4.WorldAxis
+
+					local v18 = v1.new(t4, t5, v2:NextInteger(v.MinPartsPerSpark, v.MaxPartsPerSpark))
+
+					v18.MinRadius = 0
+					v18.MaxRadius = 0.8
+					v18.AnimationSpeed = 0
+					v18.Thickness = v17.Size.Y / 2
+					v18.MinThicknessMultiplier = 1
+					v18.MaxThicknessMultiplier = 1
+					v18.PulseLength = 0.5
+					v18.PulseSpeed = v2:NextNumber(v.MinSpeed, v.MaxSpeed)
+					v18.FadeLength = 0.25
+
+					local v19, _, v20 = Color3.toHSV(v17.Color)
+
+					v18.Color = Color3.fromHSV(v19, 0.5, v20)
+					v.SlotTable[v8] = v18
+				end
+			end
+		end
+
+		local count = 0
+
+		for k2, v3 in pairs(v.SlotTable) do
+			if v3.Parts[1].Parent == nil then
+				v.SlotTable[k2] = nil
+
+				continue
+			end
+
+			count = count + 1
+		end
+
+		v.SparksN = count
+	end
+end)
+
+return t2

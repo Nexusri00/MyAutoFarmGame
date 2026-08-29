@@ -1,0 +1,111 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- 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
+
+-- https://lua.expert/
+local UserInputService = game:GetService("UserInputService")
+local EBS = require(game.ReplicatedStorage.Shared.EBS)
+local t = {
+	EnumToEBS = EBS.E2S,
+	_Keybinds = {},
+	_CurrentToken = 0
+}
+
+function t.RemoveKeyBind(p1, p2) --[[ RemoveKeyBind | Line: 22 | Upvalues: t (copy) ]]
+	if not p2 then
+		return
+	end
+
+	for k, v in pairs(t._Keybinds) do
+		for k2, v2 in pairs(v) do
+			if v2.UniqueKey == p2 then
+				table.clear(v2)
+				table.remove(v, k2)
+			end
+		end
+	end
+end
+function t.AddKeybind(p1, p2, p3) --[[ AddKeybind | Line: 33 | Upvalues: EBS (copy), t (copy) ]]
+	local v1 = EBS.S2E(p2)
+
+	if not v1 then
+		return warn("Invalid type", p2, debug.traceback())
+	end
+
+	local v3 = p3 or {}
+
+	if not t._Keybinds[v1] then
+		t._Keybinds[v1] = {}
+	end
+
+	local v4 = t
+
+	v4._CurrentToken = v4._CurrentToken + 1
+
+	local t2 = {
+		UniqueKey = t._CurrentToken,
+		Trigger = function(p1, p2) --[[ Line: 47 | Upvalues: v3 (ref) ]]
+			if p2 then
+				if p1 and v3.OnClick_RespectGameProg then
+					return
+				end
+
+				if v3.OnClick then
+					v3.OnClick()
+				end
+			else
+				if p1 and v3.OffClick_RespectGameProg then
+					return
+				end
+
+				if not v3.OffClick then
+					return
+				end
+
+				v3.OffClick()
+			end
+		end
+	}
+
+	table.insert(t._Keybinds[v1], t2)
+
+	return t2.UniqueKey
+end
+function t.Init(p1) --[[ Init | Line: 62 | Upvalues: t (copy), UserInputService (copy) ]]
+	if not t._Init then
+		t._Init = true
+		UserInputService.InputBegan:Connect(function(p1, p2) --[[ Line: 66 | Upvalues: t (ref) ]]
+			if not (t._Keybinds[p1.KeyCode] or t._Keybinds[p1.UserInputType]) then
+				return
+			end
+
+			local v2 = (if p1.UserInputType == Enum.UserInputType.Keyboard then true else false) and t._Keybinds[p1.KeyCode] or t._Keybinds[p1.UserInputType]
+
+			if not next(v2) then
+				return
+			end
+
+			for k, v in pairs(v2) do
+				v.Trigger(p2, true)
+			end
+		end)
+		UserInputService.InputEnded:connect(function(p1, p2) --[[ Line: 80 | Upvalues: t (ref) ]]
+			if not (t._Keybinds[p1.KeyCode] or t._Keybinds[p1.UserInputType]) then
+				return
+			end
+
+			local v2 = (if p1.UserInputType == Enum.UserInputType.Keyboard then true else false) and t._Keybinds[p1.KeyCode] or t._Keybinds[p1.UserInputType]
+
+			if not next(v2) then
+				return
+			end
+
+			for k, v in pairs(v2) do
+				v.Trigger(p2, false)
+			end
+		end)
+	end
+end
+
+return t

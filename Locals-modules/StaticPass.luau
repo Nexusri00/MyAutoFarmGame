@@ -1,0 +1,113 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQM3BFR5cGUGR3JhcGhzBmlwYWlycwhJc1N0YXRpYw5HZXRTdGF0aWNWYWx1ZQVhcHBseRRyZXN0b3JlRnJvbUZyZXNoRGF0YQdyZXF1aXJlBnNjcmlwdAZQYXJlbnQFR3JhcGgEUGFydApBdHRhY2htZW50BU1vZGVsCkltYWdlTGFiZWwFU3BlZWQMX3N0YXRpY1NwZWVkCkJyaWdodG5lc3MRX3N0YXRpY0JyaWdodG5lc3MMVHJhbnNwYXJlbmN5E19zdGF0aWNUcmFuc3BhcmVuY3kFU2l6ZVgMX3N0YXRpY1NpemVYBVNpemVZDF9zdGF0aWNTaXplWQVTaXplWgxfc3RhdGljU2l6ZVoJUm90U3BlZWRYEF9zdGF0aWNSb3RTcGVlZFgJUm90U3BlZWRZEF9zdGF0aWNSb3RTcGVlZFkJUm90U3BlZWRaEF9zdGF0aWNSb3RTcGVlZFoKUG9zT2Zmc2V0WBFfc3RhdGljUG9zT2Zmc2V0WApQb3NPZmZzZXRZEV9zdGF0aWNQb3NPZmZzZXRZClBvc09mZnNldFoRX3N0YXRpY1Bvc09mZnNldFoNQWNjZWxTdHJlbmd0aBRfc3RhdGljQWNjZWxTdHJlbmd0aAVTY2FsZQxfc3RhdGljU2NhbGURSW1hZ2VUcmFuc3BhcmVuY3kYX3N0YXRpY0ltYWdlVHJhbnNwYXJlbmN5FkJhY2tncm91bmRUcmFuc3BhcmVuY3kdX3N0YXRpY0JhY2tncm91bmRUcmFuc3BhcmVuY3kISW1nU3BlZWQPX3N0YXRpY0ltZ1NwZWVkC0ltZ1JvdFNwZWVkEl9zdGF0aWNJbWdSb3RTcGVlZApTaXplU2NhbGVYEV9zdGF0aWNTaXplU2NhbGVYClNpemVTY2FsZVkRX3N0YXRpY1NpemVTY2FsZVkAAw8BAgAAAC4OAAMATQEAEQAAAAArAQEAggABAPsCAABNAwARAAAAAIcBAgMrAQEAggABAE0CAHQBAAAAKwIBAIIAAQCkAwMAAAAgQFIEAQCfAwIEUQMXABMIBwATCQcBEwoHAocLAggOCxAA+wwBAE0MDHEEAAAAUg0LAJ8MAgIODAoA+wwBAE0MDIEFAAAAUg0LAFIOCgCfDAMCagwACcYMAABqDAIIZQACAMYMAABqDAAJbgPo/wIAAICCAAEABgMB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
+
+-- https://lua.expert/
+local Graph = require(script.Parent.Graph)
+local t = {}
+local t2 = {
+	Part = {
+		{ "Speed", "_staticSpeed", 0 },
+		{ "Brightness", "_staticBrightness", 1 },
+		{ "Transparency", "_staticTransparency", 0 },
+		{ "SizeX", "_staticSizeX", 1 },
+		{ "SizeY", "_staticSizeY", 1 },
+		{ "SizeZ", "_staticSizeZ", 1 },
+		{ "RotSpeedX", "_staticRotSpeedX", 0 },
+		{ "RotSpeedY", "_staticRotSpeedY", 0 },
+		{ "RotSpeedZ", "_staticRotSpeedZ", 0 },
+		{ "PosOffsetX", "_staticPosOffsetX", 0 },
+		{ "PosOffsetY", "_staticPosOffsetY", 0 },
+		{ "PosOffsetZ", "_staticPosOffsetZ", 0 },
+		{ "AccelStrength", "_staticAccelStrength", 0 }
+	},
+	Attachment = {
+		{ "Speed", "_staticSpeed", 0 },
+		{ "RotSpeedX", "_staticRotSpeedX", 0 },
+		{ "RotSpeedY", "_staticRotSpeedY", 0 },
+		{ "RotSpeedZ", "_staticRotSpeedZ", 0 },
+		{ "PosOffsetX", "_staticPosOffsetX", 0 },
+		{ "PosOffsetY", "_staticPosOffsetY", 0 },
+		{ "PosOffsetZ", "_staticPosOffsetZ", 0 }
+	},
+	Model = {
+		{ "Speed", "_staticSpeed", 0 },
+		{ "Scale", "_staticScale", 1 },
+		{ "RotSpeedX", "_staticRotSpeedX", 0 },
+		{ "RotSpeedY", "_staticRotSpeedY", 0 },
+		{ "RotSpeedZ", "_staticRotSpeedZ", 0 },
+		{ "PosOffsetX", "_staticPosOffsetX", 0 },
+		{ "PosOffsetY", "_staticPosOffsetY", 0 },
+		{ "PosOffsetZ", "_staticPosOffsetZ", 0 }
+	},
+	ImageLabel = {
+		{ "ImageTransparency", "_staticImageTransparency", 0 },
+		{ "BackgroundTransparency", "_staticBackgroundTransparency", 0 },
+		{ "ImgSpeed", "_staticImgSpeed", 0 },
+		{ "ImgRotSpeed", "_staticImgRotSpeed", 0 },
+		{ "SizeScaleX", "_staticSizeScaleX", 1 },
+		{ "SizeScaleY", "_staticSizeScaleY", 1 }
+	}
+}
+
+function t.apply(p1) --[[ apply | Line: 67 | Upvalues: t2 (copy), Graph (copy) ]]
+	if not (p1 and p1.Type) then
+		return
+	end
+
+	local v1 = t2[p1.Type]
+
+	if not v1 then
+		return
+	end
+
+	local Graphs = p1.Graphs
+
+	if not Graphs then
+		return
+	end
+
+	for i, v in ipairs(v1) do
+		local v2 = v[1]
+		local v3 = v[2]
+		local v4 = v[3]
+		local v5 = Graphs[v2]
+
+		if v5 and Graph.IsStatic(v5) then
+			p1[v3] = Graph.GetStaticValue(v5, v4)
+			Graphs[v2] = nil
+
+			continue
+		end
+
+		p1[v3] = nil
+	end
+end
+function t.restoreFromFreshData(p1, p2) --[[ restoreFromFreshData | Line: 90 | Upvalues: t2 (copy) ]]
+	if not (p1 and (p2 and p1.Type)) then
+		return
+	end
+
+	local v1 = t2[p1.Type]
+
+	if not v1 then
+		return
+	end
+
+	local Graphs = p1.Graphs
+
+	if not Graphs then
+		return
+	end
+
+	for i, v in ipairs(v1) do
+		local v2 = v[1]
+
+		if Graphs[v2] == nil and p2[v2] then
+			Graphs[v2] = p2[v2]
+		end
+	end
+end
+
+return t

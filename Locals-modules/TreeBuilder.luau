@@ -1,0 +1,430 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQN3ASAGc3RyaW5nBGdzdWICJXUEXiVzKwAQc3BsaXRCeVVwcGVyY2FzZQRtYXRoBWZsb29yBmlwYWlycwV0YWJsZQZpbnNlcnQGY29uY2F0B3RvUm9tYW4IUmVxdWlyZXMMY29tcHV0ZURlcHRoE2lzRGlyZWN0bHlBdmFpbGFibGUVaXNWaXNpYmxlSW5IaWRkZW5Nb2RlBW5vZGVzC2NvbmZpZ05vZGVzBG1vZGUHUmVndWxhcgxzZXRtZXRhdGFibGUDbmV3B1NldE1vZGUFcGFpcnMNU2V0Rmxvd0FjdGl2ZQlTZXRBY3RpdmUEQ29zdAxTZXRDYW5BZmZvcmQTVXBkYXRlQWZmb3JkYWJpbGl0eQdHZXROb2RlBkhpZGRlbgVzdGF0ZQhpbnN0YW5jZQdWaXNpYmxlCFVubG9ja2VkCUF2YWlsYWJsZQZMb2NrZWQGVW5sb2NrDU1ha2VBdmFpbGFibGUETG9jawpTZXRWaXNpYmxlClJldmVhbE5vZGUISGlkZUxvY2sFQXBwbHkPR2V0UmV2ZWFsTGF5ZXJzD3NraWxsTm9kZVByZWZhYgpjb25uZWN0b3JzC2NlbnRlclBvaW50Cm9uQWN0aXZhdGUHb25Ib3Zlcg51bmxvY2tlZFN0cm9rZQxsb2NrZWRTdHJva2UOY29ubmVjdG9yQ29sb3IFTm9kZXMFRnJhbWUOR2V0RGVzY2VuZGFudHMDSXNBBE5hbWUETm9kZRZCYWNrZ3JvdW5kVHJhbnNwYXJlbmN5DkZpbmRGaXJzdENoaWxkCUd1aU9iamVjdAZaSW5kZXgHRGVzdHJveQVDbG9uZQdWZWN0b3IyC0FuY2hvclBvaW50BVVEaW0yCWZyb21TY2FsZQhQb3NpdGlvbgRTaXplBEljb24KSW1hZ2VMYWJlbAVJbWFnZQtVcGdyYWRlTmFtZQlUZXh0TGFiZWwFVGl0bGUEdHlwZQRMaW5lBFRpZXIEVGV4dAZQYXJlbnQJR3VpQnV0dG9uCUFjdGl2YXRlZAdDb25uZWN0Ck1vdXNlRW50ZXIEd2FybgZmb3JtYXQ+W1NraWxsVHJlZV0gbWlzc2luZyBwbGFjZWhvbGRlciBmcmFtZSBmb3Igbm9kZSAnJXMnIChGcmFtZT0lcykMQWRkQ29ubmVjdG9yMFtTa2lsbFRyZWVdIG5v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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAQAAAAAAAAEAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAgAAAAAAAAABAAAAAAAAAAEAAAAAAAAABgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA/////wAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAP7///8AAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAAAAAADAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA+/7//wAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMBAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAwAAAAAAAAAAAAAAAQAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAx////wAAAAA9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAEAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPj///8AAAAA9P///wAAAAAbAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABYAAAECAHOjAAAApAABAAAAAEBvAgIAvAAAFgMAAACfAAMCpAEFAAAAQECkAgcAAABgQE0CAiQIAAAATQICLQkAAACfAQICpAIFAAAAQECkAwcAAABgQE0DAyQIAAAATQMDMwoAAACfAgICpAMFAAAAQEBNBADoCwAAAE0EBIEMAAAATQQEjw0AAACfAwIC/wQBAAAAAAD/BQQAAAAAADAFBW4OAAAAwAYPAP8HAAANAAAAjAjoA4wJhAOMCvQBjAuQAYwMZACMDVoAjA4yAIwPKACMEAoAjBEJAIwSBQCMEwQAjBQBAMUHCA4BAAAA/wgAAA0AAABvCRAAbwoRAG8LEgBvDBMAbw0UAG8OFQBvDxYAbxAXAG8RGABvEhkAbxMaAG8UGwBvFRwAxQgJDgEAAADACR0AEgAHABIACADACh4AEgAKAMALHwDADCAAwA0hABIABQAwDQXvIgAAAMANIwAwDQUgJAAAAMANJQAwDQVZJgAAAMANJwAwDQW/KAAAAMANKQAwDQW5KgAAAMANKwASAAwAEgACADANBS8sAAAAwA0tABIACgAwDQXYLgAAAMANLwASAAoAEgAJABIAAQASAAUAMA0ETzAAAACCBAIAMQNfBAAAAEADYANhA2IEAABAQANjBAAAYEADVANkA2UDZgNnA2gDaQYBA2oDawNsA20DbgNvA3ADcQNyA3MDdAN1A3YGAgYDBgQGBQYGAxgGBwMZBggDHAYJAx8GCgMgBgsDLgYMAy8GDwNeDQECAwQFBgcICQoLDA8BAAEFABwAAAAAAAEAAAAAAAAAAAEAAAAAAAAAAAEAAAAAAADhAAUAAgABABkKAAAAAAAAAAAAAAAAAAAAAAIAAAAAANMAAAAAAAAAAAAAAgAAEQAYExEAAAAIAAAHAAAGAAAHlQAIAAAAACsAAAAhAAAAAAAAdwEAAAAfAAAALQAAAGsAAAAAEILAOYKUb+hvSDXB1xNiiyny2C72sARTgw==
+
+-- https://lua.expert/
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local TreeNode = require(script.Parent.TreeNode)
+local Animation = require(script.Parent.Animation)
+
+require(ReplicatedStorage.Modules.SkillTree.SkillTreeConfig)
+
+local t = {}
+local t2 = {}
+
+t2.__index = t2
+
+local function splitByUppercase(p1) --[[ splitByUppercase | Line: 65 ]]
+	return string.gsub(string.gsub(p1, "%u", function(p13) --[[ Line: 66 ]]
+		return " " .. p13
+	end), "^%s+", "")
+end
+
+local t3 = {
+	1000,
+	900,
+	500,
+	400,
+	100,
+	90,
+	50,
+	40,
+	10,
+	9,
+	5,
+	4,
+	1
+}
+local t4 = {
+	"M",
+	"CM",
+	"D",
+	"CD",
+	"C",
+	"XC",
+	"L",
+	"XL",
+	"X",
+	"IX",
+	"V",
+	"IV",
+	"I"
+}
+
+local function toRoman(p1) --[[ toRoman | Line: 79 | Upvalues: t3 (copy), t4 (copy) ]]
+	if p1 <= 0 then
+		return ""
+	end
+
+	local sum = math.floor(p1)
+	local t = {}
+
+	for i, v in ipairs(t3) do
+		while v <= sum do
+			table.insert(t, t4[i])
+			sum = sum - v
+		end
+	end
+
+	return table.concat(t)
+end
+
+local function v1(p1, p2, p3) --[[ computeDepth | Line: 96 | Upvalues: v1 (copy) ]]
+	local v12 = p2[p3]
+
+	if v12 ~= nil then
+		return v12
+	end
+
+	p2[p3] = 0
+
+	local v2 = p1[p3]
+	local v3 = 0
+
+	if v2 ~= nil then
+		for i, v in ipairs(v2.Requires) do
+			if p1[v] ~= nil then
+				local v4 = v1(p1, p2, v) + 1
+
+				if v3 < v4 then
+					v3 = v4
+				end
+			end
+		end
+	end
+
+	p2[p3] = v3
+
+	return v3
+end
+
+local function isDirectlyAvailable(p1, p2, p3) --[[ isDirectlyAvailable | Line: 120 ]]
+	local v1 = p1[p3]
+
+	if v1 == nil then
+		return false
+	end
+
+	for i, v in ipairs(v1.Requires) do
+		if not p2[v] then
+			return false
+		end
+	end
+
+	return true
+end
+
+local function isVisibleInHiddenMode(p1, p2, p3) --[[ isVisibleInHiddenMode | Line: 139 ]]
+	if p2[p3] then
+		return true
+	end
+
+	local v1 = p1[p3]
+	local v2
+
+	if v1 == nil then
+		v2 = false
+	else
+		v2 = true
+
+		for i, v in ipairs(v1.Requires) do
+			if not p2[v] then
+				v2 = false
+
+				break
+			end
+		end
+	end
+
+	if v2 then
+		return true
+	end
+
+	local v3 = p1[p3]
+
+	for i, v in ipairs(if v3 == nil then {} else v3.Requires) do
+		local v5
+
+		if p2[v] then
+			return true
+		end
+
+		local v6 = p1[v]
+
+		if v6 == nil then
+			v5 = false
+		else
+			v5 = true
+
+			for i2, v7 in ipairs(v6.Requires) do
+				if not p2[v7] then
+					v5 = false
+
+					break
+				end
+			end
+		end
+
+		if v5 then
+			return true
+		end
+	end
+
+	return false
+end
+
+function t2.new(p1, p2, p3) --[[ new | Line: 156 | Upvalues: t2 (copy) ]]
+	return setmetatable({
+		nodes = p1,
+		configNodes = p2,
+		mode = p3 or "Regular"
+	}, t2)
+end
+function t2.SetMode(p1, p2) --[[ SetMode | Line: 164 ]]
+	p1.mode = p2
+end
+function t2.SetActive(p1, p2) --[[ SetActive | Line: 171 ]]
+	for k, v in pairs(p1.nodes) do
+		v:SetFlowActive(p2)
+	end
+end
+function t2.UpdateAffordability(p1, p2) --[[ UpdateAffordability | Line: 177 ]]
+	for k, v in pairs(p1.nodes) do
+		local v1 = p1.configNodes[k]
+
+		v:SetCanAfford(if (if v1 == nil then 0 else v1.Cost) <= p2 then true else false)
+	end
+end
+function t2.GetNode(p1, p2) --[[ GetNode | Line: 184 ]]
+	return p1.nodes[p2]
+end
+function t2.Apply(p1, p2, p3) --[[ Apply | Line: 192 | Upvalues: isVisibleInHiddenMode (copy), Animation (copy) ]]
+	local v1 = if p1.mode == "Hidden" then true else false
+	local v2 = if p2 then p2 else {}
+	local v3 = if p3 == true then v1 else false
+
+	for k, v in pairs(p1.nodes) do
+		local v4, v5
+		local state = v.state
+		local v6 = if v.instance == nil then false else v.instance.Visible
+
+		if v2[k] then
+			v4 = "Unlocked"
+		else
+			local v7 = p1.configNodes[k]
+
+			if v7 == nil then
+				v5 = false
+			else
+				v5 = true
+
+				for i, v8 in ipairs(v7.Requires) do
+					if not v2[v8] then
+						v5 = false
+
+						break
+					end
+				end
+			end
+
+			v4 = if v5 then "Available" else "Locked"
+		end
+
+		local v8 = not v1 or isVisibleInHiddenMode(p1.configNodes, v2, k)
+		local v9 = if v3 then if v4 == "Available" then if state == "Locked" then true else false else false else v3
+		local v11 = if p3 == true and v4 == "Unlocked" then if state == "Unlocked" then false else true else false
+
+		if v4 == "Unlocked" then
+			v:Unlock(v11)
+		elseif v4 == "Available" then
+			v:MakeAvailable(v9)
+		else
+			v:Lock()
+		end
+
+		v:SetVisible(v8)
+
+		if if v3 then if v8 then not v6 else v8 else v3 then
+			Animation.RevealNode(v)
+
+			continue
+		end
+
+		if v9 then
+			Animation.HideLock(v)
+		end
+	end
+end
+function t2.GetRevealLayers(p1) --[[ GetRevealLayers | Line: 235 | Upvalues: v1 (copy) ]]
+	local t = {}
+	local t2 = {}
+	local v12 = 0
+
+	for k, v in pairs(p1.nodes) do
+		if v.instance ~= nil and v.instance.Visible then
+			local v2 = v1(p1.configNodes, t, k)
+			local v3 = t2[v2]
+
+			if v3 == nil then
+				v3 = {}
+				t2[v2] = v3
+			end
+
+			table.insert(v3, v)
+
+			if v12 < v2 then
+				v12 = v2
+			end
+		end
+	end
+
+	local t3 = {}
+
+	for i = 0, v12 do
+		local v4 = t2[i]
+
+		if v4 ~= nil then
+			table.insert(t3, v4)
+		end
+	end
+
+	return t3
+end
+function t.Build(p1, p2, p3) --[[ Build | Line: 268 | Upvalues: v1 (copy), toRoman (copy), TreeNode (copy), t2 (copy) ]]
+	local skillNodePrefab = p3.skillNodePrefab
+	local connectors = p3.connectors
+	local centerPoint = p3.centerPoint
+	local onActivate = p3.onActivate
+	local onHover = p3.onHover
+	local unlockedStroke = p3.unlockedStroke
+	local lockedStroke = p3.lockedStroke
+	local connectorColor = p3.connectorColor
+	local t = {}
+	local t3 = {}
+	local t4 = {}
+	local t5 = {}
+
+	for k, v in pairs(p2.Nodes) do
+		t[v.Frame] = true
+	end
+
+	for i, v in ipairs(p1:GetDescendants()) do
+		if v:IsA("Frame") and (v.Name ~= "Node" and not t[v.Name]) then
+			v.BackgroundTransparency = 1
+		end
+	end
+
+	for k, v in pairs(p2.Nodes) do
+		local v12 = p1:FindFirstChild(v.Frame, true)
+
+		if v12 == nil or not v12:IsA("GuiObject") then
+			warn(string.format("[SkillTree] missing placeholder frame for node \'%s\' (Frame=%s)", k, v.Frame))
+
+			continue
+		end
+
+		t3[k] = v12
+
+		local v2 = v1(p2.Nodes, t4, k) + 1
+
+		v12.ZIndex = v2
+
+		local Node = v12:FindFirstChild("Node")
+
+		if Node ~= nil then
+			Node:Destroy()
+		end
+
+		local Node2 = skillNodePrefab:Clone()
+
+		Node2.Name = "Node"
+		Node2.AnchorPoint = Vector2.new(0.5, 0.5)
+		Node2.Position = UDim2.fromScale(0.5, 0.5)
+		Node2.Size = UDim2.fromScale(1, 1)
+		Node2.ZIndex = v2
+
+		local Icon = Node2:FindFirstChild("Icon")
+
+		if Icon ~= nil and (Icon:IsA("ImageLabel") and v.Icon ~= "") then
+			Icon.Image = v.Icon
+		end
+
+		local UpgradeName = Node2:FindFirstChild("UpgradeName")
+
+		if UpgradeName ~= nil and UpgradeName:IsA("TextLabel") then
+			local Title = v.Title
+
+			if type(Title) ~= "string" or Title == "" then
+				Title = string.gsub(string.gsub(v.Line or k, "%u", function(p13) --[[ Line: 66 ]]
+					return " " .. p13
+				end), "^%s+", "")
+
+				if v.Tier > 0 then
+					Title = Title .. " " .. toRoman(v.Tier)
+				end
+			end
+
+			UpgradeName.Text = Title
+		end
+
+		v12.BackgroundTransparency = 1
+		Node2.Parent = v12
+
+		local v5 = TreeNode.new(Node2, unlockedStroke, lockedStroke, connectorColor)
+
+		v5:Lock()
+		t5[k] = v5
+
+		if onActivate ~= nil and Node2:IsA("GuiButton") then
+			Node2.Activated:Connect(function() --[[ Line: 343 | Upvalues: onActivate (copy), k (copy), v5 (copy) ]]
+				onActivate(k, v5)
+			end)
+		end
+
+		if onHover ~= nil and Node2:IsA("GuiButton") then
+			Node2.MouseEnter:Connect(function() --[[ Line: 348 | Upvalues: onHover (copy), k (copy), v5 (copy) ]]
+				onHover(k, v5)
+			end)
+		end
+	end
+
+	for k, v in pairs(p2.Nodes) do
+		local v6 = t3[k]
+		local v7 = t5[k]
+
+		if v6 ~= nil then
+			if #v.Requires == 0 then
+				if centerPoint ~= nil then
+					local v8 = connectors:Connect(v6, centerPoint)
+
+					if v7 ~= nil then
+						v7:AddConnector(v8)
+					end
+				end
+
+				continue
+			end
+
+			for i, v2 in ipairs(v.Requires) do
+				local v9 = t3[v2]
+
+				if v9 == nil then
+					warn(string.format("[SkillTree] node \'%s\' requires unknown node \'%s\'", k, v2))
+
+					continue
+				end
+
+				local v10 = connectors:Connect(v6, v9)
+
+				if v7 ~= nil then
+					v7:AddConnector(v10)
+				end
+			end
+		end
+	end
+
+	return t2.new(t5, p2.Nodes, p3.mode)
+end
+
+return t

@@ -1,0 +1,305 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQNfAl9HB0VmZmVjdHMFRXh0cmELV2F0ZXJTcGxhc2gMV2FpdEZvckNoaWxkBUNsb25lBVNvdW5kBlBhcmVudAtQcmltYXJ5UGFydAZDRnJhbWUDbmV3B0FkZEl0ZW0PR2V0QWJpbGl0eVNjYWxlDkVtaXRfV2l0aFNjYWxlBFJhbmsISW5zdGFuY2UEV2VsZAVQYXJ0MAVQYXJ0MQZTb3VuZHMHUmVjaWV2ZQRQbGF5BlJhbmtVcAVMZXZlbAdMZXZlbFVwBk9idGFpbhBIdW1hbm9pZFJvb3RQYXJ0BlZvbHVtZQZ0eXBlb2YFTW9kZWwDSXNBBUNoZXN0CFN1Y2Nlc3MyClRpbWVMZW5ndGgNRW1pdF9Gb3JnZVZGWAVwYWlycw5HZXREZXNjZW5kYW50cwRCZWFtB0VuYWJsZWQETmFtZQRNYWluBldpZHRoMAZXaWR0aDEGU2Vjb25kBVRoaXJkBHRhc2sEd2FpdAlUd2VlbkluZm8GQ3JlYXRlEExpZ2h0bmluZyBTdHJpa2UFc3Bhd24PTGlnaHRuaW5nU3RyaWtlCEJhc2VQYXJ0BURlY2FsDFRyYW5zcGFyZW5jeQ9QYXJ0aWNsZUVtaXR0ZXIFQ2xlYXILR2V0Q2hpbGRyZW4FT3duZXIMR2V0QXR0cmlidXRlC0FkanVzdFNwZWVkB0Rlc3Ryb3kITWFzc2xlc3MIQW5jaG9yZWQEU3RvcAhIdW1hbm9pZA5GaW5kRmlyc3RDaGlsZAVUb3JzbxZBc3NlbWJseUxpbmVhclZlbG9jaXR5CUJvb2xWYWx1ZQZBY3RpbmcFVmFsdWUGTW9kZWxzFkluZmluaXR5IENhc3RsZSdzIERvb3IKQW5pbWF0aW9ucw9JbmZpbml0eSBDYXN0bGUGUGxheWVyDUxvYWRBbmltYXRpb24FZGVsYXkTQW5pbWF0aW9uQ29udHJvbGxlcgREb29yDkluZmluaXR5Q2FzdGxlBkFuZ2xlcwZQb3J0YWwLQmxhc3RQb3J0YWwEZ2FtZQxUd2VlblNlcnZpY2UKR2V0U2VydmljZQlXb3Jrc3BhY2UGRGVicmlzEVJlcGxpY2F0ZWRTdG9yYWdlB3JlcXVpcmUHTW9kdWxlcw1WaXN1YWxQYWNrYWdlCVNvdW5kRGF0YQEKABEIAQQAAAoDAAEFAQcPAQcCRKQB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
+
+-- https://lua.expert/
+local TweenService = game:GetService("TweenService")
+local Workspace = game:GetService("Workspace")
+local Debris = game:GetService("Debris")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local VisualPackage = require(ReplicatedStorage.Modules.VisualPackage)
+local SoundData = require(ReplicatedStorage.Modules.Effects.SoundData)
+
+return {
+	WaterSplash = function(p1) --[[ WaterSplash | Line: 13 | Upvalues: SoundData (copy), Workspace (copy), Debris (copy), VisualPackage (copy) ]]
+		local v1 = _G.Effects.Extra:WaitForChild("WaterSplash"):Clone()
+
+		SoundData.Effects.Extra.WaterSplash.Sound:Clone().Parent = v1
+		v1.CFrame = p1.PrimaryPart.CFrame * CFrame.new(0, -2.5, 0)
+		v1.Parent = Workspace.Extra:WaitForChild("Effects")
+		Debris:AddItem(v1, 3)
+		VisualPackage.Emit_WithScale(v1, (VisualPackage.GetAbilityScale(p1, true)))
+	end,
+	RankUp = function(p1) --[[ RankUp | Line: 24 | Upvalues: Workspace (copy), Debris (copy), VisualPackage (copy) ]]
+		local v1 = _G.Effects.Extra:WaitForChild("Rank"):Clone()
+
+		v1.CFrame = p1.PrimaryPart.CFrame
+		v1.Parent = Workspace.Extra:WaitForChild("Effects")
+		Debris:AddItem(v1, 3)
+
+		local Weld = Instance.new("Weld")
+
+		Weld.Part0 = v1
+		Weld.Part1 = p1.PrimaryPart
+		Weld.Parent = v1
+
+		local v2 = _G.Sounds.Extra:WaitForChild("Recieve"):Clone()
+
+		v2.Parent = v1
+		v2:Play()
+		VisualPackage.Emit_WithScale(v1, (VisualPackage.GetAbilityScale(p1, true)))
+	end,
+	LevelUp = function(p1) --[[ LevelUp | Line: 43 | Upvalues: Workspace (copy), Debris (copy), VisualPackage (copy) ]]
+		local v1 = _G.Effects.Extra:WaitForChild("Level"):Clone()
+
+		v1.CFrame = p1.PrimaryPart.CFrame
+		v1.Parent = Workspace.Extra:WaitForChild("Effects")
+		Debris:AddItem(v1, 3)
+
+		local Weld = Instance.new("Weld")
+
+		Weld.Part0 = v1
+		Weld.Part1 = p1.PrimaryPart
+		Weld.Parent = v1
+
+		local v2 = _G.Sounds.Extra:WaitForChild("Recieve"):Clone()
+
+		v2.Parent = v1
+		v2:Play()
+		VisualPackage.Emit_WithScale(v1, (VisualPackage.GetAbilityScale(p1, true)))
+	end,
+	Obtain = function(p1) --[[ Obtain | Line: 62 | Upvalues: Workspace (copy), Debris (copy), VisualPackage (copy) ]]
+		local v1 = _G.Effects.Extra:WaitForChild("Obtain"):Clone()
+
+		v1.CFrame = p1:WaitForChild("HumanoidRootPart").CFrame
+		v1.Parent = Workspace.Extra:WaitForChild("Effects")
+		Debris:AddItem(v1, 2)
+
+		local Weld = Instance.new("Weld")
+
+		Weld.Part0 = v1
+		Weld.Part1 = p1.PrimaryPart
+		Weld.Parent = v1
+
+		local v2 = _G.Sounds.Extra:WaitForChild("Recieve"):Clone()
+
+		v2.Volume = 1
+		v2.Parent = v1
+		v2:Play()
+		VisualPackage.Emit_WithScale(v1, (VisualPackage.GetAbilityScale(p1, true)))
+	end,
+	Chest = function(p1) --[[ Chest | Line: 82 | Upvalues: Workspace (copy), Debris (copy), VisualPackage (copy) ]]
+		local v1
+
+		if typeof(p1) == "CFrame" then
+			v1 = p1
+		else
+			if typeof(p1) ~= "Instance" or not (p1:IsA("Model") and p1.PrimaryPart) then
+				return
+			end
+
+			v1 = p1.PrimaryPart.CFrame
+		end
+
+		local v2 = _G.Effects.Extra:WaitForChild("Chest"):Clone()
+
+		v2.CFrame = v1
+		v2.Parent = Workspace.Extra:WaitForChild("Effects")
+		Debris:AddItem(v2, 2)
+
+		local v3 = _G.Sounds.Extra:WaitForChild("Success2"):Clone()
+
+		v3.Parent = v2
+		v3:Play()
+		Debris:AddItem(v3, v3.TimeLength)
+		VisualPackage.Emit_ForgeVFX(v2)
+	end,
+	LightningStrike = function(p1) --[[ LightningStrike | Line: 105 | Upvalues: Workspace (copy), Debris (copy), VisualPackage (copy), TweenService (copy) ]]
+		local v1 = _G.Effects.Extra:WaitForChild("Lightning Strike"):Clone()
+
+		v1.CFrame = p1.PrimaryPart.CFrame * CFrame.new(0, -2.5, 0)
+		v1.Parent = Workspace.Extra:WaitForChild("Effects")
+		Debris:AddItem(v1, 3)
+		VisualPackage.Emit_WithScale(v1, (VisualPackage.GetAbilityScale(p1, true)))
+		task.spawn(function() --[[ Line: 114 | Upvalues: v1 (copy), TweenService (ref) ]]
+			for k, v in pairs(v1:GetDescendants()) do
+				if v:IsA("Beam") then
+					v.Enabled = true
+
+					if v.Name == "Main" then
+						v.Width0 = 5
+						v.Width1 = 5
+					elseif v.Name == "Second" then
+						v.Width0 = 55
+						v.Width1 = 55
+					elseif v.Name == "Third" then
+						v.Width0 = 25
+						v.Width1 = 25
+					end
+
+					task.wait(0.05)
+					TweenService:Create(v, TweenInfo.new(0.3), {
+						Width0 = 0,
+						Width1 = 0
+					}):Play()
+				end
+			end
+		end)
+	end,
+	InfinityCastle = function(p1) --[[ InfinityCastle | Line: 138 | Upvalues: Workspace (copy), TweenService (copy) ]]
+		local Humanoid = p1:FindFirstChild("Humanoid")
+		local HumanoidRootPart = p1:FindFirstChild("HumanoidRootPart")
+		local Torso = p1:FindFirstChild("Torso")
+
+		Torso.Massless = true
+		HumanoidRootPart.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+		HumanoidRootPart.Anchored = true
+
+		local Acting = Instance.new("BoolValue")
+
+		Acting.Name = "Acting"
+		Acting.Value = true
+		Acting.Parent = p1
+
+		local v1 = _G.Models.Extra:WaitForChild("Infinity Castle\'s Door"):Clone()
+
+		v1.PrimaryPart.CFrame = HumanoidRootPart.CFrame * CFrame.new(0, -3, 0)
+		v1.Parent = Workspace.Extra:WaitForChild("Effects")
+
+		local v2 = Humanoid:LoadAnimation(_G.Animations.Extra:WaitForChild("Infinity Castle"):WaitForChild("Player"))
+
+		v2:Play()
+
+		local t = {}
+		local t2 = {}
+
+		task.delay(1.1, function() --[[ Line: 163 | Upvalues: p1 (copy), t (copy), TweenService (ref), t2 (copy), Workspace (ref) ]]
+			for k, v in pairs(p1:GetDescendants()) do
+				if v:IsA("BasePart") or v:IsA("Decal") then
+					if v.Transparency == 1 then
+						if v:IsA("ParticleEmitter") or v:IsA("Beam") then
+							t2[v] = v.Enabled
+							v.Enabled = false
+
+							if v:IsA("ParticleEmitter") then
+								v:Clear()
+							end
+						end
+
+						continue
+					end
+
+					t[v] = v.Transparency
+					TweenService:Create(v, TweenInfo.new(0.1), {
+						Transparency = 1
+					}):Play()
+				elseif v:IsA("ParticleEmitter") or v:IsA("Beam") then
+					t2[v] = v.Enabled
+					v.Enabled = false
+
+					if v:IsA("ParticleEmitter") then
+						v:Clear()
+					end
+				end
+			end
+
+			for k, v in pairs(Workspace.Extra:WaitForChild("Effects"):GetChildren()) do
+				if v:GetAttribute("Owner") == p1.Name then
+					for k2, v2 in pairs(v:GetDescendants()) do
+						if v2:IsA("ParticleEmitter") then
+							v2.Enabled = false
+							v2:Clear()
+
+							continue
+						end
+
+						if v2:IsA("Beam") then
+							v2.Enabled = false
+						end
+					end
+				end
+			end
+		end)
+		task.delay(1.57, function() --[[ Line: 192 | Upvalues: v2 (copy) ]]
+			v2:AdjustSpeed(0)
+		end)
+
+		local v3 = v1:WaitForChild("AnimationController"):LoadAnimation(_G.Animations.Extra:WaitForChild("Infinity Castle"):WaitForChild("Door"))
+
+		v3:Play()
+		task.delay(30, function() --[[ Line: 199 | Upvalues: v1 (copy), Acting (copy), Torso (copy), HumanoidRootPart (copy), v2 (copy), v3 (copy), p1 (copy), t (copy), t2 (copy), Workspace (ref) ]]
+			if v1 then
+				v1:Destroy()
+			end
+
+			if Acting then
+				Acting:Destroy()
+			end
+
+			Torso.Massless = false
+			HumanoidRootPart.Anchored = false
+			v2:Stop()
+			v3:Stop()
+
+			for k, v in pairs(p1:GetDescendants()) do
+				if (v:IsA("BasePart") or v:IsA("Decal")) and t[v] then
+					v.Transparency = t[v]
+
+					continue
+				end
+
+				if v:IsA("ParticleEmitter") or v:IsA("Beam") then
+					v.Enabled = t2[v]
+				end
+			end
+
+			for k, v in pairs(Workspace.Extra:WaitForChild("Effects"):GetChildren()) do
+				if v:GetAttribute("Owner") == p1.Name then
+					for k2, v4 in pairs(v:GetDescendants()) do
+						if v4:IsA("ParticleEmitter") or v4:IsA("Beam") then
+							v4.Enabled = true
+						end
+					end
+				end
+			end
+		end)
+	end,
+	BlastPortal = function(p1) --[[ BlastPortal | Line: 237 | Upvalues: Workspace (copy), TweenService (copy), Debris (copy) ]]
+		p1:FindFirstChild("Humanoid")
+
+		local HumanoidRootPart = p1:FindFirstChild("HumanoidRootPart")
+		local Torso = p1:FindFirstChild("Torso")
+
+		Torso.Massless = true
+		HumanoidRootPart.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+		HumanoidRootPart.Anchored = true
+
+		local Acting = Instance.new("BoolValue")
+
+		Acting.Name = "Acting"
+		Acting.Value = true
+		Acting.Parent = p1
+
+		local v1 = _G.Models.Extra:WaitForChild("Portal"):Clone()
+
+		v1.Anchored = true
+		v1.CFrame = HumanoidRootPart.CFrame * CFrame.new(0, -1, -12.5)
+		v1.Parent = Workspace.Extra:WaitForChild("Effects")
+		task.spawn(function() --[[ Line: 257 | Upvalues: v1 (copy) ]]
+			for k, v in pairs(v1:GetDescendants()) do
+				if v:IsA("ParticleEmitter") then
+					v.Enabled = true
+				end
+			end
+		end)
+		task.delay(1, function() --[[ Line: 265 | Upvalues: TweenService (ref), HumanoidRootPart (copy), v1 (copy) ]]
+			TweenService:Create(HumanoidRootPart, TweenInfo.new(2), {
+				CFrame = v1.CFrame * CFrame.Angles(-1.5707963267948966, 0, 0) * CFrame.new(0, 1, 0)
+			}):Play()
+			task.wait(2)
+			task.spawn(function() --[[ Line: 268 | Upvalues: v1 (ref) ]]
+				for k, v in pairs(v1:GetDescendants()) do
+					if v:IsA("ParticleEmitter") then
+						v.Enabled = false
+					end
+				end
+			end)
+		end)
+		task.delay(15, function() --[[ Line: 277 | Upvalues: Torso (copy), HumanoidRootPart (copy) ]]
+			Torso.Massless = false
+			HumanoidRootPart.Anchored = false
+		end)
+		Debris:AddItem(v1, 15)
+	end
+}

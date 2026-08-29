@@ -1,0 +1,143 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQM3Am9zBWNsb2NrC0xhc3RTcGF3bmVkBkNyZWF0ZQVkZWJ1Zwxwcm9maWxlYmVnaW4KV2luZCBMaW5lcwtVcGRhdGVRdWV1ZQpTdGFydENsb2NrCExpZmV0aW1lC0F0dGFjaG1lbnQwB0Rlc3Ryb3kLQXR0YWNobWVudDEFVHJhaWwJTWF4TGVuZ3RoBFNlZWQFU3BlZWQIUG9zaXRpb24GQ0ZyYW1lA25ldwlEaXJlY3Rpb24EbWF0aANzaW4HVmVjdG9yMw1Xb3JsZFBvc2l0aW9uCnByb2ZpbGVlbmQQVXBkYXRlQ29ubmVjdGlvbgpEaXNjb25uZWN0BXRhYmxlBWNsZWFyCVNwYXduUmF0ZQlIZWFydGJlYXQHQ29ubmVjdARJbml0B0NsZWFudXANQWRkIFdpbmQgTGluZQl3b3Jrc3BhY2UNQ3VycmVudENhbWVyYQZBbmdsZXMGcmFuZG9tA3JhZAhJbnN0YW5jZQpBdHRhY2htZW50Dk51bWJlclNlcXVlbmNlFk51bWJlclNlcXVlbmNlS2V5cG9pbnQKV2lkdGhTY2FsZQxUcmFuc3BhcmVuY3kKRmFjZUNhbWVyYQZQYXJlbnQEZ2FtZQpSdW5TZXJ2aWNlCkdldFNlcnZpY2UHVGVycmFpbhVGaW5kRmlyc3RDaGlsZE9mQ2xhc3MGY3JlYXRlAAUTAAIAAAgAAAEIDIEBAZQBpAACAAAEAICfAAEC+wIAAE0CAt0DAAAAJgEAAvsCAQBgAggAAQAAAPsBAAC8AQGWBAAAAJ8BAgH7AQAAMAAB3QMAAACkAQcAABhQgG8CCACfAQIB+wEAAE0BAXkJAAAAxgIAAMYDAABkAXMATQcFHgoAAAAmBgAHTQcFywsAAAB9ByIABgAAAE0HBWsMAAAAvAcHUA0AAACfBwIBTQcFLw4AAAC8BwdQDQAAAJ8HAgFNBwW5DwAAALwHB1ANAAAAnwcCAfsIAABNCAh5CQAAABwHCAD7CAAATQgIeQkAAAD7CgAATQoKeQkAAACHCQoHagkIBPsIAABNCAh5CQAAAMYJAABqCQgHZQBLAE0HBbkPAAAAjAoUAE0MBcsLAAAA7AsGDAkJCgv1CBAJMAgHlxEAAABNCQVbEgAAAEMIAAlNCgUsFAAAAFsJChMJBwgJTQgFOxUAAABNCQVrDAAAAKQMGAAAXGCBUg0IAE0PBWEZAAAAQw4ID58MAwKkDRgAAFxggYwOAACMDwAATREFLBQAAAA5EgYACRAREp8NBAIJCwwNTQsLOxUAAAC7GAcDUg8HAKQOHQAAcLCBnw4CAlsNDhq7GAcDUhAHAKQPHQAAcLCBnw8CAlsODx67GAcDUhEHAKQQHQAAcLCBnxACAlsPEBpMNgACpAwgAABc8IGfDAQCQwoLDDAKCeAhAAAATQkFLw4AAABNCwVrDAAAAE0LC+AhAAAAbwwiAEMKCwwwCgngIQAAAG4BjP8CAAAApAEkAACMUICfAQEBggABACUDAQMCBAAEAIADAwMEAwUDBgQAGFCAAwcDCAMJAwoDCwMMAw0DDgIAAAAAAAA0QAMPAxACmpmZmZmZyT8DEQMSAxMDFAQAXGCBAxUCAAAAAAAA4D8DFgMXBABwsIECmpmZmZmZ6T8DGAQAXPCBAxkHAAAAAM3MzD0AAAAAAAAAAAMaBACMUIAAIwABGAAAAAMAAAAAAAABAAAAAQAABAAAAAEAAAAAAAEAAAEAAAACAAAAAAEAAAAAAQAAAAADAAAAAQAAAAAAAAABAAAAAAIDAAAAAAAAAAAAAgAAAAAAAAEAAQAAAAAAAAAAAAABAQEAAAD9AAQAAQAAAAAAAQAAAAAAAQAAAAAA/QAAAAD8AAoAAAAAAAAAAADiACAAAAEkAAAAAAkCAgAAAFT7AgAATQQBywEAAACQAwQAMAMCywEAAAD7AgAATQQBYQMAAACQAwQCMAMCYQMAAAD7AgAATQQBLAUAAACQAwQEMAMCLAUAAAD7AgAATQIC3wYAAAAOAgoA+wIAAE0CAt8GAAAAvAICGgcAAACfAgIB+wIAAMYDAAAwAwLfBgAAAPsCAABNAgJ5CAAAAMYDAADGBAAAZAIPAE0HBmsJAAAAvAcHUAoAAACfBwIBTQcGLwsAAAC8BwdQCgAAAJ8HAgFNBwa5DAAAALwHB1AKAAAAnwcCAW4C8P8CAAAApAIPAAA40ID7AwAATQMDeQgAAACfAgIB+wIAAKQDEgAARACBnwMBAjADAt0TAAAATQQB9BYAAACQAwQV2AIUA/sDAAD7BAEATQQE/RcAAADZBgAAEgIAABIAAgC8BATHGAAAAJ8EAwIwBAPfBgAAAIIAAQAZAgAAAAAAAAhAAwoHAACAPwAAAAAAAAAAAAAAAAMVAgAAAAAAABhAAxEDGwMcAwgDCwMMAw0DDgMdAx4EADjQgAMBAwIEAEQAgQMDAgAAAAAAAPA/AgAAAAAAADlAAx8DIAMhAQAMIgEYAAAAAAAAAQAAAAAAAQAAAAAAAwAAAAEAAAAAAAEAAAADAAAAAAABAAAAAAEAAAAAAQAAAAD9AAUAAAAAAAIAAAAAAAEAAAADAAAAAAAAAAAAAAAtDgAAAAAIAQEAAAAs+wEAAE0BAd8AAAAADgEKAPsBAABNAQHfAAAAALwBARoBAAAAnwECAfsBAADGAgAAMAIB3wAAAAD7AQAATQEBeQIAAADGAgAAxgMAAGQBDwBNBgVrAwAAALwGBlAEAAAAnwYCAU0GBS8FAAAAvAYGUAQAAACfBgIBTQYFuQYAAAC8BgZQBAAAAJ8GAgFuAfD/AgAAAKQBCQAAIHCA+wIAAE0CAnkCAAAAnwECAYIAAQAKAxsDHAMIAwsDDAMNAw4DHQMeBAAgcIAAUiMBGAAAAAABAAAAAAABAAAAAwAAAAAAAQAAAAABAAAAAAEAAAAA/QAFAAAAAAABUwAAAAARAgMAAADHAaQCAgAABACAbwMDAJ8CAgFSAgEAKwIBAPsCAABSAQIATQIBywQAAAArAgMA+wIBAE0CAssEAAAATQMBOwUAAAArAysApAUHAAAAYEBNBQVICAAAAE0FBYUJAAAApAYLAAAokICkCA4AADTAgIwJ4v+MCkYAnwgDArsWCAKkBxAAADzAgJ8HAgKkCQ4AADTAgIwKsP+MC1AAnwkDArsWCQKkCBAAADzAgJ8IAgKMCQAAnwYEAgkEBQakBRIAAESQgIwGAACMBwAApAkOAAA0wICMCsgAjAtYAp8JAwJbCAkTnwUEAk0FBTsFAAAACQMEBU0EAWEUAAAAKwQDAPsEAQBNBARhFAAAAE0FASwVAAAAKwUDAPsFAQBNBQUsFQAAAIwGAAB9BQIABgAAAIIAAQCkBhcAAERggW8HGACfBgICpAcXAABEYIFvCBgAnwcCAqQIFwAARGCBbwkZAJ8IAgIwBghrGgAAADAHCC8bAAAApAkdAABEwIH/CgAABAAAAKQLHwAAROCBjAwAAG8NIACfCwMCpAwfAABE4IFvDSEAjA4BAJ8MAwKkDR8AAETggW8OIgCMDwEAnw0DAqQOHwAAROCBjA8BAG8QIACfDgMAxQoLAAEAAACfCQICMAkIZiMAAACkCR0AAETAgW8KJACfCQICMAkI2SUAAACpCQEAMAkIwSYAAAAwBggkJwAAADADBuAoAAAAbwopAEMJAwowCQfgKAAAAOIJLAAwBglrGgAAADAHCS8bAAAAMAgJuRkAAACkDA4AADTAgIwN9v+MDgoAnwwDAlsLDC1DCgILMAoJywQAAAAwAwk7BQAAADAECWEUAAAApAwOAAA0wICMDfb/jA4KAJ8MAwJbCwwtQwoFCzAKCSwVAAAApAowAAC84IKfCgECMAoJHioAAACkCw4AADTAgIwMAQCMDegDnwsDAlsKCy0wCglbKwAAAPsKAQBNCgp5MQAAAPsNAQBNDQ15MQAAABwMDQCVCwwyagkKC/sKAgAwCgYkJwAAAPsKAgAwCgckJwAAAKQKNAAAzACAnwoBAYIAAQA1AwUDBgQABACAAyQDCgMSAyUEAABgQAMmAxMDJwQAKJCAAxYDKAQANMCAAykEADzAgAMUBABEkIACmpmZmZmZub8DFQMRAyoEAERggQMrAw4DCwMNAywEAETAgQMtBABE4IECMzMzMzMz0z8CmpmZmZmZyT8CmpmZmZmZ6T8DLgJmZmZmZmbmPwMvAzADMQMZBwAAAADNzMw9AAAAAAAAAAADCQMQBQkaGxkEBRQVKisCmpmZmZmZuT8DAQMCBAC84IIDCAIAAAAAAADwPwMaBADMAIAAYAQBGAAAAAACAAAAAgAAAAAAAQAAAgAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAEAAAEDAAAAAQAAAAIAAAABAAEAAQAAAAEAAAAAAQAAAAABAAAAAAEAAAAAAAD8AAAGAAAAAAABAAABAAIAAQAAAAIBAAEAAQABAAAAAAAAAAABAAEAAQAAAAAAAAAAAQAAAAABAAAAAAAAAAMAAAAAAAAAAAIAAAEAAAIAAAFhAAAAAAYAAAECACqjAAAApAABAAAAAEBvAgIAvAAAFgMAAACfAAMCpAEFAAAAQEBvAwYAvAEBuAcAAACfAQMC/wIAAAAAAAD/AwUAAAAAAMYEAAAwBAPfCAAAAKQECwAAKJCAjAUKAJ8EAgIwBAN5DAAAAMAEDQASAAMAEgAAADAEA3MOAAAAwAQPABIAAwAwBAPxEAAAAMAEEQASAAIAEgADABIAAQAwBAOWEgAAAIIDAgATAzIEAAAAQAMzAzQDJQQAAEBAAzUDNgMbAx0DNwQAKJCAAwgGAQMiBgIDIwYDAwQDAQIDAQABGAAAAAAAAAABAAAAAAACAAMAAgAAAQAAAAAAAgAAAABGAAAADgAAAAAAOQEAAAAABB6r0o8pRv4vD7PaTuAvCMBus8X7LG+4jg==
+
+-- https://lua.expert/
+local RunService = game:GetService("RunService")
+local Terrain = workspace:FindFirstChildOfClass("Terrain")
+local t = {}
+local t2 = {
+	UpdateConnection = nil,
+	UpdateQueue = table.create(10)
+}
+
+function t2.Init(p1, p2) --[[ Init | Line: 12 | Upvalues: t2 (copy), RunService (copy) ]]
+	t2.Lifetime = p2.Lifetime or 3
+	t2.Direction = p2.Direction or Vector3.new(1, 0, 0)
+	t2.Speed = p2.Speed or 6
+
+	if t2.UpdateConnection then
+		t2.UpdateConnection:Disconnect()
+		t2.UpdateConnection = nil
+	end
+
+	for v1, v2 in t2.UpdateQueue do
+		v2.Attachment0:Destroy()
+		v2.Attachment1:Destroy()
+		v2.Trail:Destroy()
+	end
+
+	table.clear(t2.UpdateQueue)
+	t2.LastSpawned = os.clock()
+
+	local v3 = 1 / (p2.SpawnRate or 25)
+
+	t2.UpdateConnection = RunService.Heartbeat:Connect(function() --[[ Line: 35 | Upvalues: t2 (ref), v3 (copy) ]]
+		local v1 = os.clock()
+
+		if v3 < v1 - t2.LastSpawned then
+			t2:Create()
+			t2.LastSpawned = v1
+		end
+
+		debug.profilebegin("Wind Lines")
+
+		for v2, v32 in t2.UpdateQueue do
+			local v4 = v1 - v32.StartClock
+
+			if v32.Lifetime <= v4 then
+				v32.Attachment0:Destroy()
+				v32.Attachment1:Destroy()
+				v32.Trail:Destroy()
+
+				local v5 = #t2.UpdateQueue
+
+				t2.UpdateQueue[v2] = t2.UpdateQueue[v5]
+				t2.UpdateQueue[v5] = nil
+
+				continue
+			end
+
+			v32.Trail.MaxLength = 20 - 20 * (v4 / v32.Lifetime)
+
+			local v6 = (v1 + v32.Seed) * (v32.Speed * 0.2)
+			local Position = v32.Position
+			local Position2 = (CFrame.new(Position, Position + v32.Direction) * CFrame.new(0, 0, v32.Speed * -v4)).Position
+
+			v32.Attachment0.WorldPosition = Position2 + Vector3.new(math.sin(v6) * 0.5, math.sin(v6) * 0.8, math.sin(v6) * 0.5)
+			v32.Attachment1.WorldPosition = v32.Attachment0.WorldPosition + Vector3.new(0, 0.1, 0)
+		end
+
+		debug.profileend()
+	end)
+end
+function t2.Cleanup(p1) --[[ Cleanup | Line: 82 | Upvalues: t2 (copy) ]]
+	if t2.UpdateConnection then
+		t2.UpdateConnection:Disconnect()
+		t2.UpdateConnection = nil
+	end
+
+	for v1, v2 in t2.UpdateQueue do
+		v2.Attachment0:Destroy()
+		v2.Attachment1:Destroy()
+		v2.Trail:Destroy()
+	end
+
+	table.clear(t2.UpdateQueue)
+end
+function t2.Create(p1, p2) --[[ Create | Line: 96 | Upvalues: t (copy), t2 (copy), Terrain (copy) ]]
+	debug.profilebegin("Add Wind Line")
+
+	local v1 = if p2 then p2 else t
+	local v2 = v1.Lifetime or t2.Lifetime
+	local Position = v1.Position
+
+	if not Position then
+		local v3 = workspace.CurrentCamera.CFrame
+		local Angles = CFrame.Angles
+		local v5 = math.rad((math.random(-30, 70)))
+		local v6 = math.random(-80, 80)
+
+		Position = v3 * Angles(v5, math.rad(v6), 0) * CFrame.new(0, 0, math.random(200, 600) * -0.1).Position
+	end
+
+	local v7 = v1.Direction or t2.Direction
+	local v8 = v1.Speed or t2.Speed
+
+	if not (v8 <= 0) then
+		local Attachment = Instance.new("Attachment")
+		local Attachment2 = Instance.new("Attachment")
+		local Trail = Instance.new("Trail")
+
+		Trail.Attachment0 = Attachment
+		Trail.Attachment1 = Attachment2
+		Trail.WidthScale = NumberSequence.new({
+			NumberSequenceKeypoint.new(0, 0.3),
+			NumberSequenceKeypoint.new(0.2, 1),
+			NumberSequenceKeypoint.new(0.8, 1),
+			NumberSequenceKeypoint.new(1, 0.3)
+		})
+		Trail.Transparency = NumberSequence.new(0.7)
+		Trail.FaceCamera = true
+		Trail.Parent = Attachment
+		Attachment.WorldPosition = Position
+		Attachment2.WorldPosition = Position + Vector3.new(0, 0.1, 0)
+		t2.UpdateQueue[#t2.UpdateQueue + 1] = {
+			Attachment0 = Attachment,
+			Attachment1 = Attachment2,
+			Trail = Trail,
+			Lifetime = v2 + math.random(-10, 10) * 0.1,
+			Position = Position,
+			Direction = v7,
+			Speed = v8 + math.random(-10, 10) * 0.1,
+			StartClock = os.clock(),
+			Seed = math.random(1, 1000) * 0.1
+		}
+		Attachment.Parent = Terrain
+		Attachment2.Parent = Terrain
+		debug.profileend()
+	end
+end
+
+return t2

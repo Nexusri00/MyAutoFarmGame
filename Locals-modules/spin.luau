@@ -1,0 +1,91 @@
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Bytecode (Base64):
+-- CQMxBGxlcnAHU2NhbGVUbxtnZXRUcmFuc2Zvcm1lZE9yaWdpbkV4dGVudHMHUGl2b3RUbwRtYXRoBWNsYW1wBkNGcmFtZQ9mcm9tT3JpZW50YXRpb24BeAF5AXoJQ29ubmVjdGVkEWlzU3Bpbk1vZGVsU3RhdGljA2dldAxTcGluUm90YXRpb24KREVHX1RPX1JBRAtTY2FsZV9TdGFydAlTY2FsZV9FbmQJRW1pdERlbGF5ClJlc2V0RGVsYXkNUmVzZXRPbkZpbmlzaAxTeW5jUG9zaXRpb24MU3BpbkR1cmF0aW9uElNwaW5TcGVlZF9EdXJhdGlvbg9TcGluU3BlZWRfU3RhcnQNU3BpblNwZWVkX0VuZAR0YXNrBHdhaXQKZnJvbVBhcmFtcw9TcGluU3BlZWRfQ3VydmUOZGVmYXVsdF9iZXppZXIFdGFibGUGaW5zZXJ0CEdldFBpdm90CEdldFNjYWxlC1NjYWxlX0N1cnZlCkF0dGFjaG1lbnQYRmluZEZpcnN0QW5jZXN0b3JPZkNsYXNzCEJhc2VQYXJ0GUZpbmRGaXJzdEFuY2VzdG9yV2hpY2hJc0EFdGltZXIPUkVOREVSX1BSSU9SSVRZBWRlcHRoBGVtaXQHcmVxdWlyZREuLi9tb2QvYXR0cmlidXRlcwwuLi9tb2QvdHdlZW4ILi4vdHlwZXMOLi4vbW9kL3V0aWxpdHkABgYCBAAAAAn7AgEATQICvwAAAAD7AwIA+wQDAFIFAACfAgQC3gIAAIIBAgABAwEAKAABGAAAAAAAAAAAASkAAAAACAIEAAAADPsCAAD7BAEATQQEvwAAAAD7BQIA+wYDAFIHAACfBAQAvAICNAEAAACfAgABggECAAIDAQMCADcAARgAAAAAAAAAAAAAAAE4AAAAAAQABQAAABP7AAAA+wMBAA4DBgD7AgIATQIC0QAAAAD7AwEAnwICAisCAQD7AgMAvAAAwgEAAACfAAMB+wAAAPsCBAC8AAA0AgAAAJ8AAwGCAAEAAwMDAwQDAgBDAAEYAAAAAAAAAAAAAAAAAAEAAAAAAUQAAAAACgIJAAAANPsEAADsAwEEjAQAAIwFAQBMLgACpAICAAAEAICfAgQC+wQBAAkDBAL7BgIADgYIAPsGAwAOBgYA+wUEAE0FBdEDAAAA+wYCAJ8FAgJlAAEA+wUF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
+
+-- https://lua.expert/
+local v1 = require("../mod/attributes")
+local v2 = require("../mod/tween")
+
+require("../types")
+
+local v3 = require("../mod/utility")
+
+return {
+	emit = function(p1, p2) --[[ emit | Line: 8 | Upvalues: v3 (copy), v1 (copy), v2 (copy) ]]
+		if v3.isSpinModelStatic(p1) then
+			return
+		end
+
+		local v12 = v1.get(p1, "SpinRotation", Vector3.new(0, 0, 0)) * v3.DEG_TO_RAD
+		local v22 = v1.get(p1, "Scale_Start", 1)
+		local v32 = v1.get(p1, "Scale_End", 1)
+		local v4 = v1.get(p1, "EmitDelay", 0)
+		local v5 = v1.get(p1, "ResetDelay", 0)
+		local v6 = v1.get(p1, "ResetOnFinish", true)
+		local v7 = v1.get(p1, "SyncPosition", false)
+		local v8 = v1.get(p1, "SpinDuration", 0.5)
+		local v9 = v1.get(p1, "SpinSpeed_Duration", 0.1)
+		local v10 = v1.get(p1, "SpinSpeed_Start", 0)
+		local v11 = v1.get(p1, "SpinSpeed_End", 1)
+		local v122 = v10
+
+		task.wait(v4)
+
+		local v13
+
+		if v10 == v11 then
+			v13 = nil
+		else
+			v13 = v2.fromParams(v1.get(p1, "SpinSpeed_Curve", v3.default_bezier), v9, function(p1, p2) --[[ Line: 40 | Upvalues: v122 (ref), v3 (ref), v10 (copy), v11 (copy) ]]
+				v122 = v3.lerp(v10, v11, p1)
+
+				return p2
+			end)
+			table.insert(p2, v13)
+		end
+
+		local v14 = p1:GetPivot()
+		local v15 = p1:GetScale()
+
+		if v22 == v32 then
+			p1:ScaleTo(v22)
+		else
+			local v16 = v1.get(p1, "Scale_Curve", v3.default_bezier)
+
+			local function f17(p12, p2) --[[ Line: 55 | Upvalues: p1 (copy), v3 (ref), v22 (copy), v32 (copy) ]]
+				p1:ScaleTo(v3.lerp(v22, v32, p12))
+
+				return p2
+			end
+
+			table.insert(p2, v2.fromParams(v16, v8, f17))
+		end
+
+		local v18 = p1:FindFirstAncestorOfClass("Attachment") or p1:FindFirstAncestorWhichIsA("BasePart")
+
+		if v6 then
+			local function f19() --[[ Line: 67 | Upvalues: p1 (copy), v18 (copy), v3 (ref), v14 (copy), v15 (copy) ]]
+				p1:PivotTo(v18 and v3.getTransformedOriginExtents(v18) or v14)
+				p1:ScaleTo(v15)
+			end
+
+			table.insert(p2, f19)
+		end
+
+		local v20 = v12 * v8
+
+		v2.timer(v8 + v5, function(p12, p2) --[[ Line: 75 | Upvalues: v8 (copy), v20 (ref), v18 (copy), v7 (copy), v3 (ref), v14 (copy), p1 (copy), v122 (ref), v13 (ref) ]]
+			local v2 = v20 * math.clamp(p2 / v8, 0, 1)
+			local v32 = if v18 and v7 then v3.getTransformedOriginExtents(v18) else v14
+
+			p1:PivotTo(v32 * CFrame.fromOrientation(v2.x, v2.y, v2.z))
+
+			if v122 > 0 or p2 > 0 and v13.Connected then
+				return p12 * v122
+			end
+
+			return nil
+		end, v13, p2, v3.RENDER_PRIORITY + p2.depth)
+	end
+}
