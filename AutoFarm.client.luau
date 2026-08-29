@@ -1,98 +1,125 @@
--- MyAutoFarmGame | Quest Auto Farm
--- Uses the game's Contract state plus the real default combat keybinds.
--- No bytecode decoding and no guessed quest UI text as the primary state source.
+-- MyAutoFarmGame | Advanced Quest Auto Farm
+-- Inspired by the requested farming layout/flow:
+-- quest state -> quest NPC -> target lock -> hover around target -> M1/skills -> progress -> claim/repeat
+-- Uses the repository's Contract remotes and the documented Z/X/C/V/F skill bindings.
 
 local Players = game:GetService("Players")
-local UserInputService = game:GetService("UserInputService")
-local VirtualUser = game:GetService("VirtualUser")
-local VirtualInputManager = game:GetService("VirtualInputManager")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+local VirtualInputManager = game:GetService("VirtualInputManager")
+local VirtualUser = game:GetService("VirtualUser")
 
-local LocalPlayer = Players.LocalPlayer
-if not LocalPlayer then
+local player = Players.LocalPlayer
+if not player then
     return
 end
 
-local Remotes = ReplicatedStorage:FindFirstChild("Remotes")
-if not Remotes then
+local playerGui = player:WaitForChild("PlayerGui")
+local remotes = ReplicatedStorage:WaitForChild("Remotes", 15)
+if not remotes then
+    warn("[AutoFarm] Remotes folder not found")
     return
 end
 
-local RFGetState = Remotes:FindFirstChild("RF_ContractGetState")
-local RFAccept = Remotes:FindFirstChild("RF_ContractAccept")
-local RFClaim = Remotes:FindFirstChild("RF_ContractClaim")
+local RFGetState = remotes:FindFirstChild("RF_ContractGetState")
+local RFAccept = remotes:FindFirstChild("RF_ContractAccept")
+local RFClaim = remotes:FindFirstChild("RF_ContractClaim")
+local REContractChanged = remotes:FindFirstChild("RE_ContractStateChanged")
 
-local Config = {
-    Enabled = false,
-    AutoAccept = true,
+local Settings = {
+    Running = false,
+    AutoQuest = true,
     AutoClaim = true,
-    AutoM1 = true,
-    AutoSkills = true,
-    Teleport = true,
-    AttackDistance = 7,
-    M1Delay = 0.13,
-    SkillDelay = 0.40,
-    SearchRadius = 5000,
-    RespawnDelay = 1.5,
+    AutoRepeat = true,
+    UseSkills = true,
+    SkillMode = "ALL",
+    Position = "Above",
+    Height = 6,
+    HeightMin = 3,
+    HeightMax = 35,
+    Drift = 0.35,
+    HoverBob = 0.55,
+    EngageDistance = 35,
+    TargetRadius = 5000,
+    SearchInterval = 0.12,
+    StateInterval = 0.35,
+    M1IntervalMin = 0.25,
+    M1IntervalMax = 0.42,
+    SkillDelay = 1.35,
+    QuestRetryDelay = 1.0,
+    MaxQuestStall = 12,
+    SmoothTeleportTime = 1.8,
+
+    Skills = {
+        {Name = "Z", Key = Enum.KeyCode.Z, Enabled = true, Last = 0, Cooldown = 2.5},
+        {Name = "X", Key = Enum.KeyCode.X, Enabled = true, Last = 0, Cooldown = 3.0},
+        {Name = "C", Key = Enum.KeyCode.C, Enabled = true, Last = 0, Cooldown = 3.5},
+        {Name = "V", Key = Enum.KeyCode.V, Enabled = true, Last = 0, Cooldown = 4.0},
+        {Name = "F", Key = Enum.KeyCode.F, Enabled = false, Last = 0, Cooldown = 4.5},
+    },
+
+    Target = nil,
+    TargetRoot = nil,
+    QuestNPC = nil,
+    QuestId = nil,
+    TargetId = nil,
+    TargetName = nil,
+    Progress = 0,
+    Required = 0,
+    Step = "Idle",
+    LastM1 = 0,
+    QuestLastProgress = -1,
+    QuestStallStarted = 0,
+    LastState = 0,
 }
 
 local State = {
-    Character = nil,
-    Humanoid = nil,
-    Root = nil,
-    Quest = nil,
-    ActiveId = nil,
-    TargetId = nil,
-    TargetName = nil,
-    Required = 0,
-    Progress = 0,
-    Target = nil,
-    QuestNPC = nil,
-    Step = "Idle",
-    LastM1 = 0,
-    LastSkill = 0,
-    LastStateRead = 0,
     Gui = nil,
+    Main = nil,
+    Content = nil,
     Status = nil,
-    QuestLabel = nil,
-    TargetLabel = nil,
-    ProgressLabel = nil,
+    QuestText = nil,
+    TargetText = nil,
+    ProgressText = nil,
+    TargetDropdown = nil,
+    TargetList = nil,
+    SkillButton = nil,
+    SkillButtons = {},
+    ToggleButton = nil,
+    RepeatButton = nil,
+    HeightBox = nil,
+    Timer = nil,
 }
 
--- The game's Keybinds module identifies these as Skill 1-5.
-local SkillKeys = {
-    Enum.KeyCode.Z,
-    Enum.KeyCode.X,
-    Enum.KeyCode.C,
-    Enum.KeyCode.V,
-    Enum.KeyCode.F,
-}
+local selectedNPC = nil
+local npcList = {}
+local npcButtons = {}
+local farmingStarted = 0
+local hoverConnection = nil
+local teleportConnection = nil
+local isTeleporting = false
+local minimized = false
 
-local function refreshCharacter()
-    local character = LocalPlayer.Character
-    local humanoid = character and character:FindFirstChildOfClass("Humanoid")
-    local root = character and character:FindFirstChild("HumanoidRootPart")
-
-    if not character or not humanoid or not root or humanoid.Health <= 0 then
-        return false
-    end
-
-    State.Character = character
-    State.Humanoid = humanoid
-    State.Root = root
-    return true
+local function randomFloat(a, b)
+    return a + math.random() * (b - a)
 end
 
-LocalPlayer.CharacterAdded:Connect(function(character)
-    State.Target = nil
-    State.QuestNPC = nil
-    State.Step = "Respawning"
+local function getCharacter()
+    local character = player.Character
+    if not character then
+        return nil, nil, nil
+    end
 
-    task.wait(Config.RespawnDelay)
-    character:WaitForChild("Humanoid", 10)
-    character:WaitForChild("HumanoidRootPart", 10)
-    refreshCharacter()
-end)
+    local humanoid = character:FindFirstChildOfClass("Humanoid")
+    local root = character:FindFirstChild("HumanoidRootPart")
+
+    if not humanoid or not root or humanoid.Health <= 0 then
+        return nil, nil, nil
+    end
+
+    return character, humanoid, root
+end
 
 local function getRoot(model)
     if not model or not model:IsA("Model") then
@@ -104,8 +131,13 @@ local function getRoot(model)
         return root
     end
 
-    if model.PrimaryPart then
+    if model.PrimaryPart and model.PrimaryPart:IsA("BasePart") then
         return model.PrimaryPart
+    end
+
+    local torso = model:FindFirstChild("UpperTorso") or model:FindFirstChild("Torso")
+    if torso and torso:IsA("BasePart") then
+        return torso
     end
 
     return model:FindFirstChildWhichIsA("BasePart")
@@ -118,38 +150,17 @@ local function getHumanoid(model)
     return model:FindFirstChildOfClass("Humanoid")
 end
 
-local function alive(model)
+local function isAliveNPC(model)
+    if not model or not model:IsA("Model") then
+        return false
+    end
+
     local humanoid = getHumanoid(model)
-    local root = getRoot(model)
-    return model ~= nil and humanoid ~= nil and humanoid.Health > 0 and root ~= nil
+    return humanoid ~= nil and humanoid.Health > 0 and getRoot(model) ~= nil and Players:GetPlayerFromCharacter(model) == nil
 end
 
-local function distanceTo(model)
-    if not State.Root then
-        return math.huge
-    end
-
-    local root = getRoot(model)
-    if not root then
-        return math.huge
-    end
-
-    return (root.Position - State.Root.Position).Magnitude
-end
-
-local function teleportTo(model, distance)
-    if not Config.Teleport or not State.Root then
-        return
-    end
-
-    local root = getRoot(model)
-    if not root then
-        return
-    end
-
-    local amount = distance or 5
-    local position = root.Position - root.CFrame.LookVector * amount + Vector3.new(0, 2, 0)
-    State.Root.CFrame = CFrame.new(position, root.Position)
+local function normalize(value)
+    return tostring(value or ""):lower():gsub("[^%w]", "")
 end
 
 local function safeInvoke(remote, ...)
@@ -157,7 +168,7 @@ local function safeInvoke(remote, ...)
         return false, nil
     end
 
-    local args = { ... }
+    local args = {...}
     local count = select("#", ...)
     local ok, result = pcall(function()
         return remote:InvokeServer(table.unpack(args, 1, count))
@@ -166,68 +177,54 @@ local function safeInvoke(remote, ...)
     return ok, result
 end
 
-local function stringValue(value)
-    if type(value) == "string" and value ~= "" then
-        return value
-    end
-    return nil
-end
-
-local function numberValue(value)
-    if type(value) == "number" then
-        return value
-    end
-    return nil
-end
-
-local function readContractTable(value, found, seen, context)
+local function readRecursive(value, found, seen, context)
     if type(value) ~= "table" then
         return
     end
 
-    seen = seen or {}
     if seen[value] then
         return
     end
+
     seen[value] = true
 
     for key, child in pairs(value) do
-        local keyName = string.lower(tostring(key))
+        local k = string.lower(tostring(key))
 
         if type(child) == "table" then
-            local childContext = context
-            if keyName == "definitionsnapshot" then
-                childContext = "definition"
-            elseif keyName == "progress" then
-                childContext = "progress"
+            local nextContext = context
+            if k == "progress" then
+                nextContext = "progress"
+            elseif k == "definitionsnapshot" or k == "definition" then
+                nextContext = "definition"
             end
-            readContractTable(child, found, seen, childContext)
+            readRecursive(child, found, seen, nextContext)
         elseif type(child) == "string" then
-            local text = stringValue(child)
-
-            if keyName == "activeid" or keyName == "active_id" then
-                found.ActiveId = text or child
-            elseif keyName == "targetid" or keyName == "target_id" then
-                found.TargetId = text or child
-            elseif keyName == "targetname" or keyName == "target_name" then
-                found.TargetName = text
-            elseif keyName == "id" and context == "definition" and not found.TargetId then
-                found.DefinitionId = text or child
+            if k == "activeid" or k == "active_id" then
+                found.ActiveId = child
+            elseif k == "targetid" or k == "target_id" then
+                found.TargetId = child
+            elseif k == "targetnpc" or k == "target_npc" or k == "targetname" or k == "target_name" then
+                found.TargetName = child
+            elseif k == "fieldnpc" or k == "field_npc" then
+                found.FieldNPC = child
+            elseif k == "npcname" or k == "npc_name" then
+                found.NPCName = child
+            elseif k == "id" and context == "definition" and not found.DefinitionId then
+                found.DefinitionId = child
             end
         elseif type(child) == "number" then
-            local n = numberValue(child)
-
-            if keyName == "killsdone" or keyName == "killdone" or keyName == "progress" or keyName == "current" then
-                if context == "progress" or found.Progress == nil then
-                    found.Progress = n
+            if k == "kills" or k == "killsdone" or k == "killdone" or k == "progress" or k == "current" or k == "clearsdone" then
+                if found.Progress == nil or context == "progress" then
+                    found.Progress = child
                 end
-            elseif keyName == "killgoal" or keyName == "required" or keyName == "requiredkills" or keyName == "killcount" then
-                if n > 0 then
-                    found.Required = n
+            elseif k == "killgoal" or k == "killgoalmin" or k == "required" or k == "requiredkills" or k == "killcount" or k == "clears" or k == "clearsmin" then
+                if child > 0 and not found.Required then
+                    found.Required = child
                 end
             end
         elseif type(child) == "boolean" then
-            if keyName == "completed" or keyName == "complete" or keyName == "finished" or keyName == "claimable" or keyName == "readytoclaim" then
+            if k == "completed" or k == "complete" or k == "finished" or k == "claimable" or k == "readytoclaim" or k == "delivered" then
                 if child then
                     found.Completed = true
                 end
@@ -236,24 +233,25 @@ local function readContractTable(value, found, seen, context)
     end
 end
 
-local function readContractState(force)
+local function readContract(force)
     if not RFGetState then
+        Settings.Step = "Contract remote missing"
         return nil
     end
 
-    if not force and os.clock() - State.LastStateRead < 0.20 then
-        return State.Quest
+    if not force and os.clock() - Settings.LastState < Settings.StateInterval then
+        return Settings.Contract
     end
 
-    State.LastStateRead = os.clock()
+    Settings.LastState = os.clock()
 
     local ok, result = safeInvoke(RFGetState)
     if not ok then
-        State.Step = "GetState failed"
-        return State.Quest
+        Settings.Step = "Reading quest failed"
+        return Settings.Contract
     end
 
-    State.Quest = result
+    Settings.Contract = result
 
     local found = {
         Progress = nil,
@@ -261,57 +259,56 @@ local function readContractState(force)
         Completed = false,
     }
 
-    readContractTable(result, found, {}, nil)
+    readRecursive(result, found, {})
 
     if found.ActiveId ~= nil then
-        State.ActiveId = found.ActiveId
+        Settings.QuestId = found.ActiveId
     end
 
     if found.TargetId ~= nil then
-        State.TargetId = found.TargetId
+        Settings.TargetId = found.TargetId
     end
 
-    if found.TargetName ~= nil then
-        State.TargetName = found.TargetName
+    if found.TargetName ~= nil and found.TargetName ~= "" then
+        Settings.TargetName = found.TargetName
     end
 
     if found.Required ~= nil then
-        State.Required = found.Required
+        Settings.Required = found.Required
     end
 
     if found.Progress ~= nil then
-        State.Progress = found.Progress
+        Settings.Progress = found.Progress
     end
 
-    if found.Completed then
-        State.Progress = math.max(State.Progress, State.Required)
+    if found.Completed and Settings.Required > 0 then
+        Settings.Progress = Settings.Required
+    end
+
+    if found.FieldNPC then
+        Settings.QuestNPCName = found.FieldNPC
+    elseif found.NPCName then
+        Settings.QuestNPCName = found.NPCName
     end
 
     return result
 end
 
-local function findTextTarget()
-    local playerGui = LocalPlayer:FindFirstChildOfClass("PlayerGui")
-    if not playerGui then
-        return nil
-    end
-
+local function getContractTextTarget()
+    local gui = playerGui
     local best = nil
 
-    for _, object in ipairs(playerGui:GetDescendants()) do
-        if object:IsA("TextLabel") or object:IsA("TextButton") or object:IsA("TextBox") then
-            local text = object.Text
+    for _, obj in ipairs(gui:GetDescendants()) do
+        if obj:IsA("TextLabel") or obj:IsA("TextButton") or obj:IsA("TextBox") then
+            local text = obj.Text
             if type(text) == "string" and text ~= "" then
                 local lower = string.lower(text)
-                if not best and string.find(lower, "defeat", 1, true) then
-                    local target = text:match("[Dd]efeat%s+[%d]+%s+([%w%s%-]+)")
+                if string.find(lower, "defeat", 1, true) or string.find(lower, "kill", 1, true) then
+                    local target = text:match("[Dd]efeat%s+%d+%s+([%w%s%-]+)")
+                    target = target or text:match("[Kk]ill%s+%d+%s+([%w%s%-]+)")
                     if target then
                         best = target
-                    end
-                elseif not best and string.find(lower, "kill", 1, true) then
-                    local target = text:match("[Kk]ill%s+[%d]+%s+([%w%s%-]+)")
-                    if target then
-                        best = target
+                        break
                     end
                 end
             end
@@ -321,23 +318,14 @@ local function findTextTarget()
     return best
 end
 
-local function modelHasTargetId(model, targetId)
-    if not targetId then
+local function modelHasId(model, id)
+    if id == nil then
         return false
     end
 
-    local attributes = {
-        "TargetId",
-        "TargetID",
-        "NPCId",
-        "NPCID",
-        "Id",
-        "ID",
-    }
-
-    for _, attribute in ipairs(attributes) do
-        local value = model:GetAttribute(attribute)
-        if value ~= nil and tostring(value) == tostring(targetId) then
+    for _, key in ipairs({"TargetId", "TargetID", "NPCId", "NPCID", "Id", "ID", "GUID"}) do
+        local value = model:GetAttribute(key)
+        if value ~= nil and tostring(value) == tostring(id) then
             return true
         end
     end
@@ -345,43 +333,46 @@ local function modelHasTargetId(model, targetId)
     return false
 end
 
-local function targetMatches(model)
-    if not alive(model) or Players:GetPlayerFromCharacter(model) then
-        return false
+local function findTarget()
+    local _, _, playerRoot = getCharacter()
+    if not playerRoot then
+        return nil
     end
 
-    if State.TargetId and modelHasTargetId(model, State.TargetId) then
-        return true
-    end
-
-    local targetName = State.TargetName
-    if not targetName then
-        targetName = findTextTarget()
-        if targetName then
-            State.TargetName = targetName:gsub("^%s+", ""):gsub("%s+$", "")
+    local wanted = Settings.TargetName
+    if not wanted then
+        wanted = getContractTextTarget()
+        if wanted then
+            Settings.TargetName = wanted
         end
     end
 
-    if not targetName then
-        return false
-    end
-
-    local a = string.lower(model.Name)
-    local b = string.lower(targetName)
-
-    return a == b or string.find(a, b, 1, true) ~= nil or string.find(b, a, 1, true) ~= nil
-end
-
-local function findTarget()
+    local wantedNormalized = normalize(wanted)
     local best = nil
     local bestDistance = math.huge
 
-    for _, model in ipairs(workspace:GetDescendants()) do
-        if model:IsA("Model") and targetMatches(model) then
-            local d = distanceTo(model)
-            if d < bestDistance and d <= Config.SearchRadius then
-                best = model
-                bestDistance = d
+    for _, obj in ipairs(workspace:GetDescendants()) do
+        if obj:IsA("Model") and isAliveNPC(obj) then
+            local matches = false
+
+            if Settings.TargetId and modelHasId(obj, Settings.TargetId) then
+                matches = true
+            end
+
+            if not matches and wantedNormalized ~= "" then
+                local name = normalize(obj.Name):gsub("%d+$", "")
+                matches = name == wantedNormalized or string.find(name, wantedNormalized, 1, true) ~= nil or string.find(wantedNormalized, name, 1, true) ~= nil
+            end
+
+            if matches then
+                local root = getRoot(obj)
+                if root then
+                    local distance = (root.Position - playerRoot.Position).Magnitude
+                    if distance < bestDistance and distance <= Settings.TargetRadius then
+                        best = obj
+                        bestDistance = distance
+                    end
+                end
             end
         end
     end
@@ -389,64 +380,36 @@ local function findTarget()
     return best
 end
 
-local function promptPosition(prompt)
-    local parent = prompt.Parent
-    if not parent then
-        return nil
-    end
-
-    if parent:IsA("BasePart") then
-        return parent.Position
-    end
-
-    if parent:IsA("Attachment") and parent.Parent:IsA("BasePart") then
-        return parent.WorldPosition
-    end
-
-    local model = parent:FindFirstAncestorOfClass("Model")
-    local root = getRoot(model)
-    return root and root.Position or nil
-end
-
-local function findQuestPrompt(claimOnly)
-    if not State.Root then
+local function findQuestNPC()
+    local _, _, playerRoot = getCharacter()
+    if not playerRoot then
         return nil, nil
     end
 
-    local bestPrompt = nil
+    local preferredName = normalize(Settings.QuestNPCName)
     local bestModel = nil
+    local bestPrompt = nil
     local bestDistance = math.huge
 
     for _, object in ipairs(workspace:GetDescendants()) do
         if object:IsA("ProximityPrompt") and object.Enabled then
-            local text = string.lower(object.Name .. " " .. object.ActionText .. " " .. object.ObjectText)
-            local useful
+            local text = normalize(object.Name .. " " .. object.ActionText .. " " .. object.ObjectText)
+            local useful = string.find(text, "quest", 1, true) ~= nil
+                or string.find(text, "contract", 1, true) ~= nil
+                or string.find(text, "mission", 1, true) ~= nil
+                or string.find(text, "accept", 1, true) ~= nil
+                or string.find(text, "claim", 1, true) ~= nil
+                or string.find(text, "complete", 1, true) ~= nil
 
-            if claimOnly then
-                useful = string.find(text, "claim", 1, true) ~= nil
-                    or string.find(text, "complete", 1, true) ~= nil
-                    or string.find(text, "turn in", 1, true) ~= nil
-                    or string.find(text, "reward", 1, true) ~= nil
-            else
-                useful = string.find(text, "quest", 1, true) ~= nil
-                    or string.find(text, "contract", 1, true) ~= nil
-                    or string.find(text, "mission", 1, true) ~= nil
-                    or string.find(text, "accept", 1, true) ~= nil
-                    or string.find(text, "talk", 1, true) ~= nil
-            end
+            local model = object.Parent and object.Parent:FindFirstAncestorOfClass("Model")
+            local root = getRoot(model)
 
-            if useful then
-                local model = object.Parent and object.Parent:FindFirstAncestorOfClass("Model")
-                local root = getRoot(model)
-                local position = promptPosition(object)
-
-                if model and root and position then
-                    local d = (position - State.Root.Position).Magnitude
-                    if d < bestDistance then
-                        bestDistance = d
-                        bestPrompt = object
-                        bestModel = model
-                    end
+            if model and root and (useful or (preferredName ~= "" and string.find(normalize(model.Name), preferredName, 1, true))) then
+                local distance = (root.Position - playerRoot.Position).Magnitude
+                if distance < bestDistance then
+                    bestDistance = distance
+                    bestModel = model
+                    bestPrompt = object
                 end
             end
         end
@@ -455,12 +418,203 @@ local function findQuestPrompt(claimOnly)
     return bestModel, bestPrompt
 end
 
-local function firePrompt(prompt)
+local function smoothTeleport(position, duration)
+    if isTeleporting then
+        return false
+    end
+
+    local character, _, root = getCharacter()
+    if not character or not root then
+        return false
+    end
+
+    if teleportConnection then
+        teleportConnection:Disconnect()
+        teleportConnection = nil
+    end
+
+    isTeleporting = true
+    local startPosition = root.Position
+    local started = os.clock()
+    local total = math.max(duration or Settings.SmoothTeleportTime, 0.05)
+
+    teleportConnection = RunService.RenderStepped:Connect(function()
+        local char = player.Character
+        local rt = char and char:FindFirstChild("HumanoidRootPart")
+
+        if not rt then
+            if teleportConnection then teleportConnection:Disconnect() end
+            teleportConnection = nil
+            isTeleporting = false
+            return
+        end
+
+        local alpha = math.clamp((os.clock() - started) / total, 0, 1)
+        local eased = 1 - (1 - alpha) ^ 3
+        rt.CFrame = CFrame.new(startPosition:Lerp(position, eased))
+        rt.AssemblyLinearVelocity = Vector3.zero
+        rt.AssemblyAngularVelocity = Vector3.zero
+
+        if alpha >= 1 then
+            rt.CFrame = CFrame.new(position)
+            rt.AssemblyLinearVelocity = Vector3.zero
+            rt.AssemblyAngularVelocity = Vector3.zero
+
+            if teleportConnection then
+                teleportConnection:Disconnect()
+            end
+            teleportConnection = nil
+            isTeleporting = false
+        end
+    end)
+
+    return true
+end
+
+local function moveToModel(model, distance, smooth)
+    local root = getRoot(model)
+    if not root then
+        return false
+    end
+
+    local position = root.Position - root.CFrame.LookVector * (distance or 4) + Vector3.new(0, 2, 0)
+    if smooth then
+        return smoothTeleport(position, Settings.SmoothTeleportTime)
+    end
+
+    local _, _, playerRoot = getCharacter()
+    if playerRoot then
+        playerRoot.CFrame = CFrame.new(position, root.Position)
+        playerRoot.AssemblyLinearVelocity = Vector3.zero
+        playerRoot.AssemblyAngularVelocity = Vector3.zero
+    end
+
+    return true
+end
+
+local function stopHover()
+    Settings.Target = nil
+    Settings.TargetRoot = nil
+
+    if hoverConnection then
+        hoverConnection:Disconnect()
+        hoverConnection = nil
+    end
+
+    local _, humanoid, root = getCharacter()
+    if humanoid then
+        humanoid.AutoRotate = true
+    end
+
+    if root then
+        root.AssemblyLinearVelocity = Vector3.zero
+        root.AssemblyAngularVelocity = Vector3.zero
+    end
+end
+
+local function startHover()
+    if hoverConnection then
+        return
+    end
+
+    local floatTime = 0
+    local driftTime = 0
+    local drift = Vector3.zero
+
+    hoverConnection = RunService.RenderStepped:Connect(function(dt)
+        if not Settings.Running then
+            return
+        end
+
+        local _, humanoid, root = getCharacter()
+        local target = Settings.Target
+        local targetRoot = Settings.TargetRoot
+
+        if not humanoid or not root or not target or not targetRoot or not targetRoot.Parent or not isAliveNPC(target) then
+            return
+        end
+
+        floatTime = floatTime + dt
+        driftTime = driftTime + dt
+
+        if driftTime >= 2.5 then
+            driftTime = 0
+            drift = Vector3.new(randomFloat(-Settings.Drift, Settings.Drift), 0, randomFloat(-Settings.Drift, Settings.Drift))
+        end
+
+        local y = Settings.Position == "Above" and Settings.Height or -Settings.Height
+        local bob = math.sin(floatTime * 2.1) * Settings.HoverBob
+        local desired = targetRoot.Position + Vector3.new(drift.X, y + bob, drift.Z)
+        local look = targetRoot.Position - desired
+
+        root.Anchored = false
+        root.CFrame = CFrame.lookAt(desired, desired + (look.Magnitude > 0.01 and look.Unit or Vector3.new(0, 0, -1)))
+        root.AssemblyLinearVelocity = Vector3.zero
+        root.AssemblyAngularVelocity = Vector3.zero
+        humanoid.AutoRotate = false
+    end)
+end
+
+local function sendKey(key, down)
+    pcall(function()
+        VirtualInputManager:SendKeyEvent(down, key, false, game)
+    end)
+end
+
+local function pressKey(key)
+    sendKey(key, true)
+    task.wait(0.025)
+    sendKey(key, false)
+end
+
+local function doM1()
+    local now = os.clock()
+    local interval = randomFloat(Settings.M1IntervalMin, Settings.M1IntervalMax)
+
+    if now - Settings.LastM1 < interval then
+        return false
+    end
+
+    Settings.LastM1 = now
+
+    pcall(function()
+        VirtualInputManager:SendMouseButtonEvent(0, 0, 0, true, game, 0)
+        VirtualInputManager:SendMouseButtonEvent(0, 0, 0, false, game, 0)
+    end)
+
+    local character = player.Character
+    local tool = character and character:FindFirstChildOfClass("Tool")
+    if tool then
+        pcall(function()
+            tool:Activate()
+        end)
+    end
+
+    return true
+end
+
+local function doSkills()
+    if not Settings.UseSkills then
+        return
+    end
+
+    local now = os.clock()
+
+    for _, skill in ipairs(Settings.Skills) do
+        if skill.Enabled and now - skill.Last >= skill.Cooldown then
+            skill.Last = now
+            pressKey(skill.Key)
+            task.wait(0.04)
+        end
+    end
+end
+
+local function interactPrompt(prompt)
     if not prompt or not prompt.Enabled then
         return false
     end
 
-    local ok = pcall(function()
+    return pcall(function()
         if fireproximityprompt then
             fireproximityprompt(prompt)
         else
@@ -469,76 +623,55 @@ local function firePrompt(prompt)
             prompt:InputHoldEnd()
         end
     end)
-
-    return ok
 end
 
-local function clickButton(button)
-    if not button then
+local function interactQuestNPC()
+    local npc, prompt = findQuestNPC()
+    if not npc then
         return false
     end
 
-    local ok = pcall(function()
-        if button.Activate then
-            button:Activate()
-        else
-            local position = button.AbsolutePosition + button.AbsoluteSize / 2
-            VirtualInputManager:SendMouseButtonEvent(position.X, position.Y, 0, true, game, 0)
-            VirtualInputManager:SendMouseButtonEvent(position.X, position.Y, 0, false, game, 0)
-        end
-    end)
+    Settings.QuestNPC = npc
+    Settings.Step = "Going to quest NPC"
 
-    return ok
-end
+    moveToModel(npc, 4, true)
 
-local function findContractButton(names)
-    local playerGui = LocalPlayer:FindFirstChildOfClass("PlayerGui")
-    if not playerGui then
-        return nil
+    while isTeleporting and Settings.Running do
+        task.wait(0.05)
     end
 
-    for _, object in ipairs(playerGui:GetDescendants()) do
-        if object:IsA("TextButton") then
-            local objectName = string.lower(object.Name)
-            local text = string.lower(object.Text)
+    if prompt then
+        interactPrompt(prompt)
+        task.wait(0.45)
+    end
 
-            for _, wanted in ipairs(names) do
-                local w = string.lower(wanted)
-                if objectName == w or text == w or string.find(objectName, w, 1, true) or string.find(text, w, 1, true) then
-                    if object.Visible and object.AbsoluteSize.X > 0 and object.AbsoluteSize.Y > 0 then
-                        return object
-                    end
-                end
+    return true
+end
+
+local function acceptQuest()
+    Settings.Step = "Accepting quest"
+
+    -- Contract UI is the normal client path; click its visible Accept button first.
+    for _, object in ipairs(playerGui:GetDescendants()) do
+        if object:IsA("TextButton") and object.Visible then
+            local name = string.lower(object.Name)
+            local text = string.lower(object.Text)
+            if string.find(name, "acceptbutton", 1, true) or text == "accept" then
+                pcall(function() object:Activate() end)
+                task.wait(0.5)
+                readContract(true)
+                return true
             end
         end
     end
 
-    return nil
-end
-
-local function acceptContract()
-    State.Step = "Accepting quest"
-
-    -- Prefer the real contract UI. The contract module exposes AcceptButton.
-    local button = findContractButton({ "AcceptButton", "Accept" })
-    if button and clickButton(button) then
-        task.wait(0.5)
-        readContractState(true)
-        return true
-    end
-
-    -- Fallback to the actual Contract remote using an ID obtained from state.
     if RFAccept then
-        local candidate = State.ActiveId
-        if candidate == nil and type(State.Quest) == "table" then
-            candidate = State.Quest.Id or State.Quest.ID or State.Quest.ContractId or State.Quest.ContractID
-        end
-
-        if candidate ~= nil then
-            local ok = safeInvoke(RFAccept, candidate)
+        local id = Settings.QuestId
+        if id ~= nil then
+            local ok = safeInvoke(RFAccept, id)
             if ok then
                 task.wait(0.5)
-                readContractState(true)
+                readContract(true)
                 return true
             end
         end
@@ -547,30 +680,27 @@ local function acceptContract()
     return false
 end
 
-local function claimContract()
-    State.Step = "Claiming quest"
+local function claimQuest()
+    Settings.Step = "Claiming quest"
 
-    local button = findContractButton({ "ClaimButton", "Claim", "CompleteButton", "Complete" })
-    if button and clickButton(button) then
-        task.wait(0.5)
-        readContractState(true)
-        return true
-    end
-
-    if RFClaim then
-        if State.ActiveId ~= nil then
-            local ok = safeInvoke(RFClaim, State.ActiveId)
-            if ok then
-                task.wait(0.5)
-                readContractState(true)
+    for _, object in ipairs(playerGui:GetDescendants()) do
+        if object:IsA("TextButton") and object.Visible then
+            local name = string.lower(object.Name)
+            local text = string.lower(object.Text)
+            if string.find(name, "claimbutton", 1, true) or text == "claim" or text == "complete" then
+                pcall(function() object:Activate() end)
+                task.wait(0.55)
+                readContract(true)
                 return true
             end
         end
+    end
 
-        local ok = safeInvoke(RFClaim)
+    if RFClaim and Settings.QuestId ~= nil then
+        local ok = safeInvoke(RFClaim, Settings.QuestId)
         if ok then
-            task.wait(0.5)
-            readContractState(true)
+            task.wait(0.55)
+            readContract(true)
             return true
         end
     end
@@ -578,348 +708,392 @@ local function claimContract()
     return false
 end
 
-local function sendKey(key, down)
-    local ok = false
-
-    pcall(function()
-        VirtualInputManager:SendKeyEvent(down, key, false, game)
-        ok = true
-    end)
-
-    if not ok then
-        local keyCode = key.Value
-        if down and keypress then
-            pcall(function()
-                keypress(keyCode)
-                ok = true
-            end)
-        elseif not down and keyrelease then
-            pcall(function()
-                keyrelease(keyCode)
-                ok = true
-            end)
-        end
-    end
-
-    return ok
+local function clearTarget()
+    Settings.Target = nil
+    Settings.TargetRoot = nil
 end
 
-local function pressKey(key)
-    if not sendKey(key, true) then
-        return
-    end
-    task.wait(0.03)
-    sendKey(key, false)
-end
-
-local function m1()
-    if not Config.AutoM1 then
-        return
-    end
-
-    if os.clock() - State.LastM1 < Config.M1Delay then
-        return
-    end
-
-    State.LastM1 = os.clock()
-
-    pcall(function()
-        VirtualInputManager:SendMouseButtonEvent(0, 0, 0, true, game, 0)
-        VirtualInputManager:SendMouseButtonEvent(0, 0, 0, false, game, 0)
-    end)
-
-    local tool = State.Character and State.Character:FindFirstChildOfClass("Tool")
-    if tool then
-        pcall(function()
-            tool:Activate()
-        end)
-    end
-end
-
-local function skills()
-    if not Config.AutoSkills then
-        return
-    end
-
-    if os.clock() - State.LastSkill < Config.SkillDelay then
-        return
-    end
-
-    State.LastSkill = os.clock()
-
-    for _, key in ipairs(SkillKeys) do
-        pressKey(key)
-        if not Config.Enabled then
-            break
-        end
-        task.wait(0.05)
-    end
-end
-
-local function farmTarget(target)
-    if not target then
-        return
-    end
-
-    State.Target = target
-    State.Step = "Farming " .. target.Name
-
-    local started = os.clock()
-    while Config.Enabled and alive(target) and os.clock() - started < 120 do
-        if not refreshCharacter() then
-            task.wait(0.2)
-        else
-            local root = getRoot(target)
-            if not root then
-                break
-            end
-
-            local distance = (root.Position - State.Root.Position).Magnitude
-            if distance > Config.AttackDistance + 2 then
-                teleportTo(target, Config.AttackDistance)
-            end
-
-            m1()
-            skills()
-            task.wait(0.03)
-
-            if os.clock() - State.LastStateRead > 0.40 then
-                readContractState(false)
-                if State.Progress >= State.Required and State.Required > 0 then
-                    break
-                end
-            end
-        end
-    end
-end
-
-local function questComplete()
-    readContractState(false)
-
-    if State.Required > 0 and State.Progress >= State.Required then
+local function isQuestComplete()
+    if Settings.Required > 0 and Settings.Progress >= Settings.Required then
         return true
+    end
+
+    local quest = Settings.Contract
+    if type(quest) == "table" then
+        for _, key in ipairs({"Completed", "Complete", "Finished", "Claimable", "ReadyToClaim"}) do
+            if quest[key] == true then
+                return true
+            end
+        end
     end
 
     return false
 end
 
-local function ensureQuest()
-    readContractState(true)
-
-    if State.ActiveId ~= nil or State.TargetId ~= nil or State.TargetName ~= nil then
-        return true
-    end
-
-    if not Config.AutoAccept then
-        return false
-    end
-
-    local npc, prompt = findQuestPrompt(false)
-    if npc then
-        State.QuestNPC = npc
-        State.Step = "Going to quest NPC"
-        teleportTo(npc, 4)
-        task.wait(0.30)
-
-        if prompt then
-            firePrompt(prompt)
-            task.wait(0.50)
+local function farmTarget()
+    local target = Settings.Target
+    if not target or not isAliveNPC(target) then
+        clearTarget()
+        target = findTarget()
+        if not target then
+            Settings.Step = "Searching target"
+            return
         end
 
-        acceptContract()
-        task.wait(0.30)
-        readContractState(true)
+        Settings.Target = target
+        Settings.TargetRoot = getRoot(target)
+        moveToModel(target, Settings.EngageDistance <= 10 and Settings.EngageDistance or 5, true)
+        while isTeleporting and Settings.Running do
+            task.wait(0.05)
+        end
     end
 
-    return State.ActiveId ~= nil or State.TargetId ~= nil or State.TargetName ~= nil
-end
-
-local function runCycle()
-    State.Target = nil
-    State.TargetName = nil
-    State.TargetId = nil
-    State.Required = 0
-    State.Progress = 0
-
-    if not ensureQuest() then
-        State.Step = "Quest not found"
+    local targetRoot = getRoot(target)
+    if not targetRoot then
+        clearTarget()
         return
     end
 
-    local textTarget = findTextTarget()
-    if textTarget and not State.TargetName then
-        State.TargetName = textTarget:gsub("^%s+", ""):gsub("%s+$", "")
+    Settings.TargetRoot = targetRoot
+    Settings.Step = "Farming " .. target.Name
+    startHover()
+
+    local distance = (targetRoot.Position - (getCharacter() and getCharacter())).Magnitude
+
+    doM1()
+    doSkills()
+end
+
+local function refreshNPCList()
+    for _, button in ipairs(npcButtons) do
+        button:Destroy()
+    end
+    table.clear(npcButtons)
+    table.clear(npcList)
+
+    for _, obj in ipairs(workspace:GetDescendants()) do
+        if obj:IsA("Model") and isAliveNPC(obj) then
+            table.insert(npcList, obj)
+        end
     end
 
-    while Config.Enabled do
-        readContractState(false)
+    table.sort(npcList, function(a, b)
+        return a.Name:lower() < b.Name:lower()
+    end)
 
-        if questComplete() then
-            break
-        end
-
-        local target = findTarget()
-        if target then
-            farmTarget(target)
-        else
-            State.Step = "Waiting for target"
-            task.wait(0.50)
-        end
+    if State.TargetList then
+        State.TargetList.CanvasSize = UDim2.new(0, 0, 0, #npcList * 29)
     end
 
-    if Config.Enabled and Config.AutoClaim then
-        claimContract()
-        task.wait(0.50)
+    for i, npc in ipairs(npcList) do
+        local button = Instance.new("TextButton")
+        button.Size = UDim2.new(1, -8, 0, 27)
+        button.BackgroundColor3 = Color3.fromRGB(43, 43, 53)
+        button.BorderSizePixel = 0
+        button.Text = npc.Name
+        button.TextColor3 = Color3.fromRGB(235, 235, 240)
+        button.Font = Enum.Font.Gotham
+        button.TextSize = 12
+        button.LayoutOrder = i
+        button.Parent = State.TargetList
+
+        local corner = Instance.new("UICorner")
+        corner.CornerRadius = UDim.new(0, 5)
+        corner.Parent = button
+
+        button.Activated:Connect(function()
+            selectedNPC = npc
+            State.TargetDropdown.Text = npc.Name
+            State.TargetList.Visible = false
+        end)
+
+        table.insert(npcButtons, button)
     end
 end
 
-local function makeCorner(instance, radius)
+local function makeCorner(object, radius)
     local corner = Instance.new("UICorner")
     corner.CornerRadius = UDim.new(0, radius)
-    corner.Parent = instance
+    corner.Parent = object
 end
 
-local function makeButton(parent, text)
+local function makeButton(parent, name, text, y)
     local button = Instance.new("TextButton")
-    button.Size = UDim2.new(1, 0, 0, 36)
-    button.BackgroundColor3 = Color3.fromRGB(35, 35, 44)
+    button.Name = name
+    button.Size = UDim2.new(1, 0, 0, 34)
+    button.Position = UDim2.new(0, 0, 0, y)
+    button.BackgroundColor3 = Color3.fromRGB(36, 36, 45)
     button.BorderSizePixel = 0
-    button.Font = Enum.Font.GothamMedium
-    button.TextSize = 12
-    button.TextColor3 = Color3.new(1, 1, 1)
     button.Text = text
-    button.AutoButtonColor = true
+    button.TextColor3 = Color3.fromRGB(238, 238, 243)
+    button.Font = Enum.Font.GothamSemibold
+    button.TextSize = 12
     button.Parent = parent
     makeCorner(button, 7)
     return button
 end
 
 local function makeGui()
-    local playerGui = LocalPlayer:FindFirstChildOfClass("PlayerGui")
-    if not playerGui then
-        return
-    end
-
-    local old = playerGui:FindFirstChild("MyAutoFarmQuestGUI")
-    if old then
-        old:Destroy()
+    local existing = playerGui:FindFirstChild("MyAutoFarmUI")
+    if existing then
+        existing:Destroy()
     end
 
     local gui = Instance.new("ScreenGui")
-    gui.Name = "MyAutoFarmQuestGUI"
+    gui.Name = "MyAutoFarmUI"
     gui.ResetOnSpawn = false
     gui.IgnoreGuiInset = true
+    gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     gui.Parent = playerGui
     State.Gui = gui
 
-    local frame = Instance.new("Frame")
-    frame.Size = UDim2.fromOffset(340, 255)
-    frame.Position = UDim2.new(0, 20, 0.5, -128)
-    frame.BackgroundColor3 = Color3.fromRGB(16, 16, 21)
-    frame.BorderSizePixel = 0
-    frame.Parent = gui
-    makeCorner(frame, 10)
+    local main = Instance.new("Frame")
+    main.Size = UDim2.fromOffset(370, 520)
+    main.Position = UDim2.new(0, 24, 0.5, -260)
+    main.BackgroundColor3 = Color3.fromRGB(17, 17, 22)
+    main.BorderSizePixel = 0
+    main.Parent = gui
+    makeCorner(main, 11)
+    State.Main = main
 
     local stroke = Instance.new("UIStroke")
     stroke.Thickness = 1
-    stroke.Transparency = 0.65
-    stroke.Parent = frame
+    stroke.Transparency = 0.55
+    stroke.Parent = main
+
+    local header = Instance.new("Frame")
+    header.Size = UDim2.new(1, 0, 0, 46)
+    header.BackgroundColor3 = Color3.fromRGB(27, 27, 35)
+    header.BorderSizePixel = 0
+    header.Parent = main
+    makeCorner(header, 11)
 
     local title = Instance.new("TextLabel")
-    title.Size = UDim2.new(1, -20, 0, 34)
-    title.Position = UDim2.fromOffset(10, 8)
     title.BackgroundTransparency = 1
-    title.Text = "QUEST AUTO FARM"
+    title.Position = UDim2.fromOffset(14, 0)
+    title.Size = UDim2.new(1, -60, 1, 0)
+    title.Text = "MyAutoFarm • Quest"
     title.Font = Enum.Font.GothamBold
-    title.TextSize = 19
-    title.TextColor3 = Color3.new(1, 1, 1)
+    title.TextSize = 17
+    title.TextColor3 = Color3.fromRGB(245, 245, 250)
     title.TextXAlignment = Enum.TextXAlignment.Left
-    title.Parent = frame
+    title.Parent = header
+
+    local minButton = Instance.new("TextButton")
+    minButton.Size = UDim2.fromOffset(34, 30)
+    minButton.Position = UDim2.new(1, -40, 0, 8)
+    minButton.BackgroundTransparency = 1
+    minButton.Text = "—"
+    minButton.Font = Enum.Font.GothamBold
+    minButton.TextSize = 20
+    minButton.TextColor3 = Color3.fromRGB(230, 230, 235)
+    minButton.Parent = header
+
+    local content = Instance.new("Frame")
+    content.BackgroundTransparency = 1
+    content.Position = UDim2.fromOffset(12, 56)
+    content.Size = UDim2.new(1, -24, 1, -66)
+    content.Parent = main
+    State.Content = content
 
     State.Status = Instance.new("TextLabel")
-    State.Status.Size = UDim2.new(1, -20, 0, 42)
-    State.Status.Position = UDim2.fromOffset(10, 44)
     State.Status.BackgroundTransparency = 1
-    State.Status.Font = Enum.Font.Gotham
-    State.Status.TextSize = 11
-    State.Status.TextColor3 = Color3.fromRGB(175, 175, 185)
-    State.Status.TextWrapped = true
+    State.Status.Size = UDim2.new(1, 0, 0, 28)
+    State.Status.Position = UDim2.fromOffset(0, 0)
+    State.Status.Font = Enum.Font.GothamSemibold
+    State.Status.TextSize = 12
+    State.Status.TextColor3 = Color3.fromRGB(205, 205, 212)
     State.Status.TextXAlignment = Enum.TextXAlignment.Left
-    State.Status.Parent = frame
+    State.Status.Parent = content
 
-    State.QuestLabel = Instance.new("TextLabel")
-    State.QuestLabel.Size = UDim2.new(1, -20, 0, 24)
-    State.QuestLabel.Position = UDim2.fromOffset(10, 84)
-    State.QuestLabel.BackgroundTransparency = 1
-    State.QuestLabel.Font = Enum.Font.GothamMedium
-    State.QuestLabel.TextSize = 11
-    State.QuestLabel.TextColor3 = Color3.fromRGB(205, 205, 215)
-    State.QuestLabel.TextXAlignment = Enum.TextXAlignment.Left
-    State.QuestLabel.Parent = frame
+    State.QuestText = Instance.new("TextLabel")
+    State.QuestText.BackgroundTransparency = 1
+    State.QuestText.Size = UDim2.new(1, 0, 0, 22)
+    State.QuestText.Position = UDim2.fromOffset(0, 28)
+    State.QuestText.Font = Enum.Font.Gotham
+    State.QuestText.TextSize = 11
+    State.QuestText.TextColor3 = Color3.fromRGB(170, 170, 182)
+    State.QuestText.TextXAlignment = Enum.TextXAlignment.Left
+    State.QuestText.Parent = content
 
-    State.TargetLabel = Instance.new("TextLabel")
-    State.TargetLabel.Size = UDim2.new(1, -20, 0, 24)
-    State.TargetLabel.Position = UDim2.fromOffset(10, 108)
-    State.TargetLabel.BackgroundTransparency = 1
-    State.TargetLabel.Font = Enum.Font.GothamMedium
-    State.TargetLabel.TextSize = 11
-    State.TargetLabel.TextColor3 = Color3.fromRGB(205, 205, 215)
-    State.TargetLabel.TextXAlignment = Enum.TextXAlignment.Left
-    State.TargetLabel.Parent = frame
+    State.TargetText = State.QuestText:Clone()
+    State.TargetText.Position = UDim2.fromOffset(0, 50)
+    State.TargetText.Parent = content
 
-    State.ProgressLabel = Instance.new("TextLabel")
-    State.ProgressLabel.Size = UDim2.new(1, -20, 0, 24)
-    State.ProgressLabel.Position = UDim2.fromOffset(10, 132)
-    State.ProgressLabel.BackgroundTransparency = 1
-    State.ProgressLabel.Font = Enum.Font.GothamMedium
-    State.ProgressLabel.TextSize = 11
-    State.ProgressLabel.TextColor3 = Color3.fromRGB(205, 205, 215)
-    State.ProgressLabel.TextXAlignment = Enum.TextXAlignment.Left
-    State.ProgressLabel.Parent = frame
+    State.ProgressText = State.QuestText:Clone()
+    State.ProgressText.Position = UDim2.fromOffset(0, 72)
+    State.ProgressText.Parent = content
 
-    local box = Instance.new("Frame")
-    box.Size = UDim2.new(1, -20, 0, 96)
-    box.Position = UDim2.fromOffset(10, 158)
-    box.BackgroundTransparency = 1
-    box.Parent = frame
+    State.ToggleButton = makeButton(content, "Toggle", "Farming: OFF", 105)
+    State.RepeatButton = makeButton(content, "Repeat", "Auto Repeat: ON", 145)
+
+    local positionButton = makeButton(content, "Position", "Position: ABOVE", 185)
+    local skillsButton = makeButton(content, "Skills", "Skills: ON", 225)
+    State.SkillButton = skillsButton
+
+    local skillFrame = Instance.new("Frame")
+    skillFrame.BackgroundTransparency = 1
+    skillFrame.Size = UDim2.new(1, 0, 0, 30)
+    skillFrame.Position = UDim2.fromOffset(0, 265)
+    skillFrame.Parent = content
+
+    for i, skill in ipairs(Settings.Skills) do
+        local b = Instance.new("TextButton")
+        b.Size = UDim2.new(0.2, -4, 1, 0)
+        b.Position = UDim2.new((i - 1) * 0.2, i == 1 and 0 or 2, 0, 0)
+        b.BackgroundColor3 = skill.Enabled and Color3.fromRGB(61, 118, 222) or Color3.fromRGB(36, 36, 45)
+        b.BorderSizePixel = 0
+        b.Text = skill.Name
+        b.Font = Enum.Font.GothamBold
+        b.TextSize = 13
+        b.TextColor3 = Color3.fromRGB(240, 240, 245)
+        b.Parent = skillFrame
+        makeCorner(b, 6)
+        State.SkillButtons[i] = b
+
+        b.Activated:Connect(function()
+            skill.Enabled = not skill.Enabled
+            b.BackgroundColor3 = skill.Enabled and Color3.fromRGB(61, 118, 222) or Color3.fromRGB(36, 36, 45)
+        end)
+    end
+
+    local heightBox = Instance.new("TextBox")
+    heightBox.Size = UDim2.new(1, 0, 0, 32)
+    heightBox.Position = UDim2.fromOffset(0, 303)
+    heightBox.BackgroundColor3 = Color3.fromRGB(36, 36, 45)
+    heightBox.BorderSizePixel = 0
+    heightBox.ClearTextOnFocus = false
+    heightBox.Text = "Height: " .. tostring(Settings.Height)
+    heightBox.TextColor3 = Color3.fromRGB(238, 238, 243)
+    heightBox.Font = Enum.Font.Gotham
+    heightBox.TextSize = 12
+    heightBox.Parent = content
+    makeCorner(heightBox, 7)
+    State.HeightBox = heightBox
+
+    local npcRow = Instance.new("Frame")
+    npcRow.BackgroundTransparency = 1
+    npcRow.Size = UDim2.new(1, 0, 0, 32)
+    npcRow.Position = UDim2.fromOffset(0, 343)
+    npcRow.Parent = content
+
+    local npcDrop = Instance.new("TextButton")
+    npcDrop.Size = UDim2.new(0.68, -4, 1, 0)
+    npcDrop.BackgroundColor3 = Color3.fromRGB(40, 40, 50)
+    npcDrop.BorderSizePixel = 0
+    npcDrop.Text = "Select NPC"
+    npcDrop.TextColor3 = Color3.fromRGB(235, 235, 240)
+    npcDrop.Font = Enum.Font.GothamSemibold
+    npcDrop.TextSize = 12
+    npcDrop.Parent = npcRow
+    makeCorner(npcDrop, 7)
+    State.TargetDropdown = npcDrop
+
+    local tp = Instance.new("TextButton")
+    tp.Size = UDim2.new(0.30, 0, 1, 0)
+    tp.Position = UDim2.new(0.70, 0, 0, 0)
+    tp.BackgroundColor3 = Color3.fromRGB(35, 106, 70)
+    tp.BorderSizePixel = 0
+    tp.Text = "TP to NPC"
+    tp.TextColor3 = Color3.fromRGB(240, 240, 245)
+    tp.Font = Enum.Font.GothamSemibold
+    tp.TextSize = 12
+    tp.Parent = npcRow
+    makeCorner(tp, 7)
+
+    local list = Instance.new("ScrollingFrame")
+    list.Size = UDim2.new(1, 0, 0, 100)
+    list.Position = UDim2.fromOffset(0, 380)
+    list.BackgroundColor3 = Color3.fromRGB(27, 27, 35)
+    list.BorderSizePixel = 0
+    list.ScrollBarThickness = 4
+    list.CanvasSize = UDim2.new(0, 0, 0, 0)
+    list.Visible = false
+    list.Parent = content
+    makeCorner(list, 7)
+    State.TargetList = list
 
     local layout = Instance.new("UIListLayout")
-    layout.Padding = UDim.new(0, 5)
-    layout.Parent = box
+    layout.Padding = UDim.new(0, 2)
+    layout.Parent = list
 
-    local farmButton = makeButton(box, "AUTO FARM: OFF")
-    farmButton.MouseButton1Click:Connect(function()
-        Config.Enabled = not Config.Enabled
-        farmButton.Text = "AUTO FARM: " .. (Config.Enabled and "ON" or "OFF")
+    npcDrop.Activated:Connect(function()
+        list.Visible = not list.Visible
+        if list.Visible then
+            refreshNPCList()
+        end
     end)
 
-    local acceptButton = makeButton(box, "AUTO ACCEPT: ON")
-    acceptButton.MouseButton1Click:Connect(function()
-        Config.AutoAccept = not Config.AutoAccept
-        acceptButton.Text = "AUTO ACCEPT: " .. (Config.AutoAccept and "ON" or "OFF")
+    tp.Activated:Connect(function()
+        if selectedNPC and isAliveNPC(selectedNPC) then
+            moveToModel(selectedNPC, 3, true)
+        end
     end)
 
-    local skillsButton = makeButton(box, "SKILLS: ON | Z X C V F")
-    skillsButton.MouseButton1Click:Connect(function()
-        Config.AutoSkills = not Config.AutoSkills
-        skillsButton.Text = "SKILLS: " .. (Config.AutoSkills and "ON" or "OFF") .. " | Z X C V F"
+    State.ToggleButton.Activated:Connect(function()
+        Settings.Running = not Settings.Running
+        if Settings.Running then
+            farmingStarted = os.clock()
+            Settings.Step = "Starting"
+            State.ToggleButton.Text = "Farming: ON"
+            State.ToggleButton.BackgroundColor3 = Color3.fromRGB(38, 107, 68)
+        else
+            Settings.Step = "Stopped"
+            stopHover()
+            State.ToggleButton.Text = "Farming: OFF"
+            State.ToggleButton.BackgroundColor3 = Color3.fromRGB(36, 36, 45)
+        end
     end)
 
-    local claimButton = makeButton(box, "AUTO CLAIM: ON")
-    claimButton.MouseButton1Click:Connect(function()
-        Config.AutoClaim = not Config.AutoClaim
-        claimButton.Text = "AUTO CLAIM: " .. (Config.AutoClaim and "ON" or "OFF")
+    State.RepeatButton.Activated:Connect(function()
+        Settings.AutoRepeat = not Settings.AutoRepeat
+        State.RepeatButton.Text = "Auto Repeat: " .. (Settings.AutoRepeat and "ON" or "OFF")
+        State.RepeatButton.BackgroundColor3 = Settings.AutoRepeat and Color3.fromRGB(61, 118, 222) or Color3.fromRGB(36, 36, 45)
+    end)
+
+    positionButton.Activated:Connect(function()
+        Settings.Position = Settings.Position == "Above" and "Down" or "Above"
+        positionButton.Text = "Position: " .. string.upper(Settings.Position)
+    end)
+
+    skillsButton.Activated:Connect(function()
+        local anyOn = false
+        for _, skill in ipairs(Settings.Skills) do
+            anyOn = anyOn or skill.Enabled
+        end
+
+        local turnOn = not anyOn
+        for i, skill in ipairs(Settings.Skills) do
+            skill.Enabled = turnOn
+            State.SkillButtons[i].BackgroundColor3 = turnOn and Color3.fromRGB(61, 118, 222) or Color3.fromRGB(36, 36, 45)
+        end
+        skillsButton.Text = "Skills: " .. (turnOn and "ALL ON" or "ALL OFF")
+    end)
+
+    heightBox.FocusLost:Connect(function()
+        local value = tonumber(heightBox.Text:match("[-%d%.]+"))
+        if value then
+            Settings.Height = math.clamp(value, Settings.HeightMin, Settings.HeightMax)
+        end
+        heightBox.Text = "Height: " .. tostring(Settings.Height)
+    end)
+
+    minButton.Activated:Connect(function()
+        minimized = not minimized
+        content.Visible = not minimized
+        main.Size = minimized and UDim2.fromOffset(370, 46) or UDim2.fromOffset(370, 520)
+        minButton.Text = minimized and "+" or "—"
     end)
 
     local dragging = false
     local dragStart = nil
     local startPosition = nil
 
-    title.InputBegan:Connect(function(input)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+    header.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
             dragging = true
             dragStart = input.Position
-            startPosition = frame.Position
+            startPosition = main.Position
 
             input.Changed:Connect(function()
                 if input.UserInputState == Enum.UserInputState.End then
@@ -930,55 +1104,147 @@ local function makeGui()
     end)
 
     UserInputService.InputChanged:Connect(function(input)
-        if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
-            local delta = input.Position - dragStart
-            frame.Position = UDim2.new(
-                startPosition.X.Scale,
-                startPosition.X.Offset + delta.X,
-                startPosition.Y.Scale,
-                startPosition.Y.Offset + delta.Y
-            )
-        end
-    end)
-
-    UserInputService.InputBegan:Connect(function(input, processed)
-        if processed then
+        if not dragging then
             return
         end
 
-        if input.KeyCode == Enum.KeyCode.F6 then
-            Config.Enabled = not Config.Enabled
-            farmButton.Text = "AUTO FARM: " .. (Config.Enabled and "ON" or "OFF")
-        elseif input.KeyCode == Enum.KeyCode.RightShift then
-            gui.Enabled = not gui.Enabled
+        if input.UserInputType ~= Enum.UserInputType.MouseMovement and input.UserInputType ~= Enum.UserInputType.Touch then
+            return
         end
+
+        local delta = input.Position - dragStart
+        main.Position = UDim2.new(startPosition.X.Scale, startPosition.X.Offset + delta.X, startPosition.Y.Scale, startPosition.Y.Offset + delta.Y)
     end)
 end
 
-LocalPlayer.Idled:Connect(function()
+makeGui()
+
+UserInputService.InputBegan:Connect(function(input, processed)
+    if processed then
+        return
+    end
+
+    if input.KeyCode == Enum.KeyCode.K and State.Main then
+        State.Main.Visible = not State.Main.Visible
+    elseif input.KeyCode == Enum.KeyCode.F6 then
+        Settings.Running = not Settings.Running
+        if Settings.Running then
+            farmingStarted = os.clock()
+        else
+            stopHover()
+        end
+    elseif input.KeyCode == Enum.KeyCode.Up then
+        Settings.Height = math.clamp(Settings.Height + 1, Settings.HeightMin, Settings.HeightMax)
+        State.HeightBox.Text = "Height: " .. tostring(Settings.Height)
+    elseif input.KeyCode == Enum.KeyCode.Down then
+        Settings.Height = math.clamp(Settings.Height - 1, Settings.HeightMin, Settings.HeightMax)
+        State.HeightBox.Text = "Height: " .. tostring(Settings.Height)
+    end
+end)
+
+player.CharacterAdded:Connect(function()
+    stopHover()
+    task.wait(0.7)
+    readContract(true)
+end)
+
+if REContractChanged and REContractChanged:IsA("RemoteEvent") then
+    REContractChanged.OnClientEvent:Connect(function()
+        readContract(true)
+    end)
+end
+
+player.Idled:Connect(function()
     pcall(function()
         VirtualUser:CaptureController()
         VirtualUser:ClickButton2(Vector2.new())
     end)
 end)
 
-makeGui()
-refreshCharacter()
+local lastLoop = 0
+local lastTargetSearch = 0
 
-while task.wait(0.15) do
+while State.Gui and State.Gui.Parent do
+    local now = os.clock()
+
     if State.Status then
-        State.Status.Text = string.format(
-            "Status: %s | Step: %s",
-            Config.Enabled and "RUNNING" or "STOPPED",
-            State.Step
-        )
-
-        State.QuestLabel.Text = "Contract: " .. (State.ActiveId and tostring(State.ActiveId) or "none")
-        State.TargetLabel.Text = "Target: " .. (State.Target and State.Target.Name or State.TargetName or State.TargetId or "none")
-        State.ProgressLabel.Text = string.format("Progress: %d / %d", State.Progress, State.Required)
+        State.Status.Text = string.format("%s  •  %s", Settings.Running and "RUNNING" or "STOPPED", Settings.Step)
+        State.QuestText.Text = "Quest: " .. (Settings.QuestId and tostring(Settings.QuestId) or "none")
+        State.TargetText.Text = "Target: " .. (Settings.Target and Settings.Target.Name or Settings.TargetName or Settings.TargetId or "none")
+        State.ProgressText.Text = string.format("Progress: %d / %d", Settings.Progress, Settings.Required)
     end
 
-    if Config.Enabled and refreshCharacter() then
-        runCycle()
+    if Settings.Running and now - lastLoop >= Settings.SearchInterval then
+        lastLoop = now
+
+        local ok = pcall(function()
+            local character, humanoid, root = getCharacter()
+            if not character or not humanoid or not root then
+                stopHover()
+                return
+            end
+
+            readContract(false)
+
+            if not Settings.TargetName then
+                Settings.TargetName = getContractTextTarget()
+            end
+
+            if Settings.Required > 0 and Settings.Progress >= Settings.Required then
+                stopHover()
+
+                if Settings.AutoClaim then
+                    claimQuest()
+                end
+
+                if Settings.AutoRepeat then
+                    task.wait(0.45)
+                    readContract(true)
+                    if not Settings.QuestId and Settings.AutoQuest then
+                        interactQuestNPC()
+                        acceptQuest()
+                    end
+                else
+                    Settings.Running = false
+                end
+            else
+                if Settings.AutoQuest and not Settings.QuestId and now - lastTargetSearch > Settings.QuestRetryDelay then
+                    lastTargetSearch = now
+                    interactQuestNPC()
+                    acceptQuest()
+                    readContract(true)
+                end
+
+                if Settings.QuestId or Settings.TargetId or Settings.TargetName then
+                    if not Settings.Target or not isAliveNPC(Settings.Target) then
+                        if now - lastTargetSearch >= Settings.SearchInterval then
+                            lastTargetSearch = now
+                            local target = findTarget()
+                            if target then
+                                Settings.Target = target
+                                Settings.TargetRoot = getRoot(target)
+                                moveToModel(target, 5, true)
+                            end
+                        end
+                    end
+
+                    if Settings.Target then
+                        farmTarget()
+                    else
+                        Settings.Step = "Searching target"
+                    end
+                else
+                    Settings.Step = "Waiting for quest"
+                end
+            end
+        end)
+
+        if not ok then
+            Settings.Step = "Loop recovered"
+            stopHover()
+            task.wait(0.15)
+        end
     end
+
+    task.wait(0.025)
 end
