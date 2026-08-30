@@ -1,11 +1,10 @@
--- Tournament Quest Auto-Farm LocalScript v2.1
+-- Tournament Quest Auto-Farm LocalScript v2.2 (Fixed)
 -- Place in StarterPlayer > StarterCharacterScripts or as a LocalScript in game
 
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local UserInputService = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")
-local VirtualInputManager = game:GetService("VirtualInputManager")
 
 local player = Players.LocalPlayer
 if not player then return end
@@ -15,15 +14,23 @@ local character = script.Parent
 local humanoid = character:WaitForChild("Humanoid")
 local root = character:WaitForChild("HumanoidRootPart")
 
--- Get player data
-local data = player:WaitForChild("Data", 30)
+-- Get player data with timeout
+local data
+pcall(function()
+	data = player:WaitForChild("Data", 30)
+end)
+
 if not data then 
 	warn("[TournamentFarm] Player data not found")
 	return 
 end
 
 -- Quest system
-local quests = data:WaitForChild("Quests", 30)
+local quests
+pcall(function()
+	quests = data:WaitForChild("Quests", 30)
+end)
+
 if not quests then 
 	warn("[TournamentFarm] Quests folder not found")
 	return 
@@ -43,8 +50,6 @@ local remote = Events and Events:FindFirstChild("RemoteEvent")
 local Config = {
 	Running = false,
 	UseSkills = true,
-	AutoRepeat = true,
-	AutoClaim = true,
 	
 	Position = "Above",
 	Height = 6,
@@ -157,9 +162,11 @@ local function getQuestTarget(questFolder)
 		["Mission Ichigo Kurosaki"] = "Ichigo Kurosaki",
 		["Mission Sosuke Aizen"] = "Sosuke Aizen",
 		["Mission Cid Kagenou"] = "Cid Kagenou",
+		["Kill Enemies"] = "Enemies",
+		["Deal Damage"] = "Enemies",
 	}
 	
-	return targets[questName]
+	return targets[questName] or "Enemies"
 end
 
 local function findNPCByName(targetName)
@@ -193,6 +200,22 @@ end
 -- ============= COMBAT & MOVEMENT =============
 local hoverConnection = nil
 
+local function stopHover()
+	if hoverConnection then 
+		pcall(function()
+			hoverConnection:Disconnect()
+		end)
+		hoverConnection = nil
+	end
+	
+	local _, hum, rt = getCharacter()
+	if hum then hum.AutoRotate = true end
+	if rt then
+		rt.AssemblyLinearVelocity = Vector3.zero
+		rt.AssemblyAngularVelocity = Vector3.zero
+	end
+end
+
 local function smoothTeleport(targetPos, duration)
 	local _, _, rt = getCharacter()
 	if not rt then return false end
@@ -201,33 +224,26 @@ local function smoothTeleport(targetPos, duration)
 	local startPos = rt.Position
 	local startTime = os.clock()
 	
-	if hoverConnection then 
-		hoverConnection:Disconnect()
-		hoverConnection = nil
-	end
+	stopHover()
 	
 	hoverConnection = RunService.RenderStepped:Connect(function()
-		local _, _, currentRoot = getCharacter()
-		if not currentRoot then
-			if hoverConnection then 
-				hoverConnection:Disconnect()
-				hoverConnection = nil 
+		pcall(function()
+			local _, _, currentRoot = getCharacter()
+			if not currentRoot then
+				stopHover()
+				return
 			end
-			return
-		end
-		
-		local alpha = math.min((os.clock() - startTime) / duration, 1)
-		local eased = 1 - (1 - alpha) ^ 2
-		currentRoot.CFrame = CFrame.new(startPos:Lerp(targetPos, eased))
-		currentRoot.AssemblyLinearVelocity = Vector3.zero
-		currentRoot.AssemblyAngularVelocity = Vector3.zero
-		
-		if alpha >= 1 then
-			if hoverConnection then 
-				hoverConnection:Disconnect()
-				hoverConnection = nil 
+			
+			local alpha = math.min((os.clock() - startTime) / duration, 1)
+			local eased = 1 - (1 - alpha) ^ 2
+			currentRoot.CFrame = CFrame.new(startPos:Lerp(targetPos, eased))
+			currentRoot.AssemblyLinearVelocity = Vector3.zero
+			currentRoot.AssemblyAngularVelocity = Vector3.zero
+			
+			if alpha >= 1 then
+				stopHover()
 			end
-		end
+		end)
 	end)
 	
 	return true
@@ -238,32 +254,34 @@ local driftOffset = Vector3.zero
 local driftTimer = 0
 
 RunService.RenderStepped:Connect(function(dt)
-	if not Config.Running or not Config.CurrentRoot then return end
-	
-	local _, hum, rt = getCharacter()
-	if not hum or not rt or not Config.CurrentRoot.Parent or not isAliveNPC(Config.CurrentTarget) then
-		Config.CurrentTarget = nil
-		Config.CurrentRoot = nil
-		return
-	end
-	
-	floatTime = floatTime + dt
-	driftTimer = driftTimer + dt
-	
-	if driftTimer > randomFloat(2.5, 4) then
-		driftTimer = 0
-		driftOffset = Vector3.new(randomFloat(-0.25, 0.25), 0, randomFloat(-0.25, 0.25))
-	end
-	
-	local vertical = Config.Position == "Above" and Config.Height or -Config.Height
-	local bob = math.sin(floatTime * 1.5) * 0.4
-	local desiredPos = Config.CurrentRoot.Position + Vector3.new(driftOffset.X, vertical + bob, driftOffset.Z)
-	
-	rt.Anchored = false
-	rt.CFrame = CFrame.lookAt(desiredPos, desiredPos + (Config.CurrentRoot.Position - desiredPos).Unit)
-	rt.AssemblyLinearVelocity = Vector3.zero
-	rt.AssemblyAngularVelocity = Vector3.zero
-	hum.AutoRotate = false
+	pcall(function()
+		if not Config.Running or not Config.CurrentRoot then return end
+		
+		local _, hum, rt = getCharacter()
+		if not hum or not rt or not Config.CurrentRoot.Parent or not isAliveNPC(Config.CurrentTarget) then
+			Config.CurrentTarget = nil
+			Config.CurrentRoot = nil
+			return
+		end
+		
+		floatTime = floatTime + dt
+		driftTimer = driftTimer + dt
+		
+		if driftTimer > randomFloat(2.5, 4) then
+			driftTimer = 0
+			driftOffset = Vector3.new(randomFloat(-0.25, 0.25), 0, randomFloat(-0.25, 0.25))
+		end
+		
+		local vertical = Config.Position == "Above" and Config.Height or -Config.Height
+		local bob = math.sin(floatTime * 1.5) * 0.4
+		local desiredPos = Config.CurrentRoot.Position + Vector3.new(driftOffset.X, vertical + bob, driftOffset.Z)
+		
+		rt.Anchored = false
+		rt.CFrame = CFrame.lookAt(desiredPos, desiredPos + (Config.CurrentRoot.Position - desiredPos).Unit)
+		rt.AssemblyLinearVelocity = Vector3.zero
+		rt.AssemblyAngularVelocity = Vector3.zero
+		hum.AutoRotate = false
+	end)
 end)
 
 local function buildCastRay(targetRoot, playerRoot)
@@ -279,30 +297,28 @@ end
 local function attack(targetRoot, playerRoot)
 	if not remote or not targetRoot or not playerRoot then return end
 	
-	-- Try skills first
-	if Config.UseSkills then
-		local now = os.clock()
-		for _, skill in ipairs(Skills) do
-			if skill.Enabled and now - skill.Last >= skill.Cooldown then
-				skill.Last = now
-				local castRay = buildCastRay(targetRoot, playerRoot)
-				pcall(function()
+	pcall(function()
+		-- Try skills first
+		if Config.UseSkills then
+			local now = os.clock()
+			for _, skill in ipairs(Skills) do
+				if skill.Enabled and now - skill.Last >= skill.Cooldown then
+					skill.Last = now
+					local castRay = buildCastRay(targetRoot, playerRoot)
 					remote:FireServer("Attack", {isSkill = true, what = "skill" .. tostring(string.byte(skill.Name) - 88), castRay = castRay})
-				end)
-				return
+					return
+				end
 			end
 		end
-	end
-	
-	-- Fall back to M1
-	local now = os.clock()
-	if now - Config.LastM1 >= randomFloat(Config.M1Interval.Min, Config.M1Interval.Max) then
-		Config.LastM1 = now
-		local castRay = buildCastRay(targetRoot, playerRoot)
-		pcall(function()
+		
+		-- Fall back to M1
+		local now = os.clock()
+		if now - Config.LastM1 >= randomFloat(Config.M1Interval.Min, Config.M1Interval.Max) then
+			Config.LastM1 = now
+			local castRay = buildCastRay(targetRoot, playerRoot)
 			remote:FireServer("Attack", {castRay = castRay}, "Attack")
-		end)
-	end
+		end
+	end)
 end
 
 -- ============= UI =============
@@ -311,334 +327,408 @@ local UIState = {
 	Minimized = false,
 }
 
+local UIElements = {
+	gui = nil,
+	main = nil,
+	content = nil,
+	toggleBtn = nil,
+	statusLabel = nil,
+	npcLabel = nil,
+	questLabel = nil,
+	heightBox = nil,
+	aboveBtn = nil,
+	belowBtn = nil,
+	skillsBtn = nil,
+}
+
 local function createUI()
-	local old = playerGui:FindFirstChild("TournamentFarm")
-	if old then old:Destroy() end
-	
-	local gui = Instance.new("ScreenGui")
-	gui.Name = "TournamentFarm"
-	gui.ResetOnSpawn = false
-	gui.IgnoreGuiInset = true
-	gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-	gui.Parent = playerGui
-	
-	local main = Instance.new("Frame")
-	main.Size = UDim2.new(0, 320, 0, 420)
-	main.Position = UDim2.new(0, 20, 0.5, -210)
-	main.BackgroundColor3 = Color3.fromRGB(18, 18, 23)
-	main.BorderSizePixel = 0
-	main.Parent = gui
-	
-	local corner = Instance.new("UICorner")
-	corner.CornerRadius = UDim.new(0, 10)
-	corner.Parent = main
-	
-	local stroke = Instance.new("UIStroke")
-	stroke.Color = Color3.fromRGB(70, 70, 82)
-	stroke.Thickness = 1
-	stroke.Parent = main
-	
-	-- Title Bar
-	local titleBar = Instance.new("Frame")
-	titleBar.Size = UDim2.new(1, 0, 0, 44)
-	titleBar.BackgroundColor3 = Color3.fromRGB(28, 28, 35)
-	titleBar.BorderSizePixel = 0
-	titleBar.Parent = main
-	
-	local titleCorner = Instance.new("UICorner")
-	titleCorner.CornerRadius = UDim.new(0, 10)
-	titleCorner.Parent = titleBar
-	
-	local title = Instance.new("TextLabel")
-	title.BackgroundTransparency = 1
-	title.Position = UDim2.new(0, 14, 0, 0)
-	title.Size = UDim2.new(1, -55, 1, 0)
-	title.Font = Enum.Font.GothamBold
-	title.Text = "Tournament Farm"
-	title.TextColor3 = Color3.fromRGB(245, 245, 250)
-	title.TextSize = 16
-	title.TextXAlignment = Enum.TextXAlignment.Left
-	title.Parent = titleBar
-	
-	local minimize = Instance.new("TextButton")
-	minimize.Size = UDim2.new(0, 34, 0, 30)
-	minimize.Position = UDim2.new(1, -40, 0, 7)
-	minimize.BackgroundTransparency = 1
-	minimize.Font = Enum.Font.GothamBold
-	minimize.Text = "—"
-	minimize.TextColor3 = Color3.fromRGB(230, 230, 235)
-	minimize.TextSize = 20
-	minimize.Parent = titleBar
-	
-	minimize.MouseButton1Click:Connect(function()
-		UIState.Minimized = not UIState.Minimized
-		content.Visible = not UIState.Minimized
-		main.Size = UIState.Minimized and UDim2.new(0, 320, 0, 44) or UDim2.new(0, 320, 0, 420)
-		minimize.Text = UIState.Minimized and "+" or "—"
+	pcall(function()
+		local old = playerGui:FindFirstChild("TournamentFarm")
+		if old then 
+			pcall(function() old:Destroy() end)
+		end
+		
+		local gui = Instance.new("ScreenGui")
+		gui.Name = "TournamentFarm"
+		gui.ResetOnSpawn = false
+		gui.IgnoreGuiInset = true
+		gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+		gui.Parent = playerGui
+		UIElements.gui = gui
+		
+		local main = Instance.new("Frame")
+		main.Size = UDim2.new(0, 320, 0, 420)
+		main.Position = UDim2.new(0, 20, 0.5, -210)
+		main.BackgroundColor3 = Color3.fromRGB(18, 18, 23)
+		main.BorderSizePixel = 0
+		main.Parent = gui
+		UIElements.main = main
+		
+		local corner = Instance.new("UICorner")
+		corner.CornerRadius = UDim.new(0, 10)
+		corner.Parent = main
+		
+		local stroke = Instance.new("UIStroke")
+		stroke.Color = Color3.fromRGB(70, 70, 82)
+		stroke.Thickness = 1
+		stroke.Parent = main
+		
+		-- Title Bar
+		local titleBar = Instance.new("Frame")
+		titleBar.Size = UDim2.new(1, 0, 0, 44)
+		titleBar.BackgroundColor3 = Color3.fromRGB(28, 28, 35)
+		titleBar.BorderSizePixel = 0
+		titleBar.Parent = main
+		
+		local titleCorner = Instance.new("UICorner")
+		titleCorner.CornerRadius = UDim.new(0, 10)
+		titleCorner.Parent = titleBar
+		
+		local title = Instance.new("TextLabel")
+		title.BackgroundTransparency = 1
+		title.Position = UDim2.new(0, 14, 0, 0)
+		title.Size = UDim2.new(1, -55, 1, 0)
+		title.Font = Enum.Font.GothamBold
+		title.Text = "Tournament Farm"
+		title.TextColor3 = Color3.fromRGB(245, 245, 250)
+		title.TextSize = 16
+		title.TextXAlignment = Enum.TextXAlignment.Left
+		title.Parent = titleBar
+		
+		local minimize = Instance.new("TextButton")
+		minimize.Size = UDim2.new(0, 34, 0, 30)
+		minimize.Position = UDim2.new(1, -40, 0, 7)
+		minimize.BackgroundTransparency = 1
+		minimize.Font = Enum.Font.GothamBold
+		minimize.Text = "—"
+		minimize.TextColor3 = Color3.fromRGB(230, 230, 235)
+		minimize.TextSize = 20
+		minimize.Parent = titleBar
+		
+		minimize.MouseButton1Click:Connect(function()
+			pcall(function()
+				UIState.Minimized = not UIState.Minimized
+				if UIElements.content then
+					UIElements.content.Visible = not UIState.Minimized
+				end
+				if UIElements.main then
+					UIElements.main.Size = UIState.Minimized and UDim2.new(0, 320, 0, 44) or UDim2.new(0, 320, 0, 420)
+				end
+				minimize.Text = UIState.Minimized and "+" or "—"
+			end)
+		end)
+		
+		-- Content
+		local content = Instance.new("Frame")
+		content.BackgroundTransparency = 1
+		content.Position = UDim2.new(0, 12, 0, 52)
+		content.Size = UDim2.new(1, -24, 1, -60)
+		content.Parent = main
+		UIElements.content = content
+		
+		local function makeButton(text, y)
+			local btn = Instance.new("TextButton")
+			btn.Size = UDim2.new(1, 0, 0, 36)
+			btn.Position = UDim2.new(0, 0, 0, y)
+			btn.BackgroundColor3 = Color3.fromRGB(36, 36, 44)
+			btn.BorderSizePixel = 0
+			btn.AutoButtonColor = true
+			btn.Font = Enum.Font.GothamSemibold
+			btn.Text = text
+			btn.TextColor3 = Color3.fromRGB(235, 235, 240)
+			btn.TextSize = 13
+			btn.Parent = content
+			
+			local c = Instance.new("UICorner")
+			c.CornerRadius = UDim.new(0, 7)
+			c.Parent = btn
+			
+			return btn
+		end
+		
+		-- Toggle Button
+		local toggleBtn = makeButton("Farming: OFF", 0)
+		toggleBtn.BackgroundColor3 = Color3.fromRGB(36, 36, 44)
+		UIElements.toggleBtn = toggleBtn
+		
+		toggleBtn.MouseButton1Click:Connect(function()
+			pcall(function()
+				Config.Running = not Config.Running
+				if UIElements.toggleBtn then
+					UIElements.toggleBtn.Text = Config.Running and "Farming: ON" or "Farming: OFF"
+					UIElements.toggleBtn.BackgroundColor3 = Config.Running and Color3.fromRGB(35, 100, 62) or Color3.fromRGB(36, 36, 44)
+				end
+				
+				if not Config.Running then
+					Config.CurrentTarget = nil
+					Config.CurrentRoot = nil
+					stopHover()
+				end
+			end)
+		end)
+		
+		-- Position Toggle
+		local aboveBtn = makeButton("Position: ABOVE", 42)
+		local belowBtn = makeButton("Position: BELOW", 84)
+		UIElements.aboveBtn = aboveBtn
+		UIElements.belowBtn = belowBtn
+		
+		local function updatePositionUI()
+			pcall(function()
+				if Config.Position == "Above" then
+					if UIElements.aboveBtn then UIElements.aboveBtn.BackgroundColor3 = Color3.fromRGB(63, 124, 235) end
+					if UIElements.belowBtn then UIElements.belowBtn.BackgroundColor3 = Color3.fromRGB(36, 36, 44) end
+				else
+					if UIElements.aboveBtn then UIElements.aboveBtn.BackgroundColor3 = Color3.fromRGB(36, 36, 44) end
+					if UIElements.belowBtn then UIElements.belowBtn.BackgroundColor3 = Color3.fromRGB(63, 124, 235) end
+				end
+			end)
+		end
+		
+		aboveBtn.MouseButton1Click:Connect(function()
+			pcall(function()
+				Config.Position = "Above"
+				updatePositionUI()
+			end)
+		end)
+		
+		belowBtn.MouseButton1Click:Connect(function()
+			pcall(function()
+				Config.Position = "Below"
+				updatePositionUI()
+			end)
+		end)
+		
+		updatePositionUI()
+		
+		-- Skills Toggle
+		local skillsBtn = makeButton("Skills: ALL ON", 126)
+		UIElements.skillsBtn = skillsBtn
+		
+		skillsBtn.MouseButton1Click:Connect(function()
+			pcall(function()
+				local anyOn = false
+				for _, skill in ipairs(Skills) do
+					if skill.Enabled then anyOn = true break end
+				end
+				
+				for _, skill in ipairs(Skills) do
+					skill.Enabled = not anyOn
+				end
+				
+				local allOn, anyEnabled = true, false
+				for _, skill in ipairs(Skills) do
+					if skill.Enabled then anyEnabled = true else allOn = false end
+				end
+				
+				if UIElements.skillsBtn then
+					UIElements.skillsBtn.Text = "Skills: " .. (allOn and "ALL ON" or (anyEnabled and "SOME" or "ALL OFF"))
+				end
+			end)
+		end)
+		
+		-- Height Box
+		local heightBox = Instance.new("TextBox")
+		heightBox.Size = UDim2.new(1, 0, 0, 32)
+		heightBox.Position = UDim2.new(0, 0, 0, 168)
+		heightBox.BackgroundColor3 = Color3.fromRGB(36, 36, 44)
+		heightBox.BorderSizePixel = 0
+		heightBox.ClearTextOnFocus = false
+		heightBox.Font = Enum.Font.Gotham
+		heightBox.TextSize = 13
+		heightBox.TextColor3 = Color3.fromRGB(240, 240, 245)
+		heightBox.Text = "Height: " .. tostring(Config.Height)
+		heightBox.Parent = content
+		UIElements.heightBox = heightBox
+		
+		local hc = Instance.new("UICorner")
+		hc.CornerRadius = UDim.new(0, 7)
+		hc.Parent = heightBox
+		
+		heightBox.FocusLost:Connect(function()
+			pcall(function()
+				local num = tonumber(tostring(heightBox.Text):match("[-%d%.]+"))
+				if num then
+					Config.Height = math.clamp(num, Config.HeightMin, Config.HeightMax)
+					if UIElements.heightBox then
+						UIElements.heightBox.Text = "Height: " .. tostring(Config.Height)
+					end
+				else
+					if UIElements.heightBox then
+						UIElements.heightBox.Text = "Height: " .. tostring(Config.Height)
+					end
+				end
+			end)
+		end)
+		
+		-- Status Label
+		local statusLabel = Instance.new("TextLabel")
+		statusLabel.Size = UDim2.new(1, 0, 0, 24)
+		statusLabel.Position = UDim2.new(0, 0, 0, 210)
+		statusLabel.BackgroundTransparency = 1
+		statusLabel.Font = Enum.Font.Gotham
+		statusLabel.TextSize = 12
+		statusLabel.TextColor3 = Color3.fromRGB(180, 180, 200)
+		statusLabel.TextWrapped = true
+		statusLabel.Text = "Status: Idle"
+		statusLabel.Parent = content
+		UIElements.statusLabel = statusLabel
+		
+		-- NPC Info
+		local npcLabel = Instance.new("TextLabel")
+		npcLabel.Size = UDim2.new(1, 0, 0, 24)
+		npcLabel.Position = UDim2.new(0, 0, 0, 240)
+		npcLabel.BackgroundTransparency = 1
+		npcLabel.Font = Enum.Font.Gotham
+		npcLabel.TextSize = 11
+		npcLabel.TextColor3 = Color3.fromRGB(150, 150, 170)
+		npcLabel.TextWrapped = true
+		npcLabel.Text = "Target: None"
+		npcLabel.Parent = content
+		UIElements.npcLabel = npcLabel
+		
+		-- Quest Info
+		local questLabel = Instance.new("TextLabel")
+		questLabel.Size = UDim2.new(1, 0, 0, 50)
+		questLabel.Position = UDim2.new(0, 0, 0, 270)
+		questLabel.BackgroundTransparency = 1
+		questLabel.Font = Enum.Font.Gotham
+		questLabel.TextSize = 10
+		questLabel.TextColor3 = Color3.fromRGB(120, 120, 140)
+		questLabel.TextWrapped = true
+		questLabel.TextYAlignment = Enum.TextYAlignment.Top
+		questLabel.Text = "Quest: None"
+		questLabel.Parent = content
+		UIElements.questLabel = questLabel
+		
+		-- Dragging
+		local dragging, dragStart, startPos = false, nil, nil
+		
+		titleBar.InputBegan:Connect(function(input)
+			pcall(function()
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					dragging = true
+					dragStart = input.Position
+					startPos = UIElements.main.Position
+				end
+			end)
+		end)
+		
+		UserInputService.InputChanged:Connect(function(input)
+			pcall(function()
+				if not dragging or input.UserInputType ~= Enum.UserInputType.MouseMovement then return end
+				if not dragStart or not startPos or not UIElements.main then return end
+				
+				local delta = input.Position - dragStart
+				UIElements.main.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+			end)
+		end)
+		
+		UserInputService.InputEnded:Connect(function(input)
+			pcall(function()
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					dragging = false
+				end
+			end)
+		end)
 	end)
+end
+
+-- ============= INPUT HANDLING =============
+UserInputService.InputBegan:Connect(function(input, processed)
+	if processed then return end
 	
-	-- Content
-	local content = Instance.new("Frame")
-	content.BackgroundTransparency = 1
-	content.Position = UDim2.new(0, 12, 0, 52)
-	content.Size = UDim2.new(1, -24, 1, -60)
-	content.Parent = main
-	
-	local function makeButton(text, y)
-		local btn = Instance.new("TextButton")
-		btn.Size = UDim2.new(1, 0, 0, 36)
-		btn.Position = UDim2.new(0, 0, 0, y)
-		btn.BackgroundColor3 = Color3.fromRGB(36, 36, 44)
-		btn.BorderSizePixel = 0
-		btn.AutoButtonColor = true
-		btn.Font = Enum.Font.GothamSemibold
-		btn.Text = text
-		btn.TextColor3 = Color3.fromRGB(235, 235, 240)
-		btn.TextSize = 13
-		btn.Parent = content
-		
-		local c = Instance.new("UICorner")
-		c.CornerRadius = UDim.new(0, 7)
-		c.Parent = btn
-		
-		return btn
-	end
-	
-	-- Toggle Button
-	local toggleBtn = makeButton("Farming: OFF", 0)
-	toggleBtn.BackgroundColor3 = Color3.fromRGB(36, 36, 44)
-	
-	toggleBtn.MouseButton1Click:Connect(function()
-		Config.Running = not Config.Running
-		toggleBtn.Text = Config.Running and "Farming: ON" or "Farming: OFF"
-		toggleBtn.BackgroundColor3 = Config.Running and Color3.fromRGB(35, 100, 62) or Color3.fromRGB(36, 36, 44)
-		
-		if not Config.Running then
-			Config.CurrentTarget = nil
-			Config.CurrentRoot = nil
-			if hoverConnection then
-				hoverConnection:Disconnect()
-				hoverConnection = nil
+	pcall(function()
+		if input.KeyCode == Enum.KeyCode.K then
+			UIState.Visible = not UIState.Visible
+			if UIElements.main then
+				UIElements.main.Visible = UIState.Visible
+			end
+		elseif input.KeyCode == Enum.KeyCode.Up then
+			Config.Height = math.clamp(Config.Height + 1, Config.HeightMin, Config.HeightMax)
+			if UIElements.heightBox then
+				UIElements.heightBox.Text = "Height: " .. Config.Height
+			end
+		elseif input.KeyCode == Enum.KeyCode.Down then
+			Config.Height = math.clamp(Config.Height - 1, Config.HeightMin, Config.HeightMax)
+			if UIElements.heightBox then
+				UIElements.heightBox.Text = "Height: " .. Config.Height
 			end
 		end
 	end)
-	
-	-- Position Toggle
-	local aboveBtn = makeButton("Position: ABOVE", 42)
-	local belowBtn = makeButton("Position: BELOW", 84)
-	
-	local function updatePositionUI()
-		if Config.Position == "Above" then
-			aboveBtn.BackgroundColor3 = Color3.fromRGB(63, 124, 235)
-			belowBtn.BackgroundColor3 = Color3.fromRGB(36, 36, 44)
-		else
-			aboveBtn.BackgroundColor3 = Color3.fromRGB(36, 36, 44)
-			belowBtn.BackgroundColor3 = Color3.fromRGB(63, 124, 235)
-		end
-	end
-	
-	aboveBtn.MouseButton1Click:Connect(function()
-		Config.Position = "Above"
-		updatePositionUI()
-	end)
-	
-	belowBtn.MouseButton1Click:Connect(function()
-		Config.Position = "Below"
-		updatePositionUI()
-	end)
-	
-	updatePositionUI()
-	
-	-- Skills Toggle
-	local skillsBtn = makeButton("Skills: ALL ON", 126)
-	
-	skillsBtn.MouseButton1Click:Connect(function()
-		local anyOn = false
-		for _, skill in ipairs(Skills) do
-			if skill.Enabled then anyOn = true break end
-		end
-		
-		for _, skill in ipairs(Skills) do
-			skill.Enabled = not anyOn
-		end
-		
-		local allOn, anyEnabled = true, false
-		for _, skill in ipairs(Skills) do
-			if skill.Enabled then anyEnabled = true else allOn = false end
-		end
-		
-		skillsBtn.Text = "Skills: " .. (allOn and "ALL ON" or (anyEnabled and "SOME" or "ALL OFF"))
-	end)
-	
-	-- Height Box
-	local heightBox = Instance.new("TextBox")
-	heightBox.Size = UDim2.new(1, 0, 0, 32)
-	heightBox.Position = UDim2.new(0, 0, 0, 168)
-	heightBox.BackgroundColor3 = Color3.fromRGB(36, 36, 44)
-	heightBox.BorderSizePixel = 0
-	heightBox.ClearTextOnFocus = false
-	heightBox.Font = Enum.Font.Gotham
-	heightBox.TextSize = 13
-	heightBox.TextColor3 = Color3.fromRGB(240, 240, 245)
-	heightBox.Text = "Height: " .. tostring(Config.Height)
-	heightBox.Parent = content
-	
-	local hc = Instance.new("UICorner")
-	hc.CornerRadius = UDim.new(0, 7)
-	hc.Parent = heightBox
-	
-	heightBox.FocusLost:Connect(function()
-		local num = tonumber(tostring(heightBox.Text):match("[-%d%.]+"))
-		if num then
-			Config.Height = math.clamp(num, Config.HeightMin, Config.HeightMax)
-			heightBox.Text = "Height: " .. tostring(Config.Height)
-		else
-			heightBox.Text = "Height: " .. tostring(Config.Height)
-		end
-	end)
-	
-	-- Status Label
-	local statusLabel = Instance.new("TextLabel")
-	statusLabel.Size = UDim2.new(1, 0, 0, 24)
-	statusLabel.Position = UDim2.new(0, 0, 0, 210)
-	statusLabel.BackgroundTransparency = 1
-	statusLabel.Font = Enum.Font.Gotham
-	statusLabel.TextSize = 12
-	statusLabel.TextColor3 = Color3.fromRGB(180, 180, 200)
-	statusLabel.TextWrapped = true
-	statusLabel.Text = "Status: Idle"
-	statusLabel.Parent = content
-	
-	-- NPC Info
-	local npcLabel = Instance.new("TextLabel")
-	npcLabel.Size = UDim2.new(1, 0, 0, 24)
-	npcLabel.Position = UDim2.new(0, 0, 0, 240)
-	npcLabel.BackgroundTransparency = 1
-	npcLabel.Font = Enum.Font.Gotham
-	npcLabel.TextSize = 11
-	npcLabel.TextColor3 = Color3.fromRGB(150, 150, 170)
-	npcLabel.TextWrapped = true
-	npcLabel.Text = "Target: None"
-	npcLabel.Parent = content
-	
-	-- Quest Info
-	local questLabel = Instance.new("TextLabel")
-	questLabel.Size = UDim2.new(1, 0, 0, 50)
-	questLabel.Position = UDim2.new(0, 0, 0, 270)
-	questLabel.BackgroundTransparency = 1
-	questLabel.Font = Enum.Font.Gotham
-	questLabel.TextSize = 10
-	questLabel.TextColor3 = Color3.fromRGB(120, 120, 140)
-	questLabel.TextWrapped = true
-	questLabel.TextYAlignment = Enum.TextYAlignment.Top
-	questLabel.Text = "Quest: None"
-	questLabel.Parent = content
-	
-	-- Update labels regularly
-	task.spawn(function()
-		while gui.Parent do
-			statusLabel.Text = "Status: " .. tostring(Config.Status)
-			npcLabel.Text = "Target: " .. (Config.CurrentTarget and tostring(Config.CurrentTarget.Name) or "None")
-			questLabel.Text = "Quest: " .. (Config.CurrentQuest and tostring(Config.CurrentQuest.Name) or "None")
-			task.wait(0.3)
-		end
-	end)
-	
-	-- Keyboard Controls
-	UserInputService.InputBegan:Connect(function(input, processed)
-		if processed then return end
-		
-		if input.KeyCode == Enum.KeyCode.K then
-			UIState.Visible = not UIState.Visible
-			main.Visible = UIState.Visible
-		elseif input.KeyCode == Enum.KeyCode.Up then
-			Config.Height = math.clamp(Config.Height + 1, Config.HeightMin, Config.HeightMax)
-			heightBox.Text = "Height: " .. Config.Height
-		elseif input.KeyCode == Enum.KeyCode.Down then
-			Config.Height = math.clamp(Config.Height - 1, Config.HeightMin, Config.HeightMax)
-			heightBox.Text = "Height: " .. Config.Height
-		end
-	end)
-	
-	-- Dragging
-	local dragging, dragStart, startPos = false, nil, nil
-	
-	titleBar.InputBegan:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseButton1 then
-			dragging = true
-			dragStart = input.Position
-			startPos = main.Position
-		end
-	end)
-	
-	UserInputService.InputChanged:Connect(function(input)
-		if not dragging or input.UserInputType ~= Enum.UserInputType.MouseMovement then return end
-		if not dragStart or not startPos then return end
-		
-		local delta = input.Position - dragStart
-		main.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-	end)
-	
-	UserInputService.InputEnded:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseButton1 then
-			dragging = false
-		end
-	end)
-end
+end)
 
 -- ============= MAIN FARM LOOP =============
 task.spawn(function()
 	createUI()
+	task.wait(0.5)
 	
 	while true do
-		if Config.Running then
-			local questFolder, questType = findActiveQuest()
-			Config.CurrentQuest = questFolder
-			
-			if questFolder then
-				Config.Status = "Active: " .. questFolder.Name
+		pcall(function()
+			if Config.Running then
+				local questFolder = findActiveQuest()
+				Config.CurrentQuest = questFolder
 				
-				-- Get target from quest name
-				local targetName = getQuestTarget(questFolder)
-				local target = targetName and findNPCByName(targetName)
-				
-				if target and isAliveNPC(target) then
-					Config.CurrentTarget = target
-					Config.CurrentRoot = getModelRoot(target)
+				if questFolder then
+					Config.Status = "Quest: " .. string.sub(questFolder.Name, 1, 20)
 					
-					local _, _, playerRoot = getCharacter()
-					if playerRoot and Config.CurrentRoot then
-						Config.Status = "Attacking: " .. target.Name
+					-- Get target from quest name
+					local targetName = getQuestTarget(questFolder)
+					local target = targetName and findNPCByName(targetName)
+					
+					if target and isAliveNPC(target) then
+						Config.CurrentTarget = target
+						Config.CurrentRoot = getModelRoot(target)
 						
-						-- Smooth teleport to target
-						local vertical = Config.Position == "Above" and Config.Height or -Config.Height
-						smoothTeleport(Config.CurrentRoot.Position + Vector3.new(0, vertical, 0), Config.TeleportDuration)
-						
-						-- Attack
-						attack(Config.CurrentRoot, playerRoot)
+						local _, _, playerRoot = getCharacter()
+						if playerRoot and Config.CurrentRoot then
+							Config.Status = "Fighting: " .. string.sub(target.Name, 1, 15)
+							
+							-- Smooth teleport to target
+							local vertical = Config.Position == "Above" and Config.Height or -Config.Height
+							smoothTeleport(Config.CurrentRoot.Position + Vector3.new(0, vertical, 0), Config.TeleportDuration)
+							
+							-- Attack
+							attack(Config.CurrentRoot, playerRoot)
+						end
+					else
+						Config.Status = "Searching..."
+						Config.CurrentTarget = nil
+						Config.CurrentRoot = nil
 					end
 				else
-					Config.Status = "Finding: " .. (targetName or "Target")
+					Config.Status = "No Quest"
 					Config.CurrentTarget = nil
 					Config.CurrentRoot = nil
 				end
 			else
-				Config.Status = "No Active Quest"
-				Config.CurrentTarget = nil
-				Config.CurrentRoot = nil
+				Config.Status = "Idle"
 			end
-		else
-			Config.Status = "Idle"
-		end
+		end)
+		
+		-- Update UI labels
+		pcall(function()
+			if UIElements.statusLabel then
+				UIElements.statusLabel.Text = "Status: " .. tostring(Config.Status)
+			end
+			if UIElements.npcLabel then
+				UIElements.npcLabel.Text = "Target: " .. (Config.CurrentTarget and string.sub(tostring(Config.CurrentTarget.Name), 1, 20) or "None")
+			end
+			if UIElements.questLabel then
+				UIElements.questLabel.Text = "Quest: " .. (Config.CurrentQuest and string.sub(tostring(Config.CurrentQuest.Name), 1, 25) or "None")
+			end
+		end)
 		
 		task.wait(Config.SearchInterval)
 	end
 end)
 
--- Cleanup on death
+-- ============= CLEANUP =============
 character.Humanoid.Died:Connect(function()
-	if hoverConnection then
-		hoverConnection:Disconnect()
-		hoverConnection = nil
-	end
+	pcall(function()
+		stopHover()
+		Config.Running = false
+	end)
 end)
+
+print("[TournamentFarm] Loaded successfully! Press K to toggle UI")
